@@ -1,0 +1,18 @@
+%p
+  %b Title:
+  = h @presentation.title
+%p
+  %b Description:
+  = h @presentation.description
+%p
+  %b Speaker:
+  = h @presentation.speaker
+%p
+  %b Start:
+  = h @presentation.start
+%p
+  %b End:
+  = h @presentation.end
+= link_to 'Edit', edit_presentation_path(@presentation)
+|
+\#{link_to 'Back', presentations_path}

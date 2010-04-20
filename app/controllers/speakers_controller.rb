@@ -1,5 +1,5 @@
 class SpeakersController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:index, :show]
   # GET /speakers
   # GET /speakers.xml
   def index

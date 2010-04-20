@@ -3,7 +3,7 @@ class CreateSponsors < ActiveRecord::Migration
     create_table :sponsors do |t|
       t.string :name
       t.text :note, :allow_nil => true
-
+      t.string :level
       t.userstamps
       t.timestamps
     end

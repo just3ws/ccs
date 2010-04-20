@@ -1,0 +1,14 @@
+%h3.name
+  %a{:id=>speaker.full_name, :style=> "text-decoration: none;"}= speaker.full_name
+%p.bio= speaker.biography
+.profile_footer
+  - if admin?
+    email:
+    %a{:href=>"mailto:#{speaker.email}"}
+      = speaker.email
+    %br
+  - if !speaker.homepage.empty?
+    %i
+      homepage:
+      %a{:href=>speaker.homepage}
+        = speaker.homepage
