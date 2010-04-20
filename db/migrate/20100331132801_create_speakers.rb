@@ -4,7 +4,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :full_name
       t.string :email
       t.string :homepage
-      t.string :biography
+      t.text :biography
 
       t.userstamps
       t.timestamps
