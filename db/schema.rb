@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20100420135418) do
     t.string   "full_name"
     t.string   "email"
     t.string   "homepage"
-    t.string   "biography"
+    t.text     "biography"
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20100420135418) do
   create_table "sponsors", :force => true do |t|
     t.string   "name"
     t.text     "note"
+    t.string   "level"
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
