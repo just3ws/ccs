@@ -46,4 +46,8 @@ module ApplicationHelper
       Rails.logger.debug " *** hiding visitor only content. #{line} in #{file}"
     end
   end
+
+   def get_list_of_sponsors
+    Sponsor.all
+   end
 end

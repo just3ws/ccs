@@ -1,14 +1,14 @@
-%h1 Listing sponsors
-%table
-  %tr
-    %th Name
-    %th Note
-  - @sponsors.each do |sponsor|
-    %tr
-      %td= h sponsor.name
-      %td= h sponsor.note
-      %td= link_to 'Show', sponsor
-      %td= link_to 'Edit', edit_sponsor_path(sponsor)
-      %td= link_to 'Destroy', sponsor, :confirm => 'Are you sure?', :method => :delete
-%br/
-= link_to 'New sponsor', new_sponsor_path
+%h1 Sponsors
+- level = ""
+- @sponsors.each do |sponsor|
+  %h2=h sponsor.level unless sponsor.level == level
+  %h3
+    %a{:id=>sponsor.name, :style=>"text-decoration: none; padding-left: 16px;"}= sponsor.name
+  - level = sponsor.level 
+  %hr.space
+- if admin?
+  %span= link_to 'Show', presentation
+  %span= link_to 'Edit', edit_presentation_path(presentation)
+  %span= link_to 'Destroy', presentation, :confirm => 'Are you sure?', :method => :delete
+  %br/
+  = link_to 'New presentation', new_presentation_path

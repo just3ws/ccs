@@ -1,5 +1,5 @@
 class SponsorsController < ApplicationController
-  before_filter :authenticate
+  before_filter :authenticate, :except => [:index, :show]
   # GET /sponsors
   # GET /sponsors.xml
   def index
