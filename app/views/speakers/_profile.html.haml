@@ -12,3 +12,7 @@
       homepage:
       %a{:href=>speaker.homepage}
         = speaker.homepage
+- if admin?    
+  %span= link_to 'Show', speaker
+  %span= link_to 'Edit', edit_speaker_path(speaker)
+  %span= link_to 'Destroy', speaker, :confirm => 'Are you sure?', :method => :delete

@@ -6,8 +6,8 @@
     %th Category
   - @contents.each do |content|
     %tr
-      %td= h content.name
-      %td= h content.value
+      %td= h content.name.first 25
+      %td= h content.value.first 25
       %td= h content.category
       %td= link_to 'Show', content
       %td= link_to 'Edit', edit_content_path(content)

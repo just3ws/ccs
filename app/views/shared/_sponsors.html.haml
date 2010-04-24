@@ -2,9 +2,14 @@
 Please take a moment to recognize our valued sponsors.
 %hr.space
 - level = ""
-- Sponsor.all().each do |s|
-  %h3=h s.level unless s.level == level
-  %p{:style=>"padding-left: 8px;"}= s.name
-  - level = s.level
+- Sponsor.all().each do |sponsor|
+  %h3=h sponsor.level unless sponsor.level == level
+  %p{:style=>"padding-left: 8px;"}
+    = sponsor.name
+    - if sponsor.logo?
+      %br/
+      %a{:href=>sponsor.link}= image_tag "sponsors/#{sponsor.name.downcase.gsub(" ", "")}_small.png"
+
+  - level = sponsor.level
 
 

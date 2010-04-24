@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(:version => 20100420135418) do
   create_table "sponsors", :force => true do |t|
     t.string   "name"
     t.text     "note"
+    t.string   "link"
+    t.boolean  "logo",       :default => false
     t.string   "level"
     t.integer  "creator_id"
     t.integer  "updater_id"

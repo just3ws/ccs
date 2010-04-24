@@ -3,12 +3,16 @@
 - @sponsors.each do |sponsor|
   %h2=h sponsor.level unless sponsor.level == level
   %h3
-    %a{:id=>sponsor.name, :style=>"text-decoration: none; padding-left: 16px;"}= sponsor.name
+    %a{:id=>sponsor.name, :style=>"text-decoration: none; padding-left: 16px;", :href=>sponsor.link}= sponsor.name
+    - if sponsor.logo?
+      %hr.space
+      %a{:href=>sponsor.link}= image_tag "sponsors/#{sponsor.name.downcase.gsub(" ", "")}_large.png"
   - level = sponsor.level 
   %hr.space
+  - if admin?
+    %span= link_to 'Show', sponsor 
+    %span= link_to 'Edit', edit_sponsor_path(sponsor)
+    %span= link_to 'Destroy', sponsor, :confirm => 'Are you sure?', :method => :delete
 - if admin?
-  %span= link_to 'Show', presentation
-  %span= link_to 'Edit', edit_presentation_path(presentation)
-  %span= link_to 'Destroy', presentation, :confirm => 'Are you sure?', :method => :delete
   %br/
   = link_to 'New presentation', new_presentation_path

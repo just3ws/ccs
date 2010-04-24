@@ -14,6 +14,14 @@
     %br/
     = f.text_field :category
   %p
+    = f.label :display 
+    %br/
+    = f.check_box :display
+  %p
+    = f.label :sequence
+    %br/
+    = f.text_field :sequence
+  %p
     = f.submit 'Update'
 = link_to 'Show', @content
 |

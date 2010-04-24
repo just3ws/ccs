@@ -2,10 +2,7 @@
 - @speakers.each do |speaker|
   = render :partial => "profile", :locals => {:speaker => speaker}
   %hr.space
-- if admin?    
-  %span= link_to 'Show', speaker
-  %span= link_to 'Edit', edit_speaker_path(speaker)
-  %span= link_to 'Destroy', speaker, :confirm => 'Are you sure?', :method => :delete
+
 - if admin?
   %br/
   = link_to 'New speaker', new_speaker_path

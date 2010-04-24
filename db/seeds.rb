@@ -77,16 +77,18 @@ Speaker.create!([
 ])
 
 Sponsor.create!([
-  {:name=>"Microsoft", :level=>"Platinum"},
-  {:name=>"Telerik", :level=>"Platinum"},
-  {:name=>"Wintellect", :level=>"Platinum"},
-  {:name=>"Pluralsight", :level=>"Platinum"},
-  {:name=>"Red-Gate Software", :level=>"Gold"},
-  {:name=>"JetBrains", :level=>"Gold"},
-  {:name=>"8th Light", :level=>"Gold"},
-  {:name=>"Neudesic", :level=>"Bronze"},
-  {:name=>"Pearson", :level=>"Bronze"},
-  {:name=>"Magenic", :level=>"Bronze"},
-  {:name=>"O'reilly", :level=>"Bronze"},
-  {:name=>"ACM", :level=>"Bronze"},
+  {:name=>"Microsoft", :level=>"Platinum", :link=>"http://www.microsoft.com", :logo=>true},
+  {:name=>"Telerik", :level=>"Platinum", :link=>"http://www.telerik.com"},
+  {:name=>"Wintellect", :level=>"Platinum", :link=> "http://www.devscovery.com", :logo=>true},
+  {:name=>"Pluralsight", :level=>"Platinum", :link=>"http://www.pluralsight-training.com"},
+  {:name=>"Red-Gate Software", :level=>"Gold", :link=>"http://www.red-gate.com", :logo=>true},
+  {:name=>"JetBrains", :level=>"Gold", :link=>"http://www.jetbrains.com", :logo=>true},
+  {:name=>"8th Light", :level=>"Gold", :link=>"http://www.8thlight.com", :logo=>true},
+  {:name=>"Neudesic", :level=>"Bronze", :link=>"http://www.neudesic.com", :logo=>true},
+  {:name=>"Pearson", :level=>"Bronze", :link=>"http://www.pearson.com", :logo=>true},
+  {:name=>"Magenic", :level=>"Bronze", :link=>"http://www.magenic.com", :logo=>true},
+  {:name=>"O'reilly", :level=>"Bronze", :link=>"http://www.oreilly.com"},
+  {:name=>"ACM", :level=>"Bronze", :link=>"http://www.chicagoacm.org"},
 ])
+
+
