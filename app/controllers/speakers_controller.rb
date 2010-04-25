@@ -3,7 +3,7 @@ class SpeakersController < ApplicationController
   # GET /speakers
   # GET /speakers.xml
   def index
-    @speakers = Speaker.all
+    @speakers = Speaker.find(:all, :order => "full_name")
 
     respond_to do |format|
       format.html # index.html.haml
