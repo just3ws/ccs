@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20100420135418) do
     t.string   "email"
     t.string   "homepage"
     t.text     "biography"
+    t.boolean  "headshot",   :default => false
     t.integer  "creator_id"
     t.integer  "updater_id"
     t.datetime "created_at"
