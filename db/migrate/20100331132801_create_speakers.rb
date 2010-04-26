@@ -5,6 +5,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :email
       t.string :homepage
       t.text :biography
+      t.boolean :headshot, :default => false
 
       t.userstamps
       t.timestamps

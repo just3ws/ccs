@@ -1,18 +1,26 @@
-%h3.name
-  %a{:id=>speaker.full_name, :style=> "text-decoration: none;"}= speaker.full_name
-%p.bio= speaker.biography
-.profile_footer
-  - if admin?
-    email:
-    %a{:href=>"mailto:#{speaker.email}"}
-      = speaker.email
-    %br
-  - if !speaker.homepage.empty?
-    %i
-      homepage:
-      %a{:href=>speaker.homepage}
-        = speaker.homepage
-- if admin?    
-  %span= link_to 'Show', speaker
-  %span= link_to 'Edit', edit_speaker_path(speaker)
-  %span= link_to 'Destroy', speaker, :confirm => 'Are you sure?', :method => :delete
+.container.speaker_profile
+  %h3.name
+    %a{:id=>speaker.full_name, :style=> "text-decoration: none;"}= speaker.full_name
+  .span-3
+    - if speaker.headshot?
+      = image_tag "speakers/#{speaker.full_name.downcase.gsub(" ", "_")}.jpg", :style => ""
+    - if !speaker.headshot?
+      = image_tag "speakers/no_headshot.jpg"
+  .span-11.bio{:style=>"vertical-align: top;"}
+    = speaker.biography
+  %hr.space
+  .push-3.span-10.profile_footer
+    - if admin?
+      email:
+      %a{:href=>"mailto:#{speaker.email}"}
+        = speaker.email
+      %br
+    - if !speaker.homepage.empty?
+      %i
+        homepage:
+        %a{:href=>speaker.homepage}
+          = speaker.homepage
+  - if admin?    
+    %span= link_to 'Show', speaker
+    %span= link_to 'Edit', edit_speaker_path(speaker)
+    %span= link_to 'Destroy', speaker, :confirm => 'Are you sure?', :method => :delete

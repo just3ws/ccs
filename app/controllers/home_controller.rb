@@ -18,4 +18,11 @@ class HomeController < ApplicationController
       format.html
     end
   end
+
+  def agenda
+    render :layout => "agenda"
+    #respond_to do |format|
+    #  format.html
+    #end
+  end
 end
