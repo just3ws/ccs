@@ -96,7 +96,7 @@ Sponsor.create!([
                 {:name=>"Neudesic", :level=>"Bronze", :link=>"http://www.neudesic.com", :logo=>true},
                 {:name=>"Pearson", :level=>"Bronze", :link=>"http://www.pearson.com", :logo=>true},
                 {:name=>"Magenic", :level=>"Bronze", :link=>"http://www.magenic.com", :logo=>true},
-                {:name=>"O'reilly", :level=>"Bronze", :link=>"http://www.oreilly.com"},
+                {:name=>"O'reilly", :level=>"Bronze", :link=>"http://www.oreilly.com", :logo=>true},
                 {:name=>"ACM", :level=>"Bronze", :link=>"http://www.chicagoacm.org"},
 ])
 
