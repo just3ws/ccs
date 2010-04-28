@@ -88,6 +88,7 @@ Sponsor.create!([
                 {:name=>"Telerik", :level=>"Platinum", :link=>"http://www.telerik.com", :logo=>true},
                 {:name=>"Wintellect", :level=>"Platinum", :link=> "http://www.devscovery.com", :logo=>true},
                 {:name=>"Pluralsight", :level=>"Platinum", :link=>"http://www.pluralsight-training.com", :logo=>true},
+                {:name=>"Obtiva", :level=>"Gold", :link=>"http://www.obtiva.com", :logo=>true},
                 {:name=>"Red-Gate Software", :level=>"Gold", :link=>"http://www.red-gate.com", :logo=>true},
                 {:name=>"JetBrains", :level=>"Gold", :link=>"http://www.jetbrains.com", :logo=>true},
                 {:name=>"8th Light", :level=>"Gold", :link=>"http://www.8thlight.com", :logo=>true},
