@@ -1,7 +1,0 @@
-%h1 Presentations
-- @presentations.each do |presentation|
-  = render :partial => "presentation", :locals => {:presentation => presentation}
-  %hr.space
-- if admin?
-  %br/
-  = link_to 'New presentation', new_presentation_path

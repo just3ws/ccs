@@ -1,9 +1,0 @@
-%h3.name
-  %a{:id => presentation.title, :style=>"text-decoration:none;"}= presentation.title
-%h4.speaker= "by #{presentation.speaker}"
-%p.description= presentation.description
-- if admin?
-  %span= link_to 'Show', presentation
-  %span= link_to 'Edit', edit_presentation_path(presentation)
-  %span= link_to 'Destroy', presentation, :confirm => 'Are you sure?', :method => :delete
-

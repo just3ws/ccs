@@ -1,11 +1,4 @@
-log/*.log
-tmp/*
-tmp/**/*
-doc/api
-doc/app
+.bundle
 db/*.sqlite3
-*.swp
-*~
-.DS_Store
-.idea
-.rvmrc
+log/*.log
+tmp/**/*

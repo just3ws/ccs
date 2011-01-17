@@ -1,8 +1,0 @@
-%h1 Speakers
-- @speakers.each do |speaker|
-  = render :partial => "profile", :locals => {:speaker => speaker}
-  %hr.space
-
-- if admin?
-  %br/
-  = link_to 'New speaker', new_speaker_path
