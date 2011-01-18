@@ -6,10 +6,15 @@ gem 'rails', '~>3.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'compass'
+
 gem 'devise'
 gem 'cancan'
+
+gem 'compass'
+gem 'compass-960-plugin'
+gem 'jquery-rails', :git => "git://github.com/pgericson/jquery-rails.git" 
 gem 'haml'
+gem 'simple_form'
 
 # Use unicorn as the web server
 # gem 'unicorn'
