@@ -37,6 +37,11 @@ module Ccs
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
+    config.filter_parameters += [:password, :password_confirmation]
+
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      include ActionView::Helpers::RawOutputHelper
+      raw %(#{html_tag.gsub(/<(\w*)\s/, '<\1 class="field-with-errors" ')})
+    end
   end
 end

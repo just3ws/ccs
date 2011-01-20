@@ -1,14 +1,14 @@
 class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.xml
-  def index
-    @submissions = Submission.all
+  #def index
+    #@submissions = Submission.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @submissions }
-    end
-  end
+    #respond_to do |format|
+      #format.html # index.html.erb
+      #format.xml  { render :xml => @submissions }
+    #end
+  #end
 
   # GET /submissions/1
   # GET /submissions/1.xml
@@ -33,9 +33,9 @@ class SubmissionsController < ApplicationController
   end
 
   # GET /submissions/1/edit
-  def edit
-    @submission = Submission.find(params[:id])
-  end
+  #def edit
+    #@submission = Submission.find(params[:id])
+  #end
 
   # POST /submissions
   # POST /submissions.xml
@@ -55,29 +55,29 @@ class SubmissionsController < ApplicationController
 
   # PUT /submissions/1
   # PUT /submissions/1.xml
-  def update
-    @submission = Submission.find(params[:id])
+  #def update
+    #@submission = Submission.find(params[:id])
 
-    respond_to do |format|
-      if @submission.update_attributes(params[:submission])
-        format.html { redirect_to(@submission, :notice => 'Submission was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @submission.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+    #respond_to do |format|
+      #if @submission.update_attributes(params[:submission])
+        #format.html { redirect_to(@submission, :notice => 'Submission was successfully updated.') }
+        #format.xml  { head :ok }
+      #else
+        #format.html { render :action => "edit" }
+        #format.xml  { render :xml => @submission.errors, :status => :unprocessable_entity }
+      #end
+    #end
+  #end
 
   # DELETE /submissions/1
   # DELETE /submissions/1.xml
-  def destroy
-    @submission = Submission.find(params[:id])
-    @submission.destroy
+  #def destroy
+    #@submission = Submission.find(params[:id])
+    #@submission.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(submissions_url) }
-      format.xml  { head :ok }
-    end
-  end
+    #respond_to do |format|
+      #format.html { redirect_to(submissions_url) }
+      #format.xml  { head :ok }
+    #end
+  #end
 end

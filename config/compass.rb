@@ -1,5 +1,3 @@
-require 'ninesixty'
-
 project_type = :rails
 project_path = Compass::AppIntegration::Rails.root
 # Require any additional compass plugins here.

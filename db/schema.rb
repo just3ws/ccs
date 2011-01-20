@@ -20,6 +20,10 @@ ActiveRecord::Schema.define(:version => 20110118000102) do
     t.string   "title"
     t.text     "abstract"
     t.string   "home_page"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,29 +1,55 @@
-<%= simple_form_for @submission do |f| %>
-  <% if @submission.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
-
-      <ul>
-        <% @submission.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for @submission, :html => {:multipart => true} do |f| %>
   <fieldset>
     <legend>Session</legend>
-    <%= f.input :title, :placeholder => "the working title for you presentation" %>
-    <%= f.input :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
+    <ul>
+      <li>
+      <%= f.label :title %>
+      <%= f.text_field :title, :placeholder => "the working title for your presentation" %>
+      </li>
+
+      <li>
+      <%= f.label :abstract %>
+      <%= f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
+      </li>
+    </ul>
   </fieldset>
   <fieldset>
     <legend>Biography</legend>
-    <%= f.input :email, :placeholder => "your@email.com" %>
-    <%= f.input :first_name, :placeholder => "first name" %>
-    <%= f.input :last_name, :placeholder => "last name" %>
-    <%= f.input :home_page, :placeholder => "http://your.homepage.com" %>
-    <%= f.input :biography, :placeholder => "some biographical information" %>
+    <ul>
+      <li>
+      <%= f.label :email %>
+      <%= f.email_field :email, :placeholder => "your@email.com" %>
+      </li>
+
+      <li>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, :placeholder => "first name" %>
+      </li>
+
+      <li>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, :placeholder => "last name" %></li>
+      </li>
+
+      <li>
+      <%= f.label :home_page %>
+      <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %></li>
+      </li>
+
+      <li>
+      <%= f.label :biography %>
+      <%= f.text_area :biography, :placeholder => "some biographical information" %>
+      </li>
+      
+      <li>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+      </li>
+    </ul>
   </fieldset>
   <fieldset>
-    <%= f.button :submit %>
+    <ul>
+      <li><button type="submit" id="submission_submit" name="commit">submit</button></li>
+    </ul>
   </fieldset>
 <% end %>

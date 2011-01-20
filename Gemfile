@@ -11,10 +11,9 @@ gem 'devise'
 gem 'cancan'
 
 gem 'compass'
-gem 'compass-960-plugin'
 gem 'jquery-rails', :git => "git://github.com/pgericson/jquery-rails.git" 
 gem 'haml'
-gem 'simple_form'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -30,7 +29,8 @@ gem 'simple_form'
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-s3', :require => 'aws/s3'
+gem 'paperclip'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

@@ -53,3 +53,8 @@
   background: -moz-radial-gradient(center 45deg, circle closest-corner, $color 0%, #2F2727 100%);
   background: -webkit-gradient(radial, center center, 0, center center, 960, from($color), to(#2F2727));
 }
+
+@mixin prime-gs {
+  width: 997px;
+  margin: 0 auto;
+}

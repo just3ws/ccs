@@ -1,55 +1,125 @@
+@import "html5-reset";
 @import "helpers";
 
-.two-column {
-  #main-content {
+*, body {
+  font-family: 'Ubuntu', arial, serif;
+}
+body {
+  background-color: #a60400;
+  @include prime-gs();
+}
+
+.logo, h1, h2, h3, h4, h5 {
+  font-family: 'Syncopate', arial, serif;
+}
+
+#container {
+  display: block;
+  #content {
+    margin: 0;
+    background-color: white;
+    width: 660px;
+    float: left;
+    padding: 16px;
+    @include round-corner-top-right(8px);
+    @include round-corner-bottom-left(8px);
+    @include round-corner-bottom-right(16px);
+    border: solid 4px #4D0200;
+    h1, h2, h3, h4, h5 {
+      padding-bottom: 12px;
+    }
+  }
+  #sidebar {
+    width: 292px;
+    float: right;
+
+    .aside { 
+      margin-top: 8px; 
+      background-color: white;
+      border: solid 4px #4D0200;
+      padding: 16px;
+      h1, h2, h3, h4, h5 {
+        padding-bottom: 6px;
+      }
+      a {
+        padding-bottom: 8px;
+      }
+    }
+    .aside:first-of-type {
+      margin-top: 0;
+      @include round-corner-top-right(16px);
+    }
+    .aside:last-of-type {
+      @include round-corner-bottom-right(16px);
+    }
   }
 }
+
+.header-ribbon {
+  padding: 8px 8px 8px 8px;
+  color: white;
+  .logo {
+    font-size: 64px;
+  }
+  text-align: center;
+}
+
 form {
-  font-family: 'Ubuntu', arial, serif;
   fieldset {
-    width: 100%;
+    padding-top: 18px;
+    padding-bottom: 9px;
     legend {
       font-size: 32px;
       font-weight: bold;
       font-style: italic;
     }
-    div {
-      margin-left: 24px;
-      margin-top: 0;
-      margin-right: 24px;
-      margin-bottom: 0;
-
-      label {
-        float: left;
-        clear: left;
-        padding: 0;
-        margin: 0;
-        padding-top: 18px;
-        font-size: 18px;
+    ul {
+      list-style: none;
+      li{
+        padding-top: 8px;
+        label {
+          width: 100px;
+          display: inline-block;
+          font-size: 18px;
+          vertical-align: top;
+          text-align: right;
+          text-transform: lowercase;
+        }
+        input, textarea {
+          font-size: 18px;
+          padding: 8px;
+          margin: 0;
+          border: solid 2px black;
+          @include round-corners-bottom(4px);
+          @include round-corner-top-right(4px);
+          outline: none;
+        }
+        button {
+          font-size: 18px;
+          float: right;
+          vertical-align: top;
+          @include round-corners(8px);
+          border: 0;
+          padding: 8px;
+          background-color: #a60400;
+          color: white;
+        }
+        button:hover {
+          cursor: pointer;
+        }
+        input:focus, textarea:focus {
+          -moz-box-shadow: 10px 10px 5px #888;
+          -webkit-box-shadow: 10px 10px 5px #888;
+          box-shadow: 10px 10px 5px #888;
+        }
+        textarea { height: 64px; }
+        label.field-with-errors { color: red; }
       }
-
-      input, textarea {
-        float: left;
-        clear: left;
-        padding: 8px;
-        margin: 0;
-        width: 100%;
-        font-size: 18px;
-        border: solid 2px black;
-        @include round-corners-bottom(4px);
-        @include round-corner-top-right(4px);
-        outline: none;
-      }
-      input:focus, textarea:focus {
-        -moz-box-shadow: 10px 10px 5px #888;
-        -webkit-box-shadow: 10px 10px 5px #888;
-        box-shadow: 10px 10px 5px #888;
-
-      }
-      textarea {height: 64px;}
-    }
-    .input:first-of-type > label {
-      padding-top: 0;
+      li:first-of-type {padding-top: 0;}
     }
   }
+  fieldset:last-of-type {
+    padding-bottom: 0;
+  }
 }
+

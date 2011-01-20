@@ -1,0 +1,14 @@
+development:
+  bucket: ccs_development 
+  access_key_id: <your key>
+  secret_access_key: <your key>
+
+test:
+  bucket: ccs_test 
+  access_key_id: <your key>
+  secret_access_key: <your key>
+
+production:
+  bucket: ccs_production
+  access_key_id: <your key>
+  secret_access_key: <your key>
