@@ -121,5 +121,37 @@ form {
   fieldset:last-of-type {
     padding-bottom: 0;
   }
+  #error_explanation { 
+    background-color: #FCE4E3;
+    margin: 4px; 
+    margin-bottom: 8px;
+    padding: 8px; 
+    border: dotted 4px #a60400; 
+    @include round-corners(8px);
+    h4 { 
+      text-transform: none; 
+      padding-bottom: 4px;
+      font-size: 18px;
+    }
+    font-size: 16px; 
+    ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 12px;
+      text-index: -12px;
+      li:before { 
+        content: "\2713"; 
+        color: red; 
+        padding-right: 8px; 
+        font-weight: bolder;
+      }
+      li { 
+        padding-top: 4px; 
+        padding-bottom: 4px; 
+      }
+      li:first-of-type { padding-top: 0; }
+      li:last-of-type { padding-bottom: 0; }
+    }
+  }
 }
 

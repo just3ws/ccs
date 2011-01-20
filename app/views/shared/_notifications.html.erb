@@ -1,7 +1,7 @@
 <div class="aside notifications">
   <h3>Register for Updates</h3>
-  <form>
-  <input type="email">
-  <button>ok</button>
-</form> 
+  <%= form_for :preregistration, Preregistration.new do |f| %>
+    <%= f.email_field :email, :disabled => true %>
+    <button type="submit" id="preregistration_submit" name="commit" disabled="true">ok</button>
+  <% end %>
 </div>

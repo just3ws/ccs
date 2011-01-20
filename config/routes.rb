@@ -1,4 +1,6 @@
 Ccs::Application.routes.draw do
+  resources :preregistrations
+
   resources :submissions
 
   # The priority is based upon order of creation:
