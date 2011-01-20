@@ -15,6 +15,10 @@ body {
 
 #container {
   display: block;
+  #header {
+    width: 100%;
+    text-align: center;
+  }
   #content {
     margin: 0;
     background-color: white;
@@ -32,7 +36,6 @@ body {
   #sidebar {
     width: 292px;
     float: right;
-
     .aside { 
       margin-top: 8px; 
       background-color: white;

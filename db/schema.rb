@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110120031843) do
+ActiveRecord::Schema.define(:version => 20110120032519) do
 
   create_table "preregistrations", :force => true do |t|
     t.string   "email"
