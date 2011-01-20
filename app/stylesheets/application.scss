@@ -18,6 +18,17 @@ body {
   #header {
     width: 100%;
     text-align: center;
+
+    margin: 8px;
+  
+    .blurb {
+      display: inline-block;
+      background-color: white;   
+      padding: 8px;
+      @include round-corners(8px);
+      font-family: 'Syncopate', arial, serif;
+      border: solid 2px #4D0200;
+    }
   }
   #content {
     margin: 0;
@@ -92,7 +103,7 @@ form {
           font-size: 18px;
           padding: 8px;
           margin: 0;
-          border: solid 2px black;
+          border: solid 2px #4D0200;
           @include round-corners-bottom(4px);
           @include round-corner-top-right(4px);
           outline: none;
