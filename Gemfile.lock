@@ -145,6 +145,11 @@ GEM
       diff-lcs (~> 1.1.2)
     rspec-instafail (0.1.5)
     rspec-mocks (2.4.0)
+    rspec-rails (2.4.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.4.0)
     ruby-progressbar (0.0.9)
     rubyzip (0.9.4)
     selenium-webdriver (0.1.2)
@@ -194,5 +199,6 @@ DEPENDENCIES
   pg
   pickle
   rails
+  rspec-rails
   sqlite3-ruby
   wirble

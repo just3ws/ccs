@@ -21,6 +21,7 @@ gem 'paperclip'
 group :development, :test do
   gem 'cucumber'
   gem 'cucumber-rails'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
