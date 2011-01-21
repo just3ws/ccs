@@ -10,10 +10,12 @@ Feature: Speaker submissions
        | last name  | hall                     | 
        | home_page  | http://just3ws.com       | 
        | biography  | some guy, doing stuff    | 
-    Then I should see "your session has been submitted" within the notice flash
+    And I press "submit"
+    Then I should see "Submission was successfully created." within the message box 
     And I should see "my title"
     And I should see "the abstract description"
     And I should see "mdh@just3ws.com"
-    And I should see "michael hall"
+    And I should see "hall"
+    And I should see "michael"
     And I should see "http://just3ws.com"
     And I should see "some guy, doing stuff"

@@ -8,3 +8,9 @@ When /^I fill in the (new|edit) (.*) form with:$/ do |action, model, table|
   end
 end
 
+Then /^I should see "([^"]*)" within the message box$/ do |text|
+  with_scope("#messages") do
+    page.should have_content(text)
+  end
+end
+

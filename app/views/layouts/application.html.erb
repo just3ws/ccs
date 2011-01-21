@@ -5,6 +5,7 @@
     <%= stylesheet_link_tag :all %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <link href="/stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -13,10 +14,14 @@
       <div id="header">
         <div class="blurb">Chicago Code Camp - May XXth, 2011 - Greyslake, IL</div>
       </div>
-      <% unless notice.nil? and alert.nil? %>
+      <% unless notice.blank? and alert.blank? %>
         <div id="messages">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <% unless notice.blank? %>
+            <p class="notice"><%= notice %></p>
+          <% end %>
+          <% unless alert.blank? %>
+            <p class="alert"><%= alert %></p>
+          <% end %>
         </div>
       <% end %>
       <div id="content">
