@@ -13,6 +13,12 @@
       <div id="header">
         <div class="blurb">Chicago Code Camp - May XXth, 2011 - Greyslake, IL</div>
       </div>
+      <% unless notice.nil? and alert.nil? %>
+        <div id="messages">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
       <div id="content">
         <%= yield %>
       </div>
