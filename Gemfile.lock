@@ -193,6 +193,6 @@ DEPENDENCIES
   paperclip
   pg
   pickle
-  rails (~> 3.0)
+  rails
   sqlite3-ruby
   wirble
