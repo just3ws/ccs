@@ -18,9 +18,7 @@ body {
   #header {
     width: 100%;
     text-align: center;
-
     margin: 8px;
-  
     .blurb {
       display: inline-block;
       background-color: white;   
@@ -79,6 +77,14 @@ body {
       }
       a {
         padding-bottom: 8px;
+        font-size: 12px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .map {
+        margin-top: 20px;
       }
     }
     .aside:first-of-type {
@@ -100,20 +106,21 @@ body {
   text-align: center;
 }
 
-form {
-  fieldset {
+form, .form {
+  fieldset, .fieldset {
     padding-top: 18px;
     padding-bottom: 9px;
-    legend {
+    legend, .legend {
       font-size: 32px;
       font-weight: bold;
       font-style: italic;
     }
+    .legend {padding-bottom: 16px;}
     ul {
       list-style: none;
       li{
         padding-top: 8px;
-        label {
+        label, .label {
           width: 100px;
           display: inline-block;
           font-size: 18px;
@@ -121,7 +128,7 @@ form {
           text-align: right;
           text-transform: lowercase;
         }
-        input, textarea {
+        input, textarea, .field {
           font-size: 18px;
           padding: 8px;
           margin: 0;
@@ -130,6 +137,7 @@ form {
           @include round-corner-top-right(4px);
           outline: none;
         }
+        .field {display: inline-block; width: auto; }
         button {
           font-size: 18px;
           float: right;
@@ -154,7 +162,7 @@ form {
       li:first-of-type {padding-top: 0;}
     }
   }
-  fieldset:last-of-type {
+  fieldset:last-of-type, .fieldset:last-of-type {
     padding-bottom: 0;
   }
   #error_explanation { 

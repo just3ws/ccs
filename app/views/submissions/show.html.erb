@@ -1,41 +1,44 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Email:</b>
-  <%= @submission.email %>
-</p>
-
-<p>
-  <b>First name:</b>
-  <%= @submission.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @submission.last_name %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @submission.title %>
-</p>
-
-<p>
-  <b>Abstract:</b>
-  <%= @submission.abstract %>
-</p>
-
-<p>
-  <b>Biography:</b>
-  <%= @submission.biography %>
-</p>
-
-<p>
-  <b>Avatar:</b>
-  <%= image_tag @submission.avatar.url %>
-</p>
-
-<p>
-  <b>Home page:</b>
-  <%= @submission.home_page %>
-</p>
+<div class="form">
+  <div class="fieldset">
+    <div class="legend">Session</div>
+    <ul>
+      <li>
+      <span class="label">Title</span> 
+      <div class="field"><%= @submission.title %></div>
+      </li>
+      <li>
+      <span class="label">Abstract</span>
+      <div class="field"><%= @submission.abstract %></div>
+      </li>
+    </ul>
+  </div>
+  <div class="fieldset">
+    <div class="legend">Biography</div>
+    <ul>
+      <li>
+      <span class="label">Email</span>
+      <div class="field"><%= @submission.email %></div>
+      </li>
+      <li>
+      <span class="label">First name</span>
+      <div class="field"><%= @submission.first_name %></div>
+      </li>
+      <li>
+      <span class="label">Last name</span>
+      <div class="field"><%= @submission.last_name %></div>
+      </li>
+      <li>
+      <span class="label">Home page</span>
+      <div class="field"><%= @submission.home_page %></div>
+      </li>
+      <li>
+      <span class="label">Biography</span>
+      <div class="field"><%= @submission.biography %></div>
+      </li>
+      <li>
+      <span class="label">Avatar</span>
+      <div class="field"><%= image_tag @submission.avatar.url %></div>  
+      </li>
+    </ul>
+  </div>
+</div>
