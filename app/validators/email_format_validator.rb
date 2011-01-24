@@ -19,7 +19,7 @@ class EmailFormatValidator < ActiveModel::EachValidator
 
   def validate_each(record, attribute, value)
     unless value =~ EMAIL_ADDRESS 
-      record.errors[attribute] << (options[:message] || "is not valid") 
+      record.errors[attribute] << (options[:message] || "is not a valid email format") 
     end
   end
 end

@@ -157,7 +157,10 @@ form, .form {
           box-shadow: 10px 10px 5px #888;
         }
         textarea { height: 64px; }
-        label.field-with-errors { color: red; }
+        label.field-with-errors { color: #a60400; }
+        input.field-with-errors, textarea.field-with-errors {
+          background-color: #FCE4E3;
+        }
       }
       li:first-of-type {padding-top: 0;}
     }
@@ -185,7 +188,7 @@ form, .form {
       text-index: -12px;
       li:before { 
         content: "\2713"; 
-        color: red; 
+        color: #a6400; 
         padding-right: 8px; 
         font-weight: bolder;
       }
