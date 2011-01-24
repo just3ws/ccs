@@ -13,4 +13,3 @@ Then /^I should see "([^"]*)" within the message box$/ do |text|
     page.should have_content(text)
   end
 end
-
