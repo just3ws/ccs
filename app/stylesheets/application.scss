@@ -161,6 +161,7 @@ form, .form {
         input.field-with-errors, textarea.field-with-errors {
           background-color: #FCE4E3;
         }
+        label.required:before{content: '*'; color: #a60400; font-weight: bold;}
       }
       li:first-of-type {padding-top: 0;}
     }

@@ -35,10 +35,12 @@
       <span class="label">Biography</span>
       <div class="field"><%= @submission.biography %></div>
       </li>
-      <li>
-      <span class="label">Avatar</span>
-      <div class="field"><%= image_tag @submission.avatar.url %></div>  
-      </li>
+      <% unless @submission.avatar.blank? || @submission.avatar.url =~ /missing/ %>
+        <li>
+        <span class="label">Avatar</span>
+        <div class="field"><%= image_tag @submission.avatar.url %></div>  
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>

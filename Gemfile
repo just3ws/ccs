@@ -9,7 +9,7 @@ group :production do
 end
 
 gem 'devise'
-gem 'cancan'
+gem 'declarative_authorization'
 
 gem 'compass'
 gem 'jquery-rails', :git => "git://github.com/pgericson/jquery-rails.git" 

@@ -50,7 +50,6 @@ GEM
       xml-simple
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    cancan (1.5.1)
     capybara (0.4.1.1)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
@@ -76,6 +75,7 @@ GEM
       cucumber (>= 0.8.0)
     culerity (0.2.15)
     database_cleaner (0.6.0)
+    declarative_authorization (0.5.2)
     devise (1.1.5)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -183,12 +183,12 @@ DEPENDENCIES
   autotest-growl
   awesome_print
   aws-s3
-  cancan
   capybara
   compass
   cucumber
   cucumber-rails
   database_cleaner
+  declarative_authorization
   devise
   fuubar
   fuubar-cucumber

@@ -14,12 +14,12 @@
     <legend>Session</legend>
     <ul>
       <li>
-      <%= f.label :title %>
+      <%= f.label :title, :class => "required" %>
       <%= f.text_field :title, :placeholder => "the working title for your presentation" %>
       </li>
 
       <li>
-      <%= f.label :abstract %>
+      <%= f.label :abstract, :class => "required" %>
       <%= f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
       </li>
     </ul>
@@ -28,32 +28,32 @@
     <legend>Biography</legend>
     <ul>
       <li>
-      <%= f.label :email %>
+      <%= f.label :email, :class => "required" %>
       <%= f.email_field :email, :placeholder => "your@email.com" %>
       </li>
 
       <li>
-      <%= f.label :first_name %>
+      <%= f.label :first_name, :class => "required" %>
       <%= f.text_field :first_name, :placeholder => "first name" %>
       </li>
 
       <li>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, :placeholder => "last name" %></li>
+      <%= f.label :last_name, :class => "required" %>
+      <%= f.text_field :last_name, :placeholder => "last name" %>
       </li>
 
       <li>
-      <%= f.label :home_page %>
-      <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %></li>
+      <%= f.label :home_page, :class => "required" %>
+      <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %>
       </li>
 
       <li>
-      <%= f.label :biography %>
+      <%= f.label :biography, :class => "required" %>
       <%= f.text_area :biography, :placeholder => "some biographical information" %>
       </li>
 
       <li>
-      <%= f.label :avatar %>
+      <%= f.label :avatar,:accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
       <%= f.file_field :avatar %>
       </li>
     </ul>
