@@ -1,3 +1,4 @@
+# encoding: binary
 # http://lindsaar.net/2010/1/31/validates_rails_3_awesome_is_true
 class EmailFormatValidator < ActiveModel::EachValidator
   EMAIL_ADDRESS = begin
