@@ -2,7 +2,6 @@ Ccs::Application.routes.draw do
   devise_for :users
 
   resources :preregistrations
-
   resources :submissions
 
   # The priority is based upon order of creation:

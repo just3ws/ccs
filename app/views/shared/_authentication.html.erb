@@ -1,0 +1,57 @@
+<div class="aside location">
+<% if user_signed_in? %>
+  <%= form_tag destroy_user_session_path do %>
+    <fieldset>
+      <%= link_to "logout", destroy_user_session_path, :title => "logout #{current_user.email}" %>
+    </fieldset> 
+  <% end %>
+<% else %>
+  <%= form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f| %>
+    <fieldset>
+      <legend>login</legend>
+      <ol>
+        <li>
+        <%= f.label :email, "email" %>
+        <%= f.email_field :email, :placeholder => "register@email.com" %> 
+        </li>
+
+        <li>
+        <%= f.label :password, "password" %>
+        <%= f.password_field :password %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset>
+      <ol>
+        <li><button type="submit">login</button></li>
+      </ol>
+    </fieldset>
+  <% end %>
+  <%= form_for(User.new(:email => @email), :as => 'user', :url => registration_path('user')) do |f| %>
+    <fieldset>
+      <legend>register</legend>
+      <ol>
+        <li>
+        <%= f.label :email, "email" %>
+        <%= f.email_field :email, :placeholder => "register@email.com" %> 
+        </li>
+
+        <li>
+        <%= f.label :password, "password" %>
+        <%= f.password_field :password %>
+        </li>
+
+        <li>
+        <%= f.label :password_confirmation, "password x2" %>
+        <%= f.password_field :password_confirmation %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset>
+      <ol>
+        <li><button type="submit">register</button></li>
+      </ol>
+    </fieldset>
+  <% end %>
+<% end %>
+</div>

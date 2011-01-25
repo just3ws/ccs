@@ -10,7 +10,8 @@ body {
 }
 
 .logo, h1, h2, h3, h4, h5 {
-  font-family: 'Syncopate', arial, serif;
+  //font-family: 'Orbitron', arial, serif;
+  text-transform: uppercase;
 }
 
 #container {
@@ -24,7 +25,7 @@ body {
       background-color: white;   
       padding: 8px;
       @include round-corners(8px);
-      font-family: 'Syncopate', arial, serif;
+      font-family: 'Orbitron', arial, serif;
       border: solid 2px #4D0200;
     }
   }
@@ -46,7 +47,7 @@ body {
     .alert {
       color: #0400a6;
     }
-    border: solid 2px black; 
+    border: solid 2px #4d0200; 
     @include round-corner-top-right(8px);
     @include round-corners-bottom(8px);
   }
@@ -62,6 +63,19 @@ body {
     border: solid 4px #4D0200;
     h1, h2, h3, h4, h5 {
       padding-bottom: 12px;
+    }
+    p.text {
+      padding: 8px;
+      color: #4d0200;
+      margin: 0 auto;
+      width: 90%;
+    }
+    p.text:last-of-type {margin-bottom: 16px;}
+    p.loud {  
+      text-align: center;
+      font-weight: bold;
+      font-family: 'Slackey', arial, serif;
+      font-size: 32px;
     }
   }
   #sidebar {
@@ -87,6 +101,57 @@ body {
       .map {
         margin-top: 20px;
       }
+      form {
+        legend {
+          font-size: 14px;
+          padding: 0;
+          margin: 0;
+        }
+        ul, ol {
+          list-style: none;
+        } 
+        fieldset {
+          li { 
+            white-space: nowrap; 
+            float: right;
+            input { 
+              width: 170px; 
+              border: solid 2px black; 
+              outline: none; 
+              padding: 4px;
+              @include round-corners-bottom(4px);
+              @include round-corner-top-right(4px);
+            }
+            label { 
+              width: 70px; 
+              font-size: 12px; 
+              display: inline-block; 
+              text-align: right; 
+              white-space: nowrap; 
+            }
+          }
+          display: inline-block;
+          button {
+            font-size: 12px;
+            float: right;
+            vertical-align: top;
+            @include round-corners(8px);
+            border: 0;
+            padding: 6px;
+            background-color: #a60400;
+            color: white;
+          }
+          button:hover {
+            cursor: pointer;
+          }
+        }
+        fieldset:last-of-type {
+          border: 0;
+          width: 100%;
+          padding-top: 0;
+          margin: 0;
+        }
+      }
     }
     .aside:first-of-type {
       margin-top: 0;
@@ -99,37 +164,62 @@ body {
 }
 
 .header-ribbon {
-  padding: 8px 8px 8px 8px;
+  padding: 4px; 
+  padding-bottom: 0;
   color: white;
   .logo {
-    font-size: 64px;
+    font-size: 76px;
+    font-family: 'Orbitron', arial, serif;
   }
   text-align: center;
 }
 
-form, .form {
-  fieldset, .fieldset {
+.show-proposal {
+  ul { list-style: none; }
+  h3 {
+    padding: 8px;
+    font-size: 24px;
+    padding-top: 16px;
+  }
+  div:first-of-type > h3 {padding-top: 0;}
+  li > span { 
+    display: inline-block;
+    width: 100px;
+    text-transform: lowercase;
+    text-align: right;
+    color: #4D0200;
+  }
+  li > div {
+    display: inline-block;
+    font-size: 18px;
+  }
+  li { padding: 8px; }
+  li:last-of-type { padding-bottom: 0;}
+}
+
+form {
+  fieldset {
     padding-top: 18px;
     padding-bottom: 9px;
-    legend, .legend {
-      font-size: 32px;
+    legend {
+      font-size: 14px;
       font-weight: bold;
       font-style: italic;
     }
-    .legend {padding-bottom: 16px;}
     ul {
       list-style: none;
       li{
         padding-top: 8px;
-        label, .label {
+        label {
           width: 100px;
           display: inline-block;
           font-size: 18px;
           vertical-align: top;
           text-align: right;
           text-transform: lowercase;
+          color: #4D0200;
         }
-        input, textarea, .field {
+        input, textarea {
           font-size: 18px;
           padding: 8px;
           margin: 0;
@@ -137,8 +227,22 @@ form, .form {
           @include round-corners-bottom(4px);
           @include round-corner-top-right(4px);
           outline: none;
+          width: 375px;
         }
-        .field {display: inline-block; width: auto; }
+        div.hint {
+          color: #4d0200;
+          display: inline-block;
+          font-size: 11px;
+          float: top;
+          vertical-align: top;
+          word-wrap: break-word;
+          white-space: pre-line;
+          width: 145px;
+          padding: 4px;
+          padding-top: 6px;
+          padding-bottom: 6px;
+          text-transform: lowercase;
+        }
         button {
           font-size: 18px;
           float: right;

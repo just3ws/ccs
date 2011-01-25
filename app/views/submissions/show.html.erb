@@ -1,44 +1,36 @@
-<div class="form">
-  <div class="fieldset">
-    <div class="legend">Session</div>
+<div class="show-proposal">
+  <div>
+    <h3>proposed: "<%= @submission.title %>"</h3>
     <ul>
       <li>
-      <span class="label">Title</span> 
-      <div class="field"><%= @submission.title %></div>
+      <span>Title</span> 
+      <div><%= @submission.title %></div>
       </li>
       <li>
-      <span class="label">Abstract</span>
-      <div class="field"><%= @submission.abstract %></div>
+      <span>Description</span>
+      <div><%= @submission.abstract %></div>
       </li>
     </ul>
   </div>
-  <div class="fieldset">
-    <div class="legend">Biography</div>
+  <div>
+    <h3>proposed by: <%= "#{@submission.last_name}, #{@submission.first_name}" %></h3>
     <ul>
       <li>
-      <span class="label">Email</span>
-      <div class="field"><%= @submission.email %></div>
+      <span>Email</span>
+      <div><%= @submission.email %></div>
       </li>
       <li>
-      <span class="label">First name</span>
-      <div class="field"><%= @submission.first_name %></div>
+      <span>Home page</span>
+      <div><%= @submission.home_page %></div>
       </li>
       <li>
-      <span class="label">Last name</span>
-      <div class="field"><%= @submission.last_name %></div>
-      </li>
-      <li>
-      <span class="label">Home page</span>
-      <div class="field"><%= @submission.home_page %></div>
-      </li>
-      <li>
-      <span class="label">Biography</span>
-      <div class="field"><%= @submission.biography %></div>
+      <span>Biography</span>
+      <div><%= @submission.biography %></div>
       </li>
       <% unless @submission.avatar.blank? || @submission.avatar.url =~ /missing/ %>
         <li>
-        <span class="label">Avatar</span>
-        <div class="field"><%= image_tag @submission.avatar.url %></div>  
+        <span>Avatar</span>
+        <div><%= image_tag @submission.avatar.url %></div>  
         </li>
       <% end %>
     </ul>

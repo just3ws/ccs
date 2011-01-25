@@ -11,53 +11,61 @@
     </div>
   <% end %>
   <fieldset>
-    <legend>Session</legend>
+    <legend>tell us about your proposal...</legend>
     <ul>
       <li>
       <%= f.label :title, :class => "required" %>
       <%= f.text_field :title, :placeholder => "the working title for your presentation" %>
+      <div class="hint">the working title for your presentation</div>
       </li>
 
       <li>
-      <%= f.label :abstract, :class => "required" %>
+      <%= f.label :abstract, "description", :class => "required" %>
       <%= f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
+      <div class="hint">describe your proposal in 1k characters or less</div>
       </li>
     </ul>
   </fieldset>
-  <fieldset>
-    <legend>Biography</legend>
-    <ul>
-      <li>
-      <%= f.label :email, :class => "required" %>
-      <%= f.email_field :email, :placeholder => "your@email.com" %>
-      </li>
+  <% unless user_signed_in? %>
+    <fieldset>
+      <legend>and a little bit about yourself...</legend>
+      <ul>
+        <li>
+        <%= f.label :email, :class => "required" %>
+        <%= f.email_field :email, :placeholder => "your@email.com" %>
+        <div class="hint">the email address we can reach you at</div>
+        </li>
 
-      <li>
-      <%= f.label :first_name, :class => "required" %>
-      <%= f.text_field :first_name, :placeholder => "first name" %>
-      </li>
+        <li>
+        <%= f.label :first_name, :class => "required" %>
+        <%= f.text_field :first_name, :placeholder => "first name" %>
+        </li>
 
-      <li>
-      <%= f.label :last_name, :class => "required" %>
-      <%= f.text_field :last_name, :placeholder => "last name" %>
-      </li>
+        <li>
+        <%= f.label :last_name, :class => "required" %>
+        <%= f.text_field :last_name, :placeholder => "last name" %>
+        </li>
 
-      <li>
-      <%= f.label :home_page, :class => "required" %>
-      <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %>
-      </li>
+        <li>
+        <%= f.label :home_page, :class => "required" %>
+        <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %>
+        <div class="hint">this can be your blog, twitter, linkedin or personal homepage</div>
+        </li>
 
-      <li>
-      <%= f.label :biography, :class => "required" %>
-      <%= f.text_area :biography, :placeholder => "some biographical information" %>
-      </li>
+        <li>
+        <%= f.label :biography, :class => "required" %>
+        <%= f.text_area :biography, :placeholder => "some biographical information" %>
+        <div class="hint">your life story in 1K characters or less</div>
+        </li>
 
-      <li>
-      <%= f.label :avatar,:accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
-      <%= f.file_field :avatar %>
-      </li>
-    </ul>
-  </fieldset>
+        <li>
+        <%= f.label :avatar,:accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
+        <%= f.file_field :avatar %>
+        <div class="hint">feel free to upload your profile picture along with your proposal but it's optional</div>
+        </li>
+      </ul>
+    </fieldset>
+  <% end %>
   <fieldset>
     <ul>
       <li><button type="submit" id="submission_submit" name="commit">submit</button></li>

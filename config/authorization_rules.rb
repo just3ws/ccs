@@ -1,5 +1,6 @@
 authorization do
   role :guest do
+    
     has_permission_on :submissions, :to => [:create, :new, :show]
   end
 
