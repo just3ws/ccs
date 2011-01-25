@@ -1,11 +1,8 @@
 <div class="show-proposal">
+  <h1>Session Proposal</h1>
   <div>
-    <h3>proposed: "<%= @submission.title %>"</h3>
+    <h3>"<%= @submission.title %>"</h3>
     <ul>
-      <li>
-      <span>Title</span> 
-      <div><%= @submission.title %></div>
-      </li>
       <li>
       <span>Description</span>
       <div><%= @submission.abstract %></div>
@@ -13,11 +10,11 @@
     </ul>
   </div>
   <div>
-    <h3>proposed by: <%= "#{@submission.last_name}, #{@submission.first_name}" %></h3>
+    <h3>by: <%= "#{@submission.last_name}, #{@submission.first_name}" %></h3>
     <ul>
       <li>
       <span>Email</span>
-      <div><%= @submission.email %></div>
+      <div><%= mail_to @submission.email %></div>
       </li>
       <li>
       <span>Home page</span>

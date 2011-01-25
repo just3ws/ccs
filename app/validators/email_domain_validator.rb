@@ -6,6 +6,7 @@ class EmailDomainValidator < ActiveModel::EachValidator
   end
 
   def valid_email_domain?(email)
+    return false if email.blank?
     matches = email.match(/\@(.+)/)
     return false if matches.length < 2
     domain = matches[1]
