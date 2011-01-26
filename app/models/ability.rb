@@ -10,7 +10,7 @@ class Ability
       can :manage, :all
     else
       can :create, Submission
-      can [:update,:show], Submission do |submission|
+      can [:update, :show], Submission do |submission|
         submission.try(:user) == user
       end
     end

@@ -3,3 +3,4 @@ s3.yml
 db/*.sqlite3
 log/*.log
 tmp/**/*
+.idea

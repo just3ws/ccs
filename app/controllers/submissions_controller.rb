@@ -10,7 +10,7 @@ class SubmissionsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @submissions }
+      format.xml { render :xml => @submissions }
     end
   end
 
@@ -19,7 +19,7 @@ class SubmissionsController < ApplicationController
   def show
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @submission }
+      format.xml { render :xml => @submission }
     end
   end
 
@@ -28,7 +28,7 @@ class SubmissionsController < ApplicationController
   def new
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @submission }
+      format.xml { render :xml => @submission }
     end
   end
 
@@ -40,16 +40,16 @@ class SubmissionsController < ApplicationController
   # POST /submissions.xml
   def create
     if @submission.valid?
-      @submission.user = find_or_create_user_with params[:submission].slice(:email, :home_page, :first_name, :last_name, :biography)
+      @submission.user      = find_or_create_user_with params[:submission].slice(:email, :home_page, :first_name, :last_name, :biography)
       @submission.user.role = "speaker"
     end
     respond_to do |format|
       if @submission.save
         format.html { redirect_to(@submission, :notice => 'Submission was successfully created.') }
-        format.xml  { render :xml => @submission, :status => :created, :location => @submission }
+        format.xml { render :xml => @submission, :status => :created, :location => @submission }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @submission.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @submission.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -60,10 +60,10 @@ class SubmissionsController < ApplicationController
     respond_to do |format|
       if @submission.update_attributes(params[:submission])
         format.html { redirect_to(@submission, :notice => 'Submission was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @submission.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @submission.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -75,7 +75,7 @@ class SubmissionsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(submissions_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 
@@ -91,7 +91,7 @@ class SubmissionsController < ApplicationController
 
     # make a user
     password = Generator.password
-    user = User.create!(p.symbolize_keys.merge(:password => password, :password_confirmation => password))
+    user     = User.create!(p.symbolize_keys.merge(:password => password, :password_confirmation => password))
 
     if user.errors.blank?
       sign_in user
