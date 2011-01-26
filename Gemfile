@@ -9,7 +9,7 @@ group :production do
 end
 
 gem 'devise'
-gem 'declarative_authorization'
+gem 'cancan'
 
 gem 'compass'
 gem 'jquery-rails', :git => "git://github.com/pgericson/jquery-rails.git" 
@@ -35,6 +35,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'ruby_parser'
   gem 'wirble'
   gem 'awesome_print'
 end

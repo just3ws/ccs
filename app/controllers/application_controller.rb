@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery
-  before_filter { |c| Authorization.current_user = c.current_user } 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = exception.message
+    redirect_to root_url
+  end
 end

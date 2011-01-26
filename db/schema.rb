@@ -10,17 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124125426) do
+ActiveRecord::Schema.define(:version => 20110126021451) do
 
   create_table "preregistrations", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "roles", :force => true do |t|
-    t.string   "title"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,12 +32,13 @@ ActiveRecord::Schema.define(:version => 20110124125426) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
-    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "email",                               :default => "",      :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",      :null => false
+    t.string   "password_salt",                       :default => "",      :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -55,6 +49,12 @@ ActiveRecord::Schema.define(:version => 20110124125426) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role",                                :default => "guest"
+    t.integer  "submissions_id"
+    t.string   "home_page"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "biography"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

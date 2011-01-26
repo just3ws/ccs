@@ -1,3 +1,14 @@
+<% if can? :destroy, @submission %>
+  <%= link_to "Destroy", destroy_submission_path(@submission), :method => :delete, :confirm => "Are you sure?" %>
+  <br>
+<% end %>
+
+<% if can? :update, @submission %>
+  <%= link_to "Edit", edit_submission_path(@submission) %>
+  <br>
+<% end %>
+<%= link_to "All submissions", submissions_path %>
+
 <div class="show-proposal">
   <h1>Session Proposal</h1>
   <div>

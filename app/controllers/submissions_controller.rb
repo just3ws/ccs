@@ -1,5 +1,7 @@
+require 'generator'
+
 class SubmissionsController < ApplicationController
-  filter_resource_access 
+  load_and_authorize_resource
 
   # GET /submissions
   # GET /submissions.xml
@@ -37,6 +39,10 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.xml
   def create
+    if @submission.valid?
+      @submission.user = find_or_create_user_with params[:submission].slice(:email, :home_page, :first_name, :last_name, :biography)
+      @submission.user.role = "speaker"
+    end
     respond_to do |format|
       if @submission.save
         format.html { redirect_to(@submission, :notice => 'Submission was successfully created.') }
@@ -71,5 +77,25 @@ class SubmissionsController < ApplicationController
       format.html { redirect_to(submissions_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+
+  def find_or_create_user_with(p)
+    # use the current user
+    return current_user if user_signed_in?
+
+    # lookup the user
+    user = User.find(:first, :conditions => {:email => p[:email]})
+    return user unless user.nil?
+
+    # make a user
+    password = Generator.password
+    user = User.create!(p.symbolize_keys.merge(:password => password, :password_confirmation => password))
+
+    if user.errors.blank?
+      sign_in user
+    end
+    user
   end
 end
