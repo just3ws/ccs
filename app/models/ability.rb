@@ -9,7 +9,9 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
+      # anyone can create a submission
       can :create, Submission
+      # but they can only modify and view their own
       can [:update,:show], Submission do |submission|
         submission.try(:user) == user
       end
