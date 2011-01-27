@@ -60,13 +60,13 @@ body {
     h1, h2, h3, h4, h5 {
       padding-bottom: 12px;
     }
-    p.text {
+    p {
       padding: 8px;
       color: #4d0200;
       margin: 0 auto;
       width: 90%;
     }
-    p.text:last-of-type {margin-bottom: 16px;}
+    p:last-of-type {margin-bottom: 16px;}
     p.loud {  
       text-align: center;
       font-weight: bold;
