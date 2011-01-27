@@ -9,6 +9,7 @@ group :production do
 end
 
 gem 'devise'
+gem 'devise_invitable'
 gem 'cancan'
 
 gem 'compass'

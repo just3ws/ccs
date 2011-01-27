@@ -10,7 +10,6 @@ body {
 }
 
 .logo, h1, h2, h3, h4, h5 {
-  //font-family: 'Orbitron', arial, serif;
   text-transform: uppercase;
 }
 
@@ -19,15 +18,13 @@ body {
   #header {
     width: 100%;
     text-align: center;
-    margin: 8px;
+    text-shadow: 0 0 5px white;
     .blurb {
       display: inline-block;
-      background-color: white;   
-      padding: 8px;
-      @include round-corners(8px);
-      font-family: 'Orbitron', arial, serif;
-      border: solid 2px #4D0200;
+      color: white;
+      font-family: 'Syncopate', arial, serif;
     }
+    padding-bottom: 12px;
   }
   #messages {
     background-color: white;
@@ -54,13 +51,12 @@ body {
   #content {
     margin: 0;
     background-color: white;
-    width: 660px;
+    width: 666px;
     float: left;
     padding: 16px;
-    @include round-corner-top-right(8px);
-    @include round-corner-bottom-left(8px);
+    @include round-corner-top-left(16px);
+    @include round-corner-bottom-left(16px);
     @include round-corner-bottom-right(16px);
-    border: solid 4px #4D0200;
     h1, h2, h3, h4, h5 {
       padding-bottom: 12px;
     }
@@ -79,12 +75,12 @@ body {
     }
   }
   #sidebar {
-    width: 292px;
+    width: 298px;
     float: right;
+    clear: right;
     .aside { 
-      margin-top: 8px; 
+      margin-top: 1px; 
       background-color: white;
-      border: solid 4px #4D0200;
       padding: 16px;
       h1, h2, h3, h4, h5 {
         padding-bottom: 6px;
@@ -159,17 +155,17 @@ body {
     }
     .aside:last-of-type {
       @include round-corner-bottom-right(16px);
+    @include round-corner-bottom-left(16px);
     }
   }
 }
 
 .header-ribbon {
-  padding: 4px; 
   padding-bottom: 0;
   color: white;
   .logo {
-    font-size: 76px;
-    font-family: 'Orbitron', arial, serif;
+    font-size: 54px;
+    font-family: 'Syncopate', arial, serif;
   }
   text-align: center;
 }
@@ -257,9 +253,9 @@ form {
           cursor: pointer;
         }
         input:focus, textarea:focus {
-          -moz-box-shadow: 10px 10px 5px #888;
-          -webkit-box-shadow: 10px 10px 5px #888;
-          box-shadow: 10px 10px 5px #888;
+          -moz-box-shadow: 8px 8px 3px #888;
+          -webkit-box-shadow: 8px 8px 3px #888;
+          box-shadow: 8px 8px 3px #888;
         }
         textarea { height: 64px; }
         label.field-with-errors { color: #a60400; }
