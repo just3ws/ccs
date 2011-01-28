@@ -13,3 +13,10 @@ Then /^I should see "([^"]*)" within the message box$/ do |text|
     page.should have_content(text)
   end
 end
+
+Then /^I should see "([^"]*)" within the authentication box$/ do |text|
+  with_scope(".aside.authentication") do
+    page.should have_content(text)
+  end
+end
+

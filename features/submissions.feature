@@ -19,3 +19,8 @@ Feature: Speaker submissions
     And I should see "michael"
     And I should see "http://just3ws.com"
     And I should see "some guy, doing stuff"
+    And I should see "logged in as mdh@just3ws.com" within the authentication box 
+
+  Scenario: I want to see my talks
+    Given I am on the home page
+    And I have submitted two talks

@@ -1,7 +1,7 @@
-<div class="aside location">
+<div class="aside authentication">
   <% if user_signed_in? %>
     <%= form_tag destroy_user_session_path do %>
-      <%=link_to current_user.email, user_path(current_user) %>
+      logged in as <%=link_to current_user.email, user_path(current_user) %>
       <br>
       <fieldset>
         <%= link_to "logout", destroy_user_session_path, :title => "logout #{current_user.email}" %>
