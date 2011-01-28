@@ -194,7 +194,7 @@ h5 { font-size: $font-p1; }
   text-align: center;
 }
 
-.show-proposal {
+.show {
   ul { list-style: none; }
   h3 {
     padding: 8px;
@@ -215,6 +215,12 @@ h5 { font-size: $font-p1; }
   }
   li { padding: 8px; }
   li:last-of-type { padding-bottom: 0;}
+  .actions {
+    margin-top: 12px;
+    padding: 8px;
+    @include round-corners(8px);
+    background-color: #f0c1c0;
+  }
 }
 
 form {
@@ -286,7 +292,11 @@ form {
         input.field-with-errors, textarea.field-with-errors {
           background-color: #FCE4E3;
         }
-        label.required:before{content: '*'; color: $primary-color; font-weight: bold;}
+        label.required:before {
+          content: '*'; 
+          color: $primary-color; 
+          font-weight: bold;
+        }
       }
       li:first-of-type {padding-top: 0;}
     }

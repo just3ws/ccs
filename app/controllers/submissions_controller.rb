@@ -6,7 +6,8 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.xml
   def index
-    @submissions = Submission.all
+    @submissions = current_user.submissions unless current_user.admin? #Submission.find(:all, :conditions => {:user => current_user})
+    @submissions = Submission.all if current_user.admin?
 
     respond_to do |format|
       format.html # index.html.erb

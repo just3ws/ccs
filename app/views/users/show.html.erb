@@ -1,0 +1,27 @@
+
+<div class="show">
+  <h1>User Profile</h1>
+  <div>
+    <h3><%= "#{@user.last_name || "Simpson"}, #{@user.first_name || "Homer"}" %></h3>
+    <ul>
+      <li>
+      <span>Email</span>
+      <div><%= mail_to @user.email %></div>
+      </li>
+      <li>
+      <span>Home page</span>
+      <div><%= @user.home_page || "http://chicagocodecamp.com" %></div>
+      </li>
+      <li>
+      <span>Biography</span>
+      <div><%= @user.biography || "I have had a very interesting life, or not." %></div>
+      </li>
+    </ul>
+  </div>
+  <div class="actions">
+    <% if can? :update, @user %>
+      <%= link_to "Edit", edit_user_path(@user) %>
+      <br>
+    <% end %>
+  </div>
+</div>

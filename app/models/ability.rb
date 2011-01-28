@@ -13,7 +13,7 @@ class Ability
       can :create, Submission
 
       # everybody can update, see their own submissions
-      can [:update, :show], Submission do |submission|
+      can [:manage], Submission do |submission|
         submission.try(:user) == user
       end
     end
