@@ -1,17 +1,40 @@
 @import "html5-reset";
 @import "helpers";
 
+$font-m5:   3.796875px;
+$font-m4:   5.0625px;
+$font-m3:   6.75px;
+$font-m2:   9px;
+$font-m1:   12px;
+$base-font: 16px;
+$font-p1:   20px;
+$font-p2:   25px;
+$font-p3:   31.25px;
+$font-p4:   39.0625px;
+$font-p5:   48.828125px;
+
+$primary-color: #a60400;
+
 *, body {
   font-family: 'Ubuntu', arial, serif;
+  font-size: $base-font;
 }
+
 body {
-  background-color: #a60400;
+  background-color: $primary-color;
   @include prime-gs();
 }
 
-.logo, h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
+
+h1 { font-size: $font-p5; }
+h2 { font-size: $font-p4; }
+h3 { font-size: $font-p3; }
+h4 { font-size: $font-p2; }
+h5 { font-size: $font-p1; }
+
 
 #container {
   display: block;
@@ -35,7 +58,7 @@ body {
     padding: 8px;
     p { 
       text-align: center;
-      font-size: 24px;
+      //font-size: 24px;
       padding: 4px;
     }
     .notice {
@@ -71,7 +94,7 @@ body {
       text-align: center;
       font-weight: bold;
       font-family: 'Slackey', arial, serif;
-      font-size: 32px;
+      //font-size: 32px;
     }
   }
   #sidebar {
@@ -87,7 +110,7 @@ body {
       }
       a {
         padding-bottom: 8px;
-        font-size: 12px;
+        //font-size: 12px;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
@@ -99,7 +122,7 @@ body {
       }
       form {
         legend {
-          font-size: 14px;
+          //font-size: 14px;
           padding: 0;
           margin: 0;
         }
@@ -120,7 +143,7 @@ body {
             }
             label { 
               width: 70px; 
-              font-size: 12px; 
+              //font-size: 12px; 
               display: inline-block; 
               text-align: right; 
               white-space: nowrap; 
@@ -128,13 +151,13 @@ body {
           }
           display: inline-block;
           button {
-            font-size: 12px;
+            //font-size: 12px;
             float: right;
             vertical-align: top;
             @include round-corners(8px);
             border: 0;
             padding: 6px;
-            background-color: #a60400;
+            background-color: $primary-color;
             color: white;
           }
           button:hover {
@@ -164,7 +187,7 @@ body {
   padding-bottom: 0;
   color: white;
   .logo {
-    font-size: 54px;
+    font-size: $font-p5;
     font-family: 'Syncopate', arial, serif;
   }
   text-align: center;
@@ -174,7 +197,7 @@ body {
   ul { list-style: none; }
   h3 {
     padding: 8px;
-    font-size: 24px;
+    //font-size: 24px;
     padding-top: 16px;
   }
   div:first-of-type > h3 {padding-top: 0;}
@@ -187,7 +210,7 @@ body {
   }
   li > div {
     display: inline-block;
-    font-size: 18px;
+    //font-size: 18px;
   }
   li { padding: 8px; }
   li:last-of-type { padding-bottom: 0;}
@@ -198,7 +221,7 @@ form {
     padding-top: 18px;
     padding-bottom: 9px;
     legend {
-      font-size: 14px;
+      //font-size: 14px;
       font-weight: bold;
       font-style: italic;
     }
@@ -209,14 +232,14 @@ form {
         label {
           width: 100px;
           display: inline-block;
-          font-size: 18px;
+          //font-size: 18px;
           vertical-align: top;
           text-align: right;
           text-transform: lowercase;
           color: #4D0200;
         }
         input, textarea {
-          font-size: 18px;
+          //font-size: 18px;
           padding: 8px;
           margin: 0;
           border: solid 2px #4D0200;
@@ -228,7 +251,7 @@ form {
         div.hint {
           color: #4d0200;
           display: inline-block;
-          font-size: 11px;
+          font-size: $font-m1;
           float: top;
           vertical-align: top;
           word-wrap: break-word;
@@ -240,13 +263,13 @@ form {
           text-transform: lowercase;
         }
         button {
-          font-size: 18px;
+          //font-size: 18px;
           float: right;
           vertical-align: top;
           @include round-corners(8px);
           border: 0;
           padding: 8px;
-          background-color: #a60400;
+          background-color: $primary-color;
           color: white;
         }
         button:hover {
@@ -258,11 +281,11 @@ form {
           box-shadow: 8px 8px 3px #888;
         }
         textarea { height: 64px; }
-        label.field-with-errors { color: #a60400; }
+        label.field-with-errors { color: $primary-color; }
         input.field-with-errors, textarea.field-with-errors {
           background-color: #FCE4E3;
         }
-        label.required:before{content: '*'; color: #a60400; font-weight: bold;}
+        label.required:before{content: '*'; color: $primary-color; font-weight: bold;}
       }
       li:first-of-type {padding-top: 0;}
     }
@@ -275,14 +298,14 @@ form {
     margin: 4px; 
     margin-bottom: 8px;
     padding: 8px; 
-    border: dotted 4px #a60400; 
+    border: dotted 4px $primary-color; 
     @include round-corners(8px);
     h4 { 
       text-transform: none; 
       padding-bottom: 4px;
-      font-size: 18px;
+      //font-size: 18px;
     }
-    font-size: 16px; 
+    //font-size: 16px; 
     ul {
       list-style: none;
       margin-left: 0;
