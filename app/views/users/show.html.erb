@@ -1,7 +1,7 @@
 <div class="show">
   <h4>User Profile</h4>
   <div>
-    <h3><%= "#{@user.last_name || "Simpson"}, #{@user.first_name || "Homer"}" %></h3>
+    <h3><%= "#{@user.last_name || "_"*8}, #{@user.first_name || "_"*8}" %></h3>
     <ul>
       <li>
       <span>Email</span>
@@ -9,11 +9,11 @@
       </li>
       <li>
       <span>Home page</span>
-      <div><%= @user.home_page || "http://chicagocodecamp.com" %></div>
+      <div><%= @user.home_page || "_"*8 %></div>
       </li>
       <li>
       <span>Biography</span>
-      <div><%= @user.biography || "I have had a very interesting life, or not." %></div>
+      <div><%= @user.biography || "_"*8 %></div>
       </li>
     </ul>
   </div>
