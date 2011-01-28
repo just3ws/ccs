@@ -1,16 +1,5 @@
-<% if can? :destroy, @submission %>
-  <%= link_to "Destroy", destroy_submission_path(@submission), :method => :delete, :confirm => "Are you sure?" %>
-  <br>
-<% end %>
-
-<% if can? :update, @submission %>
-  <%= link_to "Edit", edit_submission_path(@submission) %>
-  <br>
-<% end %>
-<%= link_to "All submissions", submissions_path %>
-
 <div class="show">
-  <h1>Session Proposal</h1>
+  <h4>Session Proposal</h4>
   <div>
     <h3>"<%= @submission.title %>"</h3>
     <ul>
@@ -21,19 +10,19 @@
     </ul>
   </div>
   <div>
-    <h3>by: <%= "#{@submission.last_name}, #{@submission.first_name}" %></h3>
+    <h3>by: <%= "#{@submission.last_name || "_"*8}, #{@submission.first_name || "_"*8}" %></h3>
     <ul>
       <li>
       <span>Email</span>
-      <div><%= mail_to @submission.email %></div>
+      <div><%= mail_to @submission.email || "_"*8 %></div>
       </li>
       <li>
       <span>Home page</span>
-      <div><%= @submission.home_page %></div>
+      <div><%= @submission.home_page || "_"*8 %></div>
       </li>
       <li>
       <span>Biography</span>
-      <div><%= @submission.biography %></div>
+      <div><%= @submission.biography || "_"*8 %></div>
       </li>
       <% unless @submission.avatar.blank? || @submission.avatar.url =~ /missing/ %>
         <li>
@@ -42,5 +31,14 @@
         </li>
       <% end %>
     </ul>
+  </div>
+  <div class="actions">
+    <% if can? :index, @submission %>
+      <%= link_to "List your submissions", submissions_path %>
+      <span class="seperator">|</span>
+    <% end %>
+    <% if can? :update, @submission %>
+      <%= link_to "Edit this submission", edit_submission_path(@submission) %>
+    <% end %>
   </div>
 </div>
