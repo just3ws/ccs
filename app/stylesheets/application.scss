@@ -1,17 +1,17 @@
 @import "html5-reset";
 @import "helpers";
 
-$font-m5:   3.796875px;
-$font-m4:   5.0625px;
-$font-m3:   6.75px;
-$font-m2:   9px;
-$font-m1:   12px;
+$font-m5:   5.24288px;
+$font-m4:   6.5536px;
+$font-m3:   8.192px;
+$font-m2:   10.24px;
+$font-m1:   12.8px;
 $base-font: 16px;
-$font-p1:   20px;
-$font-p2:   25px;
-$font-p3:   31.25px;
-$font-p4:   39.0625px;
-$font-p5:   48.828125px;
+$font-p1:   20.8px;
+$font-p2:   27.04px;
+$font-p3:   35.152px;
+$font-p4:   45.6976px;
+$font-p5:   59.40688px;
 
 $primary-color: #a60400;
 
@@ -252,7 +252,7 @@ form {
         div.hint {
           color: #4d0200;
           display: inline-block;
-          font-size: $font-m1;
+          font-size: $font-m2;
           float: top;
           vertical-align: top;
           word-wrap: break-word;
