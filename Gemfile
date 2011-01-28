@@ -36,7 +36,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'ruby_parser'
   gem 'wirble'
   gem 'awesome_print'
 end
