@@ -41,11 +41,11 @@ h5 { font-size: $font-p1; }
   #header {
     width: 100%;
     text-align: center;
-    text-shadow: 0 0 5px white;
     .blurb {
       display: inline-block;
       color: white;
       font-family: 'Syncopate', arial, serif;
+      text-shadow: 0 0 5px white;
     }
     padding-bottom: 12px;
   }
@@ -189,6 +189,7 @@ h5 { font-size: $font-p1; }
   .logo {
     font-size: $font-p5;
     font-family: 'Syncopate', arial, serif;
+    text-shadow: 0 0 12px white;
   }
   text-align: center;
 }
