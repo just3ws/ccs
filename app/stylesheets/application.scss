@@ -58,7 +58,7 @@ h5 { font-size: $font-p1; }
     padding: 8px;
     p { 
       text-align: center;
-      //font-size: 24px;
+      font-size: $font-p1;
       padding: 4px;
     }
     .notice {
@@ -67,9 +67,7 @@ h5 { font-size: $font-p1; }
     .alert {
       color: #0400a6;
     }
-    border: solid 2px #4d0200; 
-    @include round-corner-top-right(8px);
-    @include round-corners-bottom(8px);
+    @include round-corners(8px);
   }
   #content {
     margin: 0;
@@ -94,7 +92,7 @@ h5 { font-size: $font-p1; }
       text-align: center;
       font-weight: bold;
       font-family: 'Slackey', arial, serif;
-      //font-size: 32px;
+      font-size: $font-p3;
     }
   }
   #sidebar {
@@ -110,7 +108,7 @@ h5 { font-size: $font-p1; }
       }
       a {
         padding-bottom: 8px;
-        //font-size: 12px;
+        font-size: $font-m2;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
@@ -122,7 +120,7 @@ h5 { font-size: $font-p1; }
       }
       form {
         legend {
-          //font-size: 14px;
+          font-size: $font-m1;
           padding: 0;
           margin: 0;
         }
@@ -143,7 +141,7 @@ h5 { font-size: $font-p1; }
             }
             label { 
               width: 70px; 
-              //font-size: 12px; 
+              font-size: $font-m2; 
               display: inline-block; 
               text-align: right; 
               white-space: nowrap; 
@@ -151,7 +149,7 @@ h5 { font-size: $font-p1; }
           }
           display: inline-block;
           button {
-            //font-size: 12px;
+            font-size: $font-m2;
             float: right;
             vertical-align: top;
             @include round-corners(8px);
@@ -198,7 +196,7 @@ h5 { font-size: $font-p1; }
   ul { list-style: none; }
   h3 {
     padding: 8px;
-    //font-size: 24px;
+    font-size: $font-p2;
     padding-top: 16px;
   }
   div:first-of-type > h3 {padding-top: 0;}
@@ -211,12 +209,12 @@ h5 { font-size: $font-p1; }
   }
   li > div {
     display: inline-block;
-    //font-size: 18px;
+    font-size: $font-p1;
   }
   li { padding: 8px; }
   li:last-of-type { padding-bottom: 0;}
   .actions {
-    margin-top: 12px;
+    margin-top: 16px;
     padding: 8px;
     @include round-corners(8px);
     background-color: #f0c1c0;
@@ -225,10 +223,10 @@ h5 { font-size: $font-p1; }
 
 form {
   fieldset {
-    padding-top: 18px;
-    padding-bottom: 9px;
+    padding-top: 16px;
+    padding-bottom: 8px;
     legend {
-      //font-size: 14px;
+      font-size: $font-m1;
       font-weight: bold;
       font-style: italic;
     }
@@ -239,14 +237,14 @@ form {
         label {
           width: 100px;
           display: inline-block;
-          //font-size: 18px;
+          font-size: $font-p1;
           vertical-align: top;
           text-align: right;
           text-transform: lowercase;
           color: #4D0200;
         }
         input, textarea {
-          //font-size: 18px;
+          font-size: $font-p1;
           padding: 8px;
           margin: 0;
           border: solid 2px #4D0200;
@@ -265,12 +263,12 @@ form {
           white-space: pre-line;
           width: 145px;
           padding: 4px;
-          padding-top: 6px;
-          padding-bottom: 6px;
+          padding-top: 8px;
+          padding-bottom: 8px;
           text-transform: lowercase;
         }
         button {
-          //font-size: 18px;
+          font-size: $font-p1;
           float: right;
           vertical-align: top;
           @include round-corners(8px);
@@ -283,9 +281,9 @@ form {
           cursor: pointer;
         }
         input:focus, textarea:focus {
-          -moz-box-shadow: 8px 8px 3px #888;
-          -webkit-box-shadow: 8px 8px 3px #888;
-          box-shadow: 8px 8px 3px #888;
+          -moz-box-shadow: 8px 8px 4px #888;
+          -webkit-box-shadow: 8px 8px 4px #888;
+          box-shadow: 8px 8px 4px #888;
         }
         textarea { height: 64px; }
         label.field-with-errors { color: $primary-color; }
@@ -314,14 +312,14 @@ form {
     h4 { 
       text-transform: none; 
       padding-bottom: 4px;
-      //font-size: 18px;
+      font-size: $font-p1;
     }
-    //font-size: 16px; 
+    font-size: $base-font; 
     ul {
       list-style: none;
       margin-left: 0;
-      padding-left: 12px;
-      text-index: -12px;
+      padding-left: 16px;
+      text-index: -16px;
       li:before { 
         content: "\2713"; 
         color: #a6400; 

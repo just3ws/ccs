@@ -2,8 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
+    # NOTE: avoid using blocks to define accessibility
+    # as they are not compatible withthe automatic loading 
+    # of index resources.
+    # https://github.com/ryanb/cancan/wiki/Authorizing-Controller-Actions
+
     user ||= User.new :role => "guest" # guest user (not logged in)
 
     if user.role? :admin
@@ -12,10 +15,8 @@ class Ability
       # everybody
       can :create, Submission
 
-      # everybody can update, see their own submissions
-      can [:manage], Submission do |submission|
-        submission.try(:user) == user
-      end
+      # everybody can update, index and see their own submissions
+      can [:read, :update, :index], Submission, :user_id => user.id 
     end
     #
     # The first argument to `can` is the action you are giving the user permission to do.
