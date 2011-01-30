@@ -11,9 +11,10 @@ class PreregistrationsController < ApplicationController
         format.html { redirect_to('/', :notice => 'Thank you for your interest. We will notify you when the registration opens.') }
         format.xml { render :xml => @preregistration, :status => :created, :location => @preregistration }
       else
-        #Question: How can I tell if the error was "duplicate email" and give the user the
-        # right explanation?
-        format.html { redirect_to '/', :alert => "Sorry. There was an error saving your email to be notified. Maybe you had already registered?" }
+        msg = 'Sorry. We could not register your email for updates.'
+        msg = "Sorry. The email #{@preregistration.errors.on :email}." unless @preregistration.errors[:email].empty?
+        
+        format.html { redirect_to '/', :alert => msg }
         format.xml { render :xml => @preregistration.errors, :status => :unprocessable_entity }
       end
     end

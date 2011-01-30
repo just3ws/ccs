@@ -14,6 +14,7 @@ class Ability
     else
       # everybody
       can :create, Submission
+      can :create, Preregistration
 
       # everybody can update, index and see their own submissions
       can [:read, :update, :index], Submission, :user_id => user.id 
