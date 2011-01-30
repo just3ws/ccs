@@ -6,6 +6,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.xml
   def index
+    p @submissions
   end
 
   # GET /submissions/1

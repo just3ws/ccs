@@ -20,3 +20,21 @@ Then /^I should see "([^"]*)" within the authentication box$/ do |text|
   end
 end
 
+Given /^I am not authenticated$/ do
+  visit '/users/sign_out'
+end
+
+When /^I login through the sidebar:?$/ do |table|
+  within(".aside.authentication") do
+    table.hashes.each do |field| 
+      fill_in "user_#{field[:id]}", :with => field[:value]
+    end
+    click_link_or_button 'login'
+  end
+end
+
+
+Given(/^#{capture_model} (?:has|have) registered with "(\S+)", "(.*)"$/) do |name, email, password|
+  Given "#{name} exists with email: \"#{email}\", password: \"#{password}\", password_confirmation: \"#{password}\""
+end
+

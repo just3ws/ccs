@@ -9,15 +9,21 @@ class Ability
 
     user ||= User.new :role => "guest" # guest user (not logged in)
 
+    if user.role? :guest
+      can :create, Submission
+    end
+
+    if user.role? :attendee
+    end
+
+    if user.role? :speaker
+      can [:read, :update, :index], Submission, :user_id => user.id
+    end
+
     if user.role? :admin
       can :manage, :all
-    else
-      # everybody
-      can :create, Submission
-
-      # everybody can update, index and see their own submissions
-      can [:read, :update, :index], Submission, :user_id => user.id 
     end
+
     #
     # The first argument to `can` is the action you are giving the user permission to do.
     # If you pass :manage it will apply to every action. Other common actions here are
