@@ -1,5 +1,7 @@
 class PreregistrationsController < ApplicationController
   
+  load_and_authorize_resource
+  
   # POST /preregistrations
   # POST /preregistrations.xml
   def create
