@@ -195,9 +195,13 @@ h5 { font-size: $font-p1; }
   padding-bottom: 0;
   color: white;
   .logo {
-    font-size: $font-p5;
-    font-family: 'Syncopate', arial, serif;
-    text-shadow: 0 0 12px white;
+    a, a:hover, a:visited, a:link {
+      text-decoration: none;
+      color: white;
+      font-family: 'Syncopate', arial, serif;
+      font-size: $font-p5;
+      text-shadow: 0 0 12px white;
+    }
   }
   text-align: center;
 }
@@ -208,6 +212,12 @@ h5 { font-size: $font-p1; }
     padding: 8px;
     font-size: $font-p2;
     padding-top: 16px;
+    font-weight: bold;
+    span { 
+      font-weight: normal; 
+      font-size: $font-p1;
+      color: #4D0200;
+    }
   }
   div:first-of-type > h3 {padding-top: 0;}
   li > span { 
@@ -224,11 +234,18 @@ h5 { font-size: $font-p1; }
   li { padding: 8px; }
   li:last-of-type { padding-bottom: 0;}
   .actions {
+    display: inline-block;
+    float: right;
     margin-top: 16px;
     padding: 8px;
     @include round-corners(8px);
-    background-color: #f0c1c0;
+    background-color: #A60400;
+    text-transform: lowercase;
+    a, a:visited, a:link { color: white; text-decoration: none; }
+    a:hover { text-decoration: underline; }
   }
+  .action:first-of-type {padding-left: 0;}
+  .action:last-of-type {padding-right: 0;}
 }
 
 form {
@@ -291,9 +308,9 @@ form {
           cursor: pointer;
         }
         input:focus, textarea:focus {
-          -moz-box-shadow: 8px 8px 4px #888;
-          -webkit-box-shadow: 8px 8px 4px #888;
-          box-shadow: 8px 8px 4px #888;
+          -moz-box-shadow: 8px 8px 4px #a6a6a6;
+          -webkit-box-shadow: 8px 8px 4px #a6a6a6;
+          box-shadow: 8px 8px 4px #a6a6a6;
         }
         textarea { height: 64px; }
         label.field-with-errors { color: $primary-color; }
@@ -346,3 +363,10 @@ form {
   }
 }
 
+#session-speaker {
+  margin-top: 16px;
+  * {
+    font-size: $base-font;
+    font-weight: normal;
+  }
+}

@@ -1,7 +1,6 @@
 <div class="show">
-  <h4>Session Proposal</h4>
   <div>
-    <h3>"<%= @submission.title %>"</h3>
+    <h3><span>Session Proposal:</span> "<%= @submission.title %>"</h3>
     <ul>
       <li>
       <span>Description</span>
@@ -9,8 +8,8 @@
       </li>
     </ul>
   </div>
-  <div>
-    <h3>by: <%= "#{@submission.user.last_name || "_"*8}, #{@submission.user.first_name || "_"*8}" %></h3>
+  <div id="session-speaker">
+    <h3><span>by:</span> <%= "#{@submission.user.last_name || "_"*8}, #{@submission.user.first_name || "_"*8}" %></h3>
     <ul>
       <li>
       <span>Email</span>
@@ -26,7 +25,8 @@
       </li>
       <% unless @submission.user.avatar.blank? || @submission.user.avatar.url =~ /missing/ %>
         <li>
-        <span>Avatar</span>
+        <s
+          pan>Avatar</span>
         <div><%= image_tag @submission.user.avatar.url %></div>  
         </li>
       <% end %>
