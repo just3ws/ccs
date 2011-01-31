@@ -6,7 +6,6 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.xml
   def index
-    p @submissions
   end
 
   # GET /submissions/1
@@ -21,6 +20,7 @@ class SubmissionsController < ApplicationController
   # GET /submissions/new
   # GET /submissions/new.xml
   def new
+    @user = User.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml { render :xml => @submission }
@@ -34,10 +34,10 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.xml
   def create
-    if @submission.valid?
-      @submission.user      = find_or_create_user_with params[:submission].slice(:email, :home_page, :first_name, :last_name, :biography)
-      @submission.user.role = "speaker"
-    end
+    p params[:submission]
+    p params[:user]
+    @submission.user      = find_or_create_user_with params[:user] #params[:submission].slice(:email, :home_page, :first_name, :last_name, :biography)
+    @submission.user.role = "speaker"
     respond_to do |format|
       if @submission.save
         format.html { redirect_to(@submission, :notice => 'Submission was successfully created.') }

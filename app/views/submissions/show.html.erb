@@ -10,24 +10,24 @@
     </ul>
   </div>
   <div>
-    <h3>by: <%= "#{@submission.last_name || "_"*8}, #{@submission.first_name || "_"*8}" %></h3>
+    <h3>by: <%= "#{@submission.user.last_name || "_"*8}, #{@submission.user.first_name || "_"*8}" %></h3>
     <ul>
       <li>
       <span>Email</span>
-      <div><%= mail_to @submission.email || "_"*8 %></div>
+      <div><%= mail_to @submission.user.email || "_"*8 %></div>
       </li>
       <li>
       <span>Home page</span>
-      <div><%= @submission.home_page || "_"*8 %></div>
+      <div><%= @submission.user.home_page || "_"*8 %></div>
       </li>
       <li>
       <span>Biography</span>
-      <div><%= @submission.biography || "_"*8 %></div>
+      <div><%= @submission.user.biography || "_"*8 %></div>
       </li>
-      <% unless @submission.avatar.blank? || @submission.avatar.url =~ /missing/ %>
+      <% unless @submission.user.avatar.blank? || @submission.user.avatar.url =~ /missing/ %>
         <li>
         <span>Avatar</span>
-        <div><%= image_tag @submission.avatar.url %></div>  
+        <div><%= image_tag @submission.user.avatar.url %></div>  
         </li>
       <% end %>
     </ul>

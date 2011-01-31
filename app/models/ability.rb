@@ -10,6 +10,7 @@ class Ability
     user ||= User.new :role => "guest" # guest user (not logged in)
 
     if user.role? :guest
+      can [:read, :update, :index], Submission, :user_id => user.id
       can :create, Submission
     end
 
@@ -17,7 +18,6 @@ class Ability
     end
 
     if user.role? :speaker
-      can [:read, :update, :index], Submission, :user_id => user.id
     end
 
     if user.role? :admin
