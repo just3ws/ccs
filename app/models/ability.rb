@@ -15,6 +15,7 @@ class Ability
     end
 
     if user.role? :attendee
+      can :create, Preregistration
     end
 
     if user.role? :speaker
