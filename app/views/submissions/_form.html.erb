@@ -1,10 +1,10 @@
 <%= form_for @submission, :html => {:multipart => true} do |f| %>
   <% if @submission.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@submission.errors.count, "error") %> prohibited this preregistration from being saved:</h2>
+      <h4><%= pluralize(@submission.errors.merge(@submission.user.errors).count, "error") %> prohibited this submission from being saved:</h4>
 
       <ul>
-        <% @submission.errors.full_messages.each do |msg| %>
+        <% @submission.errors.merge(@submission.user.errors).full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -27,7 +27,7 @@
     </ul>
   </fieldset>
   <% unless user_signed_in? %>
-    <%= fields_for @user do |uf| %>
+    <%= fields_for @submission.user do |uf| %>
       <fieldset>
         <legend>and a little bit about yourself...</legend>
         <ul>

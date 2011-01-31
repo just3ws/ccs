@@ -6,9 +6,9 @@ class EmailDomainValidator < ActiveModel::EachValidator
   end
 
   def valid_email_domain?(email)
-    return false if email.blank?
+    return false if email.squish.blank?
     matches = email.match(/\@(.+)/)
-    return false if matches.length < 2
+    return false if matches.nil? || matches.length < 2
     domain = matches[1]
     return false if domain.blank?
     Resolv::DNS.open do |dns|

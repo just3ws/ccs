@@ -6,7 +6,7 @@ $font-m4:   6.5536px;
 $font-m3:   8.192px;
 $font-m2:   10.24px;
 $font-m1:   12.8px;
-$base-font: 16px;
+$font-base: 16px;
 $font-p1:   20.8px;
 $font-p2:   27.04px;
 $font-p3:   35.152px;
@@ -17,7 +17,7 @@ $primary-color: #a60400;
 
 *, body {
   font-family: 'Ubuntu', arial, serif;
-  font-size: $base-font;
+  font-size: $font-base;
 }
 
 body {
@@ -264,7 +264,7 @@ form {
         label {
           width: 100px;
           display: inline-block;
-          font-size: $base-font;
+          font-size: $font-base;
           vertical-align: top;
           text-align: right;
           text-transform: lowercase;
@@ -341,7 +341,7 @@ form {
       padding-bottom: 4px;
       font-size: $font-p1;
     }
-    font-size: $base-font; 
+    font-size: $font-base; 
     ul {
       list-style: none;
       margin-left: 0;
@@ -366,7 +366,53 @@ form {
 #session-speaker {
   margin-top: 16px;
   * {
-    font-size: $base-font;
+    font-size: $font-base;
     font-weight: normal;
   }
+}
+
+table {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  th, td { font-size: $font-m1; }
+  text-align: left;
+  border-collapse: collapse;
+  border: solid 1px black;
+  @include round-corners(8px);
+  td { border-bottom: solid 1px black; padding: 8px; }
+  tr > th { 
+    background-color: #a60400; 
+    color: white;
+    padding: 8px; 
+    th {
+// left off here
+    }
+  }
+  tr { 
+    a {
+      text-decoration: none; 
+      &:hover {text-decoration: underline;}
+    } 
+  }
+  tr:nth-child(even) { 
+    a {
+      color: #4d0200; 
+    } 
+  }
+  tr:nth-child(odd) { 
+    background-color: #a60400; 
+    color: white;
+    a {
+      color: white; 
+    } 
+  }
+  ul { list-style: none; }
+  li {
+    padding-top: 4px; 
+    padding-bottom: 4px;
+  }
+  li:last-of-type {padding-bottom: 0;}
+  li:first-of-type {padding-top: 0;}
+
 }
