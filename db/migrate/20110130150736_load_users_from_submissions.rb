@@ -1,6 +1,5 @@
 class LoadUsersFromSubmissions < ActiveRecord::Migration
   def self.up
-    require 'generator'
     Submission.all.each do |s|
       password   = Generator.password
       user       = User.find_or_create_by_email s.email
