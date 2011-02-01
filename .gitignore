@@ -1,3 +1,4 @@
+.sass-cache
 .bundle
 s3.yml
 db/*.sqlite3

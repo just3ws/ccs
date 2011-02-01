@@ -14,9 +14,9 @@
       <tr>
         <td><%= submission.title %></td>
         <td><%= submission.abstract %></td>
-        <td><%= submission.user.first_name %></td>
-        <td><%= submission.user.last_name %></td>
-        <td><%= submission.user.email %></td>
+        <td><%= submission.user.first_name unless submission.user.blank? %></td>
+        <td><%= submission.user.last_name unless submission.user.blank? %></td>
+        <td><%= submission.user.email unless submission.user.blank? %></td>
         <td>
           <ul>
             <li><%= link_to 'Show', submission %></li>
