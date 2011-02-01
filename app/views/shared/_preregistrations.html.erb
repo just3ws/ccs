@@ -2,7 +2,7 @@
 <div class="aside preregistration">
   <h5>Register for Updates</h5>
   <p>Stay up-to-date on the latest announcements and news related to CCC3.
-  <%= form_for Preregistration.new do |f| %>
+  <%= form_for Preregistration.new, :method => :post do |f| %>
     <fieldset>
       <ol>
         <li>
@@ -13,7 +13,7 @@
     </fieldset>
     <fieldset>
       <ol>
-        <li><%= button "register for updates", preregistrations_path(Preregistration.new) %></li>
+        <li><%= button "register for updates" %></li>
       </ol>
     </fieldset>
   <% end %>
