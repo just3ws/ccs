@@ -102,21 +102,26 @@ h5 { font-size: $font-p1; }
     .aside { 
       margin-top: 1px; 
       background-color: white;
-      padding: 16px;
+      padding: 8px;
       h1, h2, h3, h4, h5 {
         padding-bottom: 6px;
       }
+      p {
+        font-size: $font-m1;
+        color: #4d2000;
+      }
+      .map {
+        margin: 0 auto;
+        margin-top: 8px;
+      }
       a {
         padding-bottom: 8px;
-        font-size: $font-m2;
+        font-size: $font-base;
         text-decoration: none;
         &:hover {
           text-decoration: underline;
         }
         color: #00A604;
-      }
-      .map {
-        margin-top: 20px;
       }
       form {
         legend {
@@ -130,37 +135,27 @@ h5 { font-size: $font-p1; }
         fieldset {
           li { 
             white-space: nowrap; 
-            float: right;
+            float:right;
+            clear: right;
             input { 
-              width: 170px; 
+              width: 180px; 
               border: solid 2px black; 
               outline: none; 
               padding: 4px;
+              font-size: $font-m1;
               @include round-corners-bottom(4px);
               @include round-corner-top-right(4px);
             }
             label { 
-              width: 70px; 
+              width: 50px; 
               font-size: $font-m2; 
               display: inline-block; 
               text-align: right; 
               white-space: nowrap; 
             }
+            button {font-size: $font-m1;}
           }
           display: inline-block;
-          button {
-            font-size: $font-m2;
-            float: right;
-            vertical-align: top;
-            @include round-corners(8px);
-            border: 0;
-            padding: 6px;
-            background-color: $primary-color;
-            color: white;
-          }
-          button:hover {
-            cursor: pointer;
-          }
         }
         fieldset:last-of-type {
           border: 0;
@@ -177,16 +172,6 @@ h5 { font-size: $font-p1; }
     .aside:last-of-type {
       @include round-corner-bottom-right(16px);
       @include round-corner-bottom-left(16px);
-    }
-	#preregistration {
-		height: 70px;
-		label.error {
-			color: #dd0000;
-			font-size: 10px;
-		}
-	}
-    #preregistration_email {
-   	  width: 210px;
     }
   }
 }
@@ -207,7 +192,7 @@ h5 { font-size: $font-p1; }
 }
 
 .show {
-  ul { list-style: none; }
+  ol, ul { list-style: none; }
   h3 {
     padding: 8px;
     font-size: $font-p2;
@@ -233,20 +218,28 @@ h5 { font-size: $font-p1; }
   }
   li { padding: 8px; }
   li:last-of-type { padding-bottom: 0;}
-  .actions {
-    display: inline-block;
-    float: right;
-    margin-top: 16px;
-    padding: 8px;
-    @include round-corners(8px);
-    background-color: #A60400;
-    text-transform: lowercase;
-    a, a:visited, a:link { color: white; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  }
-  .action:first-of-type {padding-left: 0;}
-  .action:last-of-type {padding-right: 0;}
 }
+
+.actions {
+  display: inline-block;
+  float: right;
+  margin-top: 16px;
+  padding: 8px;
+  @include round-corners(8px);
+  background-color: #A60400;
+  text-transform: lowercase;
+  ol, ul {list-style: none;}
+  li {display: inline-block; padding-right: 0; margin: 0;}
+  li:not(:last-of-type):after {content: ' |'; color: white;}
+  a { 
+    font-size: $font-m1;
+    color: white; 
+    text-decoration: none; 
+  }
+  a:hover { text-decoration: underline; }
+}
+.action:first-of-type {padding-left: 0;}
+.action:last-of-type {padding-right: 0;}
 
 form {
   fieldset {
@@ -257,7 +250,7 @@ form {
       font-weight: bold;
       font-style: italic;
     }
-    ul {
+    ol, ul {
       list-style: none;
       li{
         padding-top: 8px;
@@ -342,7 +335,7 @@ form {
       font-size: $font-p1;
     }
     font-size: $font-base; 
-    ul {
+    ol, ul {
       list-style: none;
       margin-left: 0;
       padding-left: 16px;
@@ -407,12 +400,24 @@ table {
       color: white; 
     } 
   }
-  ul { list-style: none; }
+  ol, ul { list-style: none; }
   li {
     padding-top: 4px; 
     padding-bottom: 4px;
   }
   li:last-of-type {padding-bottom: 0;}
   li:first-of-type {padding-top: 0;}
-
+}
+button, input[type=button] {
+  font-size: $font-m2;
+  float: right;
+  vertical-align: top;
+  @include round-corners(8px);
+  border: 0;
+  padding: 6px;
+  background-color: $primary-color;
+  color: white;
+}
+button:hover {
+  cursor: pointer;
 }

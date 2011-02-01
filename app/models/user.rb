@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
   validates :email, :presence => true,
             :length           => {:within => 0..255},
             :email_domain     => true,
-            :email_format     => true 
+            :email_format     => true
   validates :first_name, :length => {:within => 0..255}, :allow_blank => true
-  validates :last_name,  :length => {:within => 0..255}, :allow_blank => true
-  validates :home_page,  :length => {:within => 0..512}, :allow_blank => true
-  validates :biography,  :length => {:within => 0..1024}, :allow_blank => true
+  validates :last_name, :length => {:within => 0..255}, :allow_blank => true
+  validates :home_page, :length => {:within => 0..512}, :allow_blank => true
+  validates :biography, :length => {:within => 0..1024}, :allow_blank => true
   has_attached_file :avatar,
                     :bucket         => 'chicagocodecamp',
                     :storage        => :s3,

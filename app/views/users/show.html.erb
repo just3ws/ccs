@@ -1,25 +1,29 @@
 <div class="show">
   <h4>User Profile</h4>
+
   <div>
     <h3><%= "#{@user.last_name || "_"*8}, #{@user.first_name || "_"*8}" %></h3>
     <ul>
       <li>
-      <span>Email</span>
-      <div><%= mail_to @user.email %></div>
+        <span>Email</span>
+
+        <div><%= mail_to @user.email %></div>
       </li>
       <li>
-      <span>Home page</span>
-      <div><%= @user.home_page || "_"*8 %></div>
+        <span>Home page</span>
+
+        <div><%= @user.home_page || "_"*8 %></div>
       </li>
       <li>
-      <span>Biography</span>
-      <div><%= @user.biography || "_"*8 %></div>
+        <span>Biography</span>
+
+        <div><%= @user.biography || "_"*8 %></div>
       </li>
     </ul>
   </div>
   <div class="actions">
     <% if can? :update, @user %>
-      <%= link_to "Edit", edit_user_path(@user) %>
+        <%= link_to "Edit", edit_user_path(@user) %>
     <% end %>
   </div>
 </div>

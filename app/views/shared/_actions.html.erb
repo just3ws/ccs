@@ -1,0 +1,27 @@
+<div class="actions">
+  <ul>
+    <% if can?(:index, model) %>
+      <li><%= link_to "Manage your #{model.class.to_s.pluralize}", polymorphic_path(model.class) %></li>
+    <% end %>
+
+    <% unless [:new].include? current_action %>
+      <% if can?(:create, model) %>
+        <li><%= link_to "Create another #{model.class}", polymorphic_path(model.class, :action => "new") %></li>
+      <% end %>
+    <% end %>
+
+    <% unless [:new, :create, :index].include? current_action %>
+      <% if can?(:show, model) %>
+        <li><%= link_to "View #{model.class.to_s}", polymorphic_path(model) %></li>
+      <% end %>
+
+      <% if can?(:update, model) %>
+        <li><%= link_to "Edit this #{model.class}", polymorphic_path(model, :action => "edit") %></li>
+      <% end %>
+
+      <% if can?(:destroy, model) %>
+        <li><%= link_to "Destroy this #{model.class}", polymorphic_path(model, :confirm => "Are you sure you wish to delete this #{model.class}?", :method => "destroy") %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

@@ -1,7 +1,19 @@
-<div class="aside" id="preregistration">
+<div class="aside preregistration">
   <h5>Register for Updates</h5>
+  <p>Stay up-to-date on the latest announcements and news related to CCC3.
   <%= form_for Preregistration.new do |f| %>
-    <%= f.email_field :email, :placeholder => "email address", :class => 'required email' %>
-    <button type="submit" id="preregistration_submit" name="commit">ok</button>
+    <fieldset>
+      <ol>
+        <li>
+        <%= f.label :email, "email" %>
+        <%= f.email_field :email, :placeholder => "your@email.com" %>
+        </li>
+      </ol>
+    </fieldset>
+    <fieldset>
+      <ol>
+        <li><%= button "register for updates", polymorphic_path(Preregistration) %></li>
+      </ol>
+    </fieldset>
   <% end %>
 </div>

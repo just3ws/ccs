@@ -1,7 +1,7 @@
 When /^I fill in the (new|edit) (.*) form with:$/ do |action, model, table|
   scope_selector = "##{action}_#{model}"
   with_scope(scope_selector) do
-    table.rows_hash.each do |name, value| 
+    table.rows_hash.each do |name, value|
       selector = name.squish.gsub(/\s/, '_').underscore
       fill_in selector, :with => value
     end
@@ -26,7 +26,7 @@ end
 
 When /^I login through the sidebar:?$/ do |table|
   within(".aside.authentication") do
-    table.hashes.each do |field| 
+    table.hashes.each do |field|
       fill_in "user_#{field[:id]}", :with => field[:value]
     end
     click_link_or_button 'login'

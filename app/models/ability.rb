@@ -11,7 +11,6 @@ class Ability
 
     if user.role? :guest
       can :create, Preregistration
-      can [:read, :update, :index], Submission, :user_id => user.id
       can :create, Submission
     end
 
@@ -19,6 +18,7 @@ class Ability
     end
 
     if user.role? :speaker
+      can :manage, Submission, :user_id => user.id
     end
 
     if user.role? :admin

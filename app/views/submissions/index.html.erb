@@ -10,24 +10,21 @@
     <th></th>
   </tr>
 
-<% @submissions.each do |submission| %>
-  <tr>
-    <td><%= submission.title %></td>
-    <td><%= submission.abstract %></td>
-    <td><%= submission.user.first_name %></td>
-    <td><%= submission.user.last_name %></td>
-    <td><%= submission.user.email %></td>
-    <td>
-      <ul>
-        <li><%= link_to 'Show', submission %></li>
-        <li><%= link_to 'Edit', edit_submission_path(submission) %></li>
-        <li><%= link_to 'Destroy', submission, :confirm => 'Are you sure?', :method => :delete %></li>
-      </ul>
-    </td>
-  </tr>
-<% end %>
+  <% @submissions.each do |submission| %>
+      <tr>
+        <td><%= submission.title %></td>
+        <td><%= submission.abstract %></td>
+        <td><%= submission.user.first_name %></td>
+        <td><%= submission.user.last_name %></td>
+        <td><%= submission.user.email %></td>
+        <td>
+          <ul>
+            <li><%= link_to 'Show', submission %></li>
+            <li><%= link_to 'Edit', edit_submission_path(submission) %></li>
+            <li><%= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete %></li>
+          </ul>
+        </td>
+      </tr>
+  <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Submission', new_submission_path %>
+<%= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index} %>

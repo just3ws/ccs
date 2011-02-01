@@ -5,5 +5,5 @@ class Preregistration < ActiveRecord::Base
   # the people that gave their email addresses in batches,
   # avoiding that we get flagged as a spam source.
   # We can also block any bogus entries.
-  validates :status,  :inclusion => {:in => %w(NEW CONTACTED BLOCKED)}
+  validates :status, :inclusion => {:in => %w(NEW CONTACTED BLOCKED)}
 end

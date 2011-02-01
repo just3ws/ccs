@@ -81,16 +81,16 @@ end
 # model.attribute.should eql(value)
 # model.attribute.should_not eql(value)
 Then(/^#{capture_model}'s (\w+) (should(?: not)?) be #{capture_value}$/) do |name, attribute, expectation, expected|
-  actual_value  = model(name).send(attribute)
-  expectation   = expectation.gsub(' ', '_')
-  
+  actual_value = model(name).send(attribute)
+  expectation  = expectation.gsub(' ', '_')
+
   case expected
-  when 'nil', 'true', 'false'
-    actual_value.send(expectation, send("be_#{expected}"))
-  when /^[+-]?[0-9_]+(\.\d+)?$/
-    actual_value.send(expectation, eql(expected.to_f))
-  else
-    actual_value.to_s.send(expectation, eql(eval(expected)))
+    when 'nil', 'true', 'false'
+      actual_value.send(expectation, send("be_#{expected}"))
+    when /^[+-]?[0-9_]+(\.\d+)?$/
+      actual_value.send(expectation, eql(expected.to_f))
+    else
+      actual_value.to_s.send(expectation, eql(eval(expected)))
   end
 end
 

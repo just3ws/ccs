@@ -1,20 +1,21 @@
 <div class="aside authentication">
   <% if user_signed_in? %>
     <%= form_tag destroy_user_session_path do %>
-      logged in as <%=link_to current_user.email, user_path(current_user) %>
+      logged in as <%= link_to current_user.email, user_path(current_user) %>
       <br>
       <fieldset>
-        <%= link_to "logout", destroy_user_session_path, :title => "logout #{current_user.email}" %>
-      </fieldset> 
+        <%= button "logout", destroy_user_session_path %>
+      </fieldset>
     <% end %>
   <% else %>
     <%= form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f| %>
+      <h5>speaker login</h5>
+      <p>Login to manager your sessions.</p>
       <fieldset>
-        <legend>login</legend>
         <ol>
           <li>
           <%= f.label :email, "email" %>
-          <%= f.email_field :email, :placeholder => "register@email.com" %> 
+          <%= f.email_field :email, :placeholder => "your@email.com" %>
           </li>
 
           <li>
@@ -25,17 +26,21 @@
       </fieldset>
       <fieldset>
         <ol>
-          <li><button type="submit">login</button></li>
+          <li>
+          <button type="submit">login</button>
+          </li>
         </ol>
       </fieldset>
     <% end %>
+<!--
     <%= form_for(User.new(:email => @email), :as => 'user', :url => registration_path('user')) do |f| %>
+      <h5>Register</h5>
+      <p>Register to get access to features as they become available and information available only to registered users.</p>
       <fieldset>
-        <legend>register</legend>
         <ol>
           <li>
           <%= f.label :email, "email" %>
-          <%= f.email_field :email, :placeholder => "register@email.com" %> 
+          <%= f.email_field :email, :placeholder => "register@email.com" %>
           </li>
 
           <li>
@@ -51,9 +56,12 @@
       </fieldset>
       <fieldset>
         <ol>
-          <li><button type="submit">register</button></li>
+          <li>
+          <button type="submit">register</button>
+          </li>
         </ol>
       </fieldset>
     <% end %>
+-->
   <% end %>
 </div>

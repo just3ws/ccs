@@ -13,13 +13,14 @@ gem 'devise_invitable'
 gem 'cancan'
 
 gem 'compass'
-gem 'jquery-rails', :git => "git://github.com/pgericson/jquery-rails.git" 
+gem 'jquery-rails', '>= 0.2.6'
 gem 'haml'
 
 gem 'aws-s3', :require => 'aws/s3'
 gem 'paperclip'
 
 group :development, :test do
+  gem 'unicorn'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'rspec'

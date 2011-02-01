@@ -37,16 +37,16 @@ Devise.setup do |config|
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 10. If
   # using other encryptors, it sets how many times you want the password re-encrypted.
-  config.stretches = 10
+  config.stretches                = 10
 
   # Define which will be the encryption algorithm. Devise also supports encryptors
   # from others authentication tools as :clearance_sha1, :authlogic_sha512 (then
   # you should set stretches above to 20 for default behavior) and :restful_authentication_sha1
   # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :bcrypt
+  config.encryptor                = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
-  config.pepper = "705beeb0be4f3c1927255d40ca00ea6a0947180b3a77d2fb4cb119a60c21907e744b70f6c79efb94fc218fc8f72fa7fc3760f19c8f1cf6e01575823c544bf897"
+  config.pepper                   = "705beeb0be4f3c1927255d40ca00ea6a0947180b3a77d2fb4cb119a60c21907e744b70f6c79efb94fc218fc8f72fa7fc3760f19c8f1cf6e01575823c544bf897"
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
@@ -55,24 +55,24 @@ Devise.setup do |config|
   # You can use this to let your user access some features of your application 
   # without confirming the account, but blocking it after a certain period 
   # (ie 2 days). 
-  config.confirm_within = 5.days
+  config.confirm_within           = 5.days
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  config.remember_for = 2.weeks
+  config.remember_for             = 2.weeks
 
   # If true, a valid remember token can be re-used between multiple browsers.
   config.remember_across_browsers = true
 
   # If true, extends the user's remember period when remembered via cookie.
-  config.extend_remember_period = false
+  config.extend_remember_period   = false
 
   # ==> Configuration for :validatable
   # Range for password length
   # config.password_length = 6..20
 
   # Regex to use to validate the email address
-  config.email_regexp = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
+  # config.email_regexp             = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
