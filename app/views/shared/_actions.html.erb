@@ -20,7 +20,7 @@
       <% end %>
 
       <% if can?(:destroy, model) %>
-        <li><%= link_to "Destroy this #{model.class}", polymorphic_path(model, :confirm => "Are you sure you wish to delete this #{model.class}?", :method => "destroy") %></li>
+        <li><%= link_to "Destroy this #{model.class}", model, :confirm => "Are you sure you wish to delete this #{model.class}?", :method => :delete %></li>
       <% end %>
     <% end %>
   </ul>
