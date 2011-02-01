@@ -5,5 +5,5 @@ n:
   devise:
     mailer:
       confirmation_instructions:
-        subject: "Please confirm your submission to Chicago Code Camp 2011!"
+        user_subject: "Please confirm your submission to Chicago Code Camp 2011!"
 
