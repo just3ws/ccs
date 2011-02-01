@@ -20,7 +20,7 @@ gem 'aws-s3', :require => 'aws/s3'
 gem 'paperclip'
 
 group :development, :test do
-  gem 'unicorn'
+  gem 'thin'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'rspec'
