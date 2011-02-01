@@ -1,11 +1,10 @@
-require 'generator'
-
 class SubmissionsController < ApplicationController
   load_and_authorize_resource
 
   # GET /submissions
   # GET /submissions.xml
   def index
+    @submissions = Submission.visible
   end
 
   # GET /submissions/1
@@ -59,7 +58,8 @@ class SubmissionsController < ApplicationController
   # DELETE /submissions/1
   # DELETE /submissions/1.xml
   def destroy
-    @submission.destroy
+    # soft-delete
+    @submission.update_attributes(:deleted_at => DateTime.now)
 
     respond_to do |format|
       format.html { redirect_to(submissions_url) }

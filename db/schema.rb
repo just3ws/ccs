@@ -10,57 +10,58 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110130150938) do
+ActiveRecord::Schema.define(:version => 20110201214403) do
 
   create_table "preregistrations", :force => true do |t|
-    t.string "email"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "status"
+    t.string   "status"
   end
 
   create_table "submissions", :force => true do |t|
-    t.string "email"
-    t.string "first_name"
-    t.string "last_name"
-    t.text "biography"
-    t.string "title"
-    t.text "abstract"
-    t.string "home_page"
-    t.string "avatar_file_name"
-    t.string "avatar_content_type"
-    t.integer "avatar_file_size"
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "biography"
+    t.string   "title"
+    t.text     "abstract"
+    t.string   "home_page"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "user_id"
+    t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string "email", :default => "", :null => false
-    t.string "encrypted_password", :limit => 128, :default => "", :null => false
-    t.string "password_salt", :default => "", :null => false
-    t.string "reset_password_token"
-    t.string "remember_token"
+    t.string   "email",                               :default => "",      :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",      :null => false
+    t.string   "password_salt",                       :default => "",      :null => false
+    t.string   "reset_password_token"
+    t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer "sign_in_count", :default => 0
+    t.integer  "sign_in_count",                       :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip"
-    t.string "last_sign_in_ip"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "role", :default => "guest"
-    t.integer "submissions_id"
-    t.string "home_page"
-    t.string "first_name"
-    t.string "last_name"
-    t.text "biography"
-    t.string "avatar_file_name"
-    t.string "avatar_content_type"
-    t.integer "avatar_file_size"
+    t.string   "role",                                :default => "guest"
+    t.integer  "submissions_id"
+    t.string   "home_page"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "biography"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string "confirmation_token"
+    t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
   end
