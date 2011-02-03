@@ -1,11 +1,15 @@
 <%= form_for @submission, :html => {:multipart => true} do |f| %>
     <% if @submission.errors.any? %>
+      <%
+        errors = @submission.errors
+        errors.merge!(@submission.user.errors) unless @submission.user.blank?
+      %>
         <div id="error_explanation">
-          <h4><%= pluralize(@submission.errors.merge(@submission.user.errors).count, "error") %> prohibited this
+          <h4><%= pluralize(errors.count, "error") %> prohibited this
             submission from being saved:</h4>
 
           <ul>
-            <% @submission.errors.merge(@submission.user.errors).full_messages.each do |msg| %>
+            <% errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
