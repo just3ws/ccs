@@ -13,7 +13,54 @@ $font-p3:   35.152px;
 $font-p4:   45.6976px;
 $font-p5:   59.40688px;
 
-$primary-color: #800000;
+
+
+$color-primary:         #800000; // base
+$color-triad-m120:      #000080;
+$color-triad-p120:      #008000;
+$color-analog-m30:      #800040;
+$color-analog-p30:      #804000;
+$color-split-comp-m150: #004080;
+$color-split-comp-p150: #008040;
+$color-comp:            #008080;
+
+$color-value-000:       #000000;
+$color-value-010:       #1a0000;
+$color-value-020:       #330000;
+$color-value-030:       #4d0000;
+$color-value-040:       #660000;
+$color-value-050:       #800000; // base
+$color-value-060:       #990000;
+$color-value-070:       #b30000;
+$color-value-080:       #cc0000;
+$color-value-090:       #e60000;
+$color-value-100:       #ff0000;
+
+$color-satur-000:       #808080;
+$color-satur-010:       #807373;
+$color-satur-020:       #806666;
+$color-satur-030:       #805a5a;
+$color-satur-040:       #804d4d;
+$color-satur-050:       #804040;
+$color-satur-060:       #803333;
+$color-satur-070:       #802626;
+$color-satur-080:       #801a1a;
+$color-satur-090:       #800d0d;
+$color-satur-100:       #800000; // base
+
+$color-background:         $color-primary;
+$color-font-light:         white;
+$color-font-light-shadow:  white;
+
+$color-content-background: #f1ebe4;
+
+$color-input-background:   white;
+$color-input-shadow:       $color-satur-000;
+
+$color-aside-background:   #a7988b;
+$color-aside-input:        #f1ebe4;
+
+
 
 *, body {
   font-family: 'Ubuntu', arial, serif;
@@ -21,7 +68,7 @@ $primary-color: #800000;
 }
 
 body {
-  background-color: $primary-color;
+  background-color: $color-primary;
   @include prime-gs();
 }
 
@@ -43,14 +90,14 @@ h5 { font-size: $font-p1; }
     text-align: center;
     .blurb {
       display: inline-block;
-      color: white;
+      color: $color-font-light;
       font-family: 'Syncopate', arial, serif;
-      text-shadow: 0 0 5px white;
+      text-shadow: 0 0 8px $color-font-light-shadow;
     }
     padding-bottom: 12px;
   }
   #messages {
-    background-color: white;
+    background-color: $color-content-background;
     margin: 0 auto;
     margin-bottom: 8px;
     margin-top: 8px;
@@ -71,7 +118,7 @@ h5 { font-size: $font-p1; }
   }
   #content {
     margin: 0;
-    background-color: white;
+    background-color: $color-content-background;
     width: 666px;
     float: left;
     padding: 16px;
@@ -83,7 +130,7 @@ h5 { font-size: $font-p1; }
     }
     p {
       padding: 8px;
-      color: #4d0200;
+      color: $color-value-030;
       margin: 0 auto;
       width: 90%;
     }
@@ -101,27 +148,24 @@ h5 { font-size: $font-p1; }
     clear: right;
     .aside { 
       margin-top: 1px; 
-      background-color: white;
+      background-color: $color-aside-background;
       padding: 8px;
       h1, h2, h3, h4, h5 {
         padding-bottom: 6px;
       }
       p {
         font-size: $font-m1;
-        color: #4d2000;
+        color: $color-value-030;
       }
       .map {
         margin: 0 auto;
         margin-top: 8px;
       }
       a {
+        color: $color-primary !important;
         padding-bottom: 8px;
         font-size: $font-base;
         text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-        }
-        color: #00A604;
       }
       form {
         legend {
@@ -143,6 +187,7 @@ h5 { font-size: $font-p1; }
               outline: none; 
               padding: 4px;
               font-size: $font-m1;
+              background-color: $color-aside-input;
               @include round-corners-bottom(4px);
               @include round-corner-top-right(4px);
             }
@@ -180,12 +225,12 @@ h5 { font-size: $font-p1; }
   padding-bottom: 0;
   color: white;
   .logo {
-    a, a:hover, a:visited, a:link {
+    a { 
       text-decoration: none;
-      color: white;
+      color: white !important;
       font-family: 'Syncopate', arial, serif;
       font-size: $font-p5;
-      text-shadow: 0 0 12px white;
+      text-shadow: 0 0 12px $color-font-light-shadow;
     }
   }
   text-align: center;
@@ -201,7 +246,7 @@ h5 { font-size: $font-p1; }
     span { 
       font-weight: normal; 
       font-size: $font-p1;
-      color: #4D0200;
+      color: $color-value-030;
     }
   }
   div:first-of-type > h3 {padding-top: 0;}
@@ -210,7 +255,7 @@ h5 { font-size: $font-p1; }
     width: 100px;
     text-transform: lowercase;
     text-align: right;
-    color: #4D0200;
+    color: $color-value-030;
   }
   li > div {
     display: inline-block;
@@ -226,7 +271,7 @@ h5 { font-size: $font-p1; }
   margin-top: 16px;
   padding: 8px;
   @include round-corners(8px);
-  background-color: #A60400;
+  background-color: $color-primary;
   text-transform: lowercase;
   ol, ul {list-style: none;}
   li {display: inline-block; padding-right: 0; margin: 0;}
@@ -236,7 +281,6 @@ h5 { font-size: $font-p1; }
     color: white; 
     text-decoration: none; 
   }
-  a:hover { text-decoration: underline; }
 }
 .action:first-of-type {padding-left: 0;}
 .action:last-of-type {padding-right: 0;}
@@ -261,20 +305,20 @@ form {
           vertical-align: top;
           text-align: right;
           text-transform: lowercase;
-          color: #4D0200;
+          color: $color-value-030;
         }
         input, textarea {
           font-size: $font-p1;
           padding: 8px;
           margin: 0;
-          border: solid 2px #4D0200;
+          border: solid 2px $color-value-030;
           @include round-corners-bottom(4px);
           @include round-corner-top-right(4px);
           outline: none;
           width: 375px;
         }
         div.hint {
-          color: white;
+          color: $color-content-background;
           display: inline-block;
           font-size: $font-m2;
           float: top;
@@ -294,25 +338,25 @@ form {
           @include round-corners(8px);
           border: 0;
           padding: 8px;
-          background-color: $primary-color;
+          background-color: $color-primary;
           color: white;
         }
         button:hover {
           cursor: pointer;
         }
         input:focus, textarea:focus {
-          -moz-box-shadow: 8px 8px 4px #a6a6a6;
-          -webkit-box-shadow: 8px 8px 4px #a6a6a6;
-          box-shadow: 8px 8px 4px #a6a6a6;
+          -moz-box-shadow:    4px 4px 4px $color-input-shadow;
+          -webkit-box-shadow: 4px 4px 4px $color-input-shadow;
+          box-shadow:         4px 4px 4px $color-input-shadow;
         }
         textarea { height: 64px; }
-        label.field-with-errors { color: $primary-color; }
+        label.field-with-errors { color: $color-primary; }
         input.field-with-errors, textarea.field-with-errors {
           background-color: #FCE4E3;
         }
         label.required:before {
           content: '*'; 
-          color: $primary-color; 
+          color: $color-primary; 
           font-weight: bold;
         }
       }
@@ -323,11 +367,11 @@ form {
     padding-bottom: 0;
   }
   #error_explanation { 
-    background-color: #FCE4E3;
+    background-color: white;
     margin: 4px; 
     margin-bottom: 8px;
     padding: 8px; 
-    border: dotted 4px $primary-color; 
+    border: dotted 4px $color-primary; 
     @include round-corners(8px);
     h4 { 
       text-transform: none; 
@@ -375,7 +419,7 @@ table {
   @include round-corners(8px);
   td { border-bottom: solid 1px black; padding: 8px; }
   tr > th { 
-    background-color: #a60400; 
+    background-color: $color-primary; 
     color: white;
     padding: 8px; 
     th {
@@ -385,16 +429,15 @@ table {
   tr { 
     a {
       text-decoration: none; 
-      &:hover {text-decoration: underline;}
     } 
   }
   tr:nth-child(even) { 
     a {
-      color: #4d0200; 
+      color: $color-value-030; 
     } 
   }
   tr:nth-child(odd) { 
-    background-color: #a60400; 
+    background-color: $color-primary; 
     color: white;
     a {
       color: white; 
@@ -415,7 +458,7 @@ button, input[type=button] {
   @include round-corners(8px);
   border: 0;
   padding: 6px;
-  background-color: $primary-color;
+  background-color: $color-primary;
   color: white;
 }
 button:hover {
