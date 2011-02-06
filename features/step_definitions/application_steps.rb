@@ -20,10 +20,6 @@ Then /^I should see "([^"]*)" within the authentication box$/ do |text|
   end
 end
 
-Given /^I am not authenticated$/ do
-  visit '/users/sign_out'
-end
-
 When /^I login through the sidebar:?$/ do |table|
   within(".aside.authentication") do
     table.hashes.each do |field|
