@@ -254,6 +254,15 @@ h5 { font-size: $font-p1; }
       color: $color-value-030;
     }
   }
+  .session-speaker {
+    margin-top: 16px;
+    text-align: right;
+    text-transform: lowercase;
+    * {
+      font-size: $font-base;
+      font-weight: normal;
+    }
+  }
   div:first-of-type > h3 {padding-top: 0;}
   li > span { 
     display: inline-block;
@@ -405,13 +414,6 @@ form {
   }
 }
 
-#session-speaker {
-  margin-top: 16px;
-  * {
-    font-size: $font-base;
-    font-weight: normal;
-  }
-}
 
 table {
   width: 100%;
@@ -469,3 +471,4 @@ button, input[type=button] {
 button:hover {
   cursor: pointer;
 }
+

@@ -31,4 +31,8 @@ class User < ActiveRecord::Base
   def role?(base_role)
     ROLES.index(base_role.to_s) <= ROLES.index(role)
   end
+
+  def full_name
+    [last_name, first_name].compact.join(', ')
+  end
 end

@@ -9,30 +9,10 @@
       </li>
     </ul>
   </div>
-  <% unless @submission.user.blank? %>
-    <div id="session-speaker">
-      <h3><span>by:</span> <%= "#{@submission.user.last_name || "_"*8}, #{@submission.user.first_name || "_"*8}" %></h3>
-      <ul>
-        <li>
-        <span>Email</span>
-        <div><%= mail_to @submission.user.email || "_"*8 %></div>
-        </li>
-        <li>
-        <span>Home page</span>
-        <div><%= @submission.user.home_page || "_"*8 %></div>
-        </li>
-        <li>
-        <span>Biography</span>
-        <div><%= @submission.user.biography || "_"*8 %></div>
-        </li>
-        <% unless @submission.user.avatar.blank? || @submission.user.avatar.url =~ /missing/ %>
-          <li>
-          <span>Avatar</span>
-          <div><%= image_tag @submission.user.avatar.url %></div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="session-speaker">
+    <% unless @submission.user.full_name.blank? %>
+      proposed by <%= link_to @submission.user.full_name, user_path(@submission.user) %>
+    <% end %>
+  </div>
 </div>
 <%= render :partial => "shared/actions", :locals => {:model => @submission, :current_action => :show} %>
