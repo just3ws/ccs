@@ -386,7 +386,7 @@ form {
       text-index: -16px;
       li:before { 
         content: "\2713"; 
-        color: #a6400; 
+        color: $color-primary; 
         padding-right: 8px; 
         font-weight: bolder;
       }
