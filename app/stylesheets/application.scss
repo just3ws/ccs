@@ -74,6 +74,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   text-transform: uppercase;
+  color: $color-value-030 !important;
 }
 
 h1 { font-size: $font-p5; }
@@ -183,7 +184,7 @@ h5 { font-size: $font-p1; }
             clear: right;
             input { 
               width: 180px; 
-              border: solid 2px #4d0000; 
+              border: solid 2px $color-value-030; 
               outline: none; 
               padding: 4px;
               font-size: $font-m1;
@@ -415,9 +416,9 @@ table {
   th, td { font-size: $font-m1; }
   text-align: left;
   border-collapse: collapse;
-  border: solid 1px #4d0000;
+  border: solid 1px $color-value-030;
   @include round-corners(8px);
-  td { border-bottom: solid 1px #4d0000; padding: 8px; }
+  td { border-bottom: solid 1px $color-value-030; padding: 8px; }
   tr > th { 
     background-color: $color-primary; 
     color: white;
