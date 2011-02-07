@@ -10,7 +10,7 @@
   <% else %>
     <%= form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f| %>
       <h5>speaker login</h5>
-      <p>Login to manager your sessions.</p>
+      <p>Login to manage your sessions.</p>
       <fieldset>
         <ol>
           <li>
