@@ -10,7 +10,7 @@
     <th></th>
   </tr>
 
-  <% @submissions.each do |submission| %>
+  <% @submissions.visible.each do |submission| %>
       <tr>
         <td><%= submission.title %></td>
         <td><%= submission.abstract %></td>
