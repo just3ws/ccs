@@ -19,6 +19,7 @@ class Ability
 
     if user.role? :speaker
       can :manage, Submission, :user_id => user.id
+      can :manage, User, :id => user.id
     end
 
     if user.role? :admin

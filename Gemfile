@@ -16,6 +16,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'cancan'
 
+gem 'formtastic'
 gem 'compass'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'haml'
