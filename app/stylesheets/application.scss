@@ -111,10 +111,10 @@ h5 { font-size: $font-p1; }
       padding: 4px;
     }
     .notice {
-      color: #00a604;
+      color: $color-triad-p120;
     }
     .alert {
-      color: #0400a6;
+      color: $color-triad-m120;
     }
     @include round-corners(8px);
   }
@@ -179,6 +179,7 @@ h5 { font-size: $font-p1; }
           list-style: none;
         } 
         fieldset {
+          display: inline-block;
           li { 
             white-space: nowrap; 
             float:right;
@@ -202,7 +203,9 @@ h5 { font-size: $font-p1; }
             }
             button {font-size: $font-m1;}
           }
-          display: inline-block;
+          li > a {
+            font-size: $font-m2;
+          }
         }
         fieldset:last-of-type {
           border: 0;
@@ -365,7 +368,7 @@ form {
       li:first-of-type {padding-top: 0;}
     }
   }
-  fieldset:last-of-type, .fieldset:last-of-type {
+  fieldset:last-of-type {
     padding-bottom: 0;
   }
   #error_explanation { 

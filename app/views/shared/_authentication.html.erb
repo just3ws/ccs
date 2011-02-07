@@ -11,7 +11,7 @@
     <%= form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f| %>
       <h5>speaker login</h5>
       <p>Login to manage your sessions.</p>
-      <fieldset>
+      <fieldset >
         <ol>
           <li>
           <%= f.label :email, "email" %>
@@ -24,15 +24,18 @@
           </li>
         </ol>
       </fieldset>
-      <fieldset>
+      <fieldset class="buttons">
         <ol>
           <li>
           <button type="submit">login</button>
           </li>
+          <%- if controller_name != 'passwords' %>
+            <li><%= link_to "Forgot your password?", new_password_path('user') %></li>
+          <% end -%>
         </ol>
       </fieldset>
     <% end %>
-<!--
+    <!--
     <%= form_for(User.new(:email => @email), :as => 'user', :url => registration_path('user')) do |f| %>
       <h5>Register</h5>
       <p>Register to get access to features as they become available and information available only to registered users.</p>
@@ -62,6 +65,6 @@
         </ol>
       </fieldset>
     <% end %>
--->
+    -->
   <% end %>
 </div>
