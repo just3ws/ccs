@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
                                         :secret_access_key => ENV['S3_SECRET'] || S3Settings.settings[:secret_access_key]},
                     :path           => "/:style/:filename"
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
@@ -30,5 +30,9 @@ class User < ActiveRecord::Base
 
   def role?(base_role)
     ROLES.index(base_role.to_s) <= ROLES.index(role)
+  end
+
+  def full_name
+    [last_name, first_name].compact.join(', ')
   end
 end

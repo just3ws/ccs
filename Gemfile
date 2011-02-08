@@ -3,6 +3,10 @@ source 'http://rubygems.org'
 gem 'rails'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'heroku'
+
+gem 'resque'
+gem 'SystemTimer'
 
 group :production do
   gem 'pg'
@@ -12,6 +16,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'cancan'
 
+gem 'formtastic'
 gem 'compass'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'haml'

@@ -4,7 +4,6 @@ class SubmissionsController < ApplicationController
   # GET /submissions
   # GET /submissions.xml
   def index
-    @submissions = Submission.visible
   end
 
   # GET /submissions/1

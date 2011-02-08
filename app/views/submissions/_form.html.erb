@@ -1,11 +1,15 @@
 <%= form_for @submission, :html => {:multipart => true} do |f| %>
     <% if @submission.errors.any? %>
+      <%
+        errors = @submission.errors
+        errors.merge!(@submission.user.errors) unless @submission.user.blank?
+      %>
         <div id="error_explanation">
-          <h4><%= pluralize(@submission.errors.merge(@submission.user.errors).count, "error") %> prohibited this
+          <h4><%= pluralize(errors.count, "error") %> prohibited this
             submission from being saved:</h4>
 
           <ul>
-            <% @submission.errors.merge(@submission.user.errors).full_messages.each do |msg| %>
+            <% errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
             <% end %>
           </ul>
@@ -39,23 +43,23 @@
                 </li>
 
                 <li>
-                  <%= uf.label :first_name, :class => "required" %>
+                  <%= uf.label :first_name, :class => "" %>
                   <%= uf.text_field :first_name, :placeholder => "first name" %>
                 </li>
 
                 <li>
-                  <%= uf.label :last_name, :class => "required" %>
+                  <%= uf.label :last_name, :class => "" %>
                   <%= uf.text_field :last_name, :placeholder => "last name" %>
                 </li>
 
                 <li>
-                  <%= uf.label :home_page, :class => "required" %>
+                  <%= uf.label :home_page, :class => "" %>
                   <%= uf.url_field :home_page, :placeholder => "http://your.homepage.com" %>
                   <div class="hint">this can be your blog, twitter, linkedin or personal homepage</div>
                 </li>
 
                 <li>
-                  <%= uf.label :biography, :class => "required" %>
+                  <%= uf.label :biography, :class => "" %>
                   <%= uf.text_area :biography, :placeholder => "some biographical information" %>
                   <div class="hint">your life story in 1K characters or less</div>
                 </li>
