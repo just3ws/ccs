@@ -14,7 +14,6 @@ $font-p4:   45.6976px;
 $font-p5:   59.40688px;
 
 
-
 $color-primary:         #800000; // base
 $color-triad-m120:      #000080;
 $color-triad-p120:      #008000;
@@ -74,6 +73,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
+  font-weight: bold;
   text-transform: uppercase;
   color: $color-value-030 !important;
 }
@@ -84,19 +84,71 @@ h3 { font-size: $font-p3; }
 h4 { font-size: $font-p2; }
 h5 { font-size: $font-p1; }
 
+hr {
+  border: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+}
 
 #container {
   display: block;
   #header {
-    width: 100%;
-    text-align: center;
+    display: inline-block;
+    margin-bottom: 8px;
+    vertical-align: bottom;
+    .logo {
+      display: inline-block;
+      a { 
+        text-decoration: none;
+        color: white !important;
+        font-family: 'Syncopate', arial, serif;
+        font-size: $font-p5;
+        text-shadow: 0 0 12px $color-font-light-shadow;
+      }
+    }
     .blurb {
       display: inline-block;
       color: $color-font-light;
       font-family: 'Syncopate', arial, serif;
-      text-shadow: 0 0 8px $color-font-light-shadow;
+      text-shadow: 0 0 12px $color-font-light-shadow;
     }
-    padding-bottom: 12px;
+    .nav {
+      background-color: $color-content-background;
+      display: block;
+      float: left;
+      clear: left;
+      margin-right: 16px;
+      margin-left: 0;
+      @include round-corner-bottom-left(8px);
+      @include round-corner-bottom-right(8px);
+      padding: 2px 8px 8px 8px;
+      ul {
+        float: middle;
+        list-style: none;
+        li {
+          padding-top: 2px;
+          padding-bottom: 2px;
+          a {
+            &:before {
+              content: '@'; 
+              color: $color-primary; 
+              font-weight: bold;
+            }
+            font-size: $font-m1;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: lowercase;
+          }
+          a:hover { 
+            text-shadow: 0 0 4px $color-value-040;
+          }
+        }
+        li:first-of-type {padding-top: 0;}
+        li:last-of-type {padding-bottom: 0;}
+      } 
+    }
   }
   #messages {
     background-color: $color-content-background;
@@ -225,20 +277,6 @@ h5 { font-size: $font-p1; }
   }
 }
 
-.header-ribbon {
-  padding-bottom: 0;
-  color: white;
-  .logo {
-    a { 
-      text-decoration: none;
-      color: white !important;
-      font-family: 'Syncopate', arial, serif;
-      font-size: $font-p5;
-      text-shadow: 0 0 12px $color-font-light-shadow;
-    }
-  }
-  text-align: center;
-}
 
 .show {
   ol, ul { list-style: none; }

@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Chicago Code Camp 2011</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-  <link href="/stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css"/>
-</head>
-<body>
-<div class="header-ribbon"><span class="logo"><%= link_to "chicago code camp", root_url %></span></div>
-<div id="container">
-  <div id="header">
-    <div class="blurb">Saturday, May 14th, 2011 - Grayslake, IL</div>
-    <!--
-    placeholder for nav bar
-    <div class="nav">
-      <ul>
-        <a href="#">submissions</a>
-      </ul>
+  <head>
+    <title>Chicago Code Camp 2011</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <link href="/stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="header-ribbon">
     </div>
-    -->
-  </div>
-  <% unless notice.blank? and alert.blank? %>
-      <div id="messages">
-        <% unless notice.blank? %>
-            <p class="notice"><%= notice %></p>
-        <% end %>
-        <% unless alert.blank? %>
-            <p class="alert"><%= alert %></p>
-        <% end %>
+    <div id="container">
+      <div id="header">
+        <div class="nav">
+          <ul>
+            <li><%= link_to "home", root_url %></li>
+            <li><a href="#">submissions</a></li>
+            <li><a href="#">location</a></li>
+            <li><a href="#">about</a></li>
+          </ul>
+        </div>
+        <div class="logo"><%= link_to "chicago code camp", root_url %></div>
+        <hr>
+        <div class="blurb">Saturday, May 14th, 2011 - Grayslake, IL</div>
       </div>
-  <% end %>
-  <div id="content">
-    <%= yield %>
-  </div>
-  <div id="sidebar">
-    <%= render :partial => "shared/preregistrations" %>
-    <%= render :partial => "shared/location" %>
-    <%= render :partial => "shared/authentication" %>
-    <%= render :partial => "shared/github" %>
-  </div>
-</div>
-<%= render :partial => "shared/getsatisfaction" %>
-<%= render :partial => "shared/google_font_loader" %>
-<%= render :partial => "shared/google_analytics" %>
-</body>
+      <% unless notice.blank? and alert.blank? %>
+        <div id="messages">
+          <% unless notice.blank? %>
+            <p class="notice"><%= notice %></p>
+          <% end %>
+          <% unless alert.blank? %>
+            <p class="alert"><%= alert %></p>
+          <% end %>
+        </div>
+      <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="sidebar">
+        <%= render :partial => "shared/preregistrations" %>
+        <%= render :partial => "shared/location" %>
+        <%= render :partial => "shared/authentication" %>
+        <%= render :partial => "shared/github" %>
+      </div>
+    </div>
+    <%= render :partial => "shared/getsatisfaction" %>
+    <%= render :partial => "shared/google_font_loader" %>
+    <%= render :partial => "shared/google_analytics" %>
+  </body>
 </html>
