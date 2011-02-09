@@ -1,1 +1,22 @@
-rvm use ruby-1.9.2 @ccc3 --create
+#!/usr/bin/env bash
+
+# Yoinked from .... 
+# https://github.com/wayneeseguin/rvm-site/blob/master/.rvmrc 
+
+environment_id="ruby-1.9.2-p136@ccs"
+
+if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
+  && -s "${rvm_path:-$HOME/.rvm}/environments/$environment_id" ]] ; then
+  \. "${rvm_path:-$HOME/.rvm}/environments/$environment_id"
+else
+  # If the environment file has not yet been created, use the RVM CLI to select.
+  rvm --create use "$environment_id"
+fi
+
+if ! command -v bundle ; then
+  printf "The rubygem 'bundler' is not installed, installing it now.\n"
+  gem install bundler
+fi
+
+printf "Bundling your gems this may take a few minutes on a fresh clone.\n"
+bundle | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
