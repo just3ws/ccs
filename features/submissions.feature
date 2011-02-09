@@ -17,12 +17,13 @@ Feature: Speaker submissions
     Then I should see "Thank you for submitting your proposal. If this is your first submission you should receive a confirmation email." within the message box
     And I should see "my title"
     And I should see "the abstract description"
-    And I should see "mdh@just3ws.com"
-    And I should see "hall"
-    And I should see "michael"
-    And I should see "http://just3ws.com"
-    And I should see "some guy, doing stuff"
-    And I should see "logged in as mdh@just3ws.com" within the authentication box
+    #And I should see "mdh@just3ws.com"
+    #And I should see "hall"
+    #And I should see "michael"
+    #And I should see "http://just3ws.com"
+    #And I should see "some guy, doing stuff"
+    And I should see "logged in as..." within the authentication box
+    And I should see "mdh@just3ws.com" within the authentication box
 
 #Scenario: I want to see my talks
 #Given the following user:
@@ -51,5 +52,5 @@ Feature: Speaker submissions
       | id       | value           |
       | email    | mdh@just3ws.com |
       | password | secret          |
-    Then I should see "logged in as mdh@just3ws.com" within the authentication box 
-  
+    Then I should see "logged in as..." within the authentication box
+    And I should see "mdh@just3ws.com" within the authentication box
