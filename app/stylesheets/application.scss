@@ -115,6 +115,7 @@ hr {
       text-shadow: 0 0 12px $color-font-light-shadow;
     }
     .nav {
+      min-height: 64px;
       background-color: $color-content-background;
       display: block;
       float: left;
@@ -123,19 +124,21 @@ hr {
       margin-left: 0;
       @include round-corner-bottom-left(8px);
       @include round-corner-bottom-right(8px);
-      padding: 2px 8px 8px 8px;
+      padding: 2px 24px 8px 8px;
       ul {
         float: middle;
         list-style: none;
         li {
           padding-top: 2px;
           padding-bottom: 2px;
+          word-wrap: break-word;
           a {
             &:before {
               content: '@'; 
               color: $color-primary; 
               font-weight: bold;
             }
+            word-wrap: break-word;
             font-size: $font-m1;
             font-weight: bold;
             text-decoration: none;

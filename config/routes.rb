@@ -5,6 +5,8 @@ Ccs::Application.routes.draw do
   resources :preregistrations, :only => :create
   resources :submissions
 
+  match '/static/:path' => 'static#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
