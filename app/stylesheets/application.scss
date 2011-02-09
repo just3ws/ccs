@@ -124,7 +124,6 @@ h5 { font-size: $font-p1; }
     width: 666px;
     float: left;
     padding: 16px;
-    @include round-corner-top-left(16px);
     @include round-corner-bottom-left(16px);
     @include round-corner-bottom-right(16px);
     h1, h2, h3, h4, h5 {
