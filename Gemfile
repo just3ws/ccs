@@ -2,11 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3-ruby'
 gem 'heroku'
+gem 'json'
 
 gem 'resque'
-gem 'SystemTimer'
 
 group :production do
   gem 'pg'
