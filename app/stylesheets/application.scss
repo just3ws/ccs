@@ -15,7 +15,7 @@ $font-p5:   59.40688px;
 
 
 
-$color-primary:         #800000; // base
+$color-primary:         #ffffff; // base
 $color-triad-m120:      #000080;
 $color-triad-p120:      #008000;
 $color-analog-m30:      #800040;
@@ -25,41 +25,43 @@ $color-split-comp-p150: #008040;
 $color-comp:            #008080;
 
 $color-value-000:       #000000;
-$color-value-010:       #1a0000;
-$color-value-020:       #330000;
-$color-value-030:       #4d0000;
-$color-value-040:       #660000;
-$color-value-050:       #800000; // base
-$color-value-060:       #990000;
-$color-value-070:       #b30000;
-$color-value-080:       #cc0000;
-$color-value-090:       #e60000;
-$color-value-100:       #ff0000;
+$color-value-010:       #0A0919;
+$color-value-020:       #151333;
+$color-value-030:       #201D4C;
+$color-value-040:       #2A2766;
+$color-value-050:       #35317F; // base
+$color-value-060:       #403A99; // #000099;
+$color-value-070:       #4A44B2;
+$color-value-080:       #554ECC;
+$color-value-090:       #6058E5;
+$color-value-100:       #6B62FF;
 
 $color-satur-000:       #808080;
-$color-satur-010:       #807373;
-$color-satur-020:       #806666;
-$color-satur-030:       #805a5a;
-$color-satur-040:       #804d4d;
-$color-satur-050:       #804040;
-$color-satur-060:       #803333;
-$color-satur-070:       #802626;
-$color-satur-080:       #801a1a;
-$color-satur-090:       #800d0d;
-$color-satur-100:       #800000; // base
+$color-satur-010:       #737380;
+$color-satur-020:       #666680;
+$color-satur-030:       #5a5a80;
+$color-satur-040:       #4d4d80;
+$color-satur-050:       #404080;
+$color-satur-060:       #333380;
+$color-satur-070:       #262680;
+$color-satur-080:       #1a1a80;
+$color-satur-090:       #0d0d80;
+$color-satur-100:       #000080; // base
 
 $color-background:         $color-primary;
-$color-font-light:         white;
-$color-font-light-shadow:  white;
+$color-font-light:         rgb(62,56,150);
+$color-font-light-shadow:  #707070;
 
-$color-content-background: #f1ebe4;
+$color-content-background: #d8d8f0;
 
 $color-input-background:   white;
 $color-input-shadow:       $color-satur-000;
 
-$color-aside-background:   #a7988b;
+$color-aside-background:   rgb(125,125,150);
 $color-aside-input:        #f1ebe4;
 
+$color-button:			   $color-value-030;
+$color-button-font:		   white;
 
 
 *, body {
@@ -75,7 +77,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   text-transform: uppercase;
-  color: $color-value-030 !important;
+  color: $color-value-060;// !important;
 }
 
 h1 { font-size: $font-p5; }
@@ -132,7 +134,7 @@ h5 { font-size: $font-p1; }
     }
     p {
       padding: 8px;
-      color: $color-value-030;
+      color: $color-value-060;
       margin: 0 auto;
       width: 90%;
     }
@@ -152,12 +154,16 @@ h5 { font-size: $font-p1; }
       margin-top: 1px; 
       background-color: $color-aside-background;
       padding: 8px;
+      h1, h2, h3, h4, h5, p, label {
+        color: $color-value-040;
+      }
       h1, h2, h3, h4, h5 {
         padding-bottom: 6px;
+		//color: $color-value-040;
       }
       p {
         font-size: $font-m1;
-        color: $color-value-030;
+        //color: $color-value-040;
       }
       .map {
         margin: 0 auto;
@@ -186,7 +192,7 @@ h5 { font-size: $font-p1; }
             clear: right;
             input { 
               width: 180px; 
-              border: solid 2px $color-value-030; 
+              border: solid 2px $color-value-060; 
               outline: none; 
               padding: 4px;
               font-size: $font-m1;
@@ -251,7 +257,7 @@ h5 { font-size: $font-p1; }
     span { 
       font-weight: normal; 
       font-size: $font-p1;
-      color: $color-value-030;
+      color: $color-value-060;
     }
   }
   .session-speaker {
@@ -269,7 +275,7 @@ h5 { font-size: $font-p1; }
     width: 100px;
     text-transform: lowercase;
     text-align: right;
-    color: $color-value-030;
+    color: $color-value-060;
   }
   li > div {
     display: inline-block;
@@ -319,13 +325,13 @@ form {
           vertical-align: top;
           text-align: right;
           text-transform: lowercase;
-          color: $color-value-030;
+          color: $color-value-060;
         }
         input, textarea {
           font-size: $font-p1;
           padding: 8px;
           margin: 0;
-          border: solid 2px $color-value-030;
+          border: solid 2px $color-value-060;
           @include round-corners-bottom(4px);
           @include round-corner-top-right(4px);
           outline: none;
@@ -352,8 +358,8 @@ form {
           @include round-corners(8px);
           border: 0;
           padding: 8px;
-          background-color: $color-primary;
-          color: white;
+          background-color: $color-button;
+          color: $color-button-font;
         }
         button:hover {
           cursor: pointer;
@@ -370,7 +376,7 @@ form {
         }
         label.required:before {
           content: '*'; 
-          color: $color-primary; 
+          color: $color-value-090; 
           font-weight: bold;
         }
       }
@@ -422,9 +428,9 @@ table {
   th, td { font-size: $font-m1; }
   text-align: left;
   border-collapse: collapse;
-  border: solid 1px $color-value-030;
+  border: solid 1px $color-value-060;
   @include round-corners(8px);
-  td { border-bottom: solid 1px $color-value-030; padding: 8px; }
+  td { border-bottom: solid 1px $color-value-060; padding: 8px; }
   tr > th { 
     background-color: $color-primary; 
     color: white;
@@ -440,7 +446,7 @@ table {
   }
   tr:nth-child(even) { 
     a {
-      color: $color-value-030; 
+      color: $color-value-060; 
     } 
   }
   tr:nth-child(odd) { 

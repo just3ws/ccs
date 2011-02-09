@@ -15,5 +15,5 @@ jQuery(document).ready(function() {
         }
     });
 
-    $('.hint').hide().css('color', '#4d0200');
+    $('.hint').hide().css('color', '#00024d');
 });
