@@ -1,6 +1,8 @@
 @import "html5-reset";
 @import "helpers";
 
+@import "colors";
+
 $font-m5:   5.24288px;
 $font-m4:   6.5536px;
 $font-m3:   8.192px;
@@ -12,56 +14,6 @@ $font-p2:   27.04px;
 $font-p3:   35.152px;
 $font-p4:   45.6976px;
 $font-p5:   59.40688px;
-
-
-$color-primary:         #ffffff; // base
-$color-triad-m120:      #000080;
-$color-triad-p120:      #008000;
-$color-analog-m30:      #800040;
-$color-analog-p30:      #804000;
-$color-split-comp-m150: #004080;
-$color-split-comp-p150: #008040;
-$color-comp:            #008080;
-
-$color-value-000:       #000000;
-$color-value-010:       #0A0919;
-$color-value-020:       #151333;
-$color-value-030:       #201D4C;
-$color-value-040:       #2A2766;
-$color-value-050:       #35317F; // base
-$color-value-060:       #403A99; // #000099;
-$color-value-070:       #4A44B2;
-$color-value-080:       #554ECC;
-$color-value-090:       #6058E5;
-$color-value-100:       #6B62FF;
-
-$color-satur-000:       #808080;
-$color-satur-010:       #737380;
-$color-satur-020:       #666680;
-$color-satur-030:       #5a5a80;
-$color-satur-040:       #4d4d80;
-$color-satur-050:       #404080;
-$color-satur-060:       #333380;
-$color-satur-070:       #262680;
-$color-satur-080:       #1a1a80;
-$color-satur-090:       #0d0d80;
-$color-satur-100:       #000080; // base
-
-$color-background:         $color-primary;
-$color-font-light:         rgb(62,56,150);
-$color-font-light-shadow:  #707070;
-
-$color-content-background: #d8d8f0;
-
-$color-input-background:   white;
-$color-input-shadow:       $color-satur-000;
-
-$color-aside-background:   rgb(125,125,150);
-$color-aside-input:        #f1ebe4;
-
-$color-button:			   $color-value-030;
-$color-button-font:		   white;
-
 
 *, body {
   font-family: 'Ubuntu', arial, serif;
