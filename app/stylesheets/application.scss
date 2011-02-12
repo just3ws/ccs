@@ -42,7 +42,10 @@ hr {
     margin-bottom: 8px;
     vertical-align: bottom;
     .header-container {
-      text-align: center;
+      margin-left: 112px;
+      .logo {
+        a { text-decoration: none; color: white !important; font-family: 'Syncopate', arial, serif; font-size: 59.407px; text-shadow: 0 0 12px white; }
+      }
       .blurb {
         color: $color-font-light;
         font-family: $font-family-special;
