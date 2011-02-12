@@ -466,7 +466,7 @@ table {
   @include round-corners(8px);
   td { border-bottom: solid 1px $color-value-060; padding: 8px; }
   tr > th { 
-    background-color: $color-primary; 
+    background-color: $color-value-030; 
     color: white;
     padding: 8px; 
     th {
@@ -505,8 +505,8 @@ button, input[type=button] {
   @include round-corners(8px);
   border: 0;
   padding: 6px;
-  background-color: $color-primary;
-  color: white;
+  background-color: $color-button;
+  color: $color-button-font;
 }
 button:hover {
   cursor: pointer;

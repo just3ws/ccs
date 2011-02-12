@@ -2,7 +2,7 @@ Ccs::Application.routes.draw do
   devise_for :users
 
   resources :users
-  resources :preregistrations, :only => :create
+  resources :preregistrations, :only => [:create, :index]
   resources :submissions
 
   match '/static/:path' => 'static#show'

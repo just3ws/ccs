@@ -1,0 +1,22 @@
+<h4>Emails registered for updates</h4>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Status</th>
+    <th>Registered on</th>
+
+  </tr>
+
+  <% @preregistrations.each do |reg| %>
+      <tr>
+        <td><%= reg.email %></td>
+        <td><%= reg.status %></td>
+        <td><%= reg.created_at %></td>
+      </tr>
+  <% end %>
+</table>
+<br>
+Export to 
+<%= link_to('XML', preregistrations_path(@resource, :format => :xml))%>,
+<%= link_to('CSV', preregistrations_path(@resource, :format => :csv))%>
