@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   validates :first_name, :length => {:within => 0..255}, :allow_blank => true
   validates :last_name, :length => {:within => 0..255}, :allow_blank => true
   validates :home_page, :length => {:within => 0..512}, :allow_blank => true
-  validates :biography, :allow_blank => true
   validates :twitter, :length => {:within => 0..32}, :allow_blank => true
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
 
