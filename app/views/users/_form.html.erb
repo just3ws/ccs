@@ -46,6 +46,12 @@
     </li>
 
     <li>
+    <%= f.label :speakerrate, :class => "" %>
+    <%= f.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name" %>
+    <div class="hint">your speakerrate url if you'd like us to provide a link to encourage attendees to provide feedback</div>
+    </li>
+
+    <li>
     <%= f.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
     <%= f.file_field :avatar %>
     <div class="hint">feel free to upload your profile picture along with your proposal but it's

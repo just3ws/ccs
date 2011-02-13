@@ -5,25 +5,31 @@
     <h3><%= "#{@user.last_name || "_"*8}, #{@user.first_name || "_"*8}" %></h3>
     <ul>
       <li>
-        <span>Email</span>
+      <span>Email</span>
 
-        <div><%= mail_to @user.email %></div>
+      <div><%= mail_to @user.email %></div>
       </li>
       <li>
-        <span>Home page</span>
+      <span>Home page</span>
 
-        <div><%= @user.home_page || "_"*8 %></div>
+      <div><%= @user.home_page || "_"*8 %></div>
       </li>
       <li>
-        <span>Biography</span>
+      <span>Biography</span>
 
-        <div><%= @user.biography || "_"*8 %></div>
+      <div><%= @user.biography || "_"*8 %></div>
       </li>
+      <% if @user.speakerrate.present? %>
+        <li>
+        <span>SpeakerRate</span>
+        <div><a href="<%= @user.speakerrate %>"><%= @user.speakerrate %></a></div>
+        </li>
+      <% end %>
     </ul>
   </div>
   <div class="actions">
     <% if can? :update, @user %>
-        <%= link_to "Edit", edit_user_path(@user) %>
+      <%= link_to "Edit", edit_user_path(@user) %>
     <% end %>
   </div>
 </div>

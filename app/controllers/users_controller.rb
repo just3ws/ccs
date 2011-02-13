@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(@user, :notice => 'user was successfully updated.') }
