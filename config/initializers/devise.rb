@@ -51,7 +51,7 @@ Devise.setup do |config|
   # ==> Configuration for :invitable
   # Time interval where the invitation token is valid (default: 0).
   # If invite_for is 0 or nil, the invitation will never expire.
-  # config.invite_for = 2.weeks
+  config.invite_for = nil 
   
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
@@ -60,7 +60,7 @@ Devise.setup do |config|
   # You can use this to let your user access some features of your application 
   # without confirming the account, but blocking it after a certain period 
   # (ie 2 days). 
-  config.confirm_within           = 5.days
+  config.confirm_within           = 8.days
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
