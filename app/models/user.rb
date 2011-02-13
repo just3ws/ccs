@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates :last_name, :length => {:within => 0..255}, :allow_blank => true
   validates :home_page, :length => {:within => 0..512}, :allow_blank => true
   validates :biography, :length => {:within => 0..1024}, :allow_blank => true
+  validates :twitter, :length => {:within => 0..32}, :allow_blank => true
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
 
   has_attached_file :avatar,
@@ -22,7 +23,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :home_page, :biography, :role, :speakerrate
+                  :first_name, :last_name, :home_page, :biography, :role, 
+                  :speakerrate, :twitter
 
   ROLES = %w[guest attendee speaker admin]
 

@@ -19,9 +19,17 @@
 
       <div><%= @user.biography || "_"*8 %></div>
       </li>
+
+      <% if @user.twitter.present? %>
+        <li>
+        <span>twitter</span>
+        <div><a href="http://twitter.com/<%= @user.twitter %>">http://twitter.com/<%= @user.twitter %></a></div>
+        </li>
+      <% end %>
+
       <% if @user.speakerrate.present? %>
         <li>
-        <span>SpeakerRate</span>
+        <span>speakerrate</span>
         <div><a href="<%= @user.speakerrate %>"><%= @user.speakerrate %></a></div>
         </li>
       <% end %>

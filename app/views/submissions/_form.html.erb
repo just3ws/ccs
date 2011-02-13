@@ -65,6 +65,12 @@
                 </li>
 
                 <li>
+                  <%= uf.label :twitter, :class => "" %>
+                  <%= uf.text_field :twitter, :placeholder => "yourtwittername" %>
+                  <div class="hint">your twitter name if you'd like us to provide a link your twitter account</div>
+                </li>
+
+                <li>
                   <%= uf.label :speakerrate, :class => "" %>
                   <%= uf.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name" %>
                   <div class="hint">your speakerrate url if you'd like us to provide a link to encourage attendees to provide feedback</div>

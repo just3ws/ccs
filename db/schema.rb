@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110213141655) do
+ActiveRecord::Schema.define(:version => 20110213151128) do
 
   create_table "preregistrations", :force => true do |t|
     t.string   "email"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20110213141655) do
     t.string   "invitation_token",     :limit => 20
     t.datetime "invitation_sent_at"
     t.string   "speakerrate",          :limit => 2048
+    t.string   "twitter",              :limit => 32
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
