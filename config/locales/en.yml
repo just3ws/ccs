@@ -4,6 +4,9 @@
 en:
   devise:
     mailer:
+      invitation_instructions:
+        subject: "Chicago Code Camp wants a chance to host you again in 2011!"
+        user_subject: "Chicago Code Camp wants a chance to host you again in 2011!"
       confirmation_instructions:
         user_subject: "Please confirm your account for Chicago Code Camp 2011!"
     invitations:
@@ -11,8 +14,5 @@ en:
       send_instructions: 'An invitation email has been sent to %{email}.'
       invitation_token_invalid: 'The invitation token provided is not valid!'
       updated: 'Your password was set successfully. You are now signed in.'
-    invitation_instructions:
-      subject: "Chicago Code Camp wants a chance to host you again in 2011!"
-      user_subject: "Chicago Code Camp wants a chance to host you again in 2011!"
 
 
