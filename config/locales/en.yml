@@ -13,5 +13,6 @@ en:
       updated: 'Your password was set successfully. You are now signed in.'
     invitation_instructions:
       subject: "Chicago Code Camp wants a chance to host you again in 2011!"
+      user_subject: "Chicago Code Camp wants a chance to host you again in 2011!"
 
 
