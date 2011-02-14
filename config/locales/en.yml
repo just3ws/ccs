@@ -4,6 +4,9 @@
 en:
   devise:
     mailer:
+      invitation:
+        subject: "Chicago Code Camp wants a chance to host you again in 2011!"
+        user_subject: "Chicago Code Camp wants a chance to host you again in 2011!"
       invitation_instructions:
         subject: "Chicago Code Camp wants a chance to host you again in 2011!"
         user_subject: "Chicago Code Camp wants a chance to host you again in 2011!"
