@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110213151128) do
+ActiveRecord::Schema.define(:version => 20110213163439) do
+
+  create_table "imports", :force => true do |t|
+    t.string   "datatype"
+    t.integer  "processed"
+    t.string   "csv_file_name"
+    t.string   "csv_content_type"
+    t.integer  "csv_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "preregistrations", :force => true do |t|
     t.string   "email"

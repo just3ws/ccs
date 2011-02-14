@@ -1,6 +1,9 @@
 Ccs::Application.routes.draw do
+
   devise_for :users
 
+  resources :imports
+  match '/import/proc/:id' => 'imports#proc_csv', :as => :import_proc
   resources :users
   resources :preregistrations, :only => [:create, :index]
   resources :submissions
@@ -54,11 +57,11 @@ Ccs::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
+  # You can have the root of your site routed with 'root'
   # just remember to delete public/index.html.
-  root :to => "submissions#new"
+  root :to => 'submissions#new'
 
-  # See how all your routes lay out with "rake routes"
+  # See how all your routes lay out with 'rake routes'
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
