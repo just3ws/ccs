@@ -48,10 +48,17 @@ class ImportsController < ApplicationController
 
   def parse_csv_file(path_to_csv)
     require 'csv'
+    require 'aws/s3'
 
     lines = []
 
-    CSV.foreach(path_to_csv) do |row|
+    p @import
+
+    csv = AWS::S3::S3Object.value("original/#{@import.csv_file_name}", "chicagocodecamp")
+
+    p csv
+
+    CSV.parse(csv) do |row|
       lines << row
     end
     lines
