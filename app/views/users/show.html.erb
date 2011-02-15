@@ -2,34 +2,39 @@
   <h4>User Profile</h4>
 
   <div>
-    <h3><%= "#{@user.last_name || "_"*8}, #{@user.first_name || "_"*8}" %></h3>
+    <h3><%= @user.full_name.strip.present? ? @user.full_name.strip : @user.email %></h3>
     <ul>
-      <li>
-      <span>Email</span>
-
-      <div><%= mail_to @user.email %></div>
-      </li>
-      <li>
-      <span>Home page</span>
-
-      <div><%= @user.home_page || "_"*8 %></div>
-      </li>
-      <li>
-      <span>Biography</span>
-
-      <div><%= @user.biography || "_"*8 %></div>
-      </li>
-
-      <% if @user.twitter.present? %>
+      <% unless @user.full_name.strip.blank? %>
         <li>
-        <span>twitter</span>
+        <span>email:</span>
+        <div><%= mail_to @user.email %></div>
+        </li>
+      <% end %>
+
+      <% if @user.home_page.strip.present? %>
+        <li>
+        <span>home page:</span>
+        <div><%= @user.home_page %></div>
+        </li>
+      <% end %>
+
+      <% if @user.biography.strip.present? %>
+        <li>
+        <span>biography:</span>
+        <div class="long-text"><%= @user.biography %></div>
+        </li>
+      <% end %>
+
+      <% if @user.twitter.strip.present? %>
+        <li>
+        <span>twitter:</span>
         <div><a href="http://twitter.com/<%= @user.twitter %>">http://twitter.com/<%= @user.twitter %></a></div>
         </li>
       <% end %>
 
-      <% if @user.speakerrate.present? %>
+      <% if @user.speakerrate.strip.present? %>
         <li>
-        <span>speakerrate</span>
+        <span>speakerrate:</span>
         <div><a href="<%= @user.speakerrate %>"><%= @user.speakerrate %></a></div>
         </li>
       <% end %>
