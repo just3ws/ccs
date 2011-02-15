@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215145555) do
+ActiveRecord::Schema.define(:version => 20110215153623) do
 
   create_table "imports", :force => true do |t|
     t.string   "datatype"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20110215145555) do
     t.integer  "user_id"
     t.datetime "deleted_at"
     t.integer  "level"
+    t.string   "keywords"
   end
 
   create_table "users", :force => true do |t|

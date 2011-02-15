@@ -35,6 +35,12 @@
           <%= f.select :level, [["introductory", 1],["intermediate", 2], ["advanced",3]], :prompt => "select the level your session is targeted to" %>
           <div class="hint">select the level your session is targeted to</div>
         </li>
+
+        <li>
+          <%= f.label :keywords %>
+          <%= f.text_field :keywords, :placeholder => "relevant, words, for, your, session" %>
+          <div class="hint">comma-separated list of keywords to help describe your session</div>
+        </li>
       </ul>
     </fieldset>
     <% unless user_signed_in? %>

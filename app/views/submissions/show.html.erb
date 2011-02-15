@@ -3,10 +3,14 @@
     <h3><span>Session Proposal:</span> "<%= @submission.title %>"</h3>
     <ul>
       <li>
-      <span>Description</span>
+      <span>description</span>
       <div><%= @submission.abstract %></div>
       </li>
-      <li><span>level:</span> <%= %w(introductory intermediate advanced)[@submission.level-1] %></li>
+      <li><span>level</span> <%= %w(introductory intermediate advanced)[@submission.level-1] %></li>
+      <li>
+      <span>keywords</span>
+      <div><%= @submission.keywords %></div>
+      </li>
     </ul>
   </div>
   <div class="session-speaker">
