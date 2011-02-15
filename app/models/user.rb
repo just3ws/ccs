@@ -36,6 +36,9 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    [last_name, first_name].compact.join(', ')
+    names = []
+    names << last_name unless last_name.blank?
+    names << first_name unless first_name.blank?
+    names.compact.join(', ')
   end
 end
