@@ -7,4 +7,5 @@ class Submission < ActiveRecord::Base
   validates :user, :presence => true
   validates :title, :presence => true, :length => {:within => 0..64}
   validates :abstract, :presence => true, :length => {:within => 0..1024}
+  validates_inclusion_of :level, :in => 0..3 
 end

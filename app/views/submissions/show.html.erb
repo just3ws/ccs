@@ -4,9 +4,9 @@
     <ul>
       <li>
       <span>Description</span>
-
       <div><%= @submission.abstract %></div>
       </li>
+      <li><span>level:</span> <%= %w(introductory intermediate advanced)[@submission.level-1] %></li>
     </ul>
   </div>
   <div class="session-speaker">

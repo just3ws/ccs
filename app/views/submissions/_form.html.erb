@@ -29,6 +29,12 @@
           <%= f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
           <div class="hint">describe your proposal in 1k characters or less</div>
         </li>
+
+        <li>
+          <%= f.label :level, :class => "required" %>
+          <%= f.select :level, [["introductory", 1],["intermediate", 2], ["advanced",3]], :prompt => "select the level your session is targeted to" %>
+          <div class="hint">select the level your session is targeted to</div>
+        </li>
       </ul>
     </fieldset>
     <% unless user_signed_in? %>
