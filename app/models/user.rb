@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
 
   has_attached_file :avatar,
-                    :bucket         => 'chicagocodecamp',
+                    :bucket         => S3Settings.bucket, 
                     :storage        => :s3,
                     :s3_credentials => {:access_key_id     => ENV['S3_KEY'] || S3Settings.settings[:access_key_id],
                                         :secret_access_key => ENV['S3_SECRET'] || S3Settings.settings[:secret_access_key]},
