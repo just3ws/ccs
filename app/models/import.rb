@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: imports
+#
+#  id               :integer         not null, primary key
+#  datatype         :string(255)
+#  processed        :integer
+#  csv_file_name    :string(255)
+#  csv_content_type :string(255)
+#  csv_file_size    :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Import < ActiveRecord::Base
   has_attached_file :csv,
                     :bucket => S3Settings.bucket,
@@ -18,3 +32,4 @@ class Import < ActiveRecord::Base
                                                       'text/anytext',
                                                       'text/plain']
 end
+

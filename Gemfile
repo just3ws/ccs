@@ -7,7 +7,7 @@ gem 'heroku'
 gem 'json'
 
 gem 'resque'
-gem 'sitemap_generator', :git => "git://github.com/just3ws/sitemap_generator.git", :branch => "heroku"
+gem 'sitemap_generator', :git => 'git://github.com/just3ws/sitemap_generator.git', :branch => 'heroku'
 
 group :production do
   gem 'pg'
@@ -41,6 +41,7 @@ group :development, :test do
   gem 'autotest-growl'
   gem 'autotest-fsevent'
   gem 'rails_best_practices'
+  gem 'annotate'
 end
 
 group :development do
