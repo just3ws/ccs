@@ -12,7 +12,6 @@ SitemapGenerator::Sitemap.s3_access_key_id = S3Settings.access_key_id
 SitemapGenerator::Sitemap.s3_secret_access_key = S3Settings.secret_access_key
 SitemapGenerator::Sitemap.s3_bucket_name = "chicagocodecamp"
 
-
 SitemapGenerator::Sitemap.add_links do |sitemap|
   # Put links creation logic here.
   #
@@ -24,12 +23,12 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   #
   # Defaults: :priority => 0.5, :changefreq => 'weekly',
   #           :lastmod => Time.now, :host => default_host
-  # 
-  # 
+  #
+  #
   # Examples:
-  # 
+  #
   # Add '/articles'
-  #   
+  #
   #   sitemap.add articles_path, :priority => 0.7, :changefreq => 'daily'
   #
   # Add individual articles:
