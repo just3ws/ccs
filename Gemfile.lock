@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/just3ws/sitemap_generator.git
+  revision: cb5d8d09c65d84469f828997b2c183311c40ff98
+  branch: heroku
+  specs:
+    sitemap_generator (1.3.8)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -94,7 +101,7 @@ GEM
     gherkin (2.3.3)
       json (~> 1.4.6)
     haml (3.0.25)
-    heroku (1.17.11)
+    heroku (1.17.14)
       json (~> 1.4.6)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
@@ -233,6 +240,7 @@ DEPENDENCIES
   resque
   rspec
   rspec-rails
+  sitemap_generator!
   sqlite3-ruby
   thin
   wirble

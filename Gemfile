@@ -7,6 +7,7 @@ gem 'heroku'
 gem 'json'
 
 gem 'resque'
+gem 'sitemap_generator', :git => "git://github.com/just3ws/sitemap_generator.git", :branch => "heroku"
 
 group :production do
   gem 'pg'
