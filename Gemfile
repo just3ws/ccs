@@ -40,6 +40,7 @@ group :development, :test do
   gem 'autotest'
   gem 'autotest-growl'
   gem 'autotest-fsevent'
+  gem 'rails_best_practices'
 end
 
 group :development do

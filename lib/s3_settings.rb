@@ -10,7 +10,7 @@ class S3Settings
       @settings
     end
 
-    def access_key_id 
+    def access_key_id
       ENV['S3_KEY'] || settings[:access_key_id]
     end
 

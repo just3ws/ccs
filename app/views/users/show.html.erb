@@ -6,36 +6,41 @@
     <ul>
       <% unless @user.full_name.strip.blank? %>
         <li>
-        <span>email:</span>
-        <div><%= mail_to @user.email %></div>
+          <span>email:</span>
+
+          <div><%= mail_to @user.email %></div>
         </li>
       <% end %>
 
       <% if @user.home_page.strip.present? %>
         <li>
-        <span>home page:</span>
-        <div><%= @user.home_page %></div>
+          <span>home page:</span>
+
+          <div><%= @user.home_page %></div>
         </li>
       <% end %>
 
       <% if @user.biography.strip.present? %>
         <li>
-        <span>biography:</span>
-        <div class="long-text"><%= @user.biography %></div>
+          <span>biography:</span>
+
+          <div class="long-text"><%= @user.biography %></div>
         </li>
       <% end %>
 
       <% if @user.twitter.strip.present? %>
         <li>
-        <span>twitter:</span>
-        <div><a href="http://twitter.com/<%= @user.twitter %>">http://twitter.com/<%= @user.twitter %></a></div>
+          <span>twitter:</span>
+
+          <div><a href="http://twitter.com/<%= @user.twitter %>">http://twitter.com/<%= @user.twitter %></a></div>
         </li>
       <% end %>
 
       <% if @user.speakerrate.strip.present? %>
         <li>
-        <span>speakerrate:</span>
-        <div><a href="<%= @user.speakerrate %>"><%= @user.speakerrate %></a></div>
+          <span>speakerrate:</span>
+
+          <div><a href="<%= @user.speakerrate %>"><%= @user.speakerrate %></a></div>
         </li>
       <% end %>
     </ul>

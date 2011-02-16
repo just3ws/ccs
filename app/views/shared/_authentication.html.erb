@@ -2,6 +2,7 @@
   <% if user_signed_in? %>
     <%= form_tag destroy_user_session_path do %>
       <h5>logged in as...</h5>
+
       <p><%= link_to current_user.email, user_path(current_user) %></p>
       <fieldset>
         <%= button "logout", destroy_user_session_path %>
@@ -10,24 +11,25 @@
   <% else %>
     <%= form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f| %>
       <h5>speaker login</h5>
+
       <p>Login to manage your sessions.</p>
-      <fieldset >
+      <fieldset>
         <ol>
           <li>
-          <%= f.label :email, "email" %>
-          <%= f.email_field :email, :placeholder => "your@email.com" %>
+            <%= f.label :email, "email" %>
+            <%= f.email_field :email, :placeholder => "your@email.com" %>
           </li>
 
           <li>
-          <%= f.label :password, "password" %>
-          <%= f.password_field :password %>
+            <%= f.label :password, "password" %>
+            <%= f.password_field :password %>
           </li>
         </ol>
       </fieldset>
       <fieldset class="buttons">
         <ol>
           <li>
-          <button type="submit">login</button>
+            <button type="submit">login</button>
           </li>
           <%- if controller_name != 'passwords' %>
             <li><%= link_to "Forgot your password?", new_password_path('user') %></li>

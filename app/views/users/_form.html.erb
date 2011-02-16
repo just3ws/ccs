@@ -1,7 +1,7 @@
 <% if model.errors.any? %>
   <%
-    errors = @errors
-    errors.merge!(model.errors) unless model.blank?
+     errors = @errors
+     errors.merge!(model.errors) unless model.blank?
   %>
   <div id="error_explanation">
     <h4><%= pluralize(errors.count, "error") %> prohibited this
@@ -18,58 +18,60 @@
   <legend>and a little bit about yourself...</legend>
   <ul>
     <li>
-    <%= f.label :email, :class => "required" %>
-    <%= f.email_field :email, :placeholder => "your@email.com" %>
-    <div class="hint">the email address we can reach you at</div>
+      <%= f.label :email, :class => "required" %>
+      <%= f.email_field :email, :placeholder => "your@email.com" %>
+      <div class="hint">the email address we can reach you at</div>
     </li>
 
     <li>
-    <%= f.label :first_name, :class => "" %>
-    <%= f.text_field :first_name, :placeholder => "first name" %>
+      <%= f.label :first_name, :class => "" %>
+      <%= f.text_field :first_name, :placeholder => "first name" %>
     </li>
 
     <li>
-    <%= f.label :last_name, :class => "" %>
-    <%= f.text_field :last_name, :placeholder => "last name" %>
+      <%= f.label :last_name, :class => "" %>
+      <%= f.text_field :last_name, :placeholder => "last name" %>
     </li>
 
     <li>
-    <%= f.label :home_page, :class => "" %>
-    <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %>
-    <div class="hint">this can be your blog, twitter, linkedin or personal homepage</div>
+      <%= f.label :home_page, :class => "" %>
+      <%= f.url_field :home_page, :placeholder => "http://your.homepage.com" %>
+      <div class="hint">this can be your blog, twitter, linkedin or personal homepage</div>
     </li>
 
     <li>
-    <%= f.label :biography, :class => "" %>
-    <%= f.text_area :biography, :placeholder => "some biographical information" %>
-    <div class="hint">your life story in 1K characters or less</div>
+      <%= f.label :biography, :class => "" %>
+      <%= f.text_area :biography, :placeholder => "some biographical information" %>
+      <div class="hint">your life story in 1K characters or less</div>
     </li>
 
     <li>
-    <%= f.label :twitter, :class => "" %>
-    <%= f.text_field :twitter, :placeholder => "yourtwittername" %>
-    <div class="hint">your twitter name if you'd like us to provide a link your twitter account</div>
+      <%= f.label :twitter, :class => "" %>
+      <%= f.text_field :twitter, :placeholder => "yourtwittername" %>
+      <div class="hint">your twitter name if you'd like us to provide a link your twitter account</div>
     </li>
 
     <li>
-    <%= f.label :speakerrate, :class => "" %>
-    <%= f.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name" %>
-    <div class="hint">your speakerrate url if you'd like us to provide a link to encourage attendees to provide feedback</div>
+      <%= f.label :speakerrate, :class => "" %>
+      <%= f.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name" %>
+      <div class="hint">your speakerrate url if you'd like us to provide a link to encourage attendees to provide
+        feedback
+      </div>
     </li>
 
     <li>
-    <%= f.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
-    <%= f.file_field :avatar %>
-    <div class="hint">feel free to upload your profile picture along with your proposal but it's
-      optional
-    </div>
+      <%= f.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
+      <%= f.file_field :avatar %>
+      <div class="hint">feel free to upload your profile picture along with your proposal but it's
+        optional
+      </div>
     </li>
   </ul>
 </fieldset>
 <fieldset>
   <ul>
     <li>
-    <button type="submit" id="user_submit" name="commit">submit</button>
+      <button type="submit" id="user_submit" name="commit">submit</button>
     </li>
   </ul>
 </fieldset>

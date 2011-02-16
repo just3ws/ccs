@@ -1,109 +1,111 @@
 <%= form_for @submission, :html => {:multipart => true} do |f| %>
-    <% if @submission.errors.any? %>
-      <%
-        errors = @submission.errors
-        errors.merge!(@submission.user.errors) unless @submission.user.blank?
-      %>
-        <div id="error_explanation">
-          <h4><%= pluralize(errors.count, "error") %> prohibited this
-            submission from being saved:</h4>
+  <% if @submission.errors.any? %>
+    <%
+       errors = @submission.errors
+       errors.merge!(@submission.user.errors) unless @submission.user.blank?
+    %>
+    <div id="error_explanation">
+      <h4><%= pluralize(errors.count, "error") %> prohibited this
+        submission from being saved:</h4>
 
-          <ul>
-            <% errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-    <fieldset>
-      <legend>tell us about your proposal...</legend>
       <ul>
-        <li>
-          <%= f.label :title, :class => "required" %>
-          <%= f.text_field :title, :placeholder => "the working title for your presentation" %>
-          <div class="hint">the working title for your presentation</div>
-        </li>
-
-        <li>
-          <%= f.label :abstract, "description", :class => "required" %>
-          <%= f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
-          <div class="hint">describe your proposal in 1k characters or less</div>
-        </li>
-
-        <li>
-          <%= f.label :level, :class => "required" %>
-          <%= f.select :level, [["introductory", 1],["intermediate", 2], ["advanced",3]], :prompt => "select the level your session is targeted to" %>
-          <div class="hint">select the level your session is targeted to</div>
-        </li>
-
-        <li>
-          <%= f.label :keywords %>
-          <%= f.text_field :keywords, :placeholder => "relevant, words, for, your, session" %>
-          <div class="hint">comma-separated list of keywords to help describe your session</div>
-        </li>
-      </ul>
-    </fieldset>
-    <% unless user_signed_in? %>
-        <%= fields_for @submission.user do |uf| %>
-            <fieldset>
-              <legend>and a little bit about yourself...</legend>
-              <ul>
-                <li>
-                  <%= uf.label :email, :class => "required" %>
-                  <%= uf.email_field :email, :placeholder => "your@email.com" %>
-                  <div class="hint">the email address we can reach you at</div>
-                </li>
-
-                <li>
-                  <%= uf.label :first_name, :class => "" %>
-                  <%= uf.text_field :first_name, :placeholder => "first name" %>
-                </li>
-
-                <li>
-                  <%= uf.label :last_name, :class => "" %>
-                  <%= uf.text_field :last_name, :placeholder => "last name" %>
-                </li>
-
-                <li>
-                  <%= uf.label :home_page, :class => "" %>
-                  <%= uf.url_field :home_page, :placeholder => "http://your.homepage.com" %>
-                  <div class="hint">this can be your blog, twitter, linkedin or personal homepage</div>
-                </li>
-
-                <li>
-                  <%= uf.label :biography, :class => "" %>
-                  <%= uf.text_area :biography, :placeholder => "some biographical information" %>
-                  <div class="hint">your life story in 1K characters or less</div>
-                </li>
-
-                <li>
-                  <%= uf.label :twitter, :class => "" %>
-                  <%= uf.text_field :twitter, :placeholder => "yourtwittername" %>
-                  <div class="hint">your twitter name if you'd like us to provide a link your twitter account</div>
-                </li>
-
-                <li>
-                  <%= uf.label :speakerrate, :class => "" %>
-                  <%= uf.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name" %>
-                  <div class="hint">your speakerrate url if you'd like us to provide a link to encourage attendees to provide feedback</div>
-                </li>
-
-                <li>
-                  <%= uf.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
-                  <%= uf.file_field :avatar %>
-                  <div class="hint">feel free to upload your profile picture along with your proposal but it's
-                    optional
-                  </div>
-                </li>
-              </ul>
-            </fieldset>
+        <% errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
         <% end %>
-    <% end %>
-    <fieldset>
-      <ul>
-        <li>
-          <button type="submit" id="submission_submit" name="commit">submit</button>
-        </li>
       </ul>
-    </fieldset>
+    </div>
+  <% end %>
+  <fieldset>
+    <legend>tell us about your proposal...</legend>
+    <ul>
+      <li>
+        <%= f.label :title, :class => "required" %>
+        <%= f.text_field :title, :placeholder => "the working title for your presentation" %>
+        <div class="hint">the working title for your presentation</div>
+      </li>
+
+      <li>
+        <%= f.label :abstract, "description", :class => "required" %>
+        <%= f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic" %>
+        <div class="hint">describe your proposal in 1k characters or less</div>
+      </li>
+
+      <li>
+        <%= f.label :level, :class => "required" %>
+        <%= f.select :level, [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to" %>
+        <div class="hint">select the level your session is targeted to</div>
+      </li>
+
+      <li>
+        <%= f.label :keywords %>
+        <%= f.text_field :keywords, :placeholder => "relevant, words, for, your, session" %>
+        <div class="hint">comma-separated list of keywords to help describe your session</div>
+      </li>
+    </ul>
+  </fieldset>
+  <% unless user_signed_in? %>
+    <%= fields_for @submission.user do |uf| %>
+      <fieldset>
+        <legend>and a little bit about yourself...</legend>
+        <ul>
+          <li>
+            <%= uf.label :email, :class => "required" %>
+            <%= uf.email_field :email, :placeholder => "your@email.com" %>
+            <div class="hint">the email address we can reach you at</div>
+          </li>
+
+          <li>
+            <%= uf.label :first_name, :class => "" %>
+            <%= uf.text_field :first_name, :placeholder => "first name" %>
+          </li>
+
+          <li>
+            <%= uf.label :last_name, :class => "" %>
+            <%= uf.text_field :last_name, :placeholder => "last name" %>
+          </li>
+
+          <li>
+            <%= uf.label :home_page, :class => "" %>
+            <%= uf.url_field :home_page, :placeholder => "http://your.homepage.com" %>
+            <div class="hint">this can be your blog, twitter, linkedin or personal homepage</div>
+          </li>
+
+          <li>
+            <%= uf.label :biography, :class => "" %>
+            <%= uf.text_area :biography, :placeholder => "some biographical information" %>
+            <div class="hint">your life story in 1K characters or less</div>
+          </li>
+
+          <li>
+            <%= uf.label :twitter, :class => "" %>
+            <%= uf.text_field :twitter, :placeholder => "yourtwittername" %>
+            <div class="hint">your twitter name if you'd like us to provide a link your twitter account</div>
+          </li>
+
+          <li>
+            <%= uf.label :speakerrate, :class => "" %>
+            <%= uf.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name" %>
+            <div class="hint">your speakerrate url if you'd like us to provide a link to encourage attendees to provide
+              feedback
+            </div>
+          </li>
+
+          <li>
+            <%= uf.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional" %>
+            <%= uf.file_field :avatar %>
+            <div class="hint">feel free to upload your profile picture along with your proposal but it's
+              optional
+            </div>
+          </li>
+        </ul>
+      </fieldset>
+    <% end %>
+  <% end %>
+  <fieldset>
+    <ul>
+      <li>
+        <button type="submit" id="submission_submit" name="commit">submit</button>
+      </li>
+    </ul>
+  </fieldset>
 <% end %>

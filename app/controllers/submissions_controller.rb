@@ -30,7 +30,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.xml
   def create
-    @submission.user      = find_or_initialize_user_with params[:user]
+    @submission.user = find_or_initialize_user_with params[:user]
     @submission.user.role = "speaker"
 
     respond_to do |format|
@@ -77,7 +77,7 @@ class SubmissionsController < ApplicationController
 
     # make a user
     password = Generator.password
-    user     = User.create(p.symbolize_keys.merge(:password => password, :password_confirmation => password))
+    user = User.create(p.symbolize_keys.merge(:password => password, :password_confirmation => password))
     # delays the sending of confirmations.
     # TODO setup job to send the confirmations using the following command
     # Devise::Mailer.confirmation_instructions(@user).deliver

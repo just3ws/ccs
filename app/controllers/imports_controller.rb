@@ -25,14 +25,14 @@ class ImportsController < ApplicationController
 
   def proc_csv
     #@import = Import.find(params[:id])
-    lines   = parse_csv_file(@import.csv.path)
+    lines = parse_csv_file(@import.csv.path)
     lines.shift # skip the column headers
     if lines.size > 0
       @import.processed = lines.size
       lines.each do |line|
         case @import.datatype
-        when "speakers"
-          new_speaker(line)
+          when "speakers"
+            new_speaker(line)
         end
       end
       @import.save
@@ -53,10 +53,10 @@ class ImportsController < ApplicationController
     lines = []
 
     s3object = AWS::S3::S3Object.find("original/#{@import.csv_file_name}", "chicagocodecamp")
-    
+
     s3object.value.each_line do |line|
       lines << line.parse_csv({:col_sep => ";"})
-    end 
+    end
 
     lines
   end
@@ -65,13 +65,13 @@ class ImportsController < ApplicationController
     email = line[2]
     user = User.find_or_initialize_by_email(email)
     if user.invitation_token.blank?
-      attributes               = Hash.new
+      attributes = Hash.new
       attributes[:first_name] = line[0]
-      attributes[:last_name]  = line[1]
-      attributes[:email]      = email 
-      attributes[:home_page]  = line[3]
-      attributes[:biography]  = line[4]
-      attributes[:role]       = "speaker"
+      attributes[:last_name] = line[1]
+      attributes[:email] = email
+      attributes[:home_page] = line[3]
+      attributes[:biography] = line[4]
+      attributes[:role] = "speaker"
 
       user.skip_confirmation!
       user.update_attributes(attributes)
