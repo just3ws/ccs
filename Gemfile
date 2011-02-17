@@ -6,6 +6,10 @@ gem 'sqlite3-ruby'
 gem 'heroku'
 gem 'json'
 
+gem "asset-resource"
+
+gem 'dalli'
+
 gem 'resque'
 gem 'sitemap_generator', :git => 'git://github.com/just3ws/sitemap_generator.git', :branch => 'heroku'
 

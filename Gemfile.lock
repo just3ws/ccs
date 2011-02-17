@@ -38,6 +38,7 @@ GEM
     activesupport (3.0.4)
     annotate (2.4.0)
     arel (2.0.8)
+    asset-resource (0.5.0)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
     autotest-fsevent (0.2.4)
@@ -60,7 +61,7 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.3)
-    celerity (0.8.7)
+    celerity (0.8.8)
     childprocess (0.1.7)
       ffi (~> 0.6.3)
     colored (1.2)
@@ -77,6 +78,7 @@ GEM
       cucumber (>= 0.8.0)
     culerity (0.2.15)
     daemons (1.1.0)
+    dalli (1.0.2)
     database_cleaner (0.6.3)
     devise (1.1.7)
       bcrypt-ruby (~> 2.1.2)
@@ -226,6 +228,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  asset-resource
   autotest
   autotest-fsevent
   autotest-growl
@@ -236,6 +239,7 @@ DEPENDENCIES
   compass
   cucumber
   cucumber-rails
+  dalli
   database_cleaner
   devise
   devise_invitable
