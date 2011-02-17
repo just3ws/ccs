@@ -8,3 +8,4 @@ css_dir = "tmp/stylesheets"
 sass_dir = "app/stylesheets"
 preferred_syntax = :scss
 environment = Compass::AppIntegration::Rails.env
+output_style = :compressed
