@@ -1,4 +1,5 @@
 passenger-standalone
+all.js
 **.orig
 *.rbc
 *.sassc
