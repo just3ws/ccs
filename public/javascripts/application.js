@@ -17,3 +17,9 @@ jQuery(document).ready(function() {
 
   $('.hint').hide().css('color', '#00024d');
 });
+
+$(document).ready(function() {
+  if (!Modernizr.input.placeholder) {
+    $('input[placeholder], textarea[placeholder]').placeholder();
+  }
+});
