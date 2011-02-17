@@ -38,7 +38,6 @@ GEM
     activesupport (3.0.4)
     annotate (2.4.0)
     arel (2.0.8)
-    asset-resource (0.5.0)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
     autotest-fsevent (0.2.4)
@@ -91,10 +90,6 @@ GEM
     eventmachine (0.12.10)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    formtastic (1.2.3)
-      actionpack (>= 2.3.7)
-      activesupport (>= 2.3.7)
-      i18n (~> 0.4)
     fuubar (0.0.3)
       rspec (~> 2.0)
       rspec-instafail (~> 0.1.4)
@@ -228,7 +223,6 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  asset-resource
   autotest
   autotest-fsevent
   autotest-growl
@@ -243,7 +237,6 @@ DEPENDENCIES
   database_cleaner
   devise
   devise_invitable
-  formtastic
   fuubar
   fuubar-cucumber
   haml
