@@ -3,7 +3,7 @@
 # Yoinked from .... 
 # https://github.com/wayneeseguin/rvm-site/blob/master/.rvmrc 
 
-environment_id="ruby-1.9.2-p136@ccs"
+environment_id="ree-1.8.7-2010.02@ccs"
 
 if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
   && -s "${rvm_path:-$HOME/.rvm}/environments/$environment_id" ]] ; then
