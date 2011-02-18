@@ -31,11 +31,15 @@ skill levels & interests, w/multiple sessions running side-by-side.
 
     brew install git && brew info git;
 
-    brew install postgresql && brew info postgresql;
-
     brew install sqlite && brew info sqlite;
 
+    # OPTIONAL STEPS
+
     brew install redis && brew info redis;
+
+    brew install postgresql && brew info postgresql;
+
+    brew install memcached && brew info memcached;
 
   Step Twone: RubyCocoa (optional)
 
