@@ -40,6 +40,8 @@ group :development, :test do
   gem 'fuubar-cucumber'
   gem 'autotest'
   gem 'autotest-growl'
+  gem 'rb-fsevent'
+  gem 'fssm'
   gem 'autotest-fsevent'
   gem 'rails_best_practices'
   gem 'annotate'
