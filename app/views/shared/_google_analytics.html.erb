@@ -1,7 +1,7 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-5148865-9']);
-  _gaq.push(['_setDomainName', '.chicagocodecamp.com']);
+  _gaq.push(['_setAccount', '<%= ENV['GA_ACCOUNT'] %>']);
+  _gaq.push(['_setDomainName', '.<%= ENV['GA_DOMAIN_NAME'] %>']);
   _gaq.push(['_trackPageview']);
 
   (function() {

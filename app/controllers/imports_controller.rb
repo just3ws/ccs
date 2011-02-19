@@ -52,7 +52,7 @@ class ImportsController < ApplicationController
 
     lines = []
 
-    s3object = AWS::S3::S3Object.find("original/#{@import.csv_file_name}", "chicagocodecamp")
+    s3object = AWS::S3::S3Object.find("original/#{@import.csv_file_name}", S3Settings.bucket)
 
     s3object.value.each_line do |line|
       lines << line.parse_csv({:col_sep => ";"})

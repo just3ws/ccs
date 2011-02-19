@@ -184,7 +184,7 @@ GEM
       railties (~> 3.0)
       rspec (~> 2.5.0)
     ruby-progressbar (0.0.9)
-    ruby_parser (2.0.5)
+    ruby_parser (2.0.6)
       sexp_processor (~> 3.0)
     rubyzip (0.9.4)
     selenium-webdriver (0.1.3)

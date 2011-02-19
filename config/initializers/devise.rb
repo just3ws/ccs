@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "Chicago Code Camp <admin@chicagocodecamp.com>"
+  config.mailer_sender = ENV['DEVISE_MAIL_SENDER'] 
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"

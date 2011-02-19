@@ -1,4 +1,7 @@
 Ccs::Application.configure do
+  require File.expand_path("lib/heroku_settings") 
+  HerokuSettings.load_env_from_config
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

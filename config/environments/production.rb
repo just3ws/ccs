@@ -27,7 +27,7 @@ Ccs::Application.configure do
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
   config.cache_store = :dalli_store, ENV['MEMCACHE_SERVERS'] || 'localhost',
-    { :namespace => 'chicagocodecamp', :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
+    { :namespace => ENV['MEMCACHE_NS'] || 'ccs', :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
