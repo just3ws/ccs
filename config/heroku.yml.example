@@ -1,0 +1,47 @@
+production: 
+  app: chicagocodecamp
+  config:
+    APP:            chicagocodecamp
+    ROOT_URL:       "chicagocodecamp.com"
+    S3_BUCKET:      chicagocodecamp
+    BUNDLE_WITHOUT: "development:test"
+    GA_ACCOUNT:     "UA-1111111-1"
+    GA_DOMAIN_NAME: "chicagocodecamp.com"
+    S3_KEY:         "your s3 key"
+    S3_SECRET:      "your s3 secret"
+    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
+    MEMCACHE_NS:    chicagocodecamp
+    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp.com"
+    DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
+
+staging:
+  app: chicagocodecamp-staging
+  config:
+    APP:            chicagocodecamp-staging
+    ROOT_URL:       "chicagocodecamp.com"
+    S3_BUCKET:      chicagocodecamp-staging
+    BUNDLE_WITHOUT: "development:test"
+    GA_ACCOUNT:     "UA-1111111-1"
+    GA_DOMAIN_NAME: "chicagocodecamp.com"
+    S3_KEY:         "your s3 key"
+    S3_SECRET:      "your s3 secret"
+    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
+    MEMCACHE_NS:    chicagocodecamp-staging
+    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-staging.heroku.com"
+    DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
+
+development:
+  app: chicagocodecamp-development
+  config:
+    APP:            chicagocodecamp-development
+    ROOT_URL:       "chicagocodecamp.com"
+    S3_BUCKET:      chicagocodecamp-development
+    MEMCACHE_NS:    chicagocodecamp-development
+    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-development.heroku.com"
+    BUNDLE_WITHOUT: "development:test"
+    GA_ACCOUNT:     "UA-1111111-1"
+    GA_DOMAIN_NAME: "chicagocodecamp.com"
+    S3_KEY:         "your s3 key"
+    S3_SECRET:      "your s3 secret"
+    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
+    DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
