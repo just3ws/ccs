@@ -51,6 +51,7 @@ gem 'paperclip'
 group :development, :test do
   # app server
   gem 'thin'
+  gem 'heroku_san'
 
   # given/when/then
   gem 'cucumber'
