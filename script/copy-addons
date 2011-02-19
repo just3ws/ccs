@@ -1,0 +1,16 @@
+#!/bin/bash
+
+APP_FROM='chicagocodecamp'
+APP_TO='chicagocodecamp-staging'
+echo "Copying from '$APP_FROM' to '$APP_TO'."
+while read addon
+do
+  echo " * installing $addon"
+  heroku addons:add $addon --app $APP_TO
+done <<< "`heroku addons --app $APP_FROM`"
+echo " --------- "
+echo "Compare addons copied from '$APP_FROM' to '$APP_TO'."
+heroku addons --app $APP_TO
+echo " >>> "
+heroku addons --app $APP_TO
+echo "done"
