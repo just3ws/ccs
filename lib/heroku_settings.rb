@@ -15,5 +15,9 @@ class HerokuSettings
         ENV[k.to_s] = v
       end
     end
+
+    def root_url
+      ENV['ROOT_URL'] || settings[:root_url] 
+    end
   end
 end
