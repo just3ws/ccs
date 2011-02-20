@@ -3,10 +3,25 @@
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post}) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br/>
-    <%= f.text_field :email %></p>
+  <fieldset>
+    <ul>
+      <li>
+      <%= f.label :email %>
+      <%= f.email_field :email, :placeholder => "your@email.com" %>
+      <div class="hint">the email your registered your session under</div>
+      </li>
 
-  <p><%= f.submit "Send me reset password instructions" %></p>
+    </ul>
+  </fieldset>
+
+  <fieldset>
+    <ul>
+      <li>
+      <button type="submit">send me reset password instructions</button>
+      </li>
+    </ul>
+  </fieldset>
+
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

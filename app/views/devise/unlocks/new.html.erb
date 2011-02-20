@@ -3,10 +3,27 @@
 <%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => {:method => :post}) do |f| %>
   <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br/>
-    <%= f.text_field :email %></p>
 
-  <p><%= f.submit "Resend unlock instructions" %></p>
+  <fieldset>
+    <ul>
+      <li>
+      <%= f.label :email %>
+      <%= f.email_field :email, :placeholder => "your@email.com" %>
+      <div class="hint">the email your registered your session under</div>
+      </li>
+
+    </ul>
+  </fieldset>
+
+  <fieldset>
+    <ul>
+      <li>
+      <button type="submit">resend unlock instructions</button>
+      </li>
+    </ul>
+  </fieldset>
+
+
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
