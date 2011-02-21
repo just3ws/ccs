@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Chicago Code Camp 2011 - Open Call for Proposals - Talks of all skill levels welcome. Ruby, C#, F#, Scala, Clojure, Java, Python, .NET, JVM, Rails, JavaSCript, ASP.NET MVC, Mobile, iPhone, Android, Windows, Linux or OS X topics are all wanted!</title>
+  <meta name="description" content="Chicago Code Camp is a free, one day conference on Saturdary May 14th for developers of all skill levels and interests with multiple sessions running side-by-side throughout the day." >
   <meta charset="utf-8" />
-  <title>Chicago Code Camp 2011</title>
   <%= stylesheet_link_tag :all %>
   <%= csrf_meta_tag %>  
   <link href="/stylesheets/application.css" media="screen, projection" rel="stylesheet" type="text/css"/>
@@ -43,6 +44,7 @@
     <%= yield %>
   </div>
   <div id="sidebar">
+    <%= render :partial => "shared/blurb" %>
     <%= render :partial => "shared/preregistrations" %>
     <%= render :partial => "shared/location" %>
     <%= render :partial => "shared/authentication" %>
