@@ -13,7 +13,7 @@
   <% @submissions.visible.each do |submission| %>
     <tr>
       <td><%= submission.title %></td>
-      <td><%= submission.abstract %></td>
+      <td><%= truncate(submission.abstract, :length => 64) %></td>
       <td><%= submission.user.first_name unless submission.user.blank? %></td>
       <td><%= submission.user.last_name unless submission.user.blank? %></td>
       <td><%= submission.user.email unless submission.user.blank? %></td>
