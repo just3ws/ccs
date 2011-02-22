@@ -3,13 +3,13 @@
     %h5 Register for Updates
     %p
       Stay up-to-date on the latest announcements and news related to CCC3.
-      \#{form_for Preregistration.new, :method => :post do |f|}
-        %fieldset
-          %ol
-            %li
-              = f.label :email, "email"
-              = f.email_field :email, :placeholder => "your@email.com"
-        %fieldset
-          %ol
-            %li
-              %button#preregistration_submit{:name => "commit", :type => "submit"} register for updates
+    = form_for Preregistration.new, :method => :post do |f|
+      %fieldset
+        %ol
+          %li
+            = f.label :email, "email"
+            = f.email_field :email, :placeholder => "your@email.com"
+      %fieldset
+        %ol
+          %li
+            %button#preregistration_submit{:name => "commit", :type => "submit"} register for updates
