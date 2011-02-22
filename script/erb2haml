@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+ 
+Dir.glob("**/*.html.erb").each do |erbname|
+  hamlname = erbname.gsub(".html.erb", ".html.haml")
+  system "/usr/bin/html2haml #{erbname} #{hamlname}"
+end
+
