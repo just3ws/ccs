@@ -1,0 +1,6 @@
+%script{:src => "https://www.google.com/jsapi", :type => "text/javascript"}
+:javascript
+  google.load("webfont", "1");
+  google.setOnLoadCallback(function() {
+    WebFont.load({google: {families:['Syncopate','Ubuntu:regular,italic,bold,bolditalic','Slackey']}});
+  });

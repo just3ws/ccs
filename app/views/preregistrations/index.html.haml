@@ -1,0 +1,15 @@
+%h4 Emails registered for updates
+%table
+  %tr
+    %th Email
+    %th Status
+    %th Registered on
+  - @preregistrations.each do |reg|
+    %tr
+      %td= reg.email
+      %td= reg.status
+      %td= reg.created_at
+%br/
+Export to
+\#{link_to('XML', preregistrations_path(@resource, :format => :xml))},
+\#{link_to('CSV', preregistrations_path(@resource, :format => :csv))}

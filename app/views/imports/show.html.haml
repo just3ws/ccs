@@ -1,0 +1,6 @@
+%h4 Results of your CSV Upload
+= @import.csv.path
+- if @import.processed.present? && !@import.processed.zero?
+  Success! This import contained #{@import.processed} records
+- else
+  = link_to "process", import_proc_path(@import.id)

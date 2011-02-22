@@ -1,0 +1,52 @@
+- if model.errors.any?
+  - errors = @errors
+  - errors.merge!(model.errors) unless model.blank?
+  #error_explanation
+    %h4
+      = pluralize(errors.count, "error")
+      prohibited this
+      user from being saved:
+    %ul
+      - errors.full_messages.each do |msg|
+        %li= msg
+%fieldset
+  %legend and a little bit about yourself...
+  %ul
+    %li
+      = f.label :email, :class => "required"
+      = f.email_field :email, :placeholder => "your@email.com"
+      .hint the email address we can reach you at
+    %li
+      = f.label :first_name, :class => ""
+      = f.text_field :first_name, :placeholder => "first name"
+    %li
+      = f.label :last_name, :class => ""
+      = f.text_field :last_name, :placeholder => "last name"
+    %li
+      = f.label :home_page, :class => ""
+      = f.url_field :home_page, :placeholder => "http://your.homepage.com"
+      .hint this can be your blog, twitter, linkedin or personal homepage
+    %li
+      = f.label :biography, :class => ""
+      = f.text_area :biography, :placeholder => "some biographical information"
+      .hint your life story in 1K characters or less
+    %li
+      = f.label :twitter, :class => ""
+      = f.text_field :twitter, :placeholder => "yourtwittername"
+      .hint your twitter name if you'd like us to provide a link your twitter account
+    %li
+      = f.label :speakerrate, :class => ""
+      = f.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name"
+      .hint
+        your speakerrate url if you'd like us to provide a link to encourage attendees to provide
+        feedback
+    %li
+      = f.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional"
+      = f.file_field :avatar
+      .hint
+        feel free to upload your profile picture along with your proposal but it's
+        optional
+%fieldset
+  %ul
+    %li
+      %button#user_submit{:name => "commit", :type => "submit"} submit

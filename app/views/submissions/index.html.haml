@@ -1,0 +1,22 @@
+%h4 Current submissions
+%table
+  %tr
+    %th Title
+    %th Abstract
+    %th First name
+    %th Last name
+    %th Email
+    %th
+  - @submissions.visible.each do |submission|
+    %tr
+      %td= submission.title
+      %td= truncate(submission.abstract, :length => 64)
+      %td= submission.user.first_name unless submission.user.blank?
+      %td= submission.user.last_name unless submission.user.blank?
+      %td= submission.user.email unless submission.user.blank?
+      %td
+        %ul
+          %li= link_to 'Show', submission
+          %li= link_to 'Edit', edit_submission_path(submission)
+          %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
+= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}

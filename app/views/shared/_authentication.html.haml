@@ -1,0 +1,25 @@
+.aside.authentication
+  - if user_signed_in?
+    = form_tag destroy_user_session_path do
+      %h5 logged in as...
+      %p= link_to current_user.email, user_path(current_user)
+      %fieldset
+        = button "logout", destroy_user_session_path
+  - else
+    = form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f|
+      %h5 speaker login
+      %p Login to manage your sessions.
+      %fieldset
+        %ol
+          %li
+            = f.label :email, "email"
+            = f.email_field :email, :placeholder => "your@email.com"
+          %li
+            = f.label :password, "password"
+            = f.password_field :password
+      %fieldset.buttons
+        %ol
+          %li
+            %button{:type => "submit"} login
+          - if controller_name != 'passwords'
+            %li= link_to "Forgot your password?", new_password_path('user')

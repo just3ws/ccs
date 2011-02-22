@@ -1,0 +1,32 @@
+%link{:href => "http://fonts.googleapis.com/css?family=Syncopate", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic", :rel => "stylesheet", :type => "text/css"}/
+%h1{:style => "color:#a60400;font-family:'Syncopate',Verdana,Geneva,sans-serif;"} Chicago Code Camp 2011
+%h3{:style => "color:#a60400;font-family:'Syncopate',Verdana,Geneva,sans-serif;"} Grayslake, IL - May 14th,2011
+%h2{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;font-weight:bold;"}
+  Thank
+  you#{", #{@resource.first_name}" unless @resource.first_name.blank?}!
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+  The Chicago Code Camp organizers would like to
+  personally thank you for submitting a session to this year’s event. It’s passionate people like you who make events
+  like this possible. Open call will end soon marking the start of our exclusive selection process. Once the session
+  schedule is compiled we will post it online and email you. If for some reason you need to switch a time around, we ask
+  that you email us ASAP so we can make the appropriate changes.
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+  Mark your calendar. This year’s event will be on May
+  14th at the College of Lake County 19351 West Washington Street, Grayslake IL 60030.
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+  Please help spread the word. We want this year’s event
+  to be our best yet.
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+  This year we're enabling speakers to manage their own
+  sessions and profiles. When you submitted your session an account was created for you automatically. Simply click the
+  link below to claim your account. Once confirmed your username will be your email '#{@resource.email}'.
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+  You can confirm your account by clicking on the link or
+  pasting the url into your
+  browser: #{link_to confirmation_url(@resource, :confirmation_token => @resource.confirmation_token), confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)}
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,arial,sans-serif;font-weight:bold;"}
+  Thanks again from the Chicago
+  Code Camp Team,
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,arial,sans-serif;color:#a60400;"} The Chicago Code Camp Team
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,arial,sans-serif;"}= link_to "Chicago Code Camp 2011", root_url
