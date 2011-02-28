@@ -6,6 +6,6 @@ project_path = Compass::AppIntegration::Rails.root
 http_path = "/"
 css_dir = "tmp/stylesheets"
 sass_dir = "app/stylesheets"
-preferred_syntax = :scss
+preferred_syntax = :sass
 environment = Compass::AppIntegration::Rails.env
 output_style = :compressed

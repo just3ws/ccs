@@ -1,60 +1,51 @@
-@mixin round-corner-top-left($val) {
-  -khtml-border-top-left-radius: $val;
-  -webkit-border-top-left-radius: $val;
-  -moz-border-radius-topleft: $val;
-  border-top-left-radius: $val;
-}
+=round-corner-top-left($val)
+  -khtml-border-top-left-radius: $val
+  -webkit-border-top-left-radius: $val
+  -moz-border-radius-topleft: $val
+  border-top-left-radius: $val
 
-@mixin round-corner-top-right($val) {
-  -khtml-border-top-right-radius: $val;
-  -webkit-border-top-right-radius: $val;
-  -moz-border-radius-topright: $val;
-  border-top-right-radius: $val;
-}
+=round-corner-top-right($val)
+  -khtml-border-top-right-radius: $val
+  -webkit-border-top-right-radius: $val
+  -moz-border-radius-topright: $val
+  border-top-right-radius: $val
 
-@mixin round-corner-bottom-left($val) {
-  -khtml-border-bottom-left-radius: $val;
-  -webkit-border-bottom-left-radius: $val;
-  -moz-border-radius-bottomleft: $val;
-  border-bottom-left-radius: $val;
-}
+=round-corner-bottom-left($val)
+  -khtml-border-bottom-left-radius: $val
+  -webkit-border-bottom-left-radius: $val
+  -moz-border-radius-bottomleft: $val
+  border-bottom-left-radius: $val
 
-@mixin round-corner-bottom-right($val) {
-  -khtml-border-bottom-right-radius: $val;
-  -webkit-border-bottom-right-radius: $val;
-  -moz-border-radius-bottomright: $val;
-  border-bottom-right-radius: $val;
-}
+=round-corner-bottom-right($val)
+  -khtml-border-bottom-right-radius: $val
+  -webkit-border-bottom-right-radius: $val
+  -moz-border-radius-bottomright: $val
+  border-bottom-right-radius: $val
 
-@mixin round-corners($val) {
-  -khtml-border-radius: $val;
-  -webkit-border-radius: $val;
-  -moz-border-radius: $val;
-  border-radius: $val;
-}
+=round-corners($val)
+  -khtml-border-radius: $val
+  -webkit-border-radius: $val
+  -moz-border-radius: $val
+  border-radius: $val
 
-@mixin round-corners-top($val) {
-  @include round-corner-top-right($val);
-  @include round-corner-top-left($val);
-}
+=round-corners-top($val)
+  +round-corner-top-right($val)
+  +round-corner-top-left($val)
 
-@mixin round-corners-bottom($val) {
-  @include round-corner-bottom-right($val);
-  @include round-corner-bottom-left($val);
-}
+=round-corners-bottom($val)
+  +round-corner-bottom-right($val)
+  +round-corner-bottom-left($val)
 
 // prints out a nice round gradient with the primary $color
-@mixin gradient-background($color) {
-  background: $color;
-  height: 100%;
-  width: 100%;
-  background-color: #1a82f7;
+=gradient-background($color)
+  background: $color
+  height: 100%
+  width: 100%
+  background-color: #1a82f7
   // background: url(images/radial_bg.png) center center no-repeat;
-  background: -moz-radial-gradient(center 45deg, circle closest-corner, $color 0%, #2F2727 100%);
-  background: -webkit-gradient(radial, center center, 0, center center, 960, from($color), to(#2F2727));
-}
+  background: -moz-radial-gradient(center 45deg, circle closest-corner, $color 0%, #2f2727 100%)
+  background: -webkit-gradient(radial, center center, 0, center center, 960, from($color), to(#2f2727))
 
-@mixin prime-gs {
-  width: 997px;
-  margin: 0 auto;
-}
+=prime-gs
+  width: 997px
+  margin: 0 auto
