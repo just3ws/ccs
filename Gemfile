@@ -1,8 +1,11 @@
 source 'http://rubygems.org'
 
-# yep.
+# ah-yup.
 gem 'rails'
 gem 'sqlite3-ruby'
+
+# app server
+gem 'unicorn'
 
 # our beloved host
 gem 'heroku'
@@ -49,8 +52,7 @@ gem 'aws-s3', :require => 'aws/s3'
 gem 'paperclip'
 
 group :development, :test do
-  # app server
-  gem 'thin'
+  # simplify management of heroku environments 
   gem 'heroku_san'
 
   # given/when/then
