@@ -20,6 +20,9 @@ gem 'dalli'
 gem 'SystemTimer'
 gem 'resque'
 
+# csv processing
+gem 'fastercsv'
+
 # generate a sitemap and ping search servics to get indexed
 gem 'sitemap_generator', :git => 'git://github.com/just3ws/sitemap_generator.git', :branch => 'heroku'
 
