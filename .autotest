@@ -1,7 +1,7 @@
-require 'autotest/growl'
-
-# only require fsevent if we're on OS X
-require 'autotest/fsevent' if RUBY_PLATFORM=~/darwin/
+if RUBY_PLATFORM =~ /darwin/
+  require 'autotest/growl'
+  require 'autotest/fsevent' 
+end
 
 Autotest.add_hook :initialize do |at|
   #setup the files to ignore

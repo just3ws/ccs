@@ -91,8 +91,11 @@ group :development, :test do
   # run tests automatically
   gem "ZenTest"
   gem "autotest-rails-pure"
-  gem "autotest-growl"
-  gem "autotest-fsevent" 
+
+  if RUBY_PLATFORM =~ /darwin/
+    gem "autotest-growl"
+    gem "autotest-fsevent" 
+  end
 end
 
 group :development do
