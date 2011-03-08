@@ -1,5 +1,5 @@
 #!/bin/bash -e
-rm config/heroku.yml
+rm -f config/heroku.yml
 cp config/heroku.yml.example config/heroku.yml
 bundle install
 rake db:migrate db:test:prepare
