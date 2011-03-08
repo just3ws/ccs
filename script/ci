@@ -1,6 +1,5 @@
-#!/bin/bash -x
-source ~/.bashrc
+#!/bin/bash -e
 bundle install
-rake db:migrate
-rake spec
-HEADLESS=true rake cucumber
+rake db:migrate db:test:prepare
+bundle exec cucumber
+ 
