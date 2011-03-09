@@ -1,6 +1,10 @@
 #!/bin/bash -e
 rm -f config/heroku.yml
 cp config/heroku.yml.example config/heroku.yml
+
+rm -f config/s3.yml
+cp config/s3.yml.example config/s3.yml
+
 bundle install
 rake db:migrate db:test:prepare
 bundle exec cucumber
