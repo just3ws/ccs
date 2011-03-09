@@ -1,5 +1,7 @@
 #!/bin/bash -e
 pwd
+source ~/.bashrc
+
 rm -f config/heroku.yml
 cp config/heroku.yml.example config/heroku.yml
 
