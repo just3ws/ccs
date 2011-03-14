@@ -39,8 +39,11 @@ gem 'devise_invitable'
 # authorization permissions
 gem 'cancan'
 
-# for SCSS
+# for Sass 
 gem 'compass'
+
+# form generation
+gem 'formtastic'
 
 # using jQuery instead of prototype/scriptaculous
 gem 'jquery-rails', '>= 0.2.6'
