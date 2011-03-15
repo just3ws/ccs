@@ -69,6 +69,9 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
 
+  # factories
+  gem 'factory_girl_rails'
+
   # automate the ui
   gem 'capybara'
 
@@ -94,6 +97,7 @@ group :development, :test do
   # run tests automatically
   gem "ZenTest"
   gem "autotest-rails-pure"
+  gem 'watchr'
 
   if RUBY_PLATFORM =~ /darwin/
     gem "autotest-growl"

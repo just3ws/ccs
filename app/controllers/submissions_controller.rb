@@ -72,7 +72,7 @@ class SubmissionsController < ApplicationController
     return current_user if user_signed_in?
 
     # lookup the user
-    user = User.find(:first, :conditions => {:email => p[:email]})
+    user = User.find_by_email(p[:email])
     return user unless user.nil?
 
     # make a user
