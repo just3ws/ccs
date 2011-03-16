@@ -1,3 +1,4 @@
+# adapted from https://gist.github.com/483101
 ENV["WATCHR"] = "1"
 system "clear"
 
