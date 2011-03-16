@@ -66,6 +66,7 @@ group :development, :test do
   gem 'cucumber-rails'
 
   # it should
+  gem 'rspec-core'
   gem 'rspec'
   gem 'rspec-rails'
 
@@ -95,14 +96,7 @@ group :development, :test do
   gem 'annotate'
 
   # run tests automatically
-  gem "ZenTest"
-  gem "autotest-rails-pure"
   gem 'watchr'
-
-  if RUBY_PLATFORM =~ /darwin/
-    gem "autotest-growl"
-    gem "autotest-fsevent" 
-  end
 end
 
 group :development do
