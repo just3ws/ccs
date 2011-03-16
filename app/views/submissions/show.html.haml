@@ -11,7 +11,7 @@
       %li
         %span level:
         = %w(introductory intermediate advanced)[@submission.level-1]
-      - unless @submission.keywords.strip.blank?
+      - if @submission.keywords.try(:strip).present?
         %li
           %span keywords:
           %div= @submission.keywords
