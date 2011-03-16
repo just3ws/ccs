@@ -14,5 +14,10 @@ namespace :tmp do
   end
 end
 
+desc "run watchr"
+task :watchr do
+  sh %{bundle exec watchr .watchr}
+end
+
 
 Ccs::Application.load_tasks
