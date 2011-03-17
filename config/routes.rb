@@ -7,6 +7,7 @@ Ccs::Application.routes.draw do
   resources :submissions
   match '/static/:path' => 'static#show'
   root :to => 'submissions#new'
+  #root :to => "static#show"
 end
 #== Route Map
 # Generated on 16 Feb 2011 16:52
