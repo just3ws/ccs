@@ -250,28 +250,28 @@ hr
   display: inline-block
   float: right
   margin-top: 16px
-  padding: 8px
-  +round-corners(8px)
-  background-color: $color-primary
   text-transform: lowercase
   ol, ul
     list-style: none
+    text-align: right
   li
+    +round-corners(4px)
+    padding: 4px
+    background-color: $color-primary
     display: inline-block
-    padding-right: 0
     margin: 0
+    margin-top: 1px
+  li:hover
+    cursor: hand
+    -moz-box-shadow: 0px 0px 4px $color-primary
+    -webkit-box-shadow: 0px 0px 4px $color-primary
+    box-shadow: 0px 0px 4px $color-primary
   li:not(:last-of-type):after
     color: white
   a
     font-size: $font-m1
     color: white
     text-decoration: none
-
-.actions:first-of-type
-  padding-left: 0
-
-.actions:last-of-type
-  padding-right: 0
 
 form
   fieldset
