@@ -1,14 +1,19 @@
 %h4 Current submissions
+%p= pluralize @submissions.visible.count, 'submission'
 %table
   %tr
+    %th #
     %th Title
     %th Abstract
     %th First name
     %th Last name
     %th Email
     %th
+  - i = 0 
   - @submissions.visible.each do |submission|
+    - i = i + 1
     %tr
+      %td= i
       %td= submission.title
       %td= truncate(submission.abstract, :length => 64)
       %td= submission.user.first_name unless submission.user.blank?
