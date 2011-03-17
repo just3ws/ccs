@@ -37,14 +37,11 @@
   +round-corner-bottom-left($val)
 
 // prints out a nice round gradient with the primary $color
-=gradient-background($color)
-  background: $color
-  height: 100%
-  width: 100%
-  background-color: #1a82f7
-  // background: url(images/radial_bg.png) center center no-repeat;
-  background: -moz-radial-gradient(center 45deg, circle closest-corner, $color 0%, #2f2727 100%)
-  background: -webkit-gradient(radial, center center, 0, center center, 960, from($color), to(#2f2727))
+=gradient-background($from-color, $to-color)
+  background: $from-color
+  background-color: $from-color 
+  background: -moz-radial-gradient(center 45deg, circle closest-corner, $from-color 0%, $to-color 100%)
+  background: -webkit-gradient(radial, center center, 0, center center, 997, from($from-color), to($to-color))
 
 =prime-gs
   width: 997px
