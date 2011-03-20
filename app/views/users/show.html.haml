@@ -3,7 +3,7 @@
   %div
     %h3= @user.full_name.try(:strip).present? ? @user.full_name.try(:strip) : @user.email
     %ul
-      - unless @user.full_name.try(:strip).blank?
+      - if @user.full_name.try(:strip).present?
         %li
           %span email:
           %div= mail_to @user.email
@@ -26,6 +26,12 @@
           %span speakerrate:
           %div
             %a{:href => @user.speakerrate}= @user.speakerrate
+      - if @user.role == "speaker" && @user.try(:submissions)
+        %li
+          %span submissions:
+          %ul
+          - @user.submissions.each do |submission|
+            %li= link_to submission.title, submission
   .actions
     - if can? :update, @user
       = link_to "Edit", edit_user_path(@user)
