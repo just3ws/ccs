@@ -1,27 +1,33 @@
 %h4 Current submissions
 %p= pluralize @submissions.visible.count, 'submission'
-%table
-  %tr
-    %th #
-    %th Title
-    %th Abstract
-    %th First name
-    %th Last name
-    %th Email
-    %th
-  - i = 0 
+.submissions
+  - i = 0
   - @submissions.visible.each do |submission|
     - i = i + 1
-    %tr
-      %td= i
-      %td= submission.title
-      %td= truncate(submission.abstract, :length => 64)
-      %td= submission.user.first_name unless submission.user.blank?
-      %td= submission.user.last_name unless submission.user.blank?
-      %td= submission.user.email unless submission.user.blank?
-      %td
-        %ul
-          %li= link_to 'Show', submission
-          %li= link_to 'Edit', edit_submission_path(submission)
-          %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
+    %div.show
+      - if current_user.admin?
+        .actions
+          %ul
+            %li= link_to 'Show', submission
+            %li= link_to 'Edit', edit_submission_path(submission)
+            %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
+      %h3
+        = "#{i.ordinalize}: " 
+        = link_to "#{submission.title}", submission
+      %ul
+        %li
+          .long-text= truncate(submission.abstract, :length => 144)
+        %li
+          - if submission.level.present?
+            %span level:
+            =  %w(introductory intermediate advanced)[submission.level-1] 
+        - if submission.keywords.try(:strip).present?
+          %li
+            %span keywords:
+            %div= submission.keywords
+      .session-speaker
+        - if submission.user.try(:full_name).present?
+          proposed by #{link_to submission.user.full_name, user_path(submission.user)}
+        
+
 = render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}

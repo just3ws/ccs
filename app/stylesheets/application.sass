@@ -208,13 +208,17 @@ hr
     list-style: none
   h3
     padding: 8px
-    font-size: $font-p2
+    font-size: $font-p1
     padding-top: 16px
     font-weight: bold
     span
       font-weight: normal
       font-size: $font-p1
       color: $color-value-030
+    a
+      color: $color-primary
+      text-decoration: none
+      background-color: transparent
   .session-speaker
     margin-top: 16px
     text-align: right
@@ -234,18 +238,27 @@ hr
   div:first-of-type > h3
     padding-top: 0
   li > span
-    display: inline-block
+    font-weight: bold
     width: 100px
     text-transform: lowercase
     text-align: right
     color: $color-value-030
   li > div
     display: inline-block
-    font-size: $font-p1
   li
     padding: 8px
   li:last-of-type
     padding-bottom: 0
+
+.submissions
+  div
+    margin-bottom: 16px
+  div.show:nth-child(odd)
+    border-top: solid 4px $color-primary 
+    border-left: solid 4px $color-primary 
+  div.show:nth-child(even)
+    border-top: solid 4px white 
+    border-left: solid 4px white 
 
 .actions
   display: inline-block
