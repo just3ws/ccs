@@ -28,7 +28,7 @@
             %a{:href => @user.speakerrate}= @user.speakerrate
       - if @user.role == "speaker" && @user.try(:submissions)
         %li
-          %span submissions:
+          %span= "#{pluralize(@user.submissions.count, 'submission')}: "
           %ul
           - @user.submissions.each do |submission|
             %li= link_to submission.title, submission
