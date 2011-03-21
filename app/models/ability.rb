@@ -10,6 +10,7 @@ class Ability
    user ||= User.new :role => "guest" # guest user (not logged in)
 
    if user.role? :guest
+     can :show,   Content
      can :create, Preregistration
      can :create, Submission
    end

@@ -1,11 +1,16 @@
 Ccs::Application.routes.draw do
+  resources :contents
+
   devise_for :users
   resources :imports
   match '/import/proc/:id' => 'imports#proc_csv', :as => :import_proc
   resources :users
   resources :preregistrations, :only => [:create, :index]
   resources :submissions
-  match '/static/:path' => 'static#show'
+  resources :contents
+
+  match '/:path' => 'static#show' # this needs to be the last non-default route
+
   root :to => 'submissions#new'
   #root :to => "static#show"
 end

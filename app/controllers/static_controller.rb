@@ -1,15 +1,13 @@
 class StaticController < ApplicationController
   caches_page :show
   
-  @@valid ||= %(home about location)
-
   def show
-    params[:path] = "home" if params[:path].blank? 
 
-    if @@valid.include?(params[:path])
-      render :template => File.join('static', params[:path])
-    else
-      render :file => File.join(Rails.root, 'public', '404.html'), :status => 404
+    @content = Content.find_by_permalink(params[:path])
+
+    unless @content 
+      flash[:alert] = "Sorry, couldn't find the page '#{params[:path]}'."
+      redirect_to root_url
     end
   end
 end
