@@ -10,7 +10,8 @@
       - if @user.home_page.try(:strip).present?
         %li
           %span home page:
-          %div= @user.home_page
+          %div 
+            %a{:href => @user.home_page =~ /^http/ ? @user.home_page : "http://#{@user.home_page}"}= @user.home_page
       - if @user.biography.try(:strip).present?
         %li
           %span biography:
