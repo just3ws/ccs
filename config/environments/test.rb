@@ -1,5 +1,7 @@
 Ccs::Application.configure do
   require File.expand_path("lib/heroku_settings") 
+
+  puts "Loading rails env #{Rails.env}"
   HerokuSettings.load_env_from_config
 
   # Settings specified here will take precedence over those in config/application.rb
