@@ -22,32 +22,3 @@ Feature: Speaker submissions
     And I should see "logged in as..." within the authentication box
     And I should see "mdh@just3ws.com" within the authentication box
 
-#Scenario: I want to see my talks
-#Given the following user:
-#| email    | mdh@just3ws.com |
-#| password | secret          |
-#| role     | speaker         |
-#And the following submissions exist
-#| title | abstract  | email       | first_name | last_name | home_page    | biography   |
-#| abc   | 1abstract | a@gmail.com | aspeaker   | talk      | http://a.com | a biography |
-#| def   | 2abstract | b@gmail.com | bspeaker   | blah      | http://b.com | b biography |
-#And user exists with email: "a@gmail.com", password: "secret", role: "speaker"
-#And I login using the aside authentication:
-#| id       | value           |
-#| email    | mdh@just3ws.com |
-#| password | secret          |
-#And I am on the home page
-#When I go to path "/submissions"
-#Then I should see "abc"
-#And I should not see "def"
-#And show me the page
-
-  Scenario: Login via the sidebar
-    Given user has registered with "mdh@just3ws.com", "secret"
-    And I am on the home page
-    When I login through the sidebar:
-      | id       | value           |
-      | email    | mdh@just3ws.com |
-      | password | secret          |
-    Then I should see "logged in as..." within the authentication box
-    And I should see "mdh@just3ws.com" within the authentication box

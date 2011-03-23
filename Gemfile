@@ -62,6 +62,7 @@ group :development, :test do
   gem 'heroku_san'
 
   # given/when/then
+  gem 'gherkin'
   gem 'cucumber'
   gem 'cucumber-rails'
 
@@ -81,9 +82,6 @@ group :development, :test do
   
   # And show me the page
   gem 'launchy'
-
-  # model building
-  gem 'pickle'
 
   # much improved test progress and fail-fast
   gem 'fuubar'
