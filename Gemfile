@@ -4,9 +4,6 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3-ruby'
 
-# app server
-gem 'unicorn'
-
 # our beloved host
 gem 'heroku'
 

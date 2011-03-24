@@ -1,5 +1,6 @@
 %h4 Current submissions
 %p= pluralize @submissions.visible.count, 'submission'
+%p= pluralize Submission.visible.select('distinct user_id').count, 'speaker'
 .submissions
   - i = 0
   - @submissions.visible(:order => :email).each do |submission|
