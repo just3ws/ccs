@@ -15,3 +15,9 @@ Factory.define :speaker, :parent => :user do |f|
 end
 
 
+Factory.define :admin, :parent => :user do |f|
+  f.email "admin@just3ws.com"
+  f.role "admin"
+end
+
+
