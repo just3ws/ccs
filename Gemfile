@@ -23,10 +23,6 @@ gem 'fastercsv'
 # generate a sitemap and ping search servics to get indexed
 gem 'sitemap_generator', :git => 'git://github.com/just3ws/sitemap_generator.git', :branch => 'heroku'
 
-group :production do
-  gem 'pg'
-end
-
 # authentication
 gem 'devise'
 
@@ -100,5 +96,8 @@ group :development do
 
   # better than pp
   gem 'awesome_print'
+
+  # vi in your irb
+  gem 'interactive_editor'
 end
 
