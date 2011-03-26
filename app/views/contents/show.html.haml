@@ -1,0 +1,7 @@
+.show
+  %div
+    %h3= "#{@content.title}"
+    %p.long-text= @content.body
+- if current_user.try(:admin?)
+  = render :partial => "shared/actions", :locals => {:model => @content, :current_action => :show}
+

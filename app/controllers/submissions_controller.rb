@@ -1,9 +1,20 @@
 class SubmissionsController < ApplicationController
   load_and_authorize_resource
 
-  # GET /submissions
-  # GET /submissions.xml
   def index
+    respond_to do |format|
+      format.html
+      format.xml { render :xml => @submissions }
+      format.csv do
+        csv_string = FasterCSV.generate do |csv|
+          csv << ["title", "abstract", "first_name", "last_name", "level", "keywords", "biography", "home_page", "email" ]
+          @submissions.visible.each do |s|
+            csv << [s.title, s.abstract, s.first_name, s.last_name, s.level, s.keywords, s.biography, s.home_page, s.email ]
+          end
+        end
+        send_data csv_string, :type => "application/vnd.ms-excel", :filename=>"submissions.csv", :disposition => 'attachment'
+      end
+    end
   end
 
   # GET /submissions/1
