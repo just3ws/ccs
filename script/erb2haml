@@ -2,6 +2,8 @@
  
 Dir.glob("app/views/**/*.html.erb").each do |erbname|
   hamlname = erbname.gsub(".html.erb", ".html.haml")
-  system "/usr/bin/html2haml #{erbname} #{hamlname}"
+  cmd = "html2haml #{erbname} #{hamlname}"
+  puts cmd
+  system cmd 
 end
 
