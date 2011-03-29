@@ -7,9 +7,13 @@ class SubmissionsController < ApplicationController
       format.xml { render :xml => @submissions }
       format.csv do
         csv_string = FasterCSV.generate do |csv|
-          csv << ["title", "abstract", "first_name", "last_name", "level", "keywords", "biography", "home_page", "email" ]
+          csv << ["title", "abstract", "full_name", "level", "keywords", "biography", "home_page", "email" ]
           @submissions.visible.each do |s|
-            csv << [s.title, s.abstract, s.first_name, s.last_name, s.level, s.keywords, s.biography, s.home_page, s.email ]
+            begin
+              csv << [s.title, s.abstract, s.user.full_name, s.level, s.keywords, s.user.biography, s.user.home_page, s.user.email ]
+            rescue Exception => e
+              logger.error "Couldn't add the row to the submissions csv: '#{e.inspect}'"
+            end
           end
         end
         send_data csv_string, :type => "application/vnd.ms-excel", :filename=>"submissions.csv", :disposition => 'attachment'
