@@ -6,11 +6,12 @@ class ContentsController < ApplicationController
   end
 
   def show
-    @content ||= Content.find_by_permalink(params[:path])
+    permalink = params[:path] || "default"
+    @content = Content.find_by_permalink(permalink)
     unless @content
-      flash[:alert] = "Sorry, couldn't find the page '#{params[:path]}'."
+      flash[:alert] = "Sorry, couldn't find the page '#{permalink}'."
       if current_user.try(:admin?)
-        @content = Content.new(:permalink => params[:path])
+        @content = Content.new(:permalink => permalink)
         render :action => "new"
       else
         redirect_to root_url

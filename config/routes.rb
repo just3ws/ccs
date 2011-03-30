@@ -11,8 +11,8 @@ Ccs::Application.routes.draw do
   resources :contents
   match '/:path' => 'contents#show' # this needs to be the last non-default route
 
-  root :to => 'submissions#new'
-  #root :to => "#show"
+  #root :to => 'submissions#new'
+  root :to => "contents#show"
 end
 #== Route Map
 # Generated on 22 Mar 2011 08:10
