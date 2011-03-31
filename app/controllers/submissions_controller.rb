@@ -21,16 +21,12 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # GET /submissions/1
-  # GET /submissions/1.xml
   def show
     respond_to do |format|
       format.html # show.html.erb
     end
   end
 
-  # GET /submissions/new
-  # GET /submissions/new.xml
   def new
     @submission.user = User.new
     respond_to do |format|
@@ -38,12 +34,9 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # GET /submissions/1/edit
   def edit
   end
 
-  # POST /submissions
-  # POST /submissions.xml
   def create
     @submission.user = find_or_initialize_user_with params[:user]
     @submission.user.role = "speaker"
@@ -57,8 +50,6 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # PUT /submissions/1
-  # PUT /submissions/1.xml
   def update
     respond_to do |format|
       if @submission.update_attributes(params[:submission])
@@ -69,8 +60,6 @@ class SubmissionsController < ApplicationController
     end
   end
 
-  # DELETE /submissions/1
-  # DELETE /submissions/1.xml
   def destroy
     # soft-delete
     @submission.update_attributes(:deleted_at => DateTime.now)
