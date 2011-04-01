@@ -38,9 +38,9 @@
 class User < ActiveRecord::Base
   has_many :submissions, :foreign_key => "user_id"
   validates :email, :presence => true,
-            :length => {:within => 0..255},
-            :email_domain => true,
-            :email_format => true
+    :length => {:within => 0..255},
+    :email_domain => true,
+    :email_format => true
   validates :first_name, :length => {:within => 0..255}, :allow_blank => true
   validates :last_name, :length => {:within => 0..255}, :allow_blank => true
   validates :home_page, :length => {:within => 0..512}, :allow_blank => true
@@ -48,19 +48,25 @@ class User < ActiveRecord::Base
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
 
   has_attached_file :avatar,
-                    :bucket => S3Settings.bucket,
-                    :storage => :s3,
-                    :s3_credentials => {:access_key_id => ENV['S3_KEY'] || S3Settings.settings[:access_key_id],
-                                        :secret_access_key => ENV['S3_SECRET'] || S3Settings.settings[:secret_access_key]},
-                    :path => "/:style/:filename"
+    :bucket => S3Settings.bucket,
+    :storage => :s3,
+    :s3_credentials => {:access_key_id => ENV['S3_KEY'] || S3Settings.settings[:access_key_id],
+      :secret_access_key => ENV['S3_SECRET'] || S3Settings.settings[:secret_access_key]},
+      :path => "/:style/:filename"
 
-  devise :invitable, :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :invitable,
+         :database_authenticatable,
+         :registerable,
+         :confirmable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :home_page, :biography, :role,
-                  :speakerrate, :twitter
+    :first_name, :last_name, :home_page, :biography, :role,
+    :speakerrate, :twitter
 
   ROLES = %w[guest attendee speaker admin]
 
