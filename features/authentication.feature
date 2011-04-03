@@ -1,5 +1,9 @@
 Feature: Authentication
 
+  Background:
+    Given there is default content
+    And I am not authenticated
+
   Scenario: Login via the sidebar
     Given I have registered with "mdh@just3ws.com", "secret"
     And I am on the home page

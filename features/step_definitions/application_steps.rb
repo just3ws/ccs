@@ -20,5 +20,9 @@ Given /^I have registered with "([^"]*)", "([^"]*)"$/ do |email, password|
   Factory.create(:user, :email => email, :password => password, :password_confirmation => password)
 end
 
-
+Given /^there is (.*) content$/ do |permalink|
+  c = Content.find_or_initialize_by_permalink(permalink)
+  c.update_attribute(:body, "Lorem ipsum")
+  c.save!
+end
 

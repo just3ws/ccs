@@ -1,10 +1,11 @@
 Feature: Speaker submissions
 
   Background:
-    Given I am not authenticated
+    Given there is default content
+    And I am not authenticated
 
   Scenario: I want to post my talk
-    Given I am on the home page
+    Given I am on the new submission page 
     When I fill in the new submission form with:
       | submission_title    | my title                 |
       | submission_abstract | the abstract description |
