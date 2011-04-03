@@ -17,13 +17,15 @@ Ccs::Application.routes.draw do
   root :to => "contents#show"
 end
 #== Route Map
-# Generated on 31 Mar 2011 08:39
+# Generated on 03 Apr 2011 08:53
 #
-# [DEVISE] From version 1.2, there is no need to set your encryptor to bcrypt since encryptors are only enabled if you include :encryptable in your models. To update your app, please:
-# 
-# 1) Remove config.encryptor from your initializer;
-# 2) Add t.encryptable to your old migrations;
-# 3) [Optional] Remove password_salt in a new recent migration. Bcrypt does not require it anymore.
+#                   sesjas GET    /sessions(.:format)                {:controller=>"sesjas", :action=>"index"}
+#                          POST   /sessions(.:format)                {:controller=>"sesjas", :action=>"create"}
+#                new_sesja GET    /sessions/new(.:format)            {:controller=>"sesjas", :action=>"new"}
+#               edit_sesja GET    /sessions/:id/edit(.:format)       {:controller=>"sesjas", :action=>"edit"}
+#                    sesja GET    /sessions/:id(.:format)            {:controller=>"sesjas", :action=>"show"}
+#                          PUT    /sessions/:id(.:format)            {:controller=>"sesjas", :action=>"update"}
+#                          DELETE /sessions/:id(.:format)            {:controller=>"sesjas", :action=>"destroy"}
 #                 contents GET    /contents(.:format)                {:controller=>"contents", :action=>"index"}
 #                          POST   /contents(.:format)                {:controller=>"contents", :action=>"create"}
 #              new_content GET    /contents/new(.:format)            {:controller=>"contents", :action=>"new"}

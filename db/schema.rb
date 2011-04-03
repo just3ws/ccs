@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110401234616) do
+ActiveRecord::Schema.define(:version => 20110403132816) do
 
   create_table "contents", :force => true do |t|
     t.string    "title"
@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(:version => 20110401234616) do
     t.text     "abstract"
     t.integer  "level"
     t.string   "keywords"
-    t.boolean  "accepted",   :default => false
-    t.boolean  "mailed",     :default => false
-    t.boolean  "rsvped",     :default => false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "accepted_at"
+    t.datetime "mailed_at"
+    t.datetime "rsvped_at"
   end
 
   create_table "submissions", :force => true do |t|
