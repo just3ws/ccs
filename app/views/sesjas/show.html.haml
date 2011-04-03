@@ -1,0 +1,20 @@
+.show
+  %div
+    %h3
+      %span Session Proposal:
+      "#{@submission.title}"
+    %ul
+      %li
+        %span description:
+        .long-text= @submission.abstract
+      %li
+        %span level:
+        = %w(introductory intermediate advanced)[@submission.level-1]
+      - if @submission.keywords.try(:strip).present?
+        %li
+          %span keywords:
+          %div= @submission.keywords
+  .session-speaker
+    - unless @submission.user.full_name.blank?
+      proposed by #{link_to @submission.user.full_name, user_path(@submission.user)}
+= render :partial => "shared/actions", :locals => {:model => @submission, :current_action => :show}

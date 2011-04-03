@@ -3,7 +3,7 @@ class Ability
 
  def initialize(user)
    # NOTE: avoid using blocks to define accessibility
-   # as they are not compatible withthe automatic loading
+   # as they are not compatible with the automatic loading
    # of index resources.
    # https://github.com/ryanb/cancan/wiki/Authorizing-Controller-Actions
 
@@ -11,6 +11,7 @@ class Ability
 
    if user.role? :guest
      can :show,   Content
+     can :show,   Sesja, { :accepted => true, :rsvped => true }
      can :create, Preregistration
      can :create, Submission
    end
@@ -20,7 +21,8 @@ class Ability
 
    if user.role? :speaker
      can :manage, Submission, :user_id => user.id
-     can :manage, User, :id => user.id
+     can :update, Sesja, { :user_id => user.id }
+     can :manage, User, { :id => user.id }
    end
 
    if user.role? :admin
