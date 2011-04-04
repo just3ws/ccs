@@ -19,6 +19,7 @@ class CreateSesjas < ActiveRecord::Migration
     submissions.find_each do |s|
       begin
         if s.user
+          s[:level] ||= 0
           puts "loading #{s.title}"
           sesja = Sesja.find_or_initialize_by_title(s.title)
           sesja.update_attributes(s.attributes.to_hash)
