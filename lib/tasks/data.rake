@@ -1,6 +1,6 @@
 namespace :data do
   desc "Load the submissions into sesja (sessions)"
-  task :load_submissions_into_sesja do
+  task :load_submissions_into_sesja => :environment do
     submissions = Submission.visible.select([:title, :abstract, :level, :keywords, :user_id])
     puts "converting #{submissions.count} submission(s)" 
     submissions.find_each do |s|
