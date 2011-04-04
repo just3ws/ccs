@@ -4,7 +4,6 @@ class SubmissionsController < ApplicationController
   def index
     respond_to do |format|
       format.html
-      format.xml { render :xml => @submissions }
       format.csv do
         csv_string = FasterCSV.generate do |csv|
           csv << ["title", "abstract", "full_name", "level", "keywords", "biography", "home_page", "email" ]
