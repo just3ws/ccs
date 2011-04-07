@@ -4,6 +4,10 @@ Factory.define :user do |f|
   f.password_confirmation "secret"
 end
 
+Factory.sequence :email do |n|
+  "#{n.ordinalize}_user@just3ws.com"
+end
+
 Factory.define :attendee, :parent => :user do |f|
   f.email "attendee@just3ws.com"
   f.role "attendee"
@@ -20,4 +24,9 @@ Factory.define :admin, :parent => :user do |f|
   f.role "admin"
 end
 
-
+Factory.define :session, :class => Sesja do |f|
+  f.title "factory title for session"
+  f.abstract "factory abstract for session"
+  f.level 1
+  f.association :user
+end

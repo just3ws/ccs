@@ -1,16 +1,14 @@
 Ccs::Application.routes.draw do
-  resources :sesjas, :path => "sessions"
-
-  resources :contents
-
   devise_for :users
+  resources :sesjas, :path => "sessions"
+  resources :contents
   resources :imports
-  match '/import/proc/:id' => 'imports#proc_csv', :as => :import_proc
   resources :users
   resources :preregistrations, :only => [:create, :index]
   resources :submissions
-
   resources :contents
+
+  match '/import/proc/:id' => 'imports#proc_csv', :as => :import_proc
   match '/:path' => 'contents#show' # this needs to be the last non-default route
 
   #root :to => 'submissions#new'

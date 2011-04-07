@@ -6,7 +6,7 @@
   - @submissions.visible(:order => :email).each do |submission|
     - i = i + 1
     %div.show
-      - if current_user.admin?
+      - if user_signed_in? && current_user.admin?
         .actions
           %ul
             %li= link_to 'Show', submission

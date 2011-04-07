@@ -1,33 +1,35 @@
-%h4 Current submissions
-%p= pluralize @submissions.visible.count, 'submission'
-%p= pluralize Submission.visible.select('distinct user_id').count, 'speaker'
-.submissions
+%h4 Current Sessions 
+- if user_signed_in? && current_user.admin?
+  %p= pluralize @sesjas.displayable.count, 'session'
+  %p= pluralize @sesjas.displayable.select('distinct user_id').count, 'speaker'
+.sesjas
   - i = 0
-  - @submissions.visible(:order => :email).each do |submission|
+  - @sesjas.displayable.each do |sesja|
     - i = i + 1
     %div.show
-      - if current_user.admin?
+      - if user_signed_in? && current_user.admin?
         .actions
           %ul
-            %li= link_to 'Show', submission
-            %li= link_to 'Edit', edit_submission_path(submission)
-            %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
+            %li= link_to 'Show', sesja
+            %li= link_to 'Edit', edit_sesja_path(sesja)
+            %li= link_to 'Destroy', sesja, :confirm => 'Are you sure you wish to delete this sesja?', :method => :delete
       %h3
         = "#{i.ordinalize}: " 
-        = link_to "#{submission.title}", submission
+        = link_to "#{sesja.title}", sesja
       %ul
         %li
-          .long-text= truncate(submission.abstract, :length => 144)
+          .long-text= truncate(sesja.abstract, :length => 144)
         %li
-          - if submission.level.present?
+          - if sesja.level.present?
             %span level:
-            =  %w(introductory intermediate advanced)[submission.level-1] 
-        - if submission.keywords.try(:strip).present?
+            =  %w(introductory intermediate advanced)[sesja.level-1] 
+        - if sesja.keywords.try(:strip).present?
           %li
             %span keywords:
-            %div= submission.keywords
+            %div= sesja.keywords
       .session-speaker
-        - if submission.user.try(:full_name).present?
-          proposed by #{link_to submission.user.full_name, user_path(submission.user)}
+        - if sesja.user.try(:full_name).present?
+          proposed by #{link_to sesja.user.full_name, user_path(sesja.user)}
 
-= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}
+- if user_signed_in? && current_user.admin?
+  = render :partial => "shared/actions", :locals => {:model => Sesja.new, :current_action => :index}

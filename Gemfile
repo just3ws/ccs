@@ -44,6 +44,9 @@ gem 'jquery-rails', '>= 0.2.6'
 # cleaner HTML
 gem 'haml'
 
+# textile support for user defined content
+gem 'bluecloth'
+
 # for Amazon Web Service (S3)
 gem 'aws-s3', :require => 'aws/s3'
 

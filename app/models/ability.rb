@@ -10,8 +10,8 @@ class Ability
    user ||= User.new :role => "guest" # guest user (not logged in)
 
    if user.role? :guest
-     can :show,   Content
-     can :show,   Sesja, { :accepted => true, :rsvped => true }
+     can :read,   Content
+     can :read,   Sesja
      can :create, Preregistration
      can :create, Submission
    end
