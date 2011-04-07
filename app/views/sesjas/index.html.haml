@@ -1,4 +1,4 @@
-%h4 Current Sessions 
+%h4 Sessions 
 - if user_signed_in? && current_user.admin?
   %p= pluralize @sesjas.displayable.count, 'session'
   %p= pluralize @sesjas.displayable.select('distinct user_id').count, 'speaker'
@@ -14,7 +14,6 @@
             %li= link_to 'Edit', edit_sesja_path(sesja)
             %li= link_to 'Destroy', sesja, :confirm => 'Are you sure you wish to delete this sesja?', :method => :delete
       %h3
-        = "#{i.ordinalize}: " 
         = link_to "#{sesja.title}", sesja
       %ul
         %li

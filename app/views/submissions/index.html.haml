@@ -1,5 +1,6 @@
 %h4 Current submissions
-%p= pluralize @submissions.visible.count, 'submission'
+- if user_signed_in? && current_user.admin?
+  %p= pluralize @submissions.visible.count, 'submission'
 %p= pluralize Submission.visible.select('distinct user_id').count, 'speaker'
 .submissions
   - i = 0
@@ -19,7 +20,7 @@
         %li
           .long-text= truncate(submission.abstract, :length => 144)
         %li
-          - if submission.level.present?
+          - if submission.level.present? && submission.level > 0
             %span level:
             =  %w(introductory intermediate advanced)[submission.level-1] 
         - if submission.keywords.try(:strip).present?

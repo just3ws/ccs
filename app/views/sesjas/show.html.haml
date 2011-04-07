@@ -2,19 +2,21 @@
   %div
     %h3
       %span Session Proposal:
-      "#{@submission.title}"
+      "#{@sesja.title}"
     %ul
       %li
         %span description:
-        .long-text= @submission.abstract
+        .long-text= @sesja.abstract
       %li
         %span level:
-        = %w(introductory intermediate advanced)[@submission.level-1]
-      - if @submission.keywords.try(:strip).present?
+        = %w(introductory intermediate advanced)[@sesja.level-1]
+      - if @sesja.keywords.try(:strip).present?
         %li
           %span keywords:
-          %div= @submission.keywords
+          %div= @sesja.keywords
   .session-speaker
-    - unless @submission.user.full_name.blank?
-      proposed by #{link_to @submission.user.full_name, user_path(@submission.user)}
-= render :partial => "shared/actions", :locals => {:model => @submission, :current_action => :show}
+    - unless @sesja.user.full_name.blank?
+      proposed by #{link_to @sesja.user.full_name, user_path(@sesja.user)}
+
+- if user_signed_in? && (current_user.admin? || current_user.speaker?)
+  = render :partial => "shared/actions", :locals => {:model => @sesja, :current_action => :show}

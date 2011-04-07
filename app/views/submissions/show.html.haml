@@ -7,9 +7,10 @@
       %li
         %span description:
         .long-text= @submission.abstract
-      %li
-        %span level:
-        = %w(introductory intermediate advanced)[@submission.level-1]
+      - if @submission.level.present? && @submission.level > 0
+        %li
+          %span level:
+          = %w(introductory intermediate advanced)[@submission.level-1]
       - if @submission.keywords.try(:strip).present?
         %li
           %span keywords:

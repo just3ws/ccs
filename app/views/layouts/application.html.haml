@@ -16,7 +16,7 @@
         .nav
           %ul
             %li= link_to "home", root_url
-            %li= link_to "sessions", new_submission_path
+            %li= link_to "sessions", sesjas_path 
             - if user_signed_in?
               %li= link_to "profile", edit_user_path(current_user)
         .header-container

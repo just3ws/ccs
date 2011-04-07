@@ -1,5 +1,5 @@
 .show
-  %h4 User Profile
+  %h4 #{@user.speaker? ? 'Speaker' : 'User'} Profile
   %div
     %h3= @user.full_name.try(:strip).present? ? @user.full_name.try(:strip) : @user.email
     %ul
@@ -27,12 +27,18 @@
           %span speakerrate:
           %div
             %a{:href => @user.speakerrate}= @user.speakerrate
-      - if @user.role == "speaker" && @user.try(:submissions)
+      %li
+        %span= "#{pluralize(@user.sesja.displayable.count, 'session')}: "
+        %ul
+        - @user.sesja.displayable.each do |sesja|
+          %li= link_to sesja.title, sesja
+      - if user_signed_in? && (current_user.admin? || current_user.speaker?)
         %li
           %span= "#{pluralize(@user.submissions.visible.count, 'submission')}: "
           %ul
           - @user.submissions.visible.each do |submission|
             %li= link_to submission.title, submission
-  .actions
-    - if can? :update, @user
-      = link_to "Edit", edit_user_path(@user)
+  - if user_signed_in? && (current_user.admin? || current_user.speaker?)
+    .actions
+      - if can? :update, @user
+        = link_to "Edit", edit_user_path(@user)

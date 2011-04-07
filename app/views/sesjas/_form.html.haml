@@ -1,12 +1,12 @@
-= form_for @submission, :html => {:multipart => true} do |f|
-  - if @submission.errors.any?
-    - errors = @submission.errors
-    - errors.merge!(@submission.user.errors) unless @submission.user.blank?
+= form_for @sesja, :html => {:multipart => true} do |f|
+  - if @sesja.errors.any?
+    - errors = @sesja.errors
+    - errors.merge!(@sesja.user.errors) unless @sesja.user.blank?
     #error_explanation
       %h4
         = pluralize(errors.count, "error")
         prohibited this
-        submission from being saved:
+        sesja from being saved:
       %ul
         - errors.full_messages.each do |msg|
           %li= msg
@@ -29,46 +29,7 @@
         = f.label :keywords
         = f.text_field :keywords, :placeholder => "relevant, words, for, your, session"
         .hint comma-separated list of keywords to help describe your session
-  - unless user_signed_in?
-    = fields_for @submission.user do |uf|
-      %fieldset
-        %legend and a little bit about yourself...
-        %ul
-          %li
-            = uf.label :email, :class => "required"
-            = uf.email_field :email, :placeholder => "your@email.com"
-            .hint the email address we can reach you at
-          %li
-            = uf.label :first_name, :class => ""
-            = uf.text_field :first_name, :placeholder => "first name"
-          %li
-            = uf.label :last_name, :class => ""
-            = uf.text_field :last_name, :placeholder => "last name"
-          %li
-            = uf.label :home_page, :class => ""
-            = uf.url_field :home_page, :placeholder => "http://your.homepage.com"
-            .hint this can be your blog, twitter, linkedin or personal homepage
-          %li
-            = uf.label :biography, :class => ""
-            = uf.text_area :biography, :placeholder => "some biographical information"
-            .hint your life story in 1K characters or less
-          %li
-            = uf.label :twitter, :class => ""
-            = uf.text_field :twitter, :placeholder => "yourtwittername"
-            .hint your twitter name if you'd like us to provide a link your twitter account
-          %li
-            = uf.label :speakerrate, :class => ""
-            = uf.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name"
-            .hint
-              your speakerrate url if you'd like us to provide a link to encourage attendees to provide
-              feedback
-          %li
-            = uf.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional"
-            = uf.file_field :avatar
-            .hint
-              feel free to upload your profile picture along with your proposal but it's
-              optional
   %fieldset
     %ul
       %li
-        %button#submission_submit{:name => "commit", :type => "submit"} submit
+        %button#sesja_submit{:name => "commit", :type => "submit"} submit

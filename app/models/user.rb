@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     role? :admin
   end
 
+  def speaker?
+    role? :speaker
+  end
+
   def role?(base_role)
     ROLES.index(base_role.to_s) <= ROLES.index(role)
   end
