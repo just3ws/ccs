@@ -1,4 +1,5 @@
 class Content < ActiveRecord::Base
+  validates_inclusion_of :markup, :in => %(text markdown)
 end
 
 # == Schema Information

@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 require 'fastercsv'
+require 'rdiscount'
 %w(generator s3_settings hash).each do |file|
   require File.expand_path("lib/#{file}")
 end
