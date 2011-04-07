@@ -48,6 +48,11 @@ class User < ActiveRecord::Base
     names << first_name unless first_name.blank?
     names.compact.join(', ')
   end
+
+
+  def displayable?
+    # TODO: allow for displaying speakers profile when they have an accepted session
+  end
 end
 
 
