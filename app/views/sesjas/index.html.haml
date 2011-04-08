@@ -17,7 +17,7 @@
         = link_to "#{sesja.title}", sesja
       %ul
         %li
-          .long-text= truncate(sesja.abstract, :length => 144)
+          .long-text= truncate(sesja.abstract, :length => 500)
         %li
           - if sesja.level.present?
             %span level:
@@ -28,7 +28,7 @@
             %div= sesja.keywords
       .session-speaker
         - if sesja.user.try(:full_name).present?
-          proposed by #{link_to sesja.user.full_name, user_path(sesja.user)}
+          speaker: #{link_to sesja.user.full_name, user_path(sesja.user)}
 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => Sesja.new, :current_action => :index}
