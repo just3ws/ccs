@@ -17,6 +17,10 @@ gem 'dalli'
 gem 'SystemTimer'
 gem 'resque'
 
+# searching
+gem 'indextank'
+gem 'json_pure'
+
 # csv processing
 gem 'fastercsv'
 
