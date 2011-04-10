@@ -4,6 +4,7 @@ Ccs::Application.routes.draw do
   resources :contents
   resources :imports
   resources :users
+  match 'speakers' => 'users#index'
   resources :preregistrations, :only => [:create, :index]
   resources :submissions
   resources :contents

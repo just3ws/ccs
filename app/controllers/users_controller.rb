@@ -16,4 +16,8 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def index 
+    @users = User.speakers.map {|u| u if u.sesja.present? }  
+  end
 end

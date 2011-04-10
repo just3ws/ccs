@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :twitter, :length => {:within => 0..32}, :allow_blank => true
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
   before_save :seoize_permalink
+  scope :speakers, :conditions => { :role => "speaker" } 
 
   has_attached_file :avatar,
     :bucket => S3Settings.bucket,
@@ -20,13 +21,13 @@ class User < ActiveRecord::Base
       :path => "/:style/:filename"
 
   devise :invitable,
-         :database_authenticatable,
-         :registerable,
-         :confirmable,
-         :recoverable,
-         :rememberable,
-         :trackable,
-         :validatable
+    :database_authenticatable,
+    :registerable,
+    :confirmable,
+    :recoverable,
+    :rememberable,
+    :trackable,
+    :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
