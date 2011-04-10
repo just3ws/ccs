@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   validates :home_page, :length => {:within => 0..512}, :allow_blank => true
   validates :twitter, :length => {:within => 0..32}, :allow_blank => true
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
+  before_save :seoize_permalink
 
   has_attached_file :avatar,
     :bucket => S3Settings.bucket,
@@ -56,6 +57,12 @@ class User < ActiveRecord::Base
 
   def displayable?
     # TODO: allow for displaying speakers profile when they have an accepted session
+  end
+
+  protected
+
+  def seoize_permalink
+    Formatter.seoize!(self.permalink)
   end
 end
 

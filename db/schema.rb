@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403132816) do
+ActiveRecord::Schema.define(:version => 20110410153150) do
 
   create_table "contents", :force => true do |t|
     t.string   "title"
@@ -100,11 +100,14 @@ ActiveRecord::Schema.define(:version => 20110403132816) do
     t.datetime "invitation_sent_at"
     t.string   "speakerrate",          :limit => 2048
     t.string   "twitter",              :limit => 32
+    t.string   "permalink"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["first_name", "last_name"], :name => "index_users_on_first_name_and_last_name"
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["permalink"], :name => "index_users_on_permalink"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
