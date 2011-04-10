@@ -1,4 +1,11 @@
 class Content < ActiveRecord::Base
+  before_save :seoize_permalink
+
+  protected
+
+  def seoize_permalink
+    Formatter.seoize!(self.permalink)
+  end
 end
 
 # == Schema Information
