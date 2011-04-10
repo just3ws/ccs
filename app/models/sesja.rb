@@ -9,6 +9,7 @@ class Sesja < ActiveRecord::Base
   validates :title, :presence => true, :length => {:within => 0..64}
   validates :abstract, :presence => true, :length => {:within => 0..1024}
   validates_inclusion_of :level, :in => 0..3
+  before_save :seoize_permalink
 
   def accepted?
     !!self.accepted_at
@@ -20,6 +21,12 @@ class Sesja < ActiveRecord::Base
 
   def mailed?
     !!self.mailed_at
+  end
+
+  protected
+
+  def seoize_permalink
+    Formatter.seoize!(self.permalink)
   end
 end
 
