@@ -14,8 +14,7 @@ gem 'json'
 gem 'dalli'
 
 # background jobs
-gem 'SystemTimer'
-gem 'resque'
+gem 'delayed_job'
 
 # searching
 gem 'indextank'
