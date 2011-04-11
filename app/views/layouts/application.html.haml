@@ -32,6 +32,7 @@
             %p.alert= alert
       #content
         = yield
+
       #sidebar
         = render :partial => "shared/register"
         = render :partial => "shared/blurb"
@@ -39,6 +40,12 @@
         = render :partial => "shared/location"
         = render :partial => "shared/authentication"
         = render :partial => "shared/github"
+      #footer 
+        %a{ :href => "http://github.com/chicagocodecamp/ccs", :target => "_blank"} ccs 
+        is designed &amp; developed by 
+        %a{ :href => "http://about.me/michaeldhall", :target => "_blank"} michael d. hall
+        aka
+        %a{ :href => "http://twitter.com/just3ws", :target => "_blank"} just3ws
     = render :partial => "shared/google_font_loader"
     = render :partial => "shared/google_analytics"
     = javascript_include_tag :defaults
