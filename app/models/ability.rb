@@ -13,7 +13,7 @@ class Ability
      can :show,   Content
      can :read,   Sesja
      can :read,   User do |u|
-       u.sesja.present? && u.sesja.displayable.present?
+       (u.sesja.present? && u.sesja.displayable.present?)  
      end
      can :create, Preregistration
      can :create, Submission

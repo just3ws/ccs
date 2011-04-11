@@ -3,7 +3,6 @@
   %p= pluralize @users.count, 'speaker'
 .users
   - @users.each do |user|
-    = user.inspect
     %div.show
       - if user_signed_in? && current_user.admin?
         .actions
@@ -11,43 +10,40 @@
             %li= link_to 'Show', user
             %li= link_to 'Edit', edit_user_path(user)
             %li= link_to 'Destroy', user, :confirm => 'Are you sure you wish to delete this user?', :method => :delete
-      %h3= user.full_name
+      %h3
+        = link_to "#{user.full_name}", user
       %ul
-        - if user.full_name.try(:strip).present?
+        - if user.biography.try(:strip).present?
           %li
-            %span email:
-            %div= mail_to user.email
+            %span biography:
+            .long-text= user.biography
         - if user.home_page.try(:strip).present?
           %li
             %span home page:
             %div 
               %a{:href => user.home_page =~ /^http/ ? user.home_page : "http://#{user.home_page}"}= user.home_page
-        - if user.biography.try(:strip).present?
-          %li
-            %span biography:
-            .long-text= user.biography
         - if user.twitter.try(:strip).present?
           %li
             %span twitter:
             %div
               %a{:href => "http://twitter.com/#{user.twitter}"}
                 http://twitter.com/#{user.twitter}
-    - if user.speakerrate.try(:strip).present?
-      %li
-        %span speakerrate:
-        %div
-          %a{:href => user.speakerrate}= user.speakerrate
-    %li
-      %span= "#{pluralize(user.sesja.displayable.count, 'session')}: "
-      %ul
-        - user.sesja.displayable.each do |sesja|
-          %li= link_to sesja.title, sesja
-    - if user_signed_in? && (current_user.admin? || current_user.speaker?)
-      %li
-        %span= "#{pluralize(user.submissions.visible.count, 'submission')}: "
-        %ul
-          - user.submissions.visible.each do |submission|
-            %li= link_to submission.title, submission
+        - if user.speakerrate.try(:strip).present?
+          %li
+            %span speakerrate:
+            %div
+              %a{:href => user.speakerrate}= user.speakerrate
+        %li
+          %span= "#{pluralize(user.sesja.displayable.count, 'session')}: "
+          %ul
+          - user.sesja.displayable.each do |sesja|
+            %li= link_to sesja.title, sesja
+        - if user_signed_in? && (current_user.admin? || current_user.speaker?)
+          %li
+            %span= "#{pluralize(user.submissions.visible.count, 'submission')}: "
+            %ul
+            - user.submissions.visible.each do |submission|
+              %li= link_to submission.title, submission
 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => user.new, :current_action => :index}

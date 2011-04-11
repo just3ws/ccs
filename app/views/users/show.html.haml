@@ -3,19 +3,19 @@
   %div
     %h3= @user.full_name.try(:strip).present? ? @user.full_name.try(:strip) : @user.email
     %ul
-      - if @user.full_name.try(:strip).present?
+      - if user_signed_in? 
         %li
           %span email:
           %div= mail_to @user.email
+      - if @user.biography.try(:strip).present?
+        %li
+          %span biography:
+          .long-text= @user.biography
       - if @user.home_page.try(:strip).present?
         %li
           %span home page:
           %div 
             %a{:href => @user.home_page =~ /^http/ ? @user.home_page : "http://#{@user.home_page}"}= @user.home_page
-      - if @user.biography.try(:strip).present?
-        %li
-          %span biography:
-          .long-text= @user.biography
       - if @user.twitter.try(:strip).present?
         %li
           %span twitter:

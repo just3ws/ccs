@@ -18,6 +18,6 @@ class UsersController < ApplicationController
   end
 
   def index 
-    @users = User.speakers.map {|u| u if u.sesja.present? }  
+    @users = User.speakers.with_rsvped_sessions
   end
 end

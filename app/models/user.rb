@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   validates :twitter, :length => {:within => 0..32}, :allow_blank => true
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
   before_save :seoize_permalink
+  
   scope :speakers, :conditions => { :role => "speaker" } 
+  scope :with_rsvped_sessions, joins(:sesja).where("sesjas.user_id is not null and sesjas.rsvped_at is not null")
 
   has_attached_file :avatar,
     :bucket => S3Settings.bucket,
@@ -50,8 +52,8 @@ class User < ActiveRecord::Base
 
   def full_name
     names = []
-    names << last_name unless last_name.blank?
-    names << first_name unless first_name.blank?
+    names << self.last_name unless self.last_name.blank?
+    names << self.first_name unless self.first_name.blank?
     names.compact.join(', ')
   end
 
