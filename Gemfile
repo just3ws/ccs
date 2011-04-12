@@ -94,6 +94,9 @@ group :development, :test do
 
   # run tests automatically
   gem 'watchr'
+
+  # should make things faster
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 end
 
 group :development do
