@@ -7,6 +7,9 @@ gem 'sqlite3-ruby'
 # our beloved host
 gem 'heroku'
 
+# error tracking
+gem 'hoptoad_notifier'
+
 # well. json
 gem 'json'
 
