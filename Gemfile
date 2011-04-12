@@ -65,11 +65,6 @@ group :test do
   gem 'cucumber'
   gem 'cucumber-rails'
 
-  # it should
-  gem 'rspec-core'
-  gem 'rspec'
-  gem 'rspec-rails'
-
   # factories
   gem 'factory_girl_rails'
 
@@ -88,6 +83,13 @@ group :test do
 
   # run tests automatically
   gem 'watchr'
+end
+
+group :test, :development do
+  # it should
+  gem 'rspec-core'
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :development do
