@@ -3,7 +3,7 @@
 # Yoinked from .... 
 # https://github.com/wayneeseguin/rvm-site/blob/master/.rvmrc 
 
-environment_id="ruby-1.8.7-p334@ccs"
+environment_id="ruby-1.8.7@ccs"
 
 # are we on a system-wide RVM
 if [[ -d "/usr/local/lib/rvm/environments" \
