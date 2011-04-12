@@ -56,10 +56,7 @@ gem 'aws-s3', :require => 'aws/s3'
 # for dealing with physical files
 gem 'paperclip'
 
-group :development, :test do
-  # simplify management of heroku environments 
-  gem 'heroku_san'
-
+group :test do
   # given/when/then
   gem 'gherkin'
   gem 'cucumber'
@@ -86,20 +83,14 @@ group :development, :test do
   gem 'fuubar'
   gem 'fuubar-cucumber'
 
-  # understand hotspots in the codebase
-  gem 'rails_best_practices'
-
-  # adds attribute and type docs to models and routes
-  gem 'annotate'
-
   # run tests automatically
   gem 'watchr'
-
-  # should make things faster
-  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 end
 
 group :development do
+  # simplify management of heroku environments 
+  gem 'heroku_san'
+
   # improve Irb
   gem 'wirble'
 
@@ -108,5 +99,14 @@ group :development do
 
   # vi in your irb
   gem 'interactive_editor'
+
+  # should make things faster
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+
+  # understand hotspots in the codebase
+  gem 'rails_best_practices'
+
+  # adds attribute and type docs to models and routes
+  gem 'annotate'
 end
 
