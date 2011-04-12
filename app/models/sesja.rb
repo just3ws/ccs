@@ -1,9 +1,10 @@
 class Sesja < ActiveRecord::Base
   belongs_to :user, :autosave => true
-  default_scope :order => 'created_at DESC'
+  scope :by_creation, :order => 'created_at DESC'
 
   scope :pending_confirmation, lambda { where "accepted_at is null" }
   scope :displayable,          lambda { where "rsvped_at is not null" }
+  scope :randomized,           lambda { order "random()" }
 
   validates :user, :presence => true
   validates :title, :presence => true, :length => {:within => 0..64}

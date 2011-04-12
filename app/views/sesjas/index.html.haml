@@ -3,7 +3,7 @@
   %p= pluralize @sesjas.displayable.count, 'session'
   %p= pluralize @sesjas.displayable.select('distinct user_id').count, 'speaker'
 .sesjas
-  - @sesjas.displayable.each do |sesja|
+  - @sesjas.displayable.randomized.each do |sesja|
     %div.show
       - if user_signed_in? && current_user.admin?
         .actions
