@@ -18,6 +18,6 @@ class UsersController < ApplicationController
   end
 
   def index 
-    @users = User.speakers.with_rsvped_sessions
+    @users = User.speakers.with_rsvped_sessions.randomized
   end
 end
