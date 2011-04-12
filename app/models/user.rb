@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   validates :home_page, :length => {:within => 0..512}, :allow_blank => true
   validates :twitter, :length => {:within => 0..32}, :allow_blank => true
   validates :speakerrate, :length => {:within => 0..2048}, :allow_blank => true
-  before_save :seoize_permalink
+
+  before_save :set_permalink, :seoize_permalink
 
   scope :speakers, :conditions => { :role => "speaker" } 
   scope :with_rsvped_sessions, joins(:sesja).where("sesjas.user_id is not null and sesjas.rsvped_at is not null")
@@ -32,6 +33,7 @@ class User < ActiveRecord::Base
     :trackable,
     :validatable
 
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
     :first_name, :last_name, :home_page, :biography, :role,
@@ -51,11 +53,11 @@ class User < ActiveRecord::Base
     ROLES.index(base_role.to_s) <= ROLES.index(role)
   end
 
-  def full_name
+  def full_name(separator = ', ')
     names = []
     names << self.last_name unless self.last_name.blank?
     names << self.first_name unless self.first_name.blank?
-    names.compact.join(', ')
+    names.compact.join(separator)
   end
 
 
@@ -67,6 +69,10 @@ class User < ActiveRecord::Base
 
   def seoize_permalink
     Formatter.seoize!(self.permalink)
+  end
+
+  def set_permalink
+    self.permalink = full_name(' ')
   end
 end
 

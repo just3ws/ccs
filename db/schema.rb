@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110411222215) do
+ActiveRecord::Schema.define(:version => 20110412232659) do
 
   create_table "contents", :force => true do |t|
     t.string    "title"
@@ -21,17 +21,27 @@ ActiveRecord::Schema.define(:version => 20110411222215) do
   end
 
   create_table "delayed_jobs", :force => true do |t|
-    t.integer  "priority",   :default => 0
-    t.integer  "attempts",   :default => 0
-    t.text     "handler"
-    t.text     "last_error"
-    t.datetime "run_at"
-    t.datetime "locked_at"
-    t.datetime "failed_at"
-    t.text     "locked_by"
+    t.integer   "priority",   :default => 0
+    t.integer   "attempts",   :default => 0
+    t.text      "handler"
+    t.text      "last_error"
+    t.timestamp "run_at"
+    t.timestamp "locked_at"
+    t.timestamp "failed_at"
+    t.text      "locked_by"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
+  create_table "features", :force => true do |t|
+    t.string   "name"
+    t.boolean  "enabled"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "features", ["name"], :name => "index_features_on_name", :unique => true
 
   create_table "imports", :force => true do |t|
     t.string    "datatype"
