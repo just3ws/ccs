@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20110412232659) do
 
   create_table "features", :force => true do |t|
     t.string   "name"
-    t.boolean  "enabled"
+    t.boolean  "enabled",     :default => false
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

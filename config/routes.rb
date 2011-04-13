@@ -1,4 +1,6 @@
 Ccs::Application.routes.draw do
+  resources :features
+
   devise_for :users
   resources :sesjas, :path => "sessions"
   resources :contents
