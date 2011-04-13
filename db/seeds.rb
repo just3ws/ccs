@@ -14,3 +14,6 @@ user.password_confirmation = "p@ssw0rd"
 user.role = "speaker"
 user.save!
 
+feature = Feature.find_or_initialize_by_name("preregistrations")
+feature.enabled = false
+feature.save!
