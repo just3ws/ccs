@@ -113,5 +113,8 @@ group :development do
 
   # adds attribute and type docs to models and routes
   gem 'annotate'
+
+  # query watcher
+  gem 'bullet'
 end
 
