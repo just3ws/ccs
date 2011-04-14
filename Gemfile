@@ -38,9 +38,6 @@ gem 'devise_invitable'
 # authorization permissions
 gem 'cancan'
 
-# for Sass 
-gem 'compass'
-
 # form generation
 gem 'formtastic'
 
@@ -49,6 +46,12 @@ gem 'jquery-rails', '>= 0.2.6'
 
 # cleaner HTML
 gem 'haml'
+
+# for Sass 
+gem 'compass'
+
+# javascript
+gem 'coffee-script'
 
 # textile support for user defined content
 gem 'rdiscount'
@@ -83,6 +86,9 @@ group :test do
 
   # run tests automatically
   gem 'watchr'
+
+  # javascript testing
+  gem 'jasmine'
 end
 
 group :test, :development do
