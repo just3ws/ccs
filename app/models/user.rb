@@ -77,7 +77,10 @@ class User < ActiveRecord::Base
 end
 
 
+
+
 # == Schema Information
+# Schema version: 20110412232659
 #
 # Table name: users
 #
@@ -111,5 +114,15 @@ end
 #  invitation_sent_at   :timestamp
 #  speakerrate          :string(2048)
 #  twitter              :string(32)
+#  permalink            :string(255)
+#
+# Indexes
+#
+#  index_users_on_reset_password_token      (reset_password_token) UNIQUE
+#  index_users_on_permalink                 (permalink)
+#  index_users_on_invitation_token          (invitation_token)
+#  index_users_on_first_name_and_last_name  (first_name,last_name)
+#  index_users_on_email                     (email) UNIQUE
+#  index_users_on_confirmation_token        (confirmation_token) UNIQUE
 #
 

@@ -31,3 +31,22 @@ class Feature < ActiveRecord::Base
     Feature.format_name(name) if name.present?
   end
 end
+
+
+# == Schema Information
+# Schema version: 20110412232659
+#
+# Table name: features
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  enabled     :boolean         default(FALSE)
+#  description :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+# Indexes
+#
+#  index_features_on_name  (name) UNIQUE
+#
+

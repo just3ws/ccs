@@ -40,7 +40,10 @@ end
 
 
 
+
+
 # == Schema Information
+# Schema version: 20110412232659
 #
 # Table name: sesjas
 #
@@ -55,5 +58,11 @@ end
 #  accepted_at :timestamp
 #  mailed_at   :timestamp
 #  rsvped_at   :timestamp
+#  permalink   :string(255)
+#
+# Indexes
+#
+#  index_sesjas_on_title      (title)
+#  index_sesjas_on_permalink  (permalink)
 #
 
