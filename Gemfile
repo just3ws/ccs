@@ -120,6 +120,9 @@ group :development do
   # adds attribute and type docs to models and routes
   gem 'annotate'
 
+  # generate ERD
+  gem "rails-erd"
+
   # query watcher
   gem 'bullet'
 end
