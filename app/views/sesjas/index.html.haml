@@ -33,24 +33,5 @@
 
 - content_for :javascript do
   :javascript
-    $(function() {
-      var filter = function(query) {
-        var titlesSelector = "#content .show h3 a";
-        if (query == '') {
-          $(titlesSelector).closest(".show").show(); 
-        } else {
-          $("#content .show").closest(".show").hide();
-          $(titlesSelector + ":contains('" + query + "')").closest(".show").show();
-        }
-      }
-      var h = function(eventData) {
-        filter($(this).val().toLowerCase());
-      }; 
-      $("<input>", {
-        "placeholder" : "type to filter by title",
-        class: "search",
-        keyup: h, 
-        focusout: h, 
-        mouseleave: h
-      }).appendTo("#content h4");
-    });
+    SEARCH_PLACEHOLDER_TEXT = "type to filter by title";
+  = javascript_include_tag "index"
