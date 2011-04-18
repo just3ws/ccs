@@ -53,7 +53,6 @@ hr
     margin-bottom: 8px
     vertical-align: bottom
     .header-container
-      margin-left: 112px
       width: 666px
       .logo
         width: 666px
@@ -74,27 +73,30 @@ hr
         font-family: $font-family-special
         text-shadow: 0 0 12px $color-font-light-shadow
     .nav
-      min-height: 64px
       background-color: $color-content-background
       display: block
-      position: absolute
       float: left
       clear: left
+      margin-top: 12px
       margin-right: 16px
       margin-left: 0
       +round-corner-bottom-left(8px)
       +round-corner-bottom-right(8px)
+      +round-corner-top-right(8px)
       padding: 2px 24px 8px 8px
+      width: 666px
       ul
         float: middle
         list-style: none
         li
+          display: inline
           padding-top: 2px
           padding-bottom: 2px
+          padding-left: 8px
           word-wrap: break-word
           a
             &:before
-              content: '@'
+              content: 'GOTO '
               color: $color-primary
               font-weight: bold
             word-wrap: break-word
@@ -108,6 +110,7 @@ hr
           padding-top: 0
         li:last-of-type
           padding-bottom: 0
+          padding-right: 0
   #messages
     background-color: $color-content-background
     margin: 0 auto

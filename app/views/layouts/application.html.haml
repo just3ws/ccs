@@ -14,6 +14,10 @@
   %body#home
     #container
       #header
+        .header-container
+          .logo= link_to "chicago code camp", root_url
+          %hr/
+          .blurb Saturday, May 14th, 2011 - Grayslake, IL
         .nav
           %ul
             %li= link_to "home", root_url
@@ -21,10 +25,6 @@
             %li= link_to "speakers", speakers_path 
             - if user_signed_in?
               %li= link_to "profile", edit_user_path(current_user)
-        .header-container
-          .logo= link_to "chicago code camp", root_url
-          %hr/
-          .blurb Saturday, May 14th, 2011 - Grayslake, IL
       - unless notice.blank? and alert.blank?
         #messages
           - unless notice.blank?
