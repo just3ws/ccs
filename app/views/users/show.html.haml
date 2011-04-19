@@ -1,44 +1,7 @@
-.show
-  %h4 #{@user.speaker? ? 'Speaker' : 'User'} Profile
-  %div
-    %h3= @user.full_name.try(:strip).present? ? @user.full_name.try(:strip) : @user.email
-    %ul
-      - if user_signed_in? 
-        %li
-          %span email:
-          %div= mail_to @user.email
-      - if @user.biography.try(:strip).present?
-        %li
-          %span biography:
-          .long-text= @user.biography
-      - if @user.home_page.try(:strip).present?
-        %li
-          %span home page:
-          %div 
-            %a{:href => @user.home_page =~ /^http/ ? @user.home_page : "http://#{@user.home_page}"}= @user.home_page
-      - if @user.twitter.try(:strip).present?
-        %li
-          %span twitter:
-          %div
-            %a{:href => "http://twitter.com/#{@user.twitter}"}
-              http://twitter.com/#{@user.twitter}
-      - if @user.speakerrate.try(:strip).present?
-        %li
-          %span speakerrate:
-          %div
-            %a{:href => @user.speakerrate}= @user.speakerrate
-      %li
-        %span= "#{pluralize(@user.sesja.displayable.count, 'session')}: "
-        %ul
-        - @user.sesja.displayable.each do |sesja|
-          %li= link_to sesja.title, sesja
-      - if user_signed_in? && (current_user.admin? || current_user.speaker?)
-        %li
-          %span= "#{pluralize(@user.submissions.visible.count, 'submission')}: "
-          %ul
-          - @user.submissions.visible.each do |submission|
-            %li= link_to submission.title, submission
-  - if user_signed_in? && (current_user.admin? || current_user.speaker?)
-    .actions
-      - if can? :update, @user
-        = link_to "Edit", edit_user_path(@user)
+%h4.section-title #{@user.speaker? ? 'Speaker' : 'User'} Profile
+= render :partial => "user", :locals => {:user => @user}
+
+- if user_signed_in? && (current_user.admin? || current_user.speaker?)
+  .actions
+    - if can? :update, @user
+      = link_to "Edit", edit_user_path(@user)

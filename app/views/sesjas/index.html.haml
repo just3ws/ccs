@@ -1,32 +1,9 @@
-%h4 Sessions 
+%h4.section-title session lineup 
 - if user_signed_in? && current_user.admin?
   %p= pluralize @sesjas.displayable.count, 'session'
   %p= pluralize @sesjas.displayable.select('distinct user_id').count, 'speaker'
-.sesjas
-  - @sesjas.displayable.randomized.each do |sesja|
-    %div.show
-      - if user_signed_in? && current_user.admin?
-        .actions
-          %ul
-            %li= link_to 'Show', sesja
-            %li= link_to 'Edit', edit_sesja_path(sesja)
-            %li= link_to 'Destroy', sesja, :confirm => 'Are you sure you wish to delete this sesja?', :method => :delete
-      %h3
-        = link_to "#{sesja.title.downcase}", sesja
-      %ul
-        %li
-          .long-text= truncate(sesja.abstract, :length => 500)
-        %li
-          - if sesja.level.present?
-            %span level:
-            =  %w(introductory intermediate advanced)[sesja.level-1] 
-        - if sesja.keywords.try(:strip).present?
-          %li
-            %span keywords:
-            %div= sesja.keywords
-      .session-speaker
-        - if sesja.user.try(:full_name).present?
-          speaker: #{link_to sesja.user.full_name, user_path(sesja.user)}
+.lineup
+  = render :partial => "sesja", :collection =>  @sesjas.displayable.randomized
 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => Sesja.new, :current_action => :index}
