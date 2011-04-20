@@ -1,4 +1,6 @@
 Ccs::Application.routes.draw do
+  resources :sponsors
+
   resources :sponsorship_levels
 
   resources :features

@@ -1,0 +1,14 @@
+.show
+  %h3= link_to "#{sponsor.name}", sponsor
+  %ul
+    %li.details.description.long-text= sponsor.description
+    %li.details.level
+      %span level:
+      = SponsorshipLevel.find(sponsor.sponsorship_level_id).name 
+
+  - if user_signed_in? && current_user.admin?
+    .actions
+      %ul
+        %li= link_to 'Show', sponsor
+        %li= link_to 'Edit', edit_sponsor_path(sponsor)
+        %li= link_to 'Destroy', sponsor, :confirm => 'Are you sure you wish to delete this sponsor?', :method => :delete

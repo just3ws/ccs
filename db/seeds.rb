@@ -21,3 +21,14 @@ feature.save!
 feature = Feature.find_or_initialize_by_name("image_logo")
 feature.enabled = false
 feature.save!
+
+feature = Feature.find_or_initialize_by_name("show_sponsors")
+feature.enabled = true
+feature.save!
+
+sl = SponsorshipLevel.find_or_initialize_by_name("ruby")
+sl.save!
+
+sl = SponsorshipLevel.find_or_initialize_by_name("quartz")
+sl.save!
+

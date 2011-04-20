@@ -10,6 +10,8 @@ class Ability
    user ||= User.new :role => "guest" # guest user (not logged in)
 
    if user.role? :guest
+     can :read,   Sponsor
+     can :read,   SponsorshipLevel
      can :show,   Content
      can :read,   Sesja
      can :read,   User do |u|

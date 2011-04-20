@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420124725) do
+ActiveRecord::Schema.define(:version => 20110420125708) do
 
   create_table "contents", :force => true do |t|
     t.string    "title"
@@ -76,6 +76,17 @@ ActiveRecord::Schema.define(:version => 20110420124725) do
 
   add_index "sesjas", ["permalink"], :name => "index_sesjas_on_permalink"
   add_index "sesjas", ["title"], :name => "index_sesjas_on_title"
+
+  create_table "sponsors", :force => true do |t|
+    t.string   "name"
+    t.string   "contact_name"
+    t.text     "description"
+    t.string   "home_page"
+    t.integer  "sponsorship_level_id"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sponsorship_levels", :force => true do |t|
     t.string   "name"

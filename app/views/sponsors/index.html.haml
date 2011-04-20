@@ -1,0 +1,13 @@
+%h4.section-title sponsor lineup 
+- if user_signed_in? && current_user.admin?
+  %p= pluralize @sponsors.displayable.count, 'sponsor'
+.lineup
+  = render :partial => "sponsor", :collection =>  @sponsors
+
+- if user_signed_in? && current_user.admin?
+  = render :partial => "shared/actions", :locals => {:model => Sponsor.new, :current_action => :index}
+
+- content_for :javascript do
+  :javascript
+    SEARCH_PLACEHOLDER_TEXT = "type to filter by name";
+  = javascript_include_tag "index"
