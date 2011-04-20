@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @sponsorship_level.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @sponsorship_level.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_sponsorship_level_path(@sponsorship_level) %> |
+<%= link_to 'Back', sponsorship_levels_path %>

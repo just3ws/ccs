@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110412232659) do
+ActiveRecord::Schema.define(:version => 20110420124725) do
 
   create_table "contents", :force => true do |t|
     t.string    "title"
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(:version => 20110412232659) do
   end
 
   create_table "features", :force => true do |t|
-    t.string   "name"
-    t.boolean  "enabled",     :default => false
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name",        :limit => 32
+    t.boolean   "enabled",                     :default => false
+    t.string    "description", :limit => 1024
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "features", ["name"], :name => "index_features_on_name", :unique => true
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20110412232659) do
 
   add_index "sesjas", ["permalink"], :name => "index_sesjas_on_permalink"
   add_index "sesjas", ["title"], :name => "index_sesjas_on_title"
+
+  create_table "sponsorship_levels", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "submissions", :force => true do |t|
     t.string    "email"

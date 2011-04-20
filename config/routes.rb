@@ -1,4 +1,6 @@
 Ccs::Application.routes.draw do
+  resources :sponsorship_levels
+
   resources :features
 
   devise_for :users
