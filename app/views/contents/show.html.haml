@@ -1,7 +1,7 @@
 .show
   %div
     %h3= "#{@content.title}"
-    .long-text= raw(RDiscount.new(@content.body).to_html)
+    .user-content.long-text= raw(RDiscount.new(@content.body).to_html)
 - if current_user.try(:admin?)
   = render :partial => "shared/actions", :locals => {:model => @content, :current_action => :show}
 
