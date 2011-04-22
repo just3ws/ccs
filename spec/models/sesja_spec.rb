@@ -42,13 +42,14 @@ end
 
 
 
+
+
 # == Schema Information
-# Schema version: 20110412232659
 #
 # Table name: sesjas
 #
 #  id          :integer         primary key
-#  title       :string(255)
+#  title       :string(255)     indexed
 #  abstract    :text
 #  level       :integer
 #  keywords    :string(255)
@@ -58,7 +59,7 @@ end
 #  accepted_at :timestamp
 #  mailed_at   :timestamp
 #  rsvped_at   :timestamp
-#  permalink   :string(255)
+#  permalink   :string(255)     indexed
 #
 # Indexes
 #

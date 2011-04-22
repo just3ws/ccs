@@ -79,15 +79,16 @@ end
 
 
 
+
+
 # == Schema Information
-# Schema version: 20110412232659
 #
 # Table name: users
 #
 #  id                   :integer         primary key
-#  email                :string(255)     default(""), not null
+#  email                :string(255)     default(""), not null, indexed
 #  encrypted_password   :string(255)     default("")
-#  reset_password_token :string(255)
+#  reset_password_token :string(255)     indexed
 #  remember_token       :string(255)
 #  remember_created_at  :timestamp
 #  sign_in_count        :integer         default(0)
@@ -100,21 +101,21 @@ end
 #  role                 :string(255)     default("guest")
 #  submissions_id       :integer
 #  home_page            :string(255)
-#  first_name           :string(255)
-#  last_name            :string(255)
+#  first_name           :string(255)     indexed => [last_name]
+#  last_name            :string(255)     indexed => [first_name]
 #  biography            :text
 #  avatar_file_name     :string(255)
 #  avatar_content_type  :string(255)
 #  avatar_file_size     :integer
 #  avatar_updated_at    :timestamp
-#  confirmation_token   :string(255)
+#  confirmation_token   :string(255)     indexed
 #  confirmed_at         :timestamp
 #  confirmation_sent_at :timestamp
-#  invitation_token     :string(20)
+#  invitation_token     :string(20)      indexed
 #  invitation_sent_at   :timestamp
 #  speakerrate          :string(2048)
 #  twitter              :string(32)
-#  permalink            :string(255)
+#  permalink            :string(255)     indexed
 #
 # Indexes
 #

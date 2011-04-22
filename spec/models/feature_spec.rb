@@ -5,17 +5,18 @@ describe Feature do
 end
 
 
+
+
 # == Schema Information
-# Schema version: 20110412232659
 #
 # Table name: features
 #
-#  id          :integer         not null, primary key
-#  name        :string(255)
+#  id          :integer         primary key
+#  name        :string(32)      indexed
 #  enabled     :boolean         default(FALSE)
-#  description :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
+#  description :string(1024)
+#  created_at  :timestamp
+#  updated_at  :timestamp
 #
 # Indexes
 #
