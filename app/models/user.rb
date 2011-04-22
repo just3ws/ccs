@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   before_save :set_permalink, :seoize_permalink
 
   scope :speakers, :conditions => { :role => "speaker" } 
+  scope :admins, :conditions => { :role => "admins" } 
   scope :with_rsvped_sessions, joins(:sesja).where("sesjas.user_id is not null and sesjas.rsvped_at is not null")
   scope :randomized,           lambda { order "random()" }
 
@@ -32,7 +33,6 @@ class User < ActiveRecord::Base
     :rememberable,
     :trackable,
     :validatable
-
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,

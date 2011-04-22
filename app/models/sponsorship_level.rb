@@ -1,3 +1,4 @@
 class SponsorshipLevel < ActiveRecord::Base
-  belongs_to :sponsors
+  has_many :sponsors
+  default_scope :order => 'priority ASC'
 end

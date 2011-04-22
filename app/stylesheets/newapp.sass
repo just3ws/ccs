@@ -6,13 +6,6 @@ $f-px: 24px
 $f-multiplier: 1.16
 $h-px: $f-px * $f-multiplier 
 
-// div 
-//   outline: solid 1px blue
-// span
-//   outline: solid 1px red
-// li
-//   outline: solid 1px green
-
 $maroonish: #800000 
 //128, 0 0 | maroon
 
@@ -123,6 +116,7 @@ h1, h2, h3, h4, h5
     margin-right: 16px
     h1, h2, h3, h4, h5
       margin-bottom: 16px
+      display: block
     ul, ol
       li
         margin-left: 16px
@@ -130,28 +124,31 @@ h1, h2, h3, h4, h5
         span
           color: $greenish 
           font-style: italic
-      li.details:not(.long-text):not(.context)
-        display: inline-block
-        font-size: $f-px * 0.66
-        text-transform: lowercase
-        word-wrap: break-word
-        margin-left: 40px
-        font-weight: lighter
-      li.context
-        font-size: $f-px * 0.66
-        text-transform: lowercase
-        font-style: italic
-        font-weight: lighter
-      li.long-text
-        display: block
-        padding: 16px
-        font-weight: lighter
-        margin-right: 16px
-        background: rgba(80,0,0,0.1)
-        +round-corners-bottom(24px)
-        +round-corner-top-right(24px)
-        margin-top: 8px
-        line-height: 24px
+        &.details:not(.long-text):not(.context):not(.sponsor-logo)
+          display: inline-block
+          font-size: $f-px * 0.66
+          text-transform: lowercase
+          word-wrap: break-word
+          margin-left: 40px
+          font-weight: lighter
+        &.sponsor-logo
+          display: inline-block
+        // &.sponsor-logo+li.description
+        &.context
+          font-size: $f-px * 0.66
+          text-transform: lowercase
+          font-style: italic
+          font-weight: lighter
+        &.long-text
+          display: block
+          padding: 16px
+          font-weight: lighter
+          margin-right: 16px
+          background: rgba(80,0,0,0.1)
+          +round-corners-bottom(24px)
+          +round-corner-top-right(24px)
+          margin-top: 8px
+          line-height: 24px
   .show:first-of-type
   .show:last-of-type
     margin-bottom: 0
@@ -203,3 +200,21 @@ h1, h2, h3, h4, h5
   +round-corner-top-right(24px)
   padding: 8px
   font-style: italic
+
+h3.sponsorship-level
+  margin-top: 24px 
+  padding: 8px
+  padding-left: 16px
+  font-weight: bolder
+  text-transform: uppercase
+  background-color: rgba(128,0,0,0.66)
+  color: white
+  +round-corners-bottom(16px)
+  +round-corner-top-right(16px)
+  text-shadow: 0 0 12px rgba(128,0,0,0.66) 
+  border: double 4px rgba(128,0,0,0.33)
+  span
+    text-transform: lowercase
+    font-weight: 100
+h3.sponsorship-level:first-of-type
+  margin-top: 32px

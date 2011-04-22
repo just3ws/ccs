@@ -5,6 +5,7 @@ class SponsorsController < ApplicationController
   # GET /sponsors.xml
   def index
     # @sponsors = Sponsor.all
+    @sponsorship_levels = SponsorshipLevel.all 
 
     respond_to do |format|
       format.html # index.html.erb

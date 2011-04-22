@@ -1,5 +1,5 @@
 %h4.section-title sponsor description 
-= render :partial => "sponsor", :locals => {:sponsor => @sponsor}
+= render :partial => "sponsor", :locals => {:sponsor => @sponsor, :show_level => true}
 
 - if user_signed_in? && (current_user.admin? || current_user.speaker?)
   = render :partial => "shared/actions", :locals => {:model => @sponsor, :current_action => :show}

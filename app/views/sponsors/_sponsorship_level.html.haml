@@ -1,0 +1,4 @@
+%h3.sponsorship-level
+  = sponsorship_level.name
+  %span level sponsors
+= render :partial => "sponsor", :collection => sponsorship_level.sponsors 

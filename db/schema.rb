@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110420125708) do
+ActiveRecord::Schema.define(:version => 20110422125934) do
 
   create_table "contents", :force => true do |t|
     t.string    "title"
@@ -78,21 +78,26 @@ ActiveRecord::Schema.define(:version => 20110420125708) do
   add_index "sesjas", ["title"], :name => "index_sesjas_on_title"
 
   create_table "sponsors", :force => true do |t|
-    t.string   "name"
-    t.string   "contact_name"
-    t.text     "description"
-    t.string   "home_page"
-    t.integer  "sponsorship_level_id"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.string    "contact_name"
+    t.text      "description"
+    t.string    "home_page"
+    t.integer   "sponsorship_level_id"
+    t.string    "email"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "logo_file_name"
+    t.string    "logo_content_type"
+    t.integer   "logo_file_size"
+    t.datetime  "logo_updated_at"
   end
 
   create_table "sponsorship_levels", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "priority"
   end
 
   create_table "submissions", :force => true do |t|
