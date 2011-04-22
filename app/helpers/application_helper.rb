@@ -13,4 +13,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def display_diagnostic_stylesheet?
+    params["dss"] && Rails.env != "production"
+  end
 end
