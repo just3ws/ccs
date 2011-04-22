@@ -7,6 +7,8 @@
     %meta{:charset => "utf-8"}/
     -# = stylesheet_link_tag :all
     = stylesheet_link_tag "newapp"
+    - unless Rails.env == "production"
+      = stylesheet_link_tag "diagnostic"
     = csrf_meta_tag
     -# %link{:href => "/stylesheets/application.css", :media => "screen, projection", :rel => "stylesheet", :type => "text/css"}/
     %meta{:content => "W6MJO_iqsa4NviIyyrHJCyNNJqm2murQyeyacwi0h4g", :name => "google-site-verification"}/
