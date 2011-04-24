@@ -1,10 +1,12 @@
 class Formatter
   class << self
     def seoize!(value)
-      value.gsub!(/_/, ' ')
-      value.squish! 
-      value.downcase!
-      value.gsub!(/\s/, '-')
+      value.tap do |v|
+        v.gsub!(/[^a-zA-Z0-9\-\s]/, ' ')
+        v.squish! 
+        v.downcase!
+        v.gsub!(/\s/, '-')
+      end
     end
   end
 end
