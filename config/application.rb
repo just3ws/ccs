@@ -8,7 +8,7 @@ require 'rdiscount'
    hash 
    formatter).each do |file|
   require File.expand_path("lib/#{file}")
-end
+   end
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -50,6 +50,10 @@ module Ccs
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
       include ActionView::Helpers::RawOutputHelper
       raw %(#{html_tag.gsub(/<(\w*)\s/, '<\1 class="field-with-errors" ')})
+    end
+
+    config.generators do |g|
+      g.template_engine :haml
     end
   end
 end
