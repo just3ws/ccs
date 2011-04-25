@@ -10,7 +10,7 @@ class Sesja < ActiveRecord::Base
   validates :title, :presence => true, :length => {:within => 0..64}
   validates :abstract, :presence => true, :length => {:within => 0..1024}
   validates_inclusion_of :level, :in => 0..3
-  before_save :seoize_permalink
+  before_save :set_permalink, :seoize_permalink
 
   def accepted?
     !!self.accepted_at
@@ -27,14 +27,15 @@ class Sesja < ActiveRecord::Base
   protected
 
   def seoize_permalink
-    Formatter.seoize!(self.title)
+    Formatter.seoize!(self.permalink)
+  end
+
+  def set_permalink
+    # assigning the string actually is a ref
+    # so dup is necesary. :P
+    self.permalink = self.title.dup
   end
 end
-
-
-
-
-
 
 # == Schema Information
 #
