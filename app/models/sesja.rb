@@ -27,7 +27,7 @@ class Sesja < ActiveRecord::Base
   protected
 
   def seoize_permalink
-    Formatter.seoize!(self.permalink)
+    Formatter.seoize!(self.title)
   end
 end
 
