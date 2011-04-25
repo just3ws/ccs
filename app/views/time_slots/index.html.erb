@@ -1,0 +1,27 @@
+<h1>Listing time_slots</h1>
+
+<table>
+  <tr>
+    <th>Start</th>
+    <th>End</th>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @time_slots.each do |time_slot| %>
+  <tr>
+    <td><%= time_slot.start %></td>
+    <td><%= time_slot.end %></td>
+    <td><%= time_slot.title %></td>
+    <td><%= link_to 'Show', time_slot %></td>
+    <td><%= link_to 'Edit', edit_time_slot_path(time_slot) %></td>
+    <td><%= link_to 'Destroy', time_slot, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Time slot', new_time_slot_path %>

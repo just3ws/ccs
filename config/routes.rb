@@ -1,4 +1,10 @@
 Ccs::Application.routes.draw do
+  resources :schedules
+
+  resources :rooms
+
+  resources :time_slots
+
   resources :sponsors
 
   resources :sponsorship_levels
@@ -22,8 +28,29 @@ Ccs::Application.routes.draw do
   #root :to => "contents#show"
 end
 #== Route Map
-# Generated on 22 Apr 2011 09:17
+# Generated on 23 Apr 2011 17:59
 #
+#                schedules GET    /schedules(.:format)                   {:controller=>"schedules", :action=>"index"}
+#                          POST   /schedules(.:format)                   {:controller=>"schedules", :action=>"create"}
+#             new_schedule GET    /schedules/new(.:format)               {:controller=>"schedules", :action=>"new"}
+#            edit_schedule GET    /schedules/:id/edit(.:format)          {:controller=>"schedules", :action=>"edit"}
+#                 schedule GET    /schedules/:id(.:format)               {:controller=>"schedules", :action=>"show"}
+#                          PUT    /schedules/:id(.:format)               {:controller=>"schedules", :action=>"update"}
+#                          DELETE /schedules/:id(.:format)               {:controller=>"schedules", :action=>"destroy"}
+#                    rooms GET    /rooms(.:format)                       {:controller=>"rooms", :action=>"index"}
+#                          POST   /rooms(.:format)                       {:controller=>"rooms", :action=>"create"}
+#                 new_room GET    /rooms/new(.:format)                   {:controller=>"rooms", :action=>"new"}
+#                edit_room GET    /rooms/:id/edit(.:format)              {:controller=>"rooms", :action=>"edit"}
+#                     room GET    /rooms/:id(.:format)                   {:controller=>"rooms", :action=>"show"}
+#                          PUT    /rooms/:id(.:format)                   {:controller=>"rooms", :action=>"update"}
+#                          DELETE /rooms/:id(.:format)                   {:controller=>"rooms", :action=>"destroy"}
+#               time_slots GET    /time_slots(.:format)                  {:controller=>"time_slots", :action=>"index"}
+#                          POST   /time_slots(.:format)                  {:controller=>"time_slots", :action=>"create"}
+#            new_time_slot GET    /time_slots/new(.:format)              {:controller=>"time_slots", :action=>"new"}
+#           edit_time_slot GET    /time_slots/:id/edit(.:format)         {:controller=>"time_slots", :action=>"edit"}
+#                time_slot GET    /time_slots/:id(.:format)              {:controller=>"time_slots", :action=>"show"}
+#                          PUT    /time_slots/:id(.:format)              {:controller=>"time_slots", :action=>"update"}
+#                          DELETE /time_slots/:id(.:format)              {:controller=>"time_slots", :action=>"destroy"}
 #                 sponsors GET    /sponsors(.:format)                    {:controller=>"sponsors", :action=>"index"}
 #                          POST   /sponsors(.:format)                    {:controller=>"sponsors", :action=>"create"}
 #              new_sponsor GET    /sponsors/new(.:format)                {:controller=>"sponsors", :action=>"new"}

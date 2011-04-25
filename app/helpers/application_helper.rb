@@ -17,4 +17,8 @@ module ApplicationHelper
   def display_diagnostic_stylesheet?
     params["dss"] && Rails.env != "production"
   end
+
+  def process_with_markup(content)
+     raw(RDiscount.new(content).to_html)
+  end
 end

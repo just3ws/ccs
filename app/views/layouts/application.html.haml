@@ -51,11 +51,18 @@
         = render :partial => "shared/authentication"
         = render :partial => "shared/github"
       #footer 
-        %a{ :href => "http://github.com/chicagocodecamp/ccs", :target => "_blank"} ccs 
-        is designed &amp; developed by 
-        %a{ :href => "http://about.me/michaeldhall", :target => "_blank"} michael d. hall
-        aka
-        %a{ :href => "http://twitter.com/just3ws", :target => "_blank"} just3ws
+        %ul
+          %li
+            %a{ :href => "http://github.com/chicagocodecamp/ccs", :target => "_blank"} ccs 
+            is designed &amp; developed by 
+            %a{ :href => "http://about.me/michaeldhall", :target => "_blank"} michael d. hall
+            aka
+            %a{ :href => "http://twitter.com/just3ws", :target => "_blank"} just3ws
+          %li
+            logo by 
+            %a{ :href => "http://jashley.net/", :target => "_blank"} jane ashley
+            aka
+            %a{ :href => "http://twitter.com/ashleyweb", :target => "_blank"} ashleyweb
     = javascript_include_tag :defaults
     = yield :javascript
     = render :partial => "shared/google_analytics"

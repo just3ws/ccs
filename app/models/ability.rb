@@ -12,13 +12,16 @@ class Ability
    if user.role? :guest
      can :read,   Sponsor
      can :read,   SponsorshipLevel
-     can :show,   Content
+     can :read,   Content
      can :read,   Sesja
      can :read,   User do |u|
        (u.sesja.present? && u.sesja.displayable.present?)  
      end
      can :create, Preregistration
      can :create, Submission
+     can :read, TimeSlot
+     can :read, Room
+     can :read, Schedule
    end
 
    if user.role? :attendee
