@@ -18,7 +18,7 @@ user.first_name            = "Conrad"
 user.last_name             = "Speaker"
 user.password              = "secret"
 user.password_confirmation = "secret"
-user.role                  = "speakers"
+user.role                  = "speaker"
 user.save!
 
 user = User.find_or_create_by_email("penelope_speaker@just3ws.com")
@@ -26,7 +26,7 @@ user.first_name            = "Penelope"
 user.last_name             = "Speaker"
 user.password              = "secret"
 user.password_confirmation = "secret"
-user.role                  = "speakers"
+user.role                  = "speaker"
 user.save!
 
 user = User.find_or_create_by_email("attendee@just3ws.com")
@@ -105,11 +105,15 @@ line "sessions"
 sesja = Sesja.find_or_initialize_by_title("Ruby Presentation")
 sesja.abstract = "An introduction to the Ruby language"
 sesja.user = User.find_by_email("conrad_speaker@just3ws.com")
+sesja.accepted_at = DateTime.now.advance(:minutes => -10)
+sesja.rsvped_at = DateTime.now
 sesja.level = 1
 sesja.save!
 
 sesja = Sesja.find_or_initialize_by_title("CSS Presentation")
 sesja.abstract = "A story of styles and selectors"
 sesja.user = User.find_by_email("penelope_speaker@just3ws.com")
+sesja.accepted_at = DateTime.now.advance(:minutes => -10)
+sesja.rsvped_at = DateTime.now
 sesja.level = 2
 sesja.save!
