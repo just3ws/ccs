@@ -48,6 +48,7 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'haml'
 
 # for Sass 
+gem 'sass'
 gem 'compass'
 
 # javascript
