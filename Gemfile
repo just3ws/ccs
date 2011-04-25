@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 # ah-yup.
 gem 'rails'
-gem 'sqlite3-ruby'
+gem 'sqlite3'
 
 # our beloved host
 gem 'heroku'
@@ -49,7 +49,7 @@ gem 'haml'
 
 # for Sass 
 gem 'sass'
-gem 'compass'
+gem 'compass', :git => "git://github.com/chriseppstein/compass.git", :branch => "master"
 
 # javascript
 gem 'coffee-script'
