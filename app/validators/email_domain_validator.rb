@@ -15,6 +15,11 @@ class EmailDomainValidator < ActiveModel::EachValidator
       @mx = dns.getresources(domain, Resolv::DNS::Resource::IN::MX)
     end
     @mx.size > 0 ? true : false
+  rescue Exception => ex
+    # because we were likely physically unable to verify the domain
+    # log and just accept the email
+    Rails.logger.warn "Failed to verify the domain for '#{email}'. Exception '#{ex.inspect}'."
+    true
   end
 end
 
