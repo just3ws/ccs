@@ -5,7 +5,8 @@
     - if sponsor.logo.file?
       %li.details.sponsor-logo
         = image_tag sponsor.logo.url(:thumb)
-    %li.details.description.long-text= sponsor.description
+    - unless sponsor.description.blank?
+      %li.details.description.long-text= sponsor.description
     - if show_level 
       %li.details.level
         %span sponsorship level:
