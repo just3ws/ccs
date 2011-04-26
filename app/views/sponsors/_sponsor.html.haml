@@ -8,7 +8,7 @@
     - if sponsor.description.blank?
       %li
         %hr.divider
-    -
+    - else
       %li.details.description.long-text= sponsor.description
     - if show_level 
       %li.details.level
