@@ -1,11 +1,14 @@
 - show_level ||= false
 .show
-  %h3= link_to "#{sponsor.name}", sponsor
+  %h3.any-case= link_to "#{sponsor.name}", sponsor
   %ul
     - if sponsor.logo.file?
       %li.details.sponsor-logo
         = image_tag sponsor.logo.url(:thumb)
-    - unless sponsor.description.blank?
+    - if sponsor.description.blank?
+      %li
+        %hr.divider
+    -
       %li.details.description.long-text= sponsor.description
     - if show_level 
       %li.details.level
