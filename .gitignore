@@ -15,6 +15,7 @@ all.js
 /.bundle
 /coverage/
 /db/*.sqlite3
+/db/*.db
 /log/*
 /public/system/*
 /spec/tmp/*
