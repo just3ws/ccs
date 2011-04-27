@@ -1,12 +1,11 @@
-.actions
+%fieldset.actions
+  %legend management actions 
   %ul
     - if can?(:index, model)
       %li= link_to "Manage your #{model.class.to_s.pluralize}", polymorphic_path(model.class)
-
     - unless [:new].include? current_action
       - if can?(:create, model)
         %li= link_to "Create another #{model.class}", polymorphic_path(model.class, :action => "new")
-
     - unless [:new, :create, :index].include? current_action
       - if can?(:show, model)
         %li= link_to "View #{model.class.to_s}", polymorphic_path(model)

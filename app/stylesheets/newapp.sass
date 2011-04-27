@@ -8,9 +8,13 @@ $h-px: $f-px * $f-multiplier
 
 $maroonish: #800000 
 //128, 0 0 | maroon
+$maroonish-66: rgba(128, 0, 0, 0.66) 
+$maroonish-33: rgba(128, 0, 0, 0.33) 
 
 $blueish: #004080 
 //0, 64, 128 | blueish
+$blueish-66: rgba(0, 64, 128, 0.66) 
+$blueish-33: rgba(0, 64, 128, 0.33) 
 
 $greenish: #00803F 
 //0, 128, 63 | greenish
@@ -25,7 +29,7 @@ body
 body
   font-size: $f-px
   background: $maroonish 
-  +gradient-background($maroonish, rgba(128,0,0,0.8))
+  +gradient-background($maroonish, rgba(128, 0, 0, 0.8))
 
 a
   color: $blueish 
@@ -57,8 +61,7 @@ h1, h2, h3, h4, h5
 
   padding: 32px
 
-  +round-corners-bottom(24px)
-  +round-corner-top-right(24px)
+  +square-corner-top-left(24px)
 
 #header
   .header-container
@@ -92,9 +95,8 @@ h1, h2, h3, h4, h5
       padding: 8px
       padding-right: 16px
       padding-left: 16px
-      border: solid 1px rgba(128,0, 0, 0.33)
-      +round-corners-bottom(24px)
-      +round-corner-top-right(24px)
+      border: solid 1px $maroonish-33
+      +square-corner-top-left(24px)
       cursor: hand
     a:hover
       background: $blueish 
@@ -144,9 +146,8 @@ h1, h2, h3, h4, h5
           padding: 16px
           font-weight: lighter
           margin-right: 16px
-          background: rgba(80,0,0,0.1)
-          +round-corners-bottom(24px)
-          +round-corner-top-right(24px)
+          background: rgba(80, 0, 0, 0.1)
+          +square-corner-top-left(24px)
           margin-top: 8px
           line-height: 24px
   .show:first-of-type
@@ -171,8 +172,7 @@ h1, h2, h3, h4, h5
     -moz-box-shadow: 0px 0px 16px #9A9B9D 
     -webkit-box-shadow: 0px 0px 16px #9A9B9D 
     box-shadow: 0px 0px 16px #9A9B9D 
-    +round-corners-bottom(24px)
-    +round-corner-top-right(24px)
+    +square-corner-top-left(24px)
     h5
       color: $blueish 
       border-bottom: solid 1px $greyish
@@ -196,8 +196,7 @@ h1, h2, h3, h4, h5
   outline: none
   float: right
   border: solid 1px rgba(0, 64, 128, 0.33) 
-  +round-corners-bottom(24px)
-  +round-corner-top-right(24px)
+  +square-corner-top-left(24px)
   padding: 8px
   font-style: italic
 
@@ -207,12 +206,11 @@ h3.sponsorship-level
   padding-left: 16px
   font-weight: bolder
   text-transform: uppercase
-  background-color: rgba(128,0,0,0.66)
+  background-color: $maroonish-66
   color: white
-  +round-corners-bottom(16px)
-  +round-corner-top-right(16px)
-  text-shadow: 0 0 12px rgba(128,0,0,0.66) 
-  border: double 4px rgba(128,0,0,0.33)
+  +square-corner-top-left(16px)
+  text-shadow: 0 0 12px $maroonish-66 
+  border: double 4px $maroonish-33
   span
     text-transform: lowercase
     font-weight: 100
@@ -243,3 +241,37 @@ hr.divider
 
 .any-case
   text-transform: none
+
+.actions
+  border: solid 1px $maroonish-33
+  margin: 16px
+  padding: 16px
+  +square-corner-top-left(16px)
+  legend
+    padding-left: 4px
+    padding-right: 4px
+    color: $blueish-66
+    font-weight: 100
+    font-style: italic
+    font-size: 16px
+  ul, ol
+    li
+      padding: 0 
+      padding-top: 4px
+      padding-bottom: 4px
+      text-transform: lowercase
+      list-style-position: inside
+      list-style-type: disc
+    li:hover
+      list-style-type: disc
+    li:first-of-type
+      padding-top: 0
+    li:last-of-type
+      padding-top: 0
+
+
+
+
+.counts
+  margin: 16px
+  padding: 16px

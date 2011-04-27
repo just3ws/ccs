@@ -1,12 +1,12 @@
 %h4.section-title sponsor lineup 
-/
-  - if user_signed_in? && current_user.admin?
+- if user_signed_in? && current_user.admin?
+  = render :partial => "shared/actions", :locals => {:model => Sponsor.new, :current_action => :index}
+- if user_signed_in? && current_user.admin?
+  .counts
     %p= pluralize @sponsors.count, 'sponsor'
 .lineup
   = render :partial => "sponsorship_level", :collection => @sponsorship_levels  
 /
-  - if user_signed_in? && current_user.admin?
-    = render :partial => "shared/actions", :locals => {:model => Sponsor.new, :current_action => :index}
 
 - content_for :javascript do
   :javascript
