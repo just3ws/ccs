@@ -3,7 +3,7 @@
   %p= pluralize @sesjas.displayable.count, 'session'
   %p= pluralize @sesjas.displayable.select('distinct user_id').count, 'speaker'
 .lineup
-  = render :partial => "sesja", :collection =>  @sesjas.displayable.randomized
+  = render :partial => "sesja", :collection => @sesjas.displayable
 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => Sesja.new, :current_action => :index}

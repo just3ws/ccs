@@ -5,7 +5,7 @@
   = render :partial => "user", :collection => @users
 
 - if user_signed_in? && current_user.admin?
-  = render :partial => "shared/actions", :locals => {:model => user.new, :current_action => :index}
+  = render :partial => "shared/actions", :locals => {:model => User.new, :current_action => :index}
 
 - content_for :javascript do
   :javascript

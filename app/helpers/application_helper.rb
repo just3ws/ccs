@@ -21,4 +21,8 @@ module ApplicationHelper
   def process_with_markup(content)
      raw(RDiscount.new(content).to_html)
   end
+
+  def display_name(class_name)
+    class_name.gsub(/Sesja/, 'Session')
+  end
 end
