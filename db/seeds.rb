@@ -10,7 +10,15 @@ user.first_name            = "admin"
 user.last_name             = "person"
 user.password              = "secret"
 user.password_confirmation = "secret"
-user.role                  = "admins"
+user.role                  = "admin"
+user.save!
+
+user = User.find_or_create_by_email("mdh@just3ws.com")
+user.first_name            = "Michael"
+user.last_name             = "Hall"
+user.password              = "secret"
+user.password_confirmation = "secret"
+user.role                  = "admin"
 user.save!
 
 user = User.find_or_create_by_email("conrad_speaker@just3ws.com")
