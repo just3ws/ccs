@@ -29,6 +29,7 @@ body
 body
   font-size: $f-px
   background: $maroonish 
+  +gradient-background($maroonish, rgb(128, 0, 0))
   +gradient-background($maroonish, rgba(128, 0, 0, 0.8))
 
 a
@@ -91,25 +92,32 @@ h1, h2, h3, h4, h5
       li
         display: inline
     a
+      color: $blueish
       color: $blueish-66
       font-weight: 100
       padding: 8px
       padding-right: 16px
       padding-left: 16px
+      border: solid 1px $maroonish
       border: solid 1px $maroonish-33
       +square-corner-top-left(24px)
       cursor: hand
       &.highlight
+        border-color: $blueish
         border-color: $blueish-33
+        background: $blueish
         background: $blueish-66
         color: white
     a:hover
       font-weight: 100
+      background: $blueish
       background: $blueish-66 
       color: white
       &.highlight
+        border-color: $blueish
         border-color: $blueish-33
         background: white 
+        color: $maroonish
         color: $maroonish-66 
 
 .section-title
@@ -155,6 +163,7 @@ h1, h2, h3, h4, h5
           padding: 16px
           font-weight: lighter
           margin-right: 16px
+          background: rgb(80, 0, 0)
           background: rgba(80, 0, 0, 0.1)
           +square-corner-top-left(24px)
           margin-top: 8px
@@ -204,7 +213,8 @@ h1, h2, h3, h4, h5
 .search
   outline: none
   float: right
-  border: solid 1px rgba(0, 64, 128, 0.33) 
+  border: solid 1px $blueish 
+  border: solid 1px $blueish-33 
   +square-corner-top-left(24px)
   padding: 8px
   font-style: italic
@@ -215,10 +225,13 @@ h3.sponsorship-level
   padding-left: 16px
   font-weight: bolder
   text-transform: uppercase
+  background-color: $maroonish
   background-color: $maroonish-66
   color: white
   +square-corner-top-left(16px)
+  text-shadow: 0 0 12px $maroonish
   text-shadow: 0 0 12px $maroonish-66 
+  border: double 4px $maroonish
   border: double 4px $maroonish-33
   span
     text-transform: lowercase
@@ -252,6 +265,7 @@ hr.divider
   text-transform: none
 
 .actions
+  border: solid 1px $maroonish
   border: solid 1px $maroonish-33
   margin: 16px
   padding: 16px
@@ -259,6 +273,7 @@ hr.divider
   legend
     padding-left: 4px
     padding-right: 4px
+    color: $blueish
     color: $blueish-66
     font-weight: 100
     font-style: italic
