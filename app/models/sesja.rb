@@ -1,5 +1,8 @@
 class Sesja < ActiveRecord::Base
   belongs_to :user, :autosave => true
+  
+  default_scope :order => 'permalink DESC'
+
   scope :by_creation, :order => 'created_at DESC'
 
   scope :pending_confirmation, lambda { where "accepted_at is null" }

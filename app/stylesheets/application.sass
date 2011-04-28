@@ -91,6 +91,7 @@ h1, h2, h3, h4, h5
       li
         display: inline
     a
+      color: $blueish-66
       font-weight: 100
       padding: 8px
       padding-right: 16px
@@ -98,9 +99,18 @@ h1, h2, h3, h4, h5
       border: solid 1px $maroonish-33
       +square-corner-top-left(24px)
       cursor: hand
+      &.highlight
+        border-color: $blueish-33
+        background: $blueish-66
+        color: white
     a:hover
-      background: $blueish 
+      font-weight: 100
+      background: $blueish-66 
       color: white
+      &.highlight
+        border-color: $blueish-33
+        background: white 
+        color: $maroonish-66 
 
 .section-title
   color: $greenish
@@ -135,7 +145,6 @@ h1, h2, h3, h4, h5
           font-weight: lighter
         &.sponsor-logo
           display: inline-block
-        // &.sponsor-logo+li.description
         &.context
           font-size: $f-px * 0.66
           text-transform: lowercase

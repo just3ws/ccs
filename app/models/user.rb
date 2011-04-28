@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   before_save :set_permalink, :seoize_permalink
 
+  default_scope :order => 'permalink DESC'
+
   scope :speakers, :conditions => { :role => "speaker" } 
   scope :admins, :conditions => { :role => "admins" } 
   scope :with_rsvped_sessions, joins(:sesja).where("sesjas.user_id is not null and sesjas.rsvped_at is not null")
