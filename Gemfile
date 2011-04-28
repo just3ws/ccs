@@ -4,6 +4,10 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 
+# internationalization
+gem 'i18n'
+gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
+
 # our beloved host
 gem 'heroku'
 
@@ -77,7 +81,7 @@ group :test do
 
   # cleans the database after tests
   gem 'database_cleaner'
-  
+
   # And show me the page
   gem 'launchy'
 

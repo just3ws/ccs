@@ -4,6 +4,8 @@ def line(txt)
   puts "*"*80
 end
 
+p "translations"
+
 p "users"
 user = User.find_or_create_by_email("admin@just3ws.com")
 user.first_name            = "admin"

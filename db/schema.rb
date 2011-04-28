@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110423225810) do
+ActiveRecord::Schema.define(:version => 20110427234454) do
 
   create_table "contents", :force => true do |t|
     t.string   "title"
@@ -147,6 +147,16 @@ ActiveRecord::Schema.define(:version => 20110423225810) do
 
   add_index "time_slots", ["starts_at", "ends_at"], :name => "index_time_slots_on_starts_at_and_ends_at", :unique => true
   add_index "time_slots", ["title"], :name => "index_time_slots_on_title", :unique => true
+
+  create_table "translations", :force => true do |t|
+    t.string   "locale"
+    t.string   "key"
+    t.text     "value"
+    t.text     "interpolations"
+    t.boolean  "is_proc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "",      :null => false
