@@ -6,7 +6,7 @@
         %span session 
         = link_to user.sesja.displayable.first.title, user.sesja.displayable.first
       - if user.biography.present?
-        %li.details.long-text= user.biography
+        %li.long-text= user.biography
       - if user_signed_in? 
         %li.details.email
           %span email:

@@ -1,26 +1,12 @@
 @import html5-reset
 @import helpers
 @import typography
+@import colors
 
 $f-px: 24px
 $f-multiplier: 1.16
 $h-px: $f-px * $f-multiplier 
 
-$maroonish: #800000 
-//128, 0 0 | maroon
-$maroonish-66: rgba(128, 0, 0, 0.66) 
-$maroonish-33: rgba(128, 0, 0, 0.33) 
-
-$blueish: #004080 
-//0, 64, 128 | blueish
-$blueish-66: rgba(0, 64, 128, 0.66) 
-$blueish-33: rgba(0, 64, 128, 0.33) 
-
-$greenish: #00803F 
-//0, 128, 63 | greenish
-
-$greyish: #9A9B9D
-//154, 155, 157 | greyish
 
 body
   +prime-gs
@@ -29,8 +15,7 @@ body
 body
   font-size: $f-px
   background: $maroonish 
-  +gradient-background($maroonish, rgb(128, 0, 0))
-  +gradient-background($maroonish, rgba(128, 0, 0, 0.8))
+  +gradient-background($maroonish, $maroonish-66)
 
 a
   color: $blueish 
@@ -53,9 +38,9 @@ h1, h2, h3, h4, h5
 #container
   background: white
 
-  -moz-box-shadow: 0px 0px 16px #9A9B9D 
-  -webkit-box-shadow: 0px 0px 16px #9A9B9D 
-  box-shadow: 0px 0px 16px #9A9B9D 
+  -moz-box-shadow: 0px 0px 16px $greyish 
+  -webkit-box-shadow: 0px 0px 16px $greyish 
+  box-shadow: 0px 0px 16px $greyish 
     
   margin-top: 16px
   margin-bottom: 32px
@@ -92,32 +77,25 @@ h1, h2, h3, h4, h5
       li
         display: inline
     a
-      color: $blueish
       color: $blueish-66
       font-weight: 100
       padding: 8px
       padding-right: 16px
       padding-left: 16px
-      border: solid 1px $maroonish
       border: solid 1px $maroonish-33
       +square-corner-top-left(24px)
       cursor: hand
       &.highlight
-        border-color: $blueish
         border-color: $blueish-33
-        background: $blueish
         background: $blueish-66
         color: white
     a:hover
       font-weight: 100
-      background: $blueish
       background: $blueish-66 
       color: white
       &.highlight
-        border-color: $blueish
         border-color: $blueish-33
         background: white 
-        color: $maroonish
         color: $maroonish-66 
 
 .section-title
@@ -144,30 +122,33 @@ h1, h2, h3, h4, h5
         span
           color: $greenish 
           font-style: italic
-        &.details:not(.long-text):not(.context):not(.sponsor-logo)
+
+        &.details
           display: inline-block
           font-size: $f-px * 0.66
           text-transform: lowercase
           word-wrap: break-word
           margin-left: 40px
           font-weight: lighter
+
         &.sponsor-logo
           display: inline-block
-        &.context
-          font-size: $f-px * 0.66
-          text-transform: lowercase
-          font-style: italic
-          font-weight: lighter
+
         &.long-text
           display: block
           padding: 16px
           font-weight: lighter
           margin-right: 16px
-          background: rgb(80, 0, 0)
-          background: rgba(80, 0, 0, 0.1)
+          background: $tbd
           +square-corner-top-left(24px)
           margin-top: 8px
           line-height: 24px
+
+        &.context
+          font-size: $f-px * 0.66
+          text-transform: lowercase
+          font-style: italic
+          font-weight: lighter
   .show:first-of-type
   .show:last-of-type
     margin-bottom: 0
@@ -180,6 +161,7 @@ h1, h2, h3, h4, h5
   margin-right: auto
   .aside
     display: inline-block
+    background: white
     font-size: 16px
     max-width: 198px
     min-height: 320px
@@ -213,7 +195,6 @@ h1, h2, h3, h4, h5
 .search
   outline: none
   float: right
-  border: solid 1px $blueish 
   border: solid 1px $blueish-33 
   +square-corner-top-left(24px)
   padding: 8px
@@ -225,13 +206,10 @@ h3.sponsorship-level
   padding-left: 16px
   font-weight: bolder
   text-transform: uppercase
-  background-color: $maroonish
   background-color: $maroonish-66
   color: white
   +square-corner-top-left(16px)
-  text-shadow: 0 0 12px $maroonish
   text-shadow: 0 0 12px $maroonish-66 
-  border: double 4px $maroonish
   border: double 4px $maroonish-33
   span
     text-transform: lowercase
@@ -265,7 +243,6 @@ hr.divider
   text-transform: none
 
 .actions
-  border: solid 1px $maroonish
   border: solid 1px $maroonish-33
   margin: 16px
   padding: 16px
@@ -273,7 +250,6 @@ hr.divider
   legend
     padding-left: 4px
     padding-right: 4px
-    color: $blueish
     color: $blueish-66
     font-weight: 100
     font-style: italic
