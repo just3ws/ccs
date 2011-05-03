@@ -5,7 +5,7 @@ class TimeSlot < ActiveRecord::Base
   validate :that_start_is_before_end
 
   def start_and_end_time(separator = '-')
-    "#{I18n.l starts_at} #{separator} #{I18n.l ends_at}".squish!
+    "#{starts_at.strftime("%l:%M")} #{separator} #{ends_at.strftime("%l:%M")}".squish!
   end
 
   protected

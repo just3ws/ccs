@@ -2,6 +2,7 @@
   %h3= link_to "#{schedule.time_slot.start_and_end_time}", schedule.time_slot
   %ul
     %li.schedule.session
-      %span session:
       = link_to schedule.sesja.title, sesja_path(schedule.sesja)
+      %span in
+      = link_to schedule.room.title, room_path(schedule.room)
 
