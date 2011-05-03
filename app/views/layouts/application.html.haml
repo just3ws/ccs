@@ -7,6 +7,7 @@
     %meta{:charset => "utf-8"}/
     -# = stylesheet_link_tag :all
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag 'formtastic', 'formtastic_changes'
     - if display_diagnostic_stylesheet?  
       = stylesheet_link_tag "diagnostic"
     = csrf_meta_tag

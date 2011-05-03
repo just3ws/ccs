@@ -1,35 +1,48 @@
-= form_for @sesja, :html => {:multipart => true} do |f|
-  - if @sesja.errors.any?
-    - errors = @sesja.errors
-    - errors.merge!(@sesja.user.errors) unless @sesja.user.blank?
-    #error_explanation
-      %h4
-        = pluralize(errors.count, "error")
-        prohibited this
-        sesja from being saved:
-      %ul
-        - errors.full_messages.each do |msg|
-          %li= msg
-  %fieldset
-    %legend edit your session 
-    %ul
-      %li
-        = f.label :title, :class => "required"
-        = f.text_field :title, :placeholder => "the working title for your presentation"
-        .hint the working title for your presentation
-      %li
-        = f.label :abstract, "description", :class => "required"
-        = f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic"
-        .hint describe your proposal in 1k characters or less
-      %li
-        = f.label :level, :class => "required"
-        = f.select :level, [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to"
-        .hint select the level your session is targeted to
-      %li
-        = f.label :keywords
-        = f.text_field :keywords, :placeholder => "relevant, words, for, your, session"
-        .hint comma-separated list of keywords to help describe your session
-  %fieldset
-    %ul
-      %li
-        %button#sesja_submit{:name => "commit", :type => "submit"} submit
+= semantic_form_for @sesja, :html => {:multipart => true} do |f|
+  = f.inputs do
+    = f.input :title
+    = f.input :abstract
+    = f.input :level
+    = f.input :keywords
+    = f.input :permalink
+    - if current_user.admin?
+      = f.input :accepted_at
+      = f.input :mailed_at
+      = f.input :rsvped_at
+  = f.buttons
+
+-# = form_for @sesja, :html => {:multipart => true} do |f|
+-#   - if @sesja.errors.any?
+-#     - errors = @sesja.errors
+-#     - errors.merge!(@sesja.user.errors) unless @sesja.user.blank?
+-#     #error_explanation
+-#       %h4
+-#         = pluralize(errors.count, "error")
+-#         prohibited this
+-#         sesja from being saved:
+-#       %ul
+-#         - errors.full_messages.each do |msg|
+-#           %li= msg
+-#   %fieldset
+-#     %legend edit your session 
+-#     %ul
+-#       %li
+-#         = f.label :title, :class => "required"
+-#         = f.text_field :title, :placeholder => "the working title for your presentation"
+-#         .hint the working title for your presentation
+-#       %li
+-#         = f.label :abstract, "description", :class => "required"
+-#         = f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic"
+-#         .hint describe your proposal in 1k characters or less
+-#       %li
+-#         = f.label :level, :class => "required"
+-#         = f.select :level, [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to"
+-#         .hint select the level your session is targeted to
+-#       %li
+-#         = f.label :keywords
+-#         = f.text_field :keywords, :placeholder => "relevant, words, for, your, session"
+-#         .hint comma-separated list of keywords to help describe your session
+-#   %fieldset
+-#     %ul
+-#       %li
+-#         %button#sesja_submit{:name => "commit", :type => "submit"} submit
