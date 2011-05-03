@@ -18,7 +18,7 @@ module ApplicationHelper
     params["dss"] && Rails.env != "production"
   end
 
-  def process_with_markup(content)
+  def allow_markup(content)
      raw(RDiscount.new(content).to_html)
   end
 

@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>Start</th>
-    <th>End</th>
+    <th>Starts At</th>
+    <th>Ends At</th>
     <th>Title</th>
     <th></th>
     <th></th>
@@ -12,8 +12,8 @@
 
 <% @time_slots.each do |time_slot| %>
   <tr>
-    <td><%= time_slot.start %></td>
-    <td><%= time_slot.end %></td>
+    <td><%= time_slot.starts_at %></td>
+    <td><%= time_slot.ends_at %></td>
     <td><%= time_slot.title %></td>
     <td><%= link_to 'Show', time_slot %></td>
     <td><%= link_to 'Edit', edit_time_slot_path(time_slot) %></td>

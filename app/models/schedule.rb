@@ -2,6 +2,19 @@ class Schedule < ActiveRecord::Base
   belongs_to :sesja
   belongs_to :room
   belongs_to :time_slot
+
+  default_scope joins(:time_slot).order("time_slots.starts_at ASC")
+
+  scope :with_sessions, joins(:sesja).where("schedules.sesja_id is not null")
+  scope :with_rooms, joins(:room).where("schedules.room_id is not null")
+  scope :with_time_slots, joins(:time_slot).where("schedules.time_slot_id is not null")
+
+  class << self
+    def assigned
+      Schedule.with_sessions.with_rooms.with_time_slots
+    end
+  end
+
 end
 
 # == Schema Information

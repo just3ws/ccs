@@ -20,17 +20,18 @@ class Import < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: imports
 #
-#  id               :integer         primary key
+#  id               :integer         not null, primary key
 #  datatype         :string(255)
 #  processed        :integer
 #  csv_file_name    :string(255)
 #  csv_content_type :string(255)
 #  csv_file_size    :integer
-#  created_at       :timestamp
-#  updated_at       :timestamp
+#  created_at       :datetime
+#  updated_at       :datetime
 #
 

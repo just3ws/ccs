@@ -40,21 +40,22 @@ class Sesja < ActiveRecord::Base
   end
 end
 
+
 # == Schema Information
 #
 # Table name: sesjas
 #
-#  id          :integer         primary key
+#  id          :integer         not null, primary key
 #  title       :string(255)     indexed
 #  abstract    :text
 #  level       :integer
 #  keywords    :string(255)
 #  user_id     :integer
-#  created_at  :timestamp
-#  updated_at  :timestamp
-#  accepted_at :timestamp
-#  mailed_at   :timestamp
-#  rsvped_at   :timestamp
+#  created_at  :datetime
+#  updated_at  :datetime
+#  accepted_at :datetime
+#  mailed_at   :datetime
+#  rsvped_at   :datetime
 #  permalink   :string(255)     indexed
 #
 # Indexes

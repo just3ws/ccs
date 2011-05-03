@@ -1,10 +1,11 @@
 class SchedulesController < ApplicationController
-  authorize_resource
+  load_and_authorize_resource
 
   # GET /schedules
   # GET /schedules.xml
   def index
-    @schedules = Schedule.all
+
+    @schedules = Schedule.assigned
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +16,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/1
   # GET /schedules/1.xml
   def show
-    @schedule = Schedule.find(params[:id])
+    # @schedule = Schedule.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +27,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   # GET /schedules/new.xml
   def new
-    @schedule = Schedule.new
+    # @schedule = Schedule.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +37,13 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/1/edit
   def edit
-    @schedule = Schedule.find(params[:id])
+    # @schedule = Schedule.find(params[:id])
   end
 
   # POST /schedules
   # POST /schedules.xml
   def create
-    @schedule = Schedule.new(params[:schedule])
+    # @schedule = Schedule.new(params[:schedule])
 
     respond_to do |format|
       if @schedule.save
@@ -58,7 +59,7 @@ class SchedulesController < ApplicationController
   # PUT /schedules/1
   # PUT /schedules/1.xml
   def update
-    @schedule = Schedule.find(params[:id])
+    # @schedule = Schedule.find(params[:id])
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
@@ -74,7 +75,7 @@ class SchedulesController < ApplicationController
   # DELETE /schedules/1
   # DELETE /schedules/1.xml
   def destroy
-    @schedule = Schedule.find(params[:id])
+    # @schedule = Schedule.find(params[:id])
     @schedule.destroy
 
     respond_to do |format|

@@ -83,23 +83,24 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: users
 #
-#  id                   :integer         primary key
+#  id                   :integer         not null, primary key
 #  email                :string(255)     default(""), not null, indexed
-#  encrypted_password   :string(255)     default("")
+#  encrypted_password   :string(128)     default("")
 #  reset_password_token :string(255)     indexed
 #  remember_token       :string(255)
-#  remember_created_at  :timestamp
+#  remember_created_at  :datetime
 #  sign_in_count        :integer         default(0)
-#  current_sign_in_at   :timestamp
-#  last_sign_in_at      :timestamp
+#  current_sign_in_at   :datetime
+#  last_sign_in_at      :datetime
 #  current_sign_in_ip   :string(255)
 #  last_sign_in_ip      :string(255)
-#  created_at           :timestamp
-#  updated_at           :timestamp
+#  created_at           :datetime
+#  updated_at           :datetime
 #  role                 :string(255)     default("guest")
 #  submissions_id       :integer
 #  home_page            :string(255)
@@ -109,23 +110,23 @@ end
 #  avatar_file_name     :string(255)
 #  avatar_content_type  :string(255)
 #  avatar_file_size     :integer
-#  avatar_updated_at    :timestamp
+#  avatar_updated_at    :datetime
 #  confirmation_token   :string(255)     indexed
-#  confirmed_at         :timestamp
-#  confirmation_sent_at :timestamp
+#  confirmed_at         :datetime
+#  confirmation_sent_at :datetime
 #  invitation_token     :string(20)      indexed
-#  invitation_sent_at   :timestamp
+#  invitation_sent_at   :datetime
 #  speakerrate          :string(2048)
 #  twitter              :string(32)
 #  permalink            :string(255)     indexed
 #
 # Indexes
 #
-#  index_users_on_reset_password_token      (reset_password_token) UNIQUE
+#  index_users_on_first_name_and_last_name  (first_name,last_name)
 #  index_users_on_permalink                 (permalink)
 #  index_users_on_invitation_token          (invitation_token)
-#  index_users_on_first_name_and_last_name  (first_name,last_name)
-#  index_users_on_email                     (email) UNIQUE
 #  index_users_on_confirmation_token        (confirmation_token) UNIQUE
+#  index_users_on_reset_password_token      (reset_password_token) UNIQUE
+#  index_users_on_email                     (email) UNIQUE
 #
 

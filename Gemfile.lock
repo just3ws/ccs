@@ -146,7 +146,7 @@ GEM
     fuubar-cucumber (0.0.9)
       cucumber
       ruby-progressbar (~> 0.0.9)
-    gherkin (2.3.6)
+    gherkin (2.3.7)
       json (>= 1.4.6)
     haml (3.1.1)
     heroku (2.0.4)

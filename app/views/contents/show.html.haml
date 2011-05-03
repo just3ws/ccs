@@ -1,7 +1,7 @@
 .show
   %div
     %h3= "#{@content.title}"
-    .user-content.long-text= process_with_markup(@content.body)
+    .user-content.long-text= allow_markup(@content.body)
 - if current_user.try(:admin?)
   = render :partial => "shared/actions", :locals => {:model => @content, :current_action => :show}
 

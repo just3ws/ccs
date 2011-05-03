@@ -1,10 +1,10 @@
 class TimeSlotsController < ApplicationController
-  authorize_resource
+  load_and_authorize_resource
 
   # GET /time_slots
   # GET /time_slots.xml
   def index
-    @time_slots = TimeSlot.all
+    # @time_slots = TimeSlot.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots/1
   # GET /time_slots/1.xml
   def show
-    @time_slot = TimeSlot.find(params[:id])
+    # @time_slot = TimeSlot.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots/new
   # GET /time_slots/new.xml
   def new
-    @time_slot = TimeSlot.new
+    # @time_slot = TimeSlot.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class TimeSlotsController < ApplicationController
 
   # GET /time_slots/1/edit
   def edit
-    @time_slot = TimeSlot.find(params[:id])
+    # @time_slot = TimeSlot.find(params[:id])
   end
 
   # POST /time_slots
   # POST /time_slots.xml
   def create
-    @time_slot = TimeSlot.new(params[:time_slot])
+    # @time_slot = TimeSlot.new(params[:time_slot])
 
     respond_to do |format|
       if @time_slot.save
@@ -58,7 +58,7 @@ class TimeSlotsController < ApplicationController
   # PUT /time_slots/1
   # PUT /time_slots/1.xml
   def update
-    @time_slot = TimeSlot.find(params[:id])
+    # @time_slot = TimeSlot.find(params[:id])
 
     respond_to do |format|
       if @time_slot.update_attributes(params[:time_slot])
@@ -74,7 +74,7 @@ class TimeSlotsController < ApplicationController
   # DELETE /time_slots/1
   # DELETE /time_slots/1.xml
   def destroy
-    @time_slot = TimeSlot.find(params[:id])
+    # @time_slot = TimeSlot.find(params[:id])
     @time_slot.destroy
 
     respond_to do |format|
