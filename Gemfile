@@ -56,7 +56,7 @@ gem 'sass'
 gem 'compass', :git => "git://github.com/chriseppstein/compass.git", :branch => "master"
 
 # javascript
-gem 'coffee-script'
+# gem 'coffee-script'
 
 # textile support for user defined content
 gem 'rdiscount'
