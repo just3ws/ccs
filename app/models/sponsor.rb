@@ -1,8 +1,6 @@
 class Sponsor < ActiveRecord::Base
   belongs_to :sponsorship_level 
 
-
-
   has_attached_file :logo,
     :bucket => S3Settings.bucket,
     :storage => :s3,

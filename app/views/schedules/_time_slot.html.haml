@@ -1,0 +1,3 @@
+- if time_slot.schedules.present?
+  %h3.sponsorship-level= raw "<span>#{time_slot.title}:</span> #{time_slot.start_and_end_time}"
+  = render :partial => "schedule", :collection => time_slot.schedules

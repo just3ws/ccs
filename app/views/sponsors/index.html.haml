@@ -5,8 +5,7 @@
   .counts
     %p= pluralize @sponsors.count, 'sponsor'
 .lineup
-  = render :partial => "sponsorship_level", :collection => @sponsorship_levels  
-/
+  = render :partial => "sponsorship_level", :collection => @sponsorship_levels
 
 - content_for :javascript do
   :javascript

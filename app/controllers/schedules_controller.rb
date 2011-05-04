@@ -5,7 +5,9 @@ class SchedulesController < ApplicationController
   # GET /schedules.xml
   def index
 
-    @schedules = Schedule.assigned
+    #@schedules = Schedule.assigned
+    @time_slots = TimeSlot.includes(:schedules).all
+
 
     respond_to do |format|
       format.html # index.html.erb

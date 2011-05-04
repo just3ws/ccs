@@ -1,4 +1,6 @@
 class Room < ActiveRecord::Base
+  has_many :schedules
+
   validates_uniqueness_of :title
 
   def to_s

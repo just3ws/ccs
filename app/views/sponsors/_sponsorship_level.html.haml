@@ -1,4 +1,2 @@
-%h3.sponsorship-level
-  = sponsorship_level.name
-  %span level sponsors
+%h3.sponsorship-level= raw "#{sponsorship_level.name} <span>level sponsors</span>"
 = render :partial => "sponsor", :collection => sponsorship_level.sponsors 

@@ -1,5 +1,6 @@
 class Sesja < ActiveRecord::Base
   belongs_to :user, :autosave => true
+  has_one :schedule
   
   default_scope :order => 'sesjas.permalink DESC'
 
