@@ -59,7 +59,7 @@ class SchedulesController < ApplicationController
   # PUT /schedules/1
   # PUT /schedules/1.xml
   def update
-    # @schedule = Schedule.find(params[:id])
+    # @schedule = Schedule.find(params[:id]).readonly(false)
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])

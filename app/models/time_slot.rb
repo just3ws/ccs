@@ -8,6 +8,10 @@ class TimeSlot < ActiveRecord::Base
     "#{starts_at.strftime("%l:%M")} #{separator} #{ends_at.strftime("%l:%M")}".squish!
   end
 
+  def to_s
+    start_and_end_time
+  end
+
   protected
 
   def that_start_is_before_end

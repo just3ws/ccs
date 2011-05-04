@@ -1,12 +1,12 @@
 class Sesja < ActiveRecord::Base
   belongs_to :user, :autosave => true
   
-  default_scope :order => 'permalink DESC'
+  default_scope :order => 'sesjas.permalink DESC'
 
-  scope :by_creation, :order => 'created_at DESC'
+  scope :by_creation, :order => 'sesjas.created_at DESC'
 
-  scope :pending_confirmation, lambda { where "accepted_at is null" }
-  scope :displayable,          lambda { where "rsvped_at is not null" }
+  scope :pending_confirmation, lambda { where( "sesjas.accepted_at is null" ) }
+  scope :displayable,          lambda { includes(:user).where( "sesjas.rsvped_at is not null" ) }
   scope :randomized,           lambda { order "random()" }
 
   validates :user, :presence => true
@@ -25,6 +25,10 @@ class Sesja < ActiveRecord::Base
 
   def mailed?
     !!self.mailed_at
+  end
+
+  def to_s
+    permalink
   end
 
   protected

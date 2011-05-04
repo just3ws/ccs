@@ -1,0 +1,39 @@
+= semantic_form_for @schedule do |f|
+  = f.inputs do
+    = f.input :sesja, :as => :select, :collection => Sesja.displayable,
+      :include_blank => true, :label_method => :title
+    = f.input :room, :as => :select, :collection => Room.all, 
+      :include_blank => true, :label_method => :title
+    = f.input :time_slot, :as => :select, :collection => TimeSlot.all, 
+      :include_blank => true, :label_method => :title
+  = f.buttons
+
+-# <%= form_for(@schedule) do |f| %>
+-#   <% if @schedule.errors.any? %>
+-#     <div id="error_explanation">
+-#       <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+-#       <ul>
+-#       <% @schedule.errors.full_messages.each do |msg| %>
+-#         <li><%= msg %></li>
+-#       <% end %>
+-#       </ul>
+-#     </div>
+-#   <% end %>
+
+-#   <div class="field">
+-#     <%= f.label :sesja %><br />
+-#     <%= f.text_field :sesja %>
+-#   </div>
+-#   <div class="field">
+-#     <%= f.label :room %><br />
+-#     <%= f.text_field :room %>
+-#   </div>
+-#   <div class="field">
+-#     <%= f.label :time_slot %><br />
+-#     <%= f.text_field :time_slot %>
+-#   </div>
+-#   <div class="actions">
+-#     <%= f.submit %>
+-#   </div>
+-# <% end %>

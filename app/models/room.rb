@@ -1,5 +1,9 @@
 class Room < ActiveRecord::Base
   validates_uniqueness_of :title
+
+  def to_s
+    title
+  end
 end
 
 
