@@ -21,17 +21,18 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: imports
 #
-#  id               :integer         not null, primary key
+#  id               :integer         primary key
 #  datatype         :string(255)
 #  processed        :integer
 #  csv_file_name    :string(255)
 #  csv_content_type :string(255)
 #  csv_file_size    :integer
-#  created_at       :datetime
-#  updated_at       :datetime
+#  created_at       :timestamp
+#  updated_at       :timestamp
 #
 

@@ -5,16 +5,17 @@ describe TimeSlot do
 end
 
 
+
 # == Schema Information
 #
 # Table name: time_slots
 #
-#  id         :integer         not null, primary key
-#  starts_at  :datetime        indexed => [ends_at]
-#  ends_at    :datetime        indexed => [starts_at]
+#  id         :integer         primary key
+#  starts_at  :timestamp       indexed => [ends_at]
+#  ends_at    :timestamp       indexed => [starts_at]
 #  title      :string(255)     indexed
-#  created_at :datetime
-#  updated_at :datetime
+#  created_at :timestamp
+#  updated_at :timestamp
 #
 # Indexes
 #

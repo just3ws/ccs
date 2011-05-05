@@ -29,7 +29,7 @@ Ccs::Application.routes.draw do
   #root :to => "contents#show"
 end
 #== Route Map
-# Generated on 02 May 2011 18:17
+# Generated on 05 May 2011 07:48
 #
 #                schedules GET    /schedules(.:format)                   {:action=>"index", :controller=>"schedules"}
 #                          POST   /schedules(.:format)                   {:action=>"create", :controller=>"schedules"}
@@ -38,6 +38,7 @@ end
 #                 schedule GET    /schedules/:id(.:format)               {:action=>"show", :controller=>"schedules"}
 #                          PUT    /schedules/:id(.:format)               {:action=>"update", :controller=>"schedules"}
 #                          DELETE /schedules/:id(.:format)               {:action=>"destroy", :controller=>"schedules"}
+#                                 /schedule(.:format)                    {:action=>"index", :controller=>"schedules"}
 #                    rooms GET    /rooms(.:format)                       {:action=>"index", :controller=>"rooms"}
 #                          POST   /rooms(.:format)                       {:action=>"create", :controller=>"rooms"}
 #                 new_room GET    /rooms/new(.:format)                   {:action=>"new", :controller=>"rooms"}

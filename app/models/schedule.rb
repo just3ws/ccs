@@ -17,15 +17,16 @@ class Schedule < ActiveRecord::Base
 
 end
 
+
 # == Schema Information
 #
 # Table name: schedules
 #
-#  id           :integer         not null, primary key
+#  id           :integer         primary key
 #  sesja_id     :integer
 #  room_id      :integer
 #  time_slot_id :integer
-#  created_at   :datetime
-#  updated_at   :datetime
+#  created_at   :timestamp
+#  updated_at   :timestamp
 #
 

@@ -5,15 +5,16 @@ describe SponsorshipLevel do
 end
 
 
+
 # == Schema Information
 #
 # Table name: sponsorship_levels
 #
-#  id          :integer         not null, primary key
+#  id          :integer         primary key
 #  name        :string(255)
 #  description :text
-#  created_at  :datetime
-#  updated_at  :datetime
+#  created_at  :timestamp
+#  updated_at  :timestamp
 #  priority    :integer
 #
 
