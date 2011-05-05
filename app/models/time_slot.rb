@@ -6,6 +6,8 @@ class TimeSlot < ActiveRecord::Base
 
   validate :that_start_is_before_end
 
+  default_scope :order => "starts_at ASC"
+
   def start_and_end_time(separator = '-')
     "#{starts_at.strftime("%l:%M")} #{separator} #{ends_at.strftime("%l:%M")}".squish!
   end

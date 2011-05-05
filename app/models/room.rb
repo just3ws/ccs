@@ -1,5 +1,6 @@
 class Room < ActiveRecord::Base
   has_many :schedules
+  default_scope :order => "title ASC"
 
   validates_uniqueness_of :title
 
