@@ -5,4 +5,13 @@
       %a{:href => "#"}= schedule.room.title
       %span // 
       = link_to schedule.sesja.title, sesja_path(schedule.sesja)
+      %span with 
+      = link_to schedule.sesja.user.full_name, user_path(schedule.sesja.user)
 
+
+    - if user_signed_in? && current_user.admin?
+      .actions
+        %ul
+          %li= link_to 'Show',schedule 
+          %li= link_to 'Edit', edit_schedule_path(schedule)
+          %li= link_to 'Destroy', schedule, :confirm => 'Are you sure you wish to delete this schedule?', :method => :delete
