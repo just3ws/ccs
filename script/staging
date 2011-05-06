@@ -1,0 +1,4 @@
+. script/push
+rake staging heroku:maintenance
+rake staging deploy
+rake staging heroku:maintenance_off
