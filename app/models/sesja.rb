@@ -14,6 +14,7 @@ class Sesja < ActiveRecord::Base
   validates :title, :presence => true, :length => {:within => 0..64}
   validates :abstract, :presence => true, :length => {:within => 0..1024}
   validates_inclusion_of :level, :in => 0..3
+
   before_save :set_permalink, :seoize_permalink
 
   def accepted?
