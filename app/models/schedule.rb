@@ -25,7 +25,7 @@ from (
   select max(updated_at) as updated_at from sesjas
   union
   select max(updated_at) as updated_at from rooms
-);
+) as updates;
       SQL
       DateTime.parse(ActiveRecord::Base.connection.execute(sql).first["last_updated_at"])
 
