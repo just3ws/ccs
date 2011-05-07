@@ -7,11 +7,12 @@ class SchedulesController < ApplicationController
 
     #@schedules = Schedule.assigned
     @time_slots = TimeSlot.includes(:schedules).all
+    @last_updated_at = Schedule.last_updated_at
 
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @schedules }
+      format.atom { render :layout => false }
     end
   end
 
@@ -22,7 +23,6 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @schedule }
     end
   end
 
@@ -33,7 +33,6 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @schedule }
     end
   end
 
@@ -47,14 +46,13 @@ class SchedulesController < ApplicationController
   def create
     # @schedule = Schedule.new(params[:schedule])
 
-    respond_to do |format|
+    respond_to do |wants|
       if @schedule.save
-        format.html { redirect_to(@schedule, :notice => 'Schedule was successfully created.') }
-        format.xml  { render :xml => @schedule, :status => :created, :location => @schedule }
+        wants.html { redirect_to(@schedule, :notice => 'Schedule was successfully created.') }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @schedule.errors, :status => :unprocessable_entity }
+        wants.html { render :action => "new" }
       end
+      wants.atom { render :action => "index", :layout => false }
     end
   end
 
@@ -66,10 +64,8 @@ class SchedulesController < ApplicationController
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
         format.html { redirect_to(@schedule, :notice => 'Schedule was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @schedule.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -82,7 +78,6 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(schedules_url) }
-      format.xml  { head :ok }
     end
   end
 end

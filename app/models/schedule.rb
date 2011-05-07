@@ -13,7 +13,25 @@ class Schedule < ActiveRecord::Base
     def assigned
       Schedule.with_sessions.with_rooms.with_time_slots
     end
+
+    def last_updated_at
+      sql = <<-SQL
+select max(updated_at) as last_updated_at
+from (
+  select max(updated_at) as updated_at from schedules
+  union
+  select max(updated_at) as updated_at from time_slots
+  union
+  select max(updated_at) as updated_at from sesjas
+  union
+  select max(updated_at) as updated_at from rooms
+);
+      SQL
+      DateTime.parse(ActiveRecord::Base.connection.execute(sql).first["last_updated_at"])
+
+    end
   end
+
 
 end
 

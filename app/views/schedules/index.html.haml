@@ -1,3 +1,4 @@
+= auto_discovery_link_tag(:atom)
 %h4.section-title schedule 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => Schedule.new, :current_action => :index}
