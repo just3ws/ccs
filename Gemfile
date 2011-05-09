@@ -4,6 +4,9 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 
+# postgresql
+gem 'pg'
+
 # internationalization
 gem 'i18n'
 # gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
@@ -132,5 +135,8 @@ group :development do
 
   # query watcher
   gem 'bullet'
+  
+  # find's dead routes
+  gem 'traceroute'
 end
 
