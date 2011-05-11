@@ -23,41 +23,43 @@ function getCookie(cookieName) {
     }
   }
 }
-try {
-  var agent = navigator.userAgent.toLowerCase();
-  if ($.browser.mobile && getCookie('mobileSnooze') != 'nothanks') {
-    if (confirm('chicagocodecamp.mobi is mobile optimized for this event: would you like to go there instead?'))
-      window.location = 'http://chicagocodecamp.mobi';
-      else
-    setCookie('mobileSnooze', 'nothanks', 2); // user says no, wait to ask again
-  }
-}
-catch (err) {
-  console.error(err);
-}
 
 jQuery(document).ready(function() {
-  $('form').
-    focusin(
-      function(evt) {
-    $(evt.target).next('.hint').show();
-  }).
-    focusout(function(evt) {
-    $(evt.target).next('.hint').hide();
+  try {
+    var agent = navigator.userAgent.toLowerCase();
+    if ($.browser.mobile && getCookie('mobileSnooze') != 'nothanks') {
+      if (confirm('chicagocodecamp.mobi is mobile optimized for this event: would you like to go there instead?'))
+        window.location = 'http://chicagocodecamp.mobi';
+        else
+      setCookie('mobileSnooze', 'nothanks', 2); // user says no, wait to ask again
+    }
+  }
+  catch (err) {
+    console.error(err);
+  }});
+
+  jQuery(document).ready(function() {
+    $('form').
+      focusin(
+        function(evt) {
+      $(evt.target).next('.hint').show();
+    }).
+      focusout(function(evt) {
+      $(evt.target).next('.hint').hide();
+    });
+
+    $('#preregistration form').validate({
+      messages: {'preregistration[email]': 'We need your email address to notify you.'},
+      errorPlacement: function(error, field) {
+        error.insertAfter(field.next(':button'));
+      }
+    });
+
+    $('.hint').hide().css('color', '#00024d');
   });
 
-  $('#preregistration form').validate({
-    messages: {'preregistration[email]': 'We need your email address to notify you.'},
-    errorPlacement: function(error, field) {
-      error.insertAfter(field.next(':button'));
+  $(document).ready(function() {
+    if (!Modernizr.input.placeholder) {
+      $('input[placeholder], textarea[placeholder]').placeholder();
     }
   });
-
-  $('.hint').hide().css('color', '#00024d');
-});
-
-$(document).ready(function() {
-  if (!Modernizr.input.placeholder) {
-    $('input[placeholder], textarea[placeholder]').placeholder();
-  }
-});
