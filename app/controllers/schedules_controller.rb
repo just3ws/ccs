@@ -1,12 +1,8 @@
 class SchedulesController < ApplicationController
   load_and_authorize_resource
 
-  # GET /schedules
-  # GET /schedules.xml
   def index
-
     @schedules = Schedule.assigned.group_by {|s| s.time_slot.title}
-    # @time_slots = TimeSlot.includes(:schedules).all
     @last_updated_at = Schedule.last_updated_at
 
     respond_to do |format|
@@ -20,8 +16,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1
-  # GET /schedules/1.xml
   def show
     # @schedule = Schedule.find(params[:id])
 
@@ -30,8 +24,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/new
-  # GET /schedules/new.xml
   def new
     # @schedule = Schedule.new
 
@@ -40,13 +32,10 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1/edit
   def edit
     # @schedule = Schedule.find(params[:id])
   end
 
-  # POST /schedules
-  # POST /schedules.xml
   def create
     # @schedule = Schedule.new(params[:schedule])
 
@@ -60,8 +49,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # PUT /schedules/1
-  # PUT /schedules/1.xml
   def update
     # @schedule = Schedule.find(params[:id]).readonly(false)
 

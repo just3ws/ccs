@@ -5,7 +5,6 @@
   = render :partial => "shared/actions", :locals => {:model => Schedule.new, :current_action => :index}
 
 .lineup
-  -# = render :partial => "schedule", :collection => @schedules
   - @schedules.each_pair do |key, value|
     %h3.sponsorship-level= raw "<span>#{key}:</span>"
     = render :partial => "show", :collection => value

@@ -2,13 +2,19 @@ atom_feed(:schema_data => @last_updated_at)do |feed|
   feed.title "Chicago Code Camp 2011 Schedule"
   feed.updated @last_updated_at
 
-  @time_slots.each do |time_slot| 
-    feed.entry(time_slot) do |entry|
-      entry.time_slot(time_slot.title)
-      entry.starts_at(time_slot.starts_at)
-      entry.ends_at(time_slot.ends_at)
+  @schedules.each_pair do |key, value| 
+    value.each do |schedule|
+      feed.entry(schedule) do |entry|
+        entry.time_slot do
+          entry.title(schedule.time_slot.title)
+          entry.starts_at(schedule.time_slot.starts_at)
+          entry.ends_at(schedule.time_slot.ends_at)
+        end
 
-      time_slot.schedules.each do |schedule|
+        entry.room do
+          entry.title(schedule.room.title)
+        end
+
         if schedule.sesja.present?
           entry.session do
             if schedule.sesja.present?
@@ -18,8 +24,8 @@ atom_feed(:schema_data => @last_updated_at)do |feed|
             end
           end
         end
-      end
 
+      end
     end
   end
 end
