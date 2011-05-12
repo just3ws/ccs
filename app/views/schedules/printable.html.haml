@@ -1,1 +1,40 @@
-this!
+- rooms = @schedules.values.map {|k| k.map {|v| v.room.title if v.sesja}}.flatten!.compact!.uniq!
+- rms = rooms.map
+/
+  = rooms.join(', ')
+  = rms.join(', ')
+!!!
+%html
+  %head
+    = hoptoad_javascript_notifier
+    %title Chicago Code Camp 2011 - May 14th
+    %meta{:content => "Chicago Code Camp is a free, one day conference on Saturday May 14th for developers of all skill levels and interests with multiple sessions running side-by-side throughout the day.", :name => "description"}/
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag "printable"
+    = csrf_meta_tag
+  %body
+    #logo
+      - if Feature.ok? :image_logo
+        = link_to image_tag("logo-horizontal.png", :border => 0), root_url
+      - else
+        = link_to "chicago code camp", root_url
+    #blurb Saturday, May 14th, 2011 - Grayslake, IL
+
+    %table
+      %thead
+        %tr
+          %th
+          - rooms.each do |room|
+            %th= room 
+      %tbody
+        - room = rms.shift
+        - @schedules.each_pair do |key, value|
+          %tr
+            %th.left-column= value.first.time_slot.start_and_end_time
+            - value.sort_by{|s| s.room.title}.each do |schedule|
+              - if schedule.sesja 
+                - if schedule.room.title == room
+                  %td= schedule.sesja.title
+              - else
+                %td.no-session{:colspan => 12, :nowrap => true}
+                  = schedule.time_slot.title
