@@ -1,6 +1,6 @@
 class SesjasController < ApplicationController
   load_and_authorize_resource
-  cache_pages :index
+  caches_page :index
 
   def index
     respond_to do |format|
