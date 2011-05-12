@@ -1,5 +1,6 @@
 class SesjasController < ApplicationController
   load_and_authorize_resource
+  cache_pages :index
 
   def index
     respond_to do |format|
@@ -25,6 +26,7 @@ class SesjasController < ApplicationController
   def create
     respond_to do |format|
       if @sesja.save
+        expire_page :action => :index
         format.html { redirect_to(@sesja, :notice => 'Session was successfully created.') }
       else
         format.html { render :action => "new" }
@@ -37,6 +39,7 @@ class SesjasController < ApplicationController
   def update
     respond_to do |format|
       if @sesja.update_attributes(params[:sesja])
+        expire_page :action => :index
         format.html { redirect_to(@sesja, :notice => 'Session was successfully updated.') }
       else
         format.html { render :action => "edit" }
@@ -48,6 +51,7 @@ class SesjasController < ApplicationController
 
   def destroy
     @sesja.destroy
+    expire_page :action => :index
     respond_to do |format|
       format.html { redirect_to(sesjas_url) }
     end
