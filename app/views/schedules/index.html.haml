@@ -1,7 +1,12 @@
 = auto_discovery_link_tag(:atom)
+
 %h4.section-title schedule 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => Schedule.new, :current_action => :index}
 
 .lineup
-  = render :partial => "time_slot", :collection => @time_slots
+  -# = render :partial => "schedule", :collection => @schedules
+  - @schedules.each_pair do |key, value|
+    %h3.sponsorship-level= raw "<span>#{key}:</span>"
+    = render :partial => "show", :collection => value
+

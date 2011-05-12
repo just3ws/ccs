@@ -5,13 +5,17 @@ class SchedulesController < ApplicationController
   # GET /schedules.xml
   def index
 
-    #@schedules = Schedule.assigned
-    @time_slots = TimeSlot.includes(:schedules).all
+    @schedules = Schedule.assigned.group_by {|s| s.time_slot.title}
+    # @time_slots = TimeSlot.includes(:schedules).all
     @last_updated_at = Schedule.last_updated_at
 
-
     respond_to do |format|
-      format.html # index.html.erb
+      if params.keys.include? "printable"
+        format.html { render :layout => false, 
+                             :template => "schedules/printable" }
+      else
+        format.html
+      end
       format.atom { render :layout => false }
     end
   end

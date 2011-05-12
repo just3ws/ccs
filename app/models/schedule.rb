@@ -11,7 +11,7 @@ class Schedule < ActiveRecord::Base
 
   class << self
     def assigned
-      Schedule.with_sessions.with_rooms.with_time_slots
+      Schedule.with_rooms.with_time_slots
     end
 
     def last_updated_at

@@ -1,0 +1,18 @@
+.show
+  %ul
+    %li.schedule.session
+      -# = link_to schedule.room.title, room_path(schedule.room)
+      %a{:href => "#"}= show.room.title
+      %span // 
+      - if show.sesja.present?
+        = link_to show.sesja.title, sesja_path(show.sesja)
+        %span with 
+        = link_to show.sesja.user.full_name, user_path(show.sesja.user)
+      - else
+        = show.time_slot.title
+    - if user_signed_in? && current_user.admin?
+      .actions
+        %ul
+          %li= link_to 'Show', show 
+          %li= link_to 'Edit', edit_schedule_path(show)
+          %li= link_to 'Destroy', show, :confirm => 'Are you sure you wish to delete this schedule?', :method => :delete
