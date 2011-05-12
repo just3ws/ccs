@@ -1,15 +1,16 @@
 class SesjasController < ApplicationController
   load_and_authorize_resource
-  caches_page :index
+  caches_page [:index, :show]
 
   def index
-    response.headers['Cache-Control'] = 'public, max-age=300'
+    response.headers['Cache-Control'] = 'public, max-age=9600'
     respond_to do |format|
       format.html 
     end
   end
 
   def show
+    response.headers['Cache-Control'] = 'public, max-age=9600'
     respond_to do |format|
       format.html
     end

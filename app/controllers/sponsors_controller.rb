@@ -1,9 +1,11 @@
 class SponsorsController < ApplicationController
   load_and_authorize_resource
+  caches_page [:index, :show]
   
   # GET /sponsors
   # GET /sponsors.xml
   def index
+    response.headers['Cache-Control'] = 'public, max-age=9600'
     # @sponsors = Sponsor.all
     @sponsorship_levels = SponsorshipLevel.includes(:sponsors).all
 
@@ -47,6 +49,7 @@ class SponsorsController < ApplicationController
 
     respond_to do |format|
       if @sponsor.save
+        expire_page :action => :index
         format.html { redirect_to(@sponsor, :notice => 'Sponsor was successfully created.') }
         format.xml  { render :xml => @sponsor, :status => :created, :location => @sponsor }
       else
@@ -63,6 +66,7 @@ class SponsorsController < ApplicationController
 
     respond_to do |format|
       if @sponsor.update_attributes(params[:sponsor])
+        expire_page :action => :index
         format.html { redirect_to(@sponsor, :notice => 'Sponsor was successfully updated.') }
         format.xml  { head :ok }
       else

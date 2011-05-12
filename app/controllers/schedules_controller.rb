@@ -1,14 +1,16 @@
 class SchedulesController < ApplicationController
   load_and_authorize_resource
+  caches_page [:index, :show]
 
   def index
+    response.headers['Cache-Control'] = 'public, max-age=9600'
     @schedules = Schedule.assigned.group_by {|s| s.time_slot.title}
     @last_updated_at = Schedule.last_updated_at
 
     respond_to do |format|
       if params.keys.include? "printable"
         format.html { render :layout => false, 
-                             :template => "schedules/printable" }
+          :template => "schedules/printable" }
       else
         format.html
       end
@@ -18,6 +20,7 @@ class SchedulesController < ApplicationController
 
   def show
     # @schedule = Schedule.find(params[:id])
+    response.headers['Cache-Control'] = 'public, max-age=9600'
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +44,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |wants|
       if @schedule.save
+        expire_page :action => :index
         wants.html { redirect_to(@schedule, :notice => 'Schedule was successfully created.') }
       else
         wants.html { render :action => "new" }
@@ -54,6 +58,7 @@ class SchedulesController < ApplicationController
 
     respond_to do |format|
       if @schedule.update_attributes(params[:schedule])
+        expire_page :action => :index
         format.html { redirect_to(@schedule, :notice => 'Schedule was successfully updated.') }
       else
         format.html { render :action => "edit" }
@@ -66,6 +71,7 @@ class SchedulesController < ApplicationController
   def destroy
     # @schedule = Schedule.find(params[:id])
     @schedule.destroy
+    expire_page :action => :index
 
     respond_to do |format|
       format.html { redirect_to(schedules_url) }
