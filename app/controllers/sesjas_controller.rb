@@ -3,20 +3,21 @@ class SesjasController < ApplicationController
   caches_page :index
 
   def index
+    response.headers['Cache-Control'] = 'public, max-age=300'
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
     end
   end
 
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
     end
   end
 
   def new
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
     end
   end
 
@@ -34,8 +35,6 @@ class SesjasController < ApplicationController
     end
   end
 
-  # PUT /sesjas/1
-
   def update
     respond_to do |format|
       if @sesja.update_attributes(params[:sesja])
@@ -46,8 +45,6 @@ class SesjasController < ApplicationController
       end
     end
   end
-
-  # DELETE /sesjas/1
 
   def destroy
     @sesja.destroy
