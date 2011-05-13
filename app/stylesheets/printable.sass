@@ -1,25 +1,54 @@
 @import html5-reset
 @import typography
+@import colors
+@import helpers
+
+img
+  height: 75px
+  margin-bottom: 16px
+
+td, th
+  padding: 8px
 
 body
   font-family: $font-family-base
+  font-size: 12px
 
-table
-  outline: solid 1px blue
-td
-  outline: solid 1px red
-
-#logo
-  margin-left: auto
-  margin-right: auto
-
-#blurb
+.logo
+  width: 100%
+  text-align: center
+  padding: 8px
 
 .no-session
-  text-align: center
   font-weight: bold
 
 .left-column
   text-align: left 
   white-space: nowrap
   font-weight: bold
+
+thead
+  font-weight: 700
+  tr
+    background-color: $maroonish
+    color: white
+    th
+      vertical-align: bottom
+      text-align: left
+
+tbody
+  .even
+    background-color: $maroonish-33 
+  tr
+    td
+      border-right: solid 1px $greyish 
+    td:last-of-type
+      border-right: none
+
+.yellie
+  text-transform: uppercase
+  font-weight: 700
+
+.speaker
+  font-style: italic
+  font-size: 12px
