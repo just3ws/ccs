@@ -6,6 +6,6 @@
 
 .lineup
   - @schedules.each_pair do |key, value|
-    %h3.sponsorship-level= raw "<span>#{key}:</span>"
+    %h3.sponsorship-level= raw "<span>#{key}:</span> #{value.first.time_slot.start_and_end_time}" 
     = render :partial => "show", :collection => value
 
