@@ -3,14 +3,14 @@ class SesjasController < ApplicationController
   caches_page [:index, :show]
 
   def index
-    response.headers['Cache-Control'] = 'public, max-age=9600'
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
     respond_to do |format|
       format.html 
     end
   end
 
   def show
-    response.headers['Cache-Control'] = 'public, max-age=9600'
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
     respond_to do |format|
       format.html
     end

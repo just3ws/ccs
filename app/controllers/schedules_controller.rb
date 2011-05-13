@@ -3,8 +3,8 @@ class SchedulesController < ApplicationController
   caches_page [:index, :show]
 
   def index
-    response.headers['Cache-Control'] = 'public, max-age=9600'
-    @schedules = Schedule.assigned.group_by {|s| s.time_slot.title}
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}" 
+    @schedules = Schedule.assigned.group_by {|s| s.time_slot.title }
     @last_updated_at = Schedule.last_updated_at
 
     respond_to do |format|
@@ -20,7 +20,7 @@ class SchedulesController < ApplicationController
 
   def show
     # @schedule = Schedule.find(params[:id])
-    response.headers['Cache-Control'] = 'public, max-age=9600'
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
 
     respond_to do |format|
       format.html # show.html.erb

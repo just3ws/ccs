@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   caches_page [:index, :show]
 
   def show
-    response.headers['Cache-Control'] = 'public, max-age=9600'
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
   end
 
   def edit
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def index 
-    response.headers['Cache-Control'] = 'public, max-age=9600'
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
     @users = User.speakers.with_rsvped_sessions
   end
 end

@@ -5,7 +5,7 @@ class SponsorsController < ApplicationController
   # GET /sponsors
   # GET /sponsors.xml
   def index
-    response.headers['Cache-Control'] = 'public, max-age=9600'
+    response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
     # @sponsors = Sponsor.all
     @sponsorship_levels = SponsorshipLevel.includes(:sponsors).all
 

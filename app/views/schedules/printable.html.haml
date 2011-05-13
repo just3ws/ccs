@@ -1,5 +1,7 @@
-- rooms = @schedules.values.map {|k| k.map {|v| v.room.title if v.sesja}}.flatten!.compact!.uniq!
+- rooms = @schedules.values.map {|k| k.map {|v| v.room.title if v.sesja}}.flatten!.compact!.uniq!.sort!
+- time_slots = @schedules.map {|k| k.first }
 - rms = rooms.map
+- ts = time_slots.map
 /
   = rooms.join(', ')
   = rms.join(', ')

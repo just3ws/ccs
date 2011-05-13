@@ -1,3 +1,5 @@
+CACHE_CONTROL__MAX_AGE = 0 
+
 Ccs::Application.configure do
   require File.expand_path("lib/heroku_settings") 
   HerokuSettings.load_env_from_config
