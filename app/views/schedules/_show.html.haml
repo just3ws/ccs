@@ -1,7 +1,8 @@
 .show
   %ul
     %li.schedule.session
-      -# = link_to schedule.room.title, room_path(schedule.room)
+      /
+        = show.id
       %a{:href => "#"}= show.room.title
       %span // 
       - if show.sesja.present?
