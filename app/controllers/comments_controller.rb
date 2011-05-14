@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  # authorize_resource
+  authorize_resource
 
   def index
     @commentable = find_commentable
