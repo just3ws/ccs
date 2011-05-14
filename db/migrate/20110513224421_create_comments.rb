@@ -1,7 +1,7 @@
 class CreateComments < ActiveRecord::Migration
   def self.up
     create_table :comments do |t|
-      t.text :comment, :limit => 512, :null => false
+      t.text :comment
       t.integer :commentable_id
       t.string :commentable_type
       t.string :email
