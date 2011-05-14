@@ -7,6 +7,7 @@ class Comment < ActiveRecord::Base
     :email_domain => true,
     :email_format => true
   default_scope :order => "created_at DESC"
+  validates_uniqueness_of :comment, :scope => :email
 end
 
 # == Schema Information
