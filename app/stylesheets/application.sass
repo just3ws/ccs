@@ -229,7 +229,7 @@ h3.sponsorship-level:first-of-type
       margin-bottom: none
     li:first-of-type
       margin-top: none
-    
+
 hr.divider
   border: none
   display: block
@@ -282,3 +282,50 @@ li.schedule
     color: white
     padding: 4px
     +round-corners(4px)
+
+#comments
+  ul, ol
+    list-style-type: none
+    li
+      padding: 8px
+      font-weight: 300
+      font-size: 16px
+      margin: 8px
+      margin-left: 40px
+  .comments-list
+    li:nth-of-type(odd)
+      border: solid 2px $greenish
+      background-color: $greenish-33
+      .email
+        color: $greenish
+        font-weight: 700
+    li:nth-of-type(even)
+      border: solid 2px $blueish
+      background-color: $blueish-33
+      .email
+        color: $blueish
+        font-weight: 700
+  textarea, input[type='email']
+    border: solid 2px $greyish 
+    +square-corner-top-left(8px)
+
+#messages
+  margin-left: auto
+  margin-right: auto
+  font-weight: 700
+  display: block
+  text-align: center
+  .error
+    padding: 8px
+    margin: 16px
+    background-color: $maroonish-33
+    border: solid 2px $maroonish
+    color: white
+    text-shadow: 0 0 12px $maroonish-66 
+  .notice
+    padding: 8px
+    margin: 16px
+    background-color: $blueish-33
+    border: solid 2px $blueish
+    color: white
+    text-shadow: 0 0 12px $blueish-66 

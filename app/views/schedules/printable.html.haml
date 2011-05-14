@@ -37,4 +37,4 @@
                   .title= v.sesja.title
                   .speaker= "by #{v.sesja.user.full_name}"
               - else
-                %td{:class => "#{cls} yellie"}= key
+                %td{:class => "#{cls} yellie"}= raw("&nbsp;") 

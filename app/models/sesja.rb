@@ -17,6 +17,8 @@ class Sesja < ActiveRecord::Base
 
   before_save :set_permalink, :seoize_permalink
 
+  has_many :comments, :as => :commentable
+
   def accepted?
     !!self.accepted_at
   end

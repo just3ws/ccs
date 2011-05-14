@@ -1,0 +1,24 @@
+%link{:href => "http://fonts.googleapis.com/css?family=Syncopate", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "http://fonts.googleapis.com/css?family=Ubuntu:regular,italic,bold,bolditalic", :rel => "stylesheet", :type => "text/css"}/
+%h1{:style => "color:#a60400;font-family:'Syncopate',Verdana,Geneva,sans-serif;"} Chicago Code Camp 2011
+%h3{:style => "color:#a60400;font-family:'Syncopate',Verdana,Geneva,sans-serif;"} Grayslake, IL - May 14th,2011
+%h2{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;font-weight:bold;"}
+  Hello #{"#{@resource.first_name}" unless @resource.first_name.blank?}
+  ,
+%p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+  Now that we have all the speakers and sessions lined up, we are filling in the actual schedule #{link_to schedules_url, schedules_url}.
+  %p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+    The schedule consists of several tracks, each track has six 60-minute sessions, with a break for lunch:
+    %ol{:style => "list-style-type: none"}
+      %li 9-10:00 // Session 1
+      %li 10:15-11:15 // Session 2
+      %li 11:30-12:30 // (Lunch)
+      %li 12:30-1:30 // Session 3
+      %li 1:45-2:45 // Session 4
+      %li 3-4:00 // Session 5
+      %li 4:15-5:00 // Session 6 (Raffle)
+  %p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}
+    While we appreciate everyone’s flexibility to make scheduling easier, if there is any special requirement you have for a time slot (i.e. morning vs. afternoon), please let us know and we'll do our best to accommodate your need.
+  %p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;font-weight:bold;"} Looking forward to your session,
+  %p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;color:#a60400;"} The Chicago Code Camp Team
+  %p{:style => "font-family:Ubuntu,Tahoma,Arial,Helvetica,sans-serif;"}= link_to "Chicago Code Camp 2011", root_url

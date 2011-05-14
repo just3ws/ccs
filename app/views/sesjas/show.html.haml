@@ -1,5 +1,28 @@
 %h4.section-title session description 
-= render :partial => "sesja", :locals => {:sesja => @sesja}
+= render :partial => "sesjas/sesja", :locals => {:sesja => @sesja}
+
+- if Feature.ok? :comments
+  #comments
+    %ul.comments-list
+      - @sesja.comments.each do |comment|
+        %li
+          %span.email= comment.email
+          = comment.comment
+
+    - semantic_form_for [@sesja, @comment || @sesja.comments.build] do |f|
+      = f.semantic_errors
+      = f.inputs do
+        = f.input :comment, :rows => 3
+        = f.input :email
+      = f.buttons
+
+  -# - content_for :javascript do
+  -#   :javascript
+  -#     $('button').live('click', function () {
+  -#       alert('le clicke');
+  -#       $(this).parents('form:first').submit();
+  -#       return false;
+  -#     });
 
 - if user_signed_in? && (current_user.admin? || current_user.speaker?)
   = render :partial => "shared/actions", :locals => {:model => @sesja, :current_action => :show}

@@ -4,6 +4,9 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 
+# captcha for comments
+gem "recaptcha", :require => "recaptcha/rails"
+
 # postgresql
 gem 'pg'
 

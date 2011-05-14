@@ -7,7 +7,7 @@
         = button "logout", destroy_user_session_path
   - else
     = form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f|
-      %h5 speaker login
+      %h5 admin login
       %p Login to manage your sessions.
       %fieldset
         %ol

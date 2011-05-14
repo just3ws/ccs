@@ -4,7 +4,8 @@ I18n.backend.store_translations(:en, :time => { :formats => { :default => "%l:%M
 # Feature flags
 { :preregistrations => false,
   :image_logo => true,
-  :show_sponsors => true
+  :show_sponsors => true,
+  :comments => true,
 }.each_pair do |name, is_enabled|
   Feature.find_or_initialize_by_name(name).tap do |f|
     f.enabled =  is_enabled 
