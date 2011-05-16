@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/thedarkone/rails-dev-boost.git
-  revision: 3584e43f936d43a26707d1a54bd25136d321de49
+  revision: 89a795373e7a916cbf78a5993819b33705e9fd6f
   specs:
     rails-dev-boost (0.1.1)
 
@@ -93,7 +93,7 @@ GEM
       rack-test (>= 0.5.7)
     culerity (0.2.15)
     daemons (1.1.3)
-    dalli (1.0.3)
+    dalli (1.0.4)
     database_cleaner (0.6.7)
     delayed_job (2.1.4)
       activesupport (~> 3.0)
@@ -116,11 +116,10 @@ GEM
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
-    faraday-stack (0.1.0)
+    faraday-stack (0.1.1)
       faraday (~> 0.6)
     fastercsv (1.5.4)
-    ffi (1.0.7)
-      rake (>= 0.8.7)
+    ffi (1.0.8)
     formtastic (1.2.3)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -197,7 +196,7 @@ GEM
       activerecord (~> 3.0)
       activesupport (~> 3.0)
       ruby-graphviz (~> 0.9.18)
-    rails_best_practices (0.8.2)
+    rails_best_practices (0.9.0)
       activesupport
       colored
       erubis
