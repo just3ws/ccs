@@ -1,4 +1,6 @@
 Ccs::Application.routes.draw do
+  resources :posts
+
   get "notifications/speaker_notification"
 
   get "notification/speaker_notification"

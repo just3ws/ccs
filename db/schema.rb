@@ -10,15 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110513224421) do
+ActiveRecord::Schema.define(:version => 20110514114733) do
 
   create_table "comments", :force => true do |t|
-    t.text     "comment",          :limit => 512, :null => false
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text      "comment"
+    t.integer   "commentable_id"
+    t.string    "commentable_type"
+    t.string    "email"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "contents", :force => true do |t|
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(:version => 20110513224421) do
     t.integer   "csv_file_size"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "text"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "preregistrations", :force => true do |t|

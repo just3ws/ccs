@@ -14,12 +14,13 @@ class Ability
       can :create, Preregistration
       can :create, Submission
       can :read, Content
+      can :read, Post
+      can :read, Room
+      can :read, Schedule
       can :read, Sesja
       can :read, Sponsor
       can :read, SponsorshipLevel
-      can :read, Room
       can :read, TimeSlot
-      can :read, Schedule
       can :read, User do |u|
         (u.sesja.present? && u.sesja.displayable.present?)  
       end
@@ -30,8 +31,8 @@ class Ability
 
     if user.role? :speaker
       can :manage, Submission, :user_id => user.id
-      can :update, Sesja, { :user_id => user.id }
       can :manage, User, { :id => user.id }
+      can :update, Sesja, { :user_id => user.id }
     end
 
     if user.role? :admin
