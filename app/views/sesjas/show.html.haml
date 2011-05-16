@@ -8,7 +8,7 @@
         %li
           /
             = comment.id
-          %span.email= comment.email
+          %span.email= comment.email.split('@').first
           = comment.comment
 
     - semantic_form_for [@sesja, @comment || @sesja.comments.build] do |f|
