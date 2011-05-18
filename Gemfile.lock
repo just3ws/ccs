@@ -1,25 +1,9 @@
 GIT
-  remote: git://github.com/chriseppstein/compass.git
-  revision: 6ba72b953348f5d188cb01ab12739b3f7f86848b
-  branch: master
-  specs:
-    compass (0.11.1.6ba72b9)
-      chunky_png (~> 1.1)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-
-GIT
   remote: git://github.com/just3ws/sitemap_generator.git
   revision: cb5d8d09c65d84469f828997b2c183311c40ff98
   branch: heroku
   specs:
     sitemap_generator (1.3.8)
-
-GIT
-  remote: git://github.com/thedarkone/rails-dev-boost.git
-  revision: 89a795373e7a916cbf78a5993819b33705e9fd6f
-  specs:
-    rails-dev-boost (0.1.1)
 
 GEM
   remote: http://rubygems.org/
@@ -63,7 +47,7 @@ GEM
     builder (2.1.2)
     bullet (2.0.1)
       uniform_notifier (~> 1.0.0)
-    cancan (1.6.4)
+    cancan (1.6.5)
     capybara (1.0.0.beta1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -77,6 +61,10 @@ GEM
     chunky_png (1.2.0)
     colored (1.2)
     columnize (0.3.2)
+    compass (0.11.1)
+      chunky_png (~> 1.1)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     configuration (1.2.0)
     cucumber (0.10.2)
       builder (>= 2.1.2)
@@ -271,7 +259,7 @@ DEPENDENCIES
   bullet
   cancan
   capybara
-  compass!
+  compass
   cucumber
   cucumber-rails
   dalli
@@ -300,7 +288,6 @@ DEPENDENCIES
   paperclip
   pg
   rails
-  rails-dev-boost!
   rails-erd
   rails_best_practices
   rdiscount

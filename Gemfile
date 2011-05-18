@@ -59,7 +59,7 @@ gem 'haml'
 
 # for Sass 
 gem 'sass'
-gem 'compass', :git => "git://github.com/chriseppstein/compass.git", :branch => "master"
+gem 'compass' #, :git => "git://github.com/chriseppstein/compass.git", :branch => "master"
 
 # javascript
 # gem 'coffee-script'
@@ -125,7 +125,7 @@ group :development do
   gem 'interactive_editor'
 
   # should make things faster
-  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  # gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 
   # understand hotspots in the codebase
   gem 'rails_best_practices'
