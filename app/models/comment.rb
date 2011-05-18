@@ -10,16 +10,17 @@ class Comment < ActiveRecord::Base
   validates_uniqueness_of :comment, :scope => :email
 end
 
+
 # == Schema Information
-# Schema version: 20110513224421
 #
 # Table name: comments
 #
-#  id               :integer         not null, primary key
+#  id               :integer         primary key
 #  comment          :text
 #  commentable_id   :integer
 #  commentable_type :string(255)
-#  created_at       :datetime
-#  updated_at       :datetime
+#  email            :string(255)
+#  created_at       :timestamp
+#  updated_at       :timestamp
 #
 

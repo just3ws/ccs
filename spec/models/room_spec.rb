@@ -6,7 +6,10 @@ end
 
 
 
+
+
 # == Schema Information
+# Schema version: 20110514114733
 #
 # Table name: rooms
 #

@@ -38,8 +38,15 @@ Ccs::Application.routes.draw do
   #root :to => "contents#show"
 end
 #== Route Map
-# Generated on 13 May 2011 19:32
+# Generated on 18 May 2011 17:30
 #
+#                              posts GET    /posts(.:format)                                {:controller=>"posts", :action=>"index"}
+#                                    POST   /posts(.:format)                                {:controller=>"posts", :action=>"create"}
+#                           new_post GET    /posts/new(.:format)                            {:controller=>"posts", :action=>"new"}
+#                          edit_post GET    /posts/:id/edit(.:format)                       {:controller=>"posts", :action=>"edit"}
+#                               post GET    /posts/:id(.:format)                            {:controller=>"posts", :action=>"show"}
+#                                    PUT    /posts/:id(.:format)                            {:controller=>"posts", :action=>"update"}
+#                                    DELETE /posts/:id(.:format)                            {:controller=>"posts", :action=>"destroy"}
 # notifications_speaker_notification GET    /notifications/speaker_notification(.:format)   {:controller=>"notifications", :action=>"speaker_notification"}
 #  notification_speaker_notification GET    /notification/speaker_notification(.:format)    {:controller=>"notification", :action=>"speaker_notification"}
 #                          schedules GET    /schedules(.:format)                            {:controller=>"schedules", :action=>"index"}
