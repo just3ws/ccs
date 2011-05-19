@@ -3,12 +3,14 @@ source 'http://rubygems.org'
 # ah-yup.
 gem 'rails'
 gem 'sqlite3'
+gem 'arel'
 
 # captcha for comments
 gem "recaptcha", :require => "recaptcha/rails"
 
 # postgresql
 gem 'pg'
+
 
 # internationalization
 gem 'i18n'
@@ -96,10 +98,10 @@ group :test do
   gem 'fuubar-cucumber'
 
   # run tests automatically
-  gem 'watchr'
+  # gem 'watchr'
 
   # javascript testing
-  gem 'jasmine'
+  # gem 'jasmine'
 end
 
 group :test, :development do
@@ -137,8 +139,9 @@ group :development do
   gem "rails-erd"
 
   # query watcher
+
   gem 'bullet'
-  
+
   # find's dead routes
   gem 'traceroute'
 end
