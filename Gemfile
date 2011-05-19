@@ -111,9 +111,6 @@ group :test, :development do
   gem 'rspec-rails'
 
   gem 'ruby-debug'
-
-  # deploy
-  gem 'capistrano'
 end
 
 group :development do
