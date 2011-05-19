@@ -20,14 +20,14 @@ describe SubmissionsController do
       end
     end
 
-    context "with a pre-existing user" do
-      context "user not logged in" do
-        it "is unauthorized" do
-          pending
-          User.stub!(:find_by_email).with("speaker@just3ws.com").and_return(Factory(:speaker))
-          post :create, {:user => {:email => "speaker@just3ws.com"}}
-        end
-      end
-    end
+    # context "with a pre-existing user" do
+    #   context "user not logged in" do
+    #     it "is unauthorized" do
+    #       pending
+    #       User.stub!(:find_by_email).with("speaker@just3ws.com").and_return(Factory(:speaker))
+    #       post :create, {:user => {:email => "speaker@just3ws.com"}}
+    #     end
+    #   end
+    # end
   end
 end
