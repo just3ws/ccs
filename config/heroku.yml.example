@@ -13,6 +13,10 @@ production:
     MEMCACHE_NS:    chicagocodecamp
     SITEMAP_DEFAULT_HOST: "http://chicagocodecamp.com"
     DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
+    EVENTBRITE_API_KEY: "xxxxxxxxxxxxxxxx"
+    RECAPTCHA_PUBLIC_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    RECAPTCHA_PRIVATE_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
 
 staging:
   app: chicagocodecamp-staging
@@ -29,6 +33,9 @@ staging:
     MEMCACHE_NS:    chicagocodecamp-staging
     SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-staging.heroku.com"
     DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
+    EVENTBRITE_API_KEY: "xxxxxxxxxxxxxxxx"
+    RECAPTCHA_PUBLIC_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    RECAPTCHA_PRIVATE_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 development:
   app: chicagocodecamp-development
@@ -45,3 +52,6 @@ development:
     S3_SECRET:      "your s3 secret"
     GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
     DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
+    EVENTBRITE_API_KEY: "xxxxxxxxxxxxxxxx"
+    RECAPTCHA_PUBLIC_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    RECAPTCHA_PRIVATE_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
