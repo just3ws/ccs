@@ -12,7 +12,6 @@ gem "recaptcha", :require => "recaptcha/rails"
 # postgresql
 gem 'pg'
 
-
 # internationalization
 gem 'i18n'
 # gem 'i18n-active_record', :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
@@ -60,7 +59,7 @@ gem 'jquery-rails', '>= 0.2.6'
 # cleaner HTML
 gem 'haml'
 
-# for Sass 
+# for Sass
 gem 'sass'
 gem 'compass' #, :git => "git://github.com/chriseppstein/compass.git", :branch => "master"
 
@@ -111,11 +110,12 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
 
+  gem 'metric_fu'
   gem 'simplecov', :require => false
 end
 
 group :development do
-  # simplify management of heroku environments 
+  # simplify management of heroku environments
   gem 'heroku_san'
 
   # improve Irb
