@@ -94,8 +94,8 @@ group :test do
   gem 'launchy'
 
   # much improved test progress and fail-fast
-  gem 'fuubar'
-  gem 'fuubar-cucumber'
+  # gem 'fuubar'
+  # gem 'fuubar-cucumber'
 
   # run tests automatically
   # gem 'watchr'
@@ -106,7 +106,7 @@ end
 
 group :test, :development do
   # it should
-  gem 'rspec-core'
+  # gem 'rspec-core'
   gem 'rspec'
   gem 'rspec-rails'
 end
