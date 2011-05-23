@@ -1,4 +1,4 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 
 describe Formatter do
   it "formats the permalink into a SEO friendly string" do
