@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 gem 'arel'
+gem 'rake', '0.8.7'
 
 # captcha for comments
 gem "recaptcha", :require => "recaptcha/rails"
