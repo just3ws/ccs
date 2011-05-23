@@ -109,6 +109,8 @@ group :test, :development do
   # gem 'rspec-core'
   gem 'rspec'
   gem 'rspec-rails'
+
+  gem 'simplecov', :require => false
 end
 
 group :development do
