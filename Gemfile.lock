@@ -125,7 +125,7 @@ GEM
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
     fssm (0.2.7)
-    gherkin (2.3.8)
+    gherkin (2.3.9)
       json (>= 1.4.6)
     haml (3.1.1)
     heroku (2.1.4)
@@ -136,7 +136,7 @@ GEM
       heroku
       rails (>= 2)
     hirb (0.4.5)
-    hoptoad_notifier (2.4.9)
+    hoptoad_notifier (2.4.10)
       activesupport
       builder
     i18n (0.5.0)
