@@ -109,8 +109,6 @@ group :test, :development do
   gem 'rspec-core'
   gem 'rspec'
   gem 'rspec-rails'
-
-  gem 'ruby-debug'
 end
 
 group :development do
