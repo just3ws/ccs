@@ -1,5 +1,7 @@
+CACHE_CONTROL__MAX_AGE = 0
+
 Ccs::Application.configure do
-  require File.expand_path("lib/heroku_settings") 
+  require File.expand_path("lib/heroku_settings")
 
   puts "Loading rails env #{Rails.env}"
   HerokuSettings.load_env_from_config
