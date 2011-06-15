@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# Yoinked from .... 
-# https://github.com/wayneeseguin/rvm-site/blob/master/.rvmrc 
+# Yoinked from ....
+# https://github.com/wayneeseguin/rvm-site/blob/master/.rvmrc
 
-environment_id="ruby-1.9.2@ccs"
+environment_id="ruby-1.9.2-patched@ccs"
 
 # are we on a system-wide RVM
 if [[ -d "/usr/local/lib/rvm/environments" \
