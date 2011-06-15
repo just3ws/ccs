@@ -6,7 +6,7 @@
     %meta{:content => "Chicago Code Camp is a free, one day conference on Saturday May 14th for developers of all skill levels and interests with multiple sessions running side-by-side throughout the day.", :name => "description"}/
     %meta{:charset => "utf-8"}
     = stylesheet_link_tag "application", "formtastic", "formtastic_changes"
-    - if display_diagnostic_stylesheet?  
+    - if display_diagnostic_stylesheet?
       = stylesheet_link_tag "diagnostic"
     = csrf_meta_tag
     %meta{:content => "W6MJO_iqsa4NviIyyrHJCyNNJqm2murQyeyacwi0h4g", :name => "google-site-verification"}/
@@ -22,17 +22,17 @@
               = link_to image_tag("logo-horizontal.png", :border => 0), root_url
             - else
               = link_to "chicago code camp", root_url
-          .blurb 
+          .blurb
             Saturday, May 14th, 2011 - Grayslake, IL
         .nav
           %ul
             %li= link_to "home", root_url
             %li
               %a.highlight{:href => "http://chicagocodecamp.eventbrite.com?ref=elink"} register
-            %li= link_to "schedule", schedules_path 
-            %li= link_to "sessions", sesjas_path 
-            %li= link_to "speakers", speakers_path 
-            %li= link_to "sponsors", sponsors_path 
+            %li= link_to "schedule", schedules_path
+            %li= link_to "sessions", sesjas_path
+            %li= link_to "speakers", speakers_path
+            %li= link_to "sponsors", sponsors_path
             - if user_signed_in?
               %li= link_to "profile", edit_user_path(current_user)
             %li= link_to "more info", "/more-info"
@@ -53,19 +53,23 @@
         = render :partial => "shared/location"
         = render :partial => "shared/authentication"
         = render :partial => "shared/github"
-      #footer 
+      #footer
         %ul
           %li
-            %a{ :href => "http://github.com/chicagocodecamp/ccs", :target => "_blank"} ccs 
-            is designed &amp; developed by 
+            %a{ :href => "http://github.com/chicagocodecamp/ccs", :target => "_blank"} ccs
+            is designed &amp; developed by
             %a{ :href => "http://about.me/michaeldhall", :target => "_blank"} michael d. hall
             aka
             %a{ :href => "http://twitter.com/just3ws", :target => "_blank"} just3ws
           %li
-            logo by 
+            logo by
             %a{ :href => "http://jashley.net/", :target => "_blank"} jane ashley
             aka
             %a{ :href => "http://twitter.com/ashleyweb", :target => "_blank"} ashleyweb
+          %li
+            go to the
+            = link_to "/admin"
+            section
       - if Rails.env == 'development'
         = render :partial => "shared/color_proof"
     = javascript_include_tag :defaults

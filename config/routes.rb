@@ -1,4 +1,5 @@
 Ccs::Application.routes.draw do
+  match '/admin' => 'admin_home#index'
   resources :posts
 
   get "notifications/speaker_notification"
@@ -22,7 +23,7 @@ Ccs::Application.routes.draw do
   resources :sesjas, :path => "sessions" do
     resources :comments
   end
-  
+
   resources :contents
   resources :imports
   resources :users
