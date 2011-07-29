@@ -322,6 +322,7 @@ DEPENDENCIES
   rdiscount
   recaptcha
   rspec
+  rspec-core
   rspec-rails
   sass
   simplecov

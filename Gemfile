@@ -76,43 +76,43 @@ gem 'aws-s3', :require => 'aws/s3'
 gem 'paperclip'
 
 group :test do
-  # given/when/then
-  gem 'gherkin'
-  gem 'cucumber'
-  gem 'cucumber-rails'
+ # given/when/then
+ gem 'gherkin'
+ gem 'cucumber'
+ gem 'cucumber-rails'
 
-  # factories
-  gem 'factory_girl_rails'
+ # factories
+ gem 'factory_girl_rails'
 
-  # automate the ui
-  gem 'capybara'
+ # automate the ui
+ gem 'capybara'
 
-  # cleans the database after tests
-  gem 'database_cleaner'
+ # cleans the database after tests
+ gem 'database_cleaner'
 
-  # And show me the page
-  gem 'launchy'
+ # And show me the page
+ gem 'launchy'
 
-  # much improved test progress and fail-fast
-  # gem 'fuubar'
-  # gem 'fuubar-cucumber'
+ # much improved test progress and fail-fast
+ # gem 'fuubar'
+ # gem 'fuubar-cucumber'
 
-  # run tests automatically
-  # gem 'watchr'
+ # run tests automatically
+ # gem 'watchr'
 
-  # javascript testing
-  # gem 'jasmine'
+ # javascript testing
+ # gem 'jasmine'
 end
 
-group :test, :development do
-  # it should
-  # gem 'rspec-core'
-  gem 'rspec'
-  gem 'rspec-rails'
+#group :test, :development do
+ # it should
+ gem 'rspec-core'
+ gem 'rspec'
+ gem 'rspec-rails'
 
-  gem 'metric_fu'
-  gem 'simplecov', :require => false
-end
+ gem 'metric_fu'
+ gem 'simplecov', :require => false
+#end
 
 group :development do
   # unixien server
