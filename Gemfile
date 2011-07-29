@@ -131,7 +131,7 @@ group :development do
   gem 'interactive_editor'
 
   # should make things faster
-  # gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 
   # understand hotspots in the codebase
   gem 'rails_best_practices'
