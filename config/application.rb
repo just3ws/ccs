@@ -3,9 +3,9 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 require 'fastercsv'
 require 'rdiscount'
-%w(generator 
-   s3_settings 
-   hash 
+%w(generator
+   s3_settings
+   hash
    formatter).each do |file|
   require File.expand_path("lib/#{file}")
    end
@@ -39,7 +39,7 @@ module Ccs
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery.validate jquery.placeholder modernizr rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery.validate jquery.placeholder modernizr)
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
