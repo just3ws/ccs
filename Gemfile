@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 gem 'arel'
-gem 'rake', '0.8.7'
+gem 'rake'
 
 # captcha for comments
 gem "recaptcha", :require => "recaptcha/rails"
@@ -39,7 +39,7 @@ gem 'json_pure'
 gem 'fastercsv'
 
 # generate a sitemap and ping search servics to get indexed
-gem 'sitemap_generator', :git => 'git://github.com/just3ws/sitemap_generator.git', :branch => 'heroku'
+gem 'sitemap_generator'
 
 # authentication
 gem 'devise'
@@ -75,7 +75,7 @@ gem 'aws-s3', :require => 'aws/s3'
 # for dealing with physical files
 gem 'paperclip'
 
-group :test do
+#group :test do
  # given/when/then
  gem 'gherkin'
  gem 'cucumber'
@@ -102,7 +102,7 @@ group :test do
 
  # javascript testing
  # gem 'jasmine'
-end
+#end
 
 #group :test, :development do
  # it should
