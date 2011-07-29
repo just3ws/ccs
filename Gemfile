@@ -115,9 +115,6 @@ gem 'paperclip'
 #end
 
 group :development do
-  # unixien server
-  gem 'unicorn'
-
   # simplify management of heroku environments
   gem 'heroku_san'
 
