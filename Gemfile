@@ -6,6 +6,8 @@ gem 'sqlite3'
 gem 'arel'
 gem 'rake'
 
+gem 'capistrano'
+
 # captcha for comments
 gem "recaptcha", :require => "recaptcha/rails"
 
