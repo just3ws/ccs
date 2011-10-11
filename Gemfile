@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # ah-yup.
-gem 'rails'
+gem 'rails', '~>3.0'
 gem 'sqlite3'
 gem 'arel'
 gem 'rake'
