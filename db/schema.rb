@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -176,19 +177,19 @@ ActiveRecord::Schema.define(:version => 20110514114733) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                :default => "",      :null => false
-    t.string   "encrypted_password",   :limit => 128,  :default => ""
+    t.string   "email",                                  :default => "",      :null => false
+    t.string   "encrypted_password",     :limit => 128,  :default => ""
     t.string   "reset_password_token"
-    t.string   "remember_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        :default => 0
+    t.integer  "sign_in_count",                          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role",                                 :default => "guest"
+    t.string   "role",                                   :default => "guest"
     t.integer  "submissions_id"
     t.string   "home_page"
     t.string   "first_name"
@@ -201,10 +202,10 @@ ActiveRecord::Schema.define(:version => 20110514114733) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "invitation_token",     :limit => 20
+    t.string   "invitation_token",       :limit => 20
     t.datetime "invitation_sent_at"
-    t.string   "speakerrate",          :limit => 2048
-    t.string   "twitter",              :limit => 32
+    t.string   "speakerrate",            :limit => 2048
+    t.string   "twitter",                :limit => 32
     t.string   "permalink"
   end
 
