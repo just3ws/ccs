@@ -1,7 +1,7 @@
-CACHE_CONTROL__MAX_AGE = 0 
+CACHE_CONTROL__MAX_AGE = 0
 
 Ccs::Application.configure do
-  require File.expand_path("lib/heroku_settings") 
+  require File.expand_path("lib/heroku_settings")
   HerokuSettings.load_env_from_config
 
   # Settings specified here will take precedence over those in config/application.rb
@@ -16,8 +16,7 @@ Ccs::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local = true
-  config.action_view.debug_rjs = true
-  config.action_controller.perform_caching = false 
+  config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
