@@ -8,7 +8,7 @@ if you'd like to help make CCS better or find a problem, then please
 help make it even better by contributing patches or even just submitting
 defects in our Github issue tracker.
 
-CCS is written in Rails 3 on Ruby 1.8.7 (ruby-1.8.7-p334). It's intended to be easily 
+CCS is written in Rails 3 on Ruby 1.9.2 (ruby-1.9.2-p290-patched). It's intended to be easily 
 deployed to Heroku for little or no cost. 
 
 == Chicago Code Camp
@@ -60,8 +60,8 @@ skill levels & interests, w/multiple sessions running side-by-side.
 
     Follow zee instructions: http://rvm.beginrescueend.com/
 
-    rvm package install readline;
-    rvm package install openssl;
+    rvm pkg install readline;
+    rvm pkg install openssl;
 
     rvm install ree-1.8.7-2010.02 \
       --reconfigure -C --enable-shared=yes  \
