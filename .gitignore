@@ -30,3 +30,4 @@ rerun.txt
 s3.yml
 scaffold.css
 tmp/**/*
+database.yml
