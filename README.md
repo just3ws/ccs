@@ -8,15 +8,15 @@ if you'd like to help make CCS better or find a problem, then please
 help make it even better by contributing patches or even just submitting
 defects in our Github issue tracker.
 
-CCS is written in Rails 3 on Ruby 1.9.2 (ruby-1.9.2-p290-patched). It's intended to be easily 
-deployed to Heroku for little or no cost. 
+CCS is written in Rails 3 on Ruby 1.9.3. It's intended to be easily
+deployed to Heroku for little or no cost.
 
 == Chicago Code Camp
 
-Chicago Code Camp a free, 1 day conf. on Sat. May 14th. For devs of all 
+Chicago Code Camp a free, one day conf. on a Saturday in May. For devs of all
 skill levels & interests, w/multiple sessions running side-by-side.
 
-== Getting Started 
+== Getting Started
 
 - OS X
 
@@ -26,7 +26,7 @@ skill levels & interests, w/multiple sessions running side-by-side.
   Step One: Homebrew
 
     Follow zee instructions: https://github.com/mxcl/homebrew
- 
+
     brew install libiconv; brew install libxml2;
 
     brew install git && brew info git;
@@ -41,34 +41,23 @@ skill levels & interests, w/multiple sessions running side-by-side.
 
     brew install memcached && brew info memcached;
 
-  Step Twone: RubyCocoa (optional)
-
-    brew install wget
-
-    cd ~/Downloads
- 
-    wget http://downloads.sourceforge.net/project/rubycocoa/RubyCocoa/1.0.0/RubyCocoa-1.0.0.tar.gz  
-   
-    tar -xvzf RubyCocoa-1.0.0.tar.gz
-    cd RubyCocoa-1.0.0
-
-    ruby install.rb config --build-universal=yes 
-    ruby install.rb setup 
-    sudo ruby install.rb install
-
   Step Two. RVM
 
     Follow zee instructions: http://rvm.beginrescueend.com/
 
-    rvm pkg install readline;
-    rvm pkg install openssl;
+    rvm install 1.9.3@ccs --create --install
 
-    rvm install ree-1.8.7-2010.02 \
-      --reconfigure -C --enable-shared=yes  \
-      --with-readline-dir=$rvm_path/usr \
-      --with-openssl-dir=$rvm_path/usr;
-    
-  3. Github
+  Step Three. Run it.
+
+    cp config/database.yml.postgres config/database.yml
+
+    bundle install
+
+    bundle exec rake db:create:all db:migrate db:seed
+
+    bundle exec rails server
+
+  Step Four. Github
 
     Fork http://github.com/chicagocodecamp/ccs
 
@@ -78,7 +67,7 @@ skill levels & interests, w/multiple sessions running side-by-side.
 
 == License
 
-Copyright (C) 2011  Michael D. Hall (just3ws)
+Copyright (C) 2011-2012  Michael D. Hall (just3ws)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
