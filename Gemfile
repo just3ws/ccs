@@ -6,6 +6,8 @@ gem 'sqlite3'
 gem 'arel'
 gem 'rake'
 
+gem 'activeadmin'
+
 gem 'capistrano'
 
 # captcha for comments
