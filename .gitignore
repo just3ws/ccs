@@ -22,6 +22,7 @@ Icon?
 all.js
 capybara-*.html
 config/*.yml
+database.yml
 db/*.sqlite3
 log/*.log
 logfile
@@ -30,4 +31,3 @@ rerun.txt
 s3.yml
 scaffold.css
 tmp/**/*
-database.yml
