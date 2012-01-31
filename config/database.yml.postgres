@@ -1,25 +1,25 @@
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: uglst_test
+  database: ccs_test
   pool: 5
-  user: uglst
+  user: ccs
   host: localhost
 
 development:
   adapter: postgresql
   encoding: unicode
-  database: uglst_development
+  database: ccs_development
   pool: 5
-  user: uglst
+  user: ccs
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: uglst_production
-  user: uglst
+  database: ccs_production
+  user: ccs
   host: localhost
 
 cucumber:

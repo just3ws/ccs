@@ -53,7 +53,8 @@ skill levels & interests, w/multiple sessions running side-by-side.
 
     bundle install
 
-    bundle exec rake db:create:all db:migrate db:seed
+    bundle exec rake db:drop:all db:create:all db:migrate db:seed
+    db:test:prepare
 
     bundle exec rails server
 
