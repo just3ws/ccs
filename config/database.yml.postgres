@@ -1,0 +1,26 @@
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: uglst_test
+  pool: 5
+  user: uglst
+  host: localhost
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: uglst_development
+  pool: 5
+  user: uglst
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: uglst_production
+  user: uglst
+  host: localhost
+
+cucumber:
+  <<: *test
