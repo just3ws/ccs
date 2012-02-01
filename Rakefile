@@ -4,14 +4,14 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-if %[development test].include? Rails.env
-  require 'metric_fu'
-  MetricFu::Configuration.run do |config|
-    config.metrics -= [:rcov]
-    config.darwin_txmt_protocol_no_thanks = true
-    config.verbose = true
-  end
-end
+#if %[development test].include? Rails.env
+  #require 'metric_fu'
+  #MetricFu::Configuration.run do |config|
+    #config.metrics -= [:rcov]
+    #config.darwin_txmt_protocol_no_thanks = true
+    #config.verbose = true
+  #end
+#end
 
 namespace :tmp do
   namespace :assets do

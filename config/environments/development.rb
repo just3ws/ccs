@@ -29,12 +29,12 @@ Ccs::Application.configure do
 
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 
-  config.after_initialize do
-    Bullet.enable                = false
-    Bullet.bullet_logger         = false
-    Bullet.console               = false
-    Bullet.rails_logger          = false
-    Bullet.disable_browser_cache = false
-  end
+  #config.after_initialize do
+    #Bullet.enable                = false
+    #Bullet.bullet_logger         = false
+    #Bullet.console               = false
+    #Bullet.rails_logger          = false
+    #Bullet.disable_browser_cache = false
+  #end
 end
 

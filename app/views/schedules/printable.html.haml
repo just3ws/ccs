@@ -3,7 +3,7 @@
 !!!
 %html
   %head
-    = hoptoad_javascript_notifier
+    -#= hoptoad_javascript_notifier
     %title Chicago Code Camp 2011 - May 14th
     %meta{:content => "Chicago Code Camp is a free, one day conference on Saturday May 14th for developers of all skill levels and interests with multiple sessions running side-by-side throughout the day.", :name => "description"}/
     %meta{:charset => "utf-8"}
@@ -27,14 +27,14 @@
           - cls = counter % 2 == 0 ? 'even' : 'odd'
           %tr{:class => "#{cls}"}
             - counter = counter + 1
-            %td.left-column= r 
+            %td.left-column= r
             - @schedules.each_pair do |key, value|
               - v = value.select {|s| s.room.title == r}.first
               - if v.nil?
-                %td{:class => "#{cls}"}= raw("&nbsp;") 
-              - elsif v.sesja 
+                %td{:class => "#{cls}"}= raw("&nbsp;")
+              - elsif v.sesja
                 %td{:class => "#{cls}"}
                   .title= v.sesja.title
                   .speaker= "by #{v.sesja.user.full_name}"
               - else
-                %td{:class => "#{cls} yellie"}= raw("&nbsp;") 
+                %td{:class => "#{cls} yellie"}= raw("&nbsp;")

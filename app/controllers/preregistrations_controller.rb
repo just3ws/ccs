@@ -7,7 +7,7 @@ class PreregistrationsController < ApplicationController
       format.html # show.html.erb
       format.xml { render :xml => @preregistrations }
       format.csv do
-        csv_string = FasterCSV.generate do |csv|
+        csv_string = CSV.generate do |csv|
           csv << ["email", "created at", "status"]
           @preregistrations.each do |reg|
             csv << [reg.email, reg.created_at, reg.status]

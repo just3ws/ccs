@@ -5,7 +5,7 @@ class SubmissionsController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        csv_string = FasterCSV.generate do |csv|
+        csv_string = CSV.generate do |csv|
           csv << ["title", "abstract", "full_name", "level", "keywords", "biography", "home_page", "email" ]
           @submissions.visible.each do |s|
             begin

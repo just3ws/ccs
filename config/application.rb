@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-require 'fastercsv'
+require 'csv'
 require 'rdiscount'
 %w(generator
    s3_settings
