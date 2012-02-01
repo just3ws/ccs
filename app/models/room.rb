@@ -1,6 +1,7 @@
 class Room < ActiveRecord::Base
   has_many :schedules
-  default_scope :order => "title ASC"
+
+  default_scope where("rooms.version_tag = ?", VERSION_TAG).order("rooms.title ASC")
 
   validates_uniqueness_of :title
 
@@ -8,9 +9,6 @@ class Room < ActiveRecord::Base
     title
   end
 end
-
-
-
 
 
 # == Schema Information

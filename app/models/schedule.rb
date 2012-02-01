@@ -3,11 +3,11 @@ class Schedule < ActiveRecord::Base
   belongs_to :room
   belongs_to :time_slot
 
-  default_scope includes(:time_slot).order("time_slots.starts_at ASC")
+  default_scope includes(:time_slot).where('schedules.version_tag = ?', VERSION_TAG).order('time_slots.starts_at ASC')
 
-  scope :with_sessions, includes(:sesja).where("schedules.sesja_id is not null")
-  scope :with_rooms, includes(:room).where("schedules.room_id is not null")
-  scope :with_time_slots, includes(:time_slot).where("schedules.time_slot_id is not null")
+  scope :with_sessions, includes(:sesja).where('schedules.sesja_id is not null')
+  scope :with_rooms, includes(:room).where('schedules.room_id is not null')
+  scope :with_time_slots, includes(:time_slot).where('schedules.time_slot_id is not null')
 
   class << self
     def assigned

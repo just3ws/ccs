@@ -1,6 +1,8 @@
 class Submission < ActiveRecord::Base
   belongs_to :user, :autosave => true
-  default_scope :order => 'submissions.created_at DESC'
+
+  default_scope where("submissions.version_tag = ?", VERSION_TAG).order('submissions.created_at DESC')
+
   scope :visible, :conditions => {:deleted_at => nil}
   scope :hidden, :conditions => "submissions.deleted_at IS NOT NULL"
 

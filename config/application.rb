@@ -15,6 +15,9 @@ require 'aws/s3'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+# updating to the new site version will require a restart
+VERSION_TAG ||= '2012-05'
+
 module Ccs
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

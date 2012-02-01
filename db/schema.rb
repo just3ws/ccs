@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201002959) do
+ActiveRecord::Schema.define(:version => 20120201112341) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20120201002959) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "version_tag"
   end
 
   add_index "rooms", ["title"], :name => "index_rooms_on_title", :unique => true
@@ -126,6 +127,7 @@ ActiveRecord::Schema.define(:version => 20120201002959) do
     t.integer  "time_slot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "version_tag"
   end
 
   create_table "sesjas", :force => true do |t|
@@ -140,6 +142,7 @@ ActiveRecord::Schema.define(:version => 20120201002959) do
     t.datetime "mailed_at"
     t.datetime "rsvped_at"
     t.string   "permalink"
+    t.string   "version_tag"
   end
 
   add_index "sesjas", ["permalink"], :name => "index_sesjas_on_permalink"
@@ -158,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20120201002959) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "version_tag"
   end
 
   create_table "sponsorship_levels", :force => true do |t|
@@ -186,6 +190,7 @@ ActiveRecord::Schema.define(:version => 20120201002959) do
     t.datetime "deleted_at"
     t.integer  "level"
     t.string   "keywords"
+    t.string   "version_tag"
   end
 
   create_table "time_slots", :force => true do |t|
@@ -194,6 +199,7 @@ ActiveRecord::Schema.define(:version => 20120201002959) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "version_tag"
   end
 
   add_index "time_slots", ["starts_at", "ends_at"], :name => "index_time_slots_on_starts_at_and_ends_at", :unique => true

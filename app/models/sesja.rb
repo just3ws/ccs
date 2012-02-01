@@ -1,8 +1,8 @@
 class Sesja < ActiveRecord::Base
   belongs_to :user, :autosave => true
   has_one :schedule
-  
-  default_scope :order => 'sesjas.permalink ASC'
+
+  default_scope where("sesjas.version_tag = ?", VERSION_TAG).order('sesjas.permalink ASC')
 
   scope :by_creation, :order => 'sesjas.created_at DESC'
 
