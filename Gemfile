@@ -92,6 +92,8 @@ group :test do
 end
 
 group :development do
+  gem 'pry'
+
   # simplify management of heroku environments
   gem 'heroku_san'
 
