@@ -1,4 +1,8 @@
 Ccs::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   match '/admin' => 'admin_home#index'
   resources :posts
 
