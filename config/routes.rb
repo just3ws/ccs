@@ -40,6 +40,7 @@ Ccs::Application.routes.draw do
   match '/:path' => 'contents#show' # this needs to be the last non-default route
 
   root :to => 'sesjas#index'
+  #root :to => 'submissions#new'
   #root :to => "contents#show"
 end
 #== Route Map

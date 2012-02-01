@@ -13,6 +13,7 @@ class Ability
       can :create, Comment
       can :create, Preregistration
       can :create, Submission
+      can :read, Submission
       can :read, Content
       can :read, Post
       can :read, Room
@@ -22,7 +23,7 @@ class Ability
       can :read, SponsorshipLevel
       can :read, TimeSlot
       can :read, User do |u|
-        (u.sesja.present? && u.sesja.displayable.present?)  
+        (u.sesja.present? && u.sesja.displayable.present?)
       end
     end
 
