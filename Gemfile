@@ -102,21 +102,20 @@ group :development do
   gem 'awesome_print'
 
   # should make things faster
-  #gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 
   # understand hotspots in the codebase
-  #gem 'rails_best_practices'
+  gem 'rails_best_practices'
 
   # adds attribute and type docs to models and routes
-  #gem 'annotate'
+  gem 'annotate'
 
   # generate ERD
-  #gem "rails-erd"
+  gem "rails-erd"
 
   # query watcher
-
-  #gem 'bullet'
+  gem 'bullet'
 
   # find's dead routes
-  #gem 'traceroute'
+  gem 'traceroute'
 end
