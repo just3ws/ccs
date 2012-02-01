@@ -98,7 +98,7 @@ group :development do
   gem 'heroku_san'
 
   # improve Irb
-  #gem 'wirble'
+  gem 'wirble'
 
   # better than pp
   gem 'awesome_print'
