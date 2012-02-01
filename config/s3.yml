@@ -1,0 +1,14 @@
+production:
+  bucket: chicagocodecamp  
+  access_key_id: 'AKIAIXNAKWPZXG4FQ7FA'
+  secret_access_key: '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'
+
+development: 
+  bucket: chicagocodecamp_development 
+  access_key_id: 'AKIAIXNAKWPZXG4FQ7FA'
+  secret_access_key: '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'
+
+test:
+  bucket: chicagocodecamp_test
+  access_key_id: 'AKIAIXNAKWPZXG4FQ7FA'
+  secret_access_key: '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'

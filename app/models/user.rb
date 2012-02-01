@@ -15,17 +15,17 @@ class User < ActiveRecord::Base
 
   default_scope :order => 'users.permalink DESC'
 
-  scope :speakers, :conditions => { :role => "speaker" } 
-  scope :admins, :conditions => { :role => "admins" } 
+  scope :speakers, :conditions => { :role => "speaker" }
+  scope :admins, :conditions => { :role => "admins" }
   scope :with_rsvped_sessions, includes(:sesja).where("sesjas.user_id is not null and sesjas.rsvped_at is not null")
   scope :randomized,           lambda { order "random()" }
 
-  has_attached_file :avatar,
-    :bucket => S3Settings.bucket,
-    :storage => :s3,
-    :s3_credentials => {:access_key_id => ENV['S3_KEY'] || S3Settings.settings[:access_key_id],
-      :secret_access_key => ENV['S3_SECRET'] || S3Settings.settings[:secret_access_key]},
-      :path => "/:style/:filename"
+  #has_attached_file :avatar,
+    #:bucket => S3Settings.bucket,
+    #:storage => :s3,
+    #:s3_credentials => {:access_key_id => ENV['S3_KEY'] || S3Settings.settings[:access_key_id],
+      #:secret_access_key => ENV['S3_SECRET'] || S3Settings.settings[:secret_access_key]},
+      #:path => "/:style/:filename"
 
   devise :invitable,
     :database_authenticatable,

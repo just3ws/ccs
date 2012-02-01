@@ -26,6 +26,5 @@ log/*.log
 logfile
 passenger-standalone
 rerun.txt
-s3.yml
 scaffold.css
 tmp/**/*

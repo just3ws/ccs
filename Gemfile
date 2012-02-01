@@ -15,7 +15,7 @@ gem 'rake'
 gem 'activeadmin'
 
 # captcha for comments
-gem "recaptcha", :require => "recaptcha/rails"
+#gem "recaptcha", :require => "recaptcha/rails"
 
 # postgresql
 gem 'pg'
@@ -30,7 +30,7 @@ gem 'json'
 gem 'dalli'
 
 # generate a sitemap and ping search servics to get indexed
-gem 'sitemap_generator'
+#gem 'sitemap_generator'
 
 # authentication
 gem 'devise'
@@ -61,7 +61,7 @@ gem 'compass' #, :git => "git://github.com/chriseppstein/compass.git", :branch =
 gem 'rdiscount'
 
 # for Amazon Web Service (S3)
-gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk' #, :require => 'aws/s3'
 
 # for dealing with physical files
 gem 'paperclip'
