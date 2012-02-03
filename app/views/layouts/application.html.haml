@@ -13,6 +13,9 @@
     /[if IE]
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       = stylesheet_link_tag "ie"
+    = stylesheet_link_tag 'formtastic', 'my_formtastic_changes'
+    <!--[if IE 6]><%= stylesheet_link_tag 'formtastic_ie6' %><![endif]-->
+    <!--[if IE 7]><%= stylesheet_link_tag 'formtastic_ie7' %><![endif]-->
   %body#home
     #container
       #header

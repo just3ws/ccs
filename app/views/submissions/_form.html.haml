@@ -1,4 +1,4 @@
-= form_for @submission, :html => {:multipart => true} do |f|
+= semantic_form_for @submission, :html => {:multipart => true} do |f|
   - if @submission.errors.any?
     - errors = @submission.errors
     - errors.merge!(@submission.user.errors) unless @submission.user.blank?
@@ -10,65 +10,55 @@
       %ul
         - errors.full_messages.each do |msg|
           %li= msg
-  %fieldset
-    %legend tell us about your proposal...
-    %ul
-      %li
-        = f.label :title, :class => "required"
-        = f.text_field :title, :placeholder => "the working title for your presentation"
-        .hint the working title for your presentation
-      %li
-        = f.label :abstract, "description", :class => "required"
-        = f.text_area :abstract, :placeholder => "a brief synopsis of the presentation and topic"
-        .hint describe your proposal in 1k characters or less
-      %li
-        = f.label :level, :class => "required"
-        = f.select :level, [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to"
-        .hint select the level your session is targeted to
-      %li
-        = f.label :keywords
-        = f.text_field :keywords, :placeholder => "relevant, words, for, your, session"
-        .hint comma-separated list of keywords to help describe your session
-  - unless user_signed_in?
-    = fields_for @submission.user do |uf|
-      %fieldset
-        %legend and a little bit about yourself...
-        %ul
-          %li
-            = uf.label :email, :class => "required"
-            = uf.email_field :email, :placeholder => "your@email.com"
-            .hint the email address we can reach you at
-          %li
-            = uf.label :first_name, :class => ""
-            = uf.text_field :first_name, :placeholder => "first name"
-          %li
-            = uf.label :last_name, :class => ""
-            = uf.text_field :last_name, :placeholder => "last name"
-          %li
-            = uf.label :home_page, :class => ""
-            = uf.url_field :home_page, :placeholder => "http://your.homepage.com"
-            .hint this can be your blog, twitter, linkedin or personal homepage
-          %li
-            = uf.label :biography, :class => ""
-            = uf.text_area :biography, :placeholder => "some biographical information"
-            .hint your life story in 1K characters or less
-          %li
-            = uf.label :twitter, :class => ""
-            = uf.text_field :twitter, :placeholder => "yourtwittername"
-            .hint your twitter name if you'd like us to provide a link your twitter account
-          %li
-            = uf.label :speakerrate, :class => ""
-            = uf.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name"
-            .hint
-              your speakerrate url if you'd like us to provide a link to encourage attendees to provide
-              feedback
-          %li
-            = uf.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional"
-            = uf.file_field :avatar
-            .hint
-              feel free to upload your profile picture along with your proposal but it's
-              optional
-  %fieldset
-    %ul
-      %li
-        %button#submission_submit{:name => "commit", :type => "submit"} submit
+  - f.inputs :name => "tell us about your proposal..." do
+    = f.input :title, :required => true, :placeholder => "the working title for your presentation"
+    -#.hint the working title for your presentation
+    = f.input :abstract, :required => true, :placeholder => "a brief synopsis of the presentation and topic", :as => :text, :input_html => { :class => 'autogrow', :rows => 8, :maxlength => 1000  }
+    -#.hint describe your proposal in 1k characters or less
+    = f.input :level, :required => true, :as => :select, :collection => [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to"
+    -#.hint select the level your session is targeted to
+    = f.input :keywords, :required => true, :placeholder => "relevant, words, for, your, session"
+    -#.hint comma-separated list of keywords to help describe your session
+  -#- unless user_signed_in?
+    -#= fields_for @submission.user do |uf|
+      -#%fieldset
+        -#%legend and a little bit about yourself...
+        -#%ul
+          -#%li
+            -#= uf.label :email, :class => "required"
+            -#= uf.email_field :email, :placeholder => "your@email.com"
+            -#.hint the email address we can reach you at
+          -#%li
+            -#= uf.label :first_name, :class => ""
+            -#= uf.text_field :first_name, :placeholder => "first name"
+          -#%li
+            -#= uf.label :last_name, :class => ""
+            -#= uf.text_field :last_name, :placeholder => "last name"
+          -#%li
+            -#= uf.label :home_page, :class => ""
+            -#= uf.url_field :home_page, :placeholder => "http://your.homepage.com"
+            -#.hint this can be your blog, twitter, linkedin or personal homepage
+          -#%li
+            -#= uf.label :biography, :class => ""
+            -#= uf.text_area :biography, :placeholder => "some biographical information"
+            -#.hint your life story in 1K characters or less
+          -#%li
+            -#= uf.label :twitter, :class => ""
+            -#= uf.text_field :twitter, :placeholder => "yourtwittername"
+            -#.hint your twitter name if you'd like us to provide a link your twitter account
+          -#%li
+            -#= uf.label :speakerrate, :class => ""
+            -#= uf.url_field :speakerrate, :placeholder => "http://speakerrate.com/0000-your-profile-name"
+            -#.hint
+              -#your speakerrate url if you'd like us to provide a link to encourage attendees to provide
+              -#feedback
+          -#%li
+            -#= uf.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional"
+            -#= uf.file_field :avatar
+            -#.hint
+              -#feel free to upload your profile picture along with your proposal but it's
+              -#optional
+  -#%fieldset
+    -#%ul
+      -#%li
+        -#%button#submission_submit{:name => "commit", :type => "submit"} submit

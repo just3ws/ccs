@@ -13,7 +13,7 @@ class Ability
       can :create, Comment
       can :create, Preregistration
       can :create, Submission
-      can :read, Submission
+      #can :read, Submission
       can :read, Content
       can :read, Post
       can :read, Room
