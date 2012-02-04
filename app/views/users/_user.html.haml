@@ -1,32 +1,33 @@
-.show
-  %div
-    %h3= link_to user.full_name.present? ? user.full_name : user.email, user
-    %ul
-      %li.details.context.session
-        %span session 
-        = link_to user.sesja.displayable.first.title, user.sesja.displayable.first
-      - if user.biography.present?
-        %li.long-text= allow_markup(user.biography)
-      - if user_signed_in? 
-        %li.details.email
-          %span email:
-          = mail_to user.email
-      - if user.home_page.present?
-        %li.details.home_page
-          %span home page:
-          %a{:href => user.home_page =~ /^http/ ? user.home_page : "http://#{user.home_page}"}= user.home_page
-      - if user.twitter.present?
-        %li.details.twitter
-          %span twitter:
-          %a{:href => "http://twitter.com/#{user.twitter}"}
-            http://twitter.com/#{user.twitter}
-      - if user.speakerrate.present?
-        %li.details.speakerrate
-          %span speakerrate:
-          %a{:href => user.speakerrate}= user.speakerrate
-    - if user_signed_in? && current_user.admin?
-      .actions
-        %ul
-          %li= link_to 'Show', user 
-          %li= link_to 'Edit', edit_user_path(user)
-          %li= link_to 'Destroy', user, :confirm => 'Are you sure you wish to delete this user?', :method => :delete
+- if user.sesja.displayable.count > 0
+  .show
+    %div
+      %h3= link_to user.full_name.present? ? user.full_name : user.email, user
+      %ul
+        %li.details.context.session
+          %span session
+          = link_to user.sesja.displayable.first.title, user.sesja.displayable.first
+        - if user.biography.present?
+          %li.long-text= allow_markup(user.biography)
+        - if user_signed_in?
+          %li.details.email
+            %span email:
+            = mail_to user.email
+        - if user.home_page.present?
+          %li.details.home_page
+            %span home page:
+            %a{:href => user.home_page =~ /^http/ ? user.home_page : "http://#{user.home_page}"}= user.home_page
+        - if user.twitter.present?
+          %li.details.twitter
+            %span twitter:
+            %a{:href => "http://twitter.com/#{user.twitter}"}
+              http://twitter.com/#{user.twitter}
+        - if user.speakerrate.present?
+          %li.details.speakerrate
+            %span speakerrate:
+            %a{:href => user.speakerrate}= user.speakerrate
+      - if user_signed_in? && current_user.admin?
+        .actions
+          %ul
+            %li= link_to 'Show', user
+            %li= link_to 'Edit', edit_user_path(user)
+            %li= link_to 'Destroy', user, :confirm => 'Are you sure you wish to delete this user?', :method => :delete
