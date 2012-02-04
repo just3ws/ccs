@@ -1,0 +1,37 @@
+@import helpers
+@import typography
+@import colors
+
+#content
+  h4
+    margin-bottom: 16px
+  p
+    margin: 8px
+    margin-bottom: 16px
+  p.previous-speaker
+    border: solid 1px $c-primary-66
+    padding: 16px
+    +square-corner-top-left(8px)
+    strong
+      font-weight: bolder
+
+label
+  color: $c-left-66
+
+form.formtastic.submission
+  fieldset.inputs
+    legend
+      span
+        padding-bottom: 32px
+        font-style: italic
+        display: block
+        font-size: $font-p1
+        color: $c-right-66
+        font-weight: lighter
+    ol
+      li
+        input, textarea
+          padding: 8px
+          border: solid 1px $greyish
+          line-height: 34px
+          +square-corner-top-left(8px)

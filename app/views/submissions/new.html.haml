@@ -8,10 +8,14 @@
   for consideration.
 - unless user_signed_in?
   %p Check your email inbox after your first submission for further information on how to manage your submissions!
-  %p
+  %p.previous-speaker
     %strong Already submitted a talk?
     An account was automatically created for you when you submitted your first proposal. Click #{link_to "here", new_session_path("user")} to login!
 = render 'form'
 
 - if user_signed_in? && current_user.admin?
   = render :partial => "shared/actions", :locals => {:model => @submission, :current_action => :new}
+
+- content_for :controller_stylesheets do
+  = stylesheet_link_tag "submissions"
+

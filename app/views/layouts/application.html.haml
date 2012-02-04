@@ -1,7 +1,10 @@
 !!!
 %html
   %head
-    -#= hoptoad_javascript_notifier
+    /[if IE 6]
+      = stylesheet_link_tag 'formtastic_ie6'
+    /[if IE 7]
+      = stylesheet_link_tag 'formtastic_ie7'
     %title Chicago Code Camp 2011 - May 14th
     %meta{:content => "Chicago Code Camp is a free, one day conference on Saturday May 14th for developers of all skill levels and interests with multiple sessions running side-by-side throughout the day.", :name => "description"}/
     %meta{:charset => "utf-8"}
@@ -13,9 +16,7 @@
     /[if IE]
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       = stylesheet_link_tag "ie"
-    = stylesheet_link_tag 'formtastic', 'my_formtastic_changes'
-    <!--[if IE 6]><%= stylesheet_link_tag 'formtastic_ie6' %><![endif]-->
-    <!--[if IE 7]><%= stylesheet_link_tag 'formtastic_ie7' %><![endif]-->
+    = yield :controller_stylesheets
   %body#home
     #container
       #header
