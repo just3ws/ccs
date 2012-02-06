@@ -1,21 +1,11 @@
 %h4 Sign in
-= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+= semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   = devise_error_messages!
-  %fieldset
-    %ul
-      %li
-        = f.label :email, :class => "required"
-        = f.email_field :email, :placeholder => "your@email.com"
-        .hint the email address you registered with
-      %li
-        = f.label :password
-        = f.password_field :password, :placeholder => "password"
-      - if devise_mapping.rememberable?
-        %li
-          = f.label :remember_me
-          = f.check_box :remember_me
-  %fieldset
-    %ul
-      %li
-        %button{:type => "submit"} login
+  - f.inputs do
+    = f.input :email, :required => true, :placeholder => "your.login@email.com"
+    .hint the email address you registered with
+    = f.input :password, :required => true, :placeholder => "password"
+  - f.buttons do
+    = f.commit_button :label => "login"
+
 = render :partial => "devise/shared/links"

@@ -1,17 +1,12 @@
-%h4 Sign up
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+%h4 sign up
+= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
-  %p
-    = f.label :email
-    %br/
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %p= f.submit "Sign up"
+  - f.inputs do
+    = f.input :email, :required => true, :placeholder => "your.login@email.com"
+    .hint the email address you registered with
+    = f.input :password, :required => true, :placeholder => "password"
+    = f.input :password_confirmation, :required => true, :placeholder => "password"
+  - f.buttons do
+    = f.commit_button :label => "sign up"
+
 = render :partial => "devise/shared/links"
