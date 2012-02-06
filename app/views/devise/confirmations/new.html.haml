@@ -1,14 +1,10 @@
 %h4 Resend confirmation instructions
-= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:method => :post}) do |f|
+= semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => {:method => :post}) do |f|
   = devise_error_messages!
-  %fieldset
-    %ul
-      %li
-        = f.label :email
-        = f.email_field :email, :placeholder => "your@email.com"
-        .hint the email your registered your session under
-  %fieldset
-    %ul
-      %li
-        %button{:type => "submit"} resend confirmation instructions
+  - f.inputs do
+    = f.input:email, :placeholder => "your.login@email.com"
+    .hint the email your registered your session under
+  - f.buttons do
+    = f.commit_button :label => "resend confirmation instructions"
+
 = render :partial => "devise/shared/links"

@@ -27,7 +27,7 @@
     = semantic_fields_for @submission.user do |uf|
       - f.inputs :name => "And a little bit about your awesome self too." do
 
-        = uf.input :email, :require => true, :placeholder => "your@email.com"
+        = uf.input :email, :require => true, :placeholder => "your.login@email.com"
         .hint the email address we can reach you at
 
         = uf.input :first_name, :label => "First Name", :required => true

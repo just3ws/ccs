@@ -30,16 +30,23 @@
             Saturday, May 14th, 2011 - Grayslake, IL
         .nav
           %ul
-            %li= link_to "home", root_url
-            %li
-              %a.highlight{:href => "http://chicagocodecamp.eventbrite.com?ref=elink"} register
-            %li= link_to "schedule", schedules_path
-            %li= link_to "sessions", sesjas_path
-            %li= link_to "speakers", speakers_path
-            %li= link_to "sponsors", sponsors_path
+            -#TODO once we have speakers and things to navigate then home will become relevant again.
+            -#%li= link_to "home", root_url
+            -# TODO re-enable this link once the actual registration is enabled.
+            -#%li
+              -#%a.highlight{:href => "http://chicagocodecamp.eventbrite.com?ref=elink"} register
+
+
+            -# TODO once we start to setup the schedule and speakers then start to re-enable these
+            -#%li= link_to "schedule", schedules_path
+            -#%li= link_to "sessions", sesjas_path
+            -#%li= link_to "speakers", speakers_path
+            -#%li= link_to "sponsors", sponsors_path
+
             - if user_signed_in?
               %li= link_to "profile", edit_user_path(current_user)
-            %li= link_to "more info", "/more-info"
+            -# TODO renable once we have some news to post.
+            -#%li= link_to "more info", "/more-info"
       - unless notice.blank? and alert.blank?
         #messages
           - unless notice.blank?
