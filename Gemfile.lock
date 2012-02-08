@@ -114,7 +114,7 @@ GEM
       json (>= 1.4.6)
     haml (3.1.4)
     has_scope (0.5.1)
-    heroku (2.19.1)
+    heroku (2.19.2)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
       rubyzip
