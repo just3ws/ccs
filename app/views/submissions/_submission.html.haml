@@ -1,0 +1,22 @@
+.show
+  %h3= link_to "#{submission.title.downcase}", submission
+  %ul
+    %li.context.speaker
+      %span proposed by:
+      = link_to submission.user.full_name, user_path(submission.user)
+    %li.description.long-text= allow_markup(submission.abstract)
+    - if submission.level.present?
+      %li.details.level
+        %span level:
+        =  %w(introductory intermediate advanced)[submission.level-1]
+    - if submission.keywords.try(:strip).present?
+      %li.details.keywords
+        %span keywords:
+        = submission.keywords
+
+  - if user_signed_in? && current_user.admin?
+    .actions
+      %ul
+        %li= link_to 'Show', submission
+        %li= link_to 'Edit', edit_submission_path(submission)
+        %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
