@@ -28,3 +28,4 @@ passenger-standalone
 rerun.txt
 scaffold.css
 tmp/**/*
+*.dump
