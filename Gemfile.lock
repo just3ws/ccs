@@ -303,6 +303,7 @@ DEPENDENCIES
   rspec-rails
   sass
   simplecov
+  sqlite3-ruby
   taps
   traceroute
   wirble
