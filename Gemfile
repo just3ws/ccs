@@ -92,6 +92,7 @@ group :test do
 end
 
 group :development do
+  gem 'taps'
   gem 'pry'
 
   # simplify management of heroku environments
