@@ -1,3 +1,4 @@
+Sass::Plugin.options[:never_update] = true
 ActiveAdmin.setup do |config|
 
   # == Site Title
