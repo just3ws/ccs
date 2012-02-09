@@ -29,3 +29,5 @@ rerun.txt
 scaffold.css
 tmp/**/*
 *.dump
+push_*
+.backup
