@@ -1,5 +1,5 @@
 = f.inputs do
-  = f.input :email, :as => :email, :input_html => { :readonly => true }
+  = f.input :email, :as => :email, :input_html => { :readonly => true }, required: true
   -# = f.input :encrypted_password
   -# = f.input :reset_password_token
   -# = f.input :remember_token
@@ -8,11 +8,14 @@
   -# = f.input :last_sign_in_at
   -# = f.input :current_sign_in_ip
   -# = f.input :last_sign_in_ip
-  = f.input :role, :as => :string, :input_html => { :readonly => true }
+  - if current_user.admin?
+    = f.input :role, :as => :string, :input_html => { :readonly => true }, required: true
+  - else
+    = f.input :role, :as => :string, enabled: false, :input_html => { :readonly => true, style: "background-color: lightgrey" }, required: true
   = f.input :home_page, :as => :url
-  = f.input :first_name
-  = f.input :last_name
-  = f.input :biography
+  = f.input :first_name, required: true
+  = f.input :last_name, required: true
+  = f.input :biography, required: true
   -# = f.input :avatar_file_name
   -# = f.input :avatar_content_type
   -# = f.input :avatar_file_size
@@ -24,7 +27,7 @@
   -# = f.input :invitation_sent_at
   = f.input :speakerrate, :as => :url
   = f.input :twitter, :as => :url
-  = f.input :permalink, :as => :string, :input_html => { :readonly => true }
+  = f.input :permalink, :as => :string, :input_html => { :readonly => true }, required: true
 = f.buttons
 
 -# - if model.errors.any?

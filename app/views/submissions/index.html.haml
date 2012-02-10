@@ -1,10 +1,10 @@
 %h4 Current submissions
 - if user_signed_in? && current_user.admin?
   %p= pluralize @submissions.visible.count, 'submission'
-%p= pluralize Submission.visible.select('distinct user_id').count, 'speaker'
+%p= "You have submitted #{pluralize(Submission.where(user_id: current_user.id).visible.count, 'proposal')}."
 .submissions
   - i = 0
-  - @submissions.visible(:order => :email).each do |submission|
+  - @submissions.where(user_id: current_user.id).visible(:order => :email).each do |submission|
     - i = i + 1
     %div.show
       - if user_signed_in? && current_user.admin?
@@ -14,7 +14,7 @@
             %li= link_to 'Edit', edit_submission_path(submission)
             %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
       %h3
-        = "#{i.ordinalize}: " 
+        = "#{i.ordinalize}: "
         = link_to "#{submission.title}", submission
       %ul
         %li
@@ -22,7 +22,7 @@
         %li
           - if submission.level.present? && submission.level > 0
             %span level:
-            =  %w(introductory intermediate advanced)[submission.level-1] 
+            =  %w(introductory intermediate advanced)[submission.level-1]
         - if submission.keywords.try(:strip).present?
           %li
             %span keywords:

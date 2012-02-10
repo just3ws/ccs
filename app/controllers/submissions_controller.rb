@@ -42,8 +42,8 @@ class SubmissionsController < ApplicationController
 
     respond_to do |format|
       if @submission.save
-        flash[:notice] = "Your submission has been saved."
-        format.html { redirect_to(@submission, :notice => "Thank you for submitting your proposal. If this is your first submission you should receive a confirmation email.") }
+        format.html { redirect_to(@submission,
+                                  :notice => "Thank you for submitting your proposal. If this is your first submission you should receive a confirmation email.") }
       else
         format.html { render :action => "new" }
       end
