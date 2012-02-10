@@ -16,11 +16,12 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: submissions
 #
-#  id                  :integer         primary key
+#  id                  :integer         not null, primary key
 #  email               :string(255)
 #  first_name          :string(255)
 #  last_name           :string(255)
@@ -31,12 +32,13 @@ end
 #  avatar_file_name    :string(255)
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer
-#  avatar_updated_at   :timestamp
-#  created_at          :timestamp
-#  updated_at          :timestamp
+#  avatar_updated_at   :datetime
+#  created_at          :datetime
+#  updated_at          :datetime
 #  user_id             :integer
-#  deleted_at          :timestamp
+#  deleted_at          :datetime
 #  level               :integer
 #  keywords            :string(255)
+#  version_tag         :string(255)
 #
 

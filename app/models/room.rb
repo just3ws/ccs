@@ -11,19 +11,16 @@ class Room < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
-# Schema version: 20110514114733
 #
 # Table name: rooms
 #
-#  id          :integer         primary key
-#  title       :string(255)     indexed
+#  id          :integer         not null, primary key
+#  title       :string(255)
 #  description :text
-#  created_at  :timestamp
-#  updated_at  :timestamp
-#
-# Indexes
-#
-#  index_rooms_on_title  (title) UNIQUE
+#  created_at  :datetime
+#  updated_at  :datetime
+#  version_tag :string(255)
 #
 

@@ -36,15 +36,17 @@ from (
 end
 
 
+
 # == Schema Information
 #
 # Table name: schedules
 #
-#  id           :integer         primary key
+#  id           :integer         not null, primary key
 #  sesja_id     :integer
 #  room_id      :integer
 #  time_slot_id :integer
-#  created_at   :timestamp
-#  updated_at   :timestamp
+#  created_at   :datetime
+#  updated_at   :datetime
+#  version_tag  :string(255)
 #
 

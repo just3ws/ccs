@@ -13,14 +13,15 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: preregistrations
 #
-#  id         :integer         primary key
+#  id         :integer         not null, primary key
 #  email      :string(255)
-#  created_at :timestamp
-#  updated_at :timestamp
+#  created_at :datetime
+#  updated_at :datetime
 #  status     :string(255)
 #
 
