@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   end
 
   def update
+
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
+
     respond_to do |format|
       if @user.update_attributes(params[:user])
         expire_page :action => :index
@@ -20,7 +26,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def index 
+  def index
     response.headers['Cache-Control'] = "public, max-age=#{CACHE_CONTROL__MAX_AGE}"
     @users = User.speakers.with_rsvped_sessions
   end

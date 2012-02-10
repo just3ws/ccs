@@ -1,15 +1,16 @@
 Ccs::Application.routes.draw do
-  devise_for :users
+
+  devise_for :users, :path_prefix => 'd'
+  resources :users
+  match 'speakers' => 'users#index'
 
   ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
-
   match '/admin' => 'admin_home#index'
+
   resources :posts
 
   get "notifications/speaker_notification"
-
   get "notification/speaker_notification"
 
   resources :schedules
@@ -31,8 +32,6 @@ Ccs::Application.routes.draw do
 
   resources :contents
   resources :imports
-  resources :users
-  match 'speakers' => 'users#index'
   resources :preregistrations, :only => [:create, :index]
   resources :submissions
   resources :contents
@@ -45,27 +44,35 @@ Ccs::Application.routes.draw do
   #root :to => "contents#show"
 end
 #== Route Map
-# Generated on 10 Feb 2012 08:31
+# Generated on 10 Feb 2012 09:27
 #
-#                       user_session POST       /users/sign_in(.:format)                        {:action=>"create", :controller=>"devise/sessions"}
-#               destroy_user_session DELETE     /users/sign_out(.:format)                       {:action=>"destroy", :controller=>"devise/sessions"}
-#                      user_password POST       /users/password(.:format)                       {:action=>"create", :controller=>"devise/passwords"}
-#                  new_user_password GET        /users/password/new(.:format)                   {:action=>"new", :controller=>"devise/passwords"}
-#                 edit_user_password GET        /users/password/edit(.:format)                  {:action=>"edit", :controller=>"devise/passwords"}
-#                                    PUT        /users/password(.:format)                       {:action=>"update", :controller=>"devise/passwords"}
-#           cancel_user_registration GET        /users/cancel(.:format)                         {:action=>"cancel", :controller=>"devise/registrations"}
-#                  user_registration POST       /users(.:format)                                {:action=>"create", :controller=>"devise/registrations"}
-#              new_user_registration GET        /users/sign_up(.:format)                        {:action=>"new", :controller=>"devise/registrations"}
-#             edit_user_registration GET        /users/edit(.:format)                           {:action=>"edit", :controller=>"devise/registrations"}
-#                                    PUT        /users(.:format)                                {:action=>"update", :controller=>"devise/registrations"}
-#                                    DELETE     /users(.:format)                                {:action=>"destroy", :controller=>"devise/registrations"}
-#                  user_confirmation POST       /users/confirmation(.:format)                   {:action=>"create", :controller=>"devise/confirmations"}
-#              new_user_confirmation GET        /users/confirmation/new(.:format)               {:action=>"new", :controller=>"devise/confirmations"}
-#                                    GET        /users/confirmation(.:format)                   {:action=>"show", :controller=>"devise/confirmations"}
-#             accept_user_invitation GET        /users/invitation/accept(.:format)              {:action=>"edit", :controller=>"devise/invitations"}
-#                    user_invitation POST       /users/invitation(.:format)                     {:action=>"create", :controller=>"devise/invitations"}
-#                new_user_invitation GET        /users/invitation/new(.:format)                 {:action=>"new", :controller=>"devise/invitations"}
-#                                    PUT        /users/invitation(.:format)                     {:action=>"update", :controller=>"devise/invitations"}
+#                       user_session POST       /d/users/sign_in(.:format)                      {:action=>"create", :controller=>"devise/sessions"}
+#               destroy_user_session DELETE     /d/users/sign_out(.:format)                     {:action=>"destroy", :controller=>"devise/sessions"}
+#                      user_password POST       /d/users/password(.:format)                     {:action=>"create", :controller=>"devise/passwords"}
+#                  new_user_password GET        /d/users/password/new(.:format)                 {:action=>"new", :controller=>"devise/passwords"}
+#                 edit_user_password GET        /d/users/password/edit(.:format)                {:action=>"edit", :controller=>"devise/passwords"}
+#                                    PUT        /d/users/password(.:format)                     {:action=>"update", :controller=>"devise/passwords"}
+#           cancel_user_registration GET        /d/users/cancel(.:format)                       {:action=>"cancel", :controller=>"devise/registrations"}
+#                  user_registration POST       /d/users(.:format)                              {:action=>"create", :controller=>"devise/registrations"}
+#              new_user_registration GET        /d/users/sign_up(.:format)                      {:action=>"new", :controller=>"devise/registrations"}
+#             edit_user_registration GET        /d/users/edit(.:format)                         {:action=>"edit", :controller=>"devise/registrations"}
+#                                    PUT        /d/users(.:format)                              {:action=>"update", :controller=>"devise/registrations"}
+#                                    DELETE     /d/users(.:format)                              {:action=>"destroy", :controller=>"devise/registrations"}
+#                  user_confirmation POST       /d/users/confirmation(.:format)                 {:action=>"create", :controller=>"devise/confirmations"}
+#              new_user_confirmation GET        /d/users/confirmation/new(.:format)             {:action=>"new", :controller=>"devise/confirmations"}
+#                                    GET        /d/users/confirmation(.:format)                 {:action=>"show", :controller=>"devise/confirmations"}
+#             accept_user_invitation GET        /d/users/invitation/accept(.:format)            {:action=>"edit", :controller=>"devise/invitations"}
+#                    user_invitation POST       /d/users/invitation(.:format)                   {:action=>"create", :controller=>"devise/invitations"}
+#                new_user_invitation GET        /d/users/invitation/new(.:format)               {:action=>"new", :controller=>"devise/invitations"}
+#                                    PUT        /d/users/invitation(.:format)                   {:action=>"update", :controller=>"devise/invitations"}
+#                              users GET        /users(.:format)                                {:action=>"index", :controller=>"users"}
+#                                    POST       /users(.:format)                                {:action=>"create", :controller=>"users"}
+#                           new_user GET        /users/new(.:format)                            {:action=>"new", :controller=>"users"}
+#                          edit_user GET        /users/:id/edit(.:format)                       {:action=>"edit", :controller=>"users"}
+#                               user GET        /users/:id(.:format)                            {:action=>"show", :controller=>"users"}
+#                                    PUT        /users/:id(.:format)                            {:action=>"update", :controller=>"users"}
+#                                    DELETE     /users/:id(.:format)                            {:action=>"destroy", :controller=>"users"}
+#                           speakers            /speakers(.:format)                             {:action=>"index", :controller=>"users"}
 #                    admin_dashboard            /admin(.:format)                                {:action=>"index", :controller=>"admin/dashboard"}
 #                     admin_contents GET        /admin/contents(.:format)                       {:action=>"index", :controller=>"admin/contents"}
 #                                    POST       /admin/contents(.:format)                       {:action=>"create", :controller=>"admin/contents"}
@@ -239,14 +246,6 @@ end
 #                             import GET        /imports/:id(.:format)                          {:action=>"show", :controller=>"imports"}
 #                                    PUT        /imports/:id(.:format)                          {:action=>"update", :controller=>"imports"}
 #                                    DELETE     /imports/:id(.:format)                          {:action=>"destroy", :controller=>"imports"}
-#                              users GET        /users(.:format)                                {:action=>"index", :controller=>"users"}
-#                                    POST       /users(.:format)                                {:action=>"create", :controller=>"users"}
-#                           new_user GET        /users/new(.:format)                            {:action=>"new", :controller=>"users"}
-#                          edit_user GET        /users/:id/edit(.:format)                       {:action=>"edit", :controller=>"users"}
-#                               user GET        /users/:id(.:format)                            {:action=>"show", :controller=>"users"}
-#                                    PUT        /users/:id(.:format)                            {:action=>"update", :controller=>"users"}
-#                                    DELETE     /users/:id(.:format)                            {:action=>"destroy", :controller=>"users"}
-#                           speakers            /speakers(.:format)                             {:action=>"index", :controller=>"users"}
 #                   preregistrations GET        /preregistrations(.:format)                     {:action=>"index", :controller=>"preregistrations"}
 #                                    POST       /preregistrations(.:format)                     {:action=>"create", :controller=>"preregistrations"}
 #                        submissions GET        /submissions(.:format)                          {:action=>"index", :controller=>"submissions"}
