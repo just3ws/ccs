@@ -94,6 +94,7 @@ end
 group :development do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'taps'
+  gem 'ruby-debug19'
   gem 'pry'
 
   # simplify management of heroku environments
