@@ -44,7 +44,7 @@ Ccs::Application.routes.draw do
   #root :to => "contents#show"
 end
 #== Route Map
-# Generated on 10 Feb 2012 09:27
+# Generated on 10 Feb 2012 09:40
 #
 #                       user_session POST       /d/users/sign_in(.:format)                      {:action=>"create", :controller=>"devise/sessions"}
 #               destroy_user_session DELETE     /d/users/sign_out(.:format)                     {:action=>"destroy", :controller=>"devise/sessions"}
