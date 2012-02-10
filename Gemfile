@@ -33,10 +33,10 @@ gem 'dalli'
 #gem 'sitemap_generator'
 
 # authentication
-gem 'devise'
+gem 'devise', "~>1"
 
 # generating users
-gem 'devise_invitable'
+gem 'devise_invitable', "~>0.6"
 
 # authorization permissions
 gem 'cancan'
