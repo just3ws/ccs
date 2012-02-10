@@ -21,17 +21,17 @@ staging:
   app: chicagocodecamp-staging
   config:
     APP:            chicagocodecamp-staging
-    ROOT_URL:       "chicagocodecamp.com"
+    ROOT_URL:       "chicagocodecamp-staging.heroku.com"
     S3_BUCKET:      chicagocodecamp-staging
     BUNDLE_WITHOUT: "development:test"
-    GA_ACCOUNT:     "UA-1111111-1"
-    GA_DOMAIN_NAME: "chicagocodecamp.com"
-    S3_KEY:         "your s3 key"
-    S3_SECRET:      "your s3 secret"
+    GA_ACCOUNT:     "UA-5148865-9"
+    GA_DOMAIN_NAME: "chicagocodecamp-staging.heroku.com"
+    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
+    S3_SECRET:      "02Gtpt2KR4fOuOSDRNjXoXQidLkvEfPlOgULlgMx"
     GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
     MEMCACHE_NS:    chicagocodecamp-staging
     SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-staging.heroku.com"
-    DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
+    DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin+staging@chicagocodecamp.com>"'
     EVENTBRITE_API_KEY: "NzQwYjcxMTJiZmI4"
     RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
     RECAPTCHA_PRIVATE_KEY: "6Le1WcQSAAAAAFqtRjTWwfnSGmU7YhJAIZhfydcK"
