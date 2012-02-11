@@ -14,7 +14,7 @@
 
 = render 'form'
 
-- if user_signed_in? && current_user.admin?
+- if user_signed_in? && (current_user.admin? || current_user.speaker?)
   = render :partial => "shared/actions", :locals => {:model => @submission, :current_action => :new}
 
 - content_for :controller_stylesheets do

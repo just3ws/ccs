@@ -2,3 +2,5 @@
   %h4 User Profile
   = semantic_form_for @user, :html => {:multipart => true} do |f|
     - render :partial => "form", :locals => {:f => f, :model => @user}
+
+= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}
