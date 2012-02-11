@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP_FROM='chicagocodecamp-18'
+APP_FROM='chicagocodecamp-cedar'
 APP_TO='chicagocodecamp'
 echo "Copying from '$APP_FROM' to '$APP_TO'."
 while read addon

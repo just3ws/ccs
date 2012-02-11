@@ -11,7 +11,7 @@ production:
     MEMCACHE_NS:    chicagocodecamp
     RECAPTCHA_PRIVATE_KEY: "6Le1WcQSAAAAAFqtRjTWwfnSGmU7YhJAIZhfydcK"
     RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
-    ROOT_URL:       "chicagocodecamp.herokuapp.com"
+    ROOT_URL:       "chicagocodecamp.heroku.com"
     S3_BUCKET:      chicagocodecamp
     S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
     S3_SECRET:      "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"
