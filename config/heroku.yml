@@ -2,59 +2,59 @@ production:
   app: chicagocodecamp
   config:
     APP:            chicagocodecamp
-    ROOT_URL:       "chicagocodecamp.com"
-    S3_BUCKET:      chicagocodecamp
     BUNDLE_WITHOUT: "development:test"
-    GA_ACCOUNT:     "UA-5148865-9"
-    GA_DOMAIN_NAME: "chicagocodecamp.com"
-    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
-    S3_SECRET:      "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"
-    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
-    MEMCACHE_NS:    chicagocodecamp
-    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp.com"
     DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
     EVENTBRITE_API_KEY: "NzQwYjcxMTJiZmI4"
-    RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
+    GA_ACCOUNT:     "UA-5148865-9"
+    GA_DOMAIN_NAME: "chicagocodecamp.com"
+    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
+    MEMCACHE_NS:    chicagocodecamp
     RECAPTCHA_PRIVATE_KEY: "6Le1WcQSAAAAAFqtRjTWwfnSGmU7YhJAIZhfydcK"
+    RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
+    ROOT_URL:       "chicagocodecamp.heroku.com"
+    S3_BUCKET:      chicagocodecamp
+    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
+    S3_SECRET:      "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"
+    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp.com"
 
 staging:
   app: chicagocodecamp-staging
   config:
     APP:            chicagocodecamp-staging
-    ROOT_URL:       "chicagocodecamp-staging.heroku.com"
-    S3_BUCKET:      chicagocodecamp-staging
     BUNDLE_WITHOUT: "development:test"
-    GA_ACCOUNT:     "UA-5148865-9"
-    GA_DOMAIN_NAME: "chicagocodecamp-staging.heroku.com"
-    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
-    S3_SECRET:      "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"
-    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
-    MEMCACHE_NS:    chicagocodecamp-staging
-    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-staging.heroku.com"
     DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin+staging@chicagocodecamp.com>"'
     EVENTBRITE_API_KEY: "NzQwYjcxMTJiZmI4"
-    RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
+    GA_ACCOUNT:     "UA-5148865-9"
+    GA_DOMAIN_NAME: "chicagocodecamp-staging.heroku.com"
+    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
+    MEMCACHE_NS:    chicagocodecamp-staging
     RECAPTCHA_PRIVATE_KEY: "6Le1WcQSAAAAAFqtRjTWwfnSGmU7YhJAIZhfydcK"
+    RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
+    ROOT_URL:       "chicagocodecamp-staging.heroku.com"
+    S3_BUCKET:      chicagocodecamp-staging
+    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
+    S3_SECRET:      "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"
+    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-staging.heroku.com"
 
 
 development: &local
   app: chicagocodecamp-development
   config:
     APP:            chicagocodecamp-development
-    ROOT_URL:       "chicagocodecamp.com"
-    S3_BUCKET:      chicagocodecamp-development
-    MEMCACHE_NS:    chicagocodecamp-development
-    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-development.heroku.com"
     BUNDLE_WITHOUT: "development:test"
-    GA_ACCOUNT:     "UA-1111111-1"
-    GA_DOMAIN_NAME: "chicagocodecamp.com"
-    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
-    S3_SECRET:      "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"
-    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
     DEVISE_MAIL_SENDER: '"Chicago Code Camp <admin@chicagocodecamp.com>"'
     EVENTBRITE_API_KEY: "NzQwYjcxMTJiZmI4"
-    RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
+    GA_ACCOUNT:     "UA-1111111-1"
+    GA_DOMAIN_NAME: "chicagocodecamp.com"
+    GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
+    MEMCACHE_NS:    chicagocodecamp-development
     RECAPTCHA_PRIVATE_KEY: "6Le1WcQSAAAAAFqtRjTWwfnSGmU7YhJAIZhfydcK"
+    RECAPTCHA_PUBLIC_KEY: "6Le1WcQSAAAAACrE0OMJCkU0aUTmCPyIkI_cn-dS"
+    ROOT_URL:       "chicagocodecamp.com"
+    S3_BUCKET:      chicagocodecamp-development
+    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
+    S3_SECRET:      "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"
+    SITEMAP_DEFAULT_HOST: "http://chicagocodecamp-development.heroku.com"
 
 test:
   <<: *local
