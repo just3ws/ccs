@@ -20,6 +20,9 @@ gem 'activeadmin'
 # postgresql
 gem 'pg'
 
+gem 'thin'
+gem 'foreman'
+
 # our beloved host
 gem 'heroku'
 
