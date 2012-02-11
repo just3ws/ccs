@@ -16,7 +16,6 @@ body
   font-size: $f-px
   background: $c-primary
   +gradient-background($c-primary, $c-primary-66)
-
 a
   color: $c-left
   text-decoration: none
@@ -174,17 +173,46 @@ h1, h2, h3, h4, h5
     -webkit-box-shadow: 0px 0px 16px #9A9B9D
     box-shadow: 0px 0px 16px #9A9B9D
     +square-corner-top-left(24px)
-    h5
-      color: $c-left
-      border-bottom: solid 1px $greyish
-      margin-bottom: 8px
-      padding-bottom: 8px
-      padding-top: 8px
-      font-weight: bold
-    .map
-      margin-top: 8px
-      border: solid 4px #9A9B9D
-      width: 190px
+    &.authentication
+      text-align: left
+      h5
+        color: $c-left
+        border-bottom: solid 1px $greyish
+        margin-bottom: 8px
+        padding-bottom: 8px
+        padding-top: 8px
+        font-weight: bold
+      .map
+        margin-top: 8px
+        border: solid 4px #9A9B9D
+        width: 190px
+      .login-to
+        margin-bottom: 4px
+      li
+        padding: 0
+        margin: 4px 0 4px 0
+      //p
+        //display: inline
+        //font-size: 12px
+        //text-align: right
+      input[type=password], input[type=email]
+        width: 186px
+        margin: 0
+        padding: 4px
+      .buttons ol
+        width: 186px
+        margin: 0
+        padding: 0
+        margin-left: -48px
+        text-align: left
+        margin-right: 2px
+        li
+          display: inline
+          &:last-of-type
+            text-align: right
+            vertical-align: center
+            white-space: nowrap
+
 
 #footer
   color: #9A9B9D

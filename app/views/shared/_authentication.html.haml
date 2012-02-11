@@ -6,20 +6,12 @@
       %fieldset
         = button "logout", destroy_user_session_path
   - else
-    = form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f|
+    = semantic_form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f|
       %h5 admin login
-      %p Login to manage your sessions.
-      %fieldset
-        %ol
-          %li
-            = f.label :email, "email"
-            = f.email_field :email, :placeholder => "your.login@email.com"
-          %li
-            = f.label :password, "password"
-            = f.password_field :password
-      %fieldset.buttons
-        %ol
-          %li
-            %button{:type => "submit"} login
-          - if controller_name != 'passwords'
-            %li= link_to "Forgot your password?", new_password_path('user')
+      %p.login-to Login to manage your sessions.
+      - f.inputs do
+        = f.input :email, :placeholder => "your.login@email.com", required: true
+        = f.input :password, required: true
+      - f.buttons do
+        = f.commit_button label: "login"
+        %li= link_to "Forgot your password?", new_password_path('user')
