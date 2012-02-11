@@ -5,10 +5,10 @@ production:
     ROOT_URL:       "chicagocodecamp.com"
     S3_BUCKET:      chicagocodecamp
     BUNDLE_WITHOUT: "development:test"
-    GA_ACCOUNT:     "UA-1111111-1"
+    GA_ACCOUNT:     "UA-5148865-9"
     GA_DOMAIN_NAME: "chicagocodecamp.com"
-    S3_KEY:         "your s3 key"
-    S3_SECRET:      "your s3 secret"
+    S3_KEY:         "AKIAIXNAKWPZXG4FQ7FA"
+    S3_SECRET:      "02Gtpt2KR4fOuOSDRNjXoXQidLkvEfPlOgULlgMx"
     GITHUB_URL:     '"http://github.com/chicagocodecamp/ccs"'
     MEMCACHE_NS:    chicagocodecamp
     SITEMAP_DEFAULT_HOST: "http://chicagocodecamp.com"
