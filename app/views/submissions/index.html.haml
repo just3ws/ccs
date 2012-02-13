@@ -1,44 +1,10 @@
 %h4.section-title submissions
 - if user_signed_in? && current_user.admin?
-  %p= pluralize @submissions.visible.count, 'submission'
+  %p= pluralize(@submissions.visible.count, 'submission')
 %p= "You have submitted #{pluralize(Submission.where(user_id: current_user.id).visible.count, 'proposal')}."
 .lineup
   = render :partial => "submission", :collection => @submissions.where(user_id: current_user.id).visible(:order => :email)
 
-- if user_signed_in? && current_user.admin?
-  = render :partial => "shared/actions", :locals => {:model => submission.new, :current_action => :index}
+- if user_signed_in? && (current_user.admin? || current_user.speaker?)
+  = render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}
 
--#%h4 Current submissions
--#- if user_signed_in? && current_user.admin?
-  -#%p= pluralize @submissions.visible.count, 'submission'
--#%p= "You have submitted #{pluralize(Submission.where(user_id: current_user.id).visible.count, 'proposal')}."
--#.submissions
-  -#- i = 0
-  -#- @submissions.where(user_id: current_user.id).visible(:order => :email).each do |submission|
-    -#- i = i + 1
-    -#%div.show
-      -#- if user_signed_in? && current_user.admin?
-        -#.actions
-          -#%ul
-            -#%li= link_to 'Show', submission
-            -#%li= link_to 'Edit', edit_submission_path(submission)
-            -#%li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
-      -#%h3
-        -#= "#{i.ordinalize}: "
-        -#= link_to "#{submission.title}", submission
-      -#%ul
-        -#%li
-          -#.long-text= truncate(submission.abstract, :length => 144)
-        -#%li
-          -#- if submission.level.present? && submission.level > 0
-            -#%span level:
-            -#=  %w(introductory intermediate advanced)[submission.level-1]
-        -#- if submission.keywords.try(:strip).present?
-          -#%li
-            -#%span keywords:
-            -#%div= submission.keywords
-      -#.session-speaker
-        -#- if submission.user.try(:full_name).present?
-          -#proposed by #{link_to submission.user.full_name, user_path(submission.user)}
-
-= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}
