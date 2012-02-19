@@ -85,7 +85,7 @@ class SubmissionsController < ApplicationController
     # delays the sending of confirmations.
     # TODO setup job to send the confirmations using the following command
     # Devise::Mailer.confirmation_instructions(@user).deliver
-    user.skip_confirmation! unless Rails.env == "production"
+    user.skip_confirmation! # unless Rails.env == "production"
 
     if user.errors.blank?
       sign_in user
