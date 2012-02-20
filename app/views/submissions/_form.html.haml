@@ -37,7 +37,6 @@
         = uf.input :home_page, :label => "Home Page", :placeholder => "http://your.homepage.com"
         .hint this can be your blog, twitter, linkedin or personal homepage
 
-
         = f.input :biography, :required => true, :placeholder => "some biographical information", :as => :text, :input_html => { :class => 'autogrow', :rows => 8, :maxlength => 1000  }
         .hint your life story in 1K characters or less
 
@@ -52,7 +51,3 @@
         -#.hint feel free to upload your profile picture along with your proposal but it's optional
   = f.buttons do
     = f.commit_button :label => "Submit Proposal"
-  -#%fieldset
-    -#%ul
-      -#%li
-        -#%button#submission_submit{:name => "commit", :type => "submit"} submit

@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     if params[:user][:password].blank?
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
@@ -19,8 +18,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         expire_page :action => :index
-        format.html { redirect_to(@user, :notice => 'user was successfully updated.') }
+        sign_in(@user, bypass: true)
+        format.html { redirect_to(@user, :action => "show", :notice => 'user was successfully updated.') }
       else
+        sign_in(@user, bypass: true)
         format.html { render :action => "edit" }
       end
     end

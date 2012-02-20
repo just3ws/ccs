@@ -37,13 +37,18 @@ class SubmissionsController < ApplicationController
   end
 
   def create
-    @submission.user = find_or_initialize_user_with params[:user]
+    @submission.user, temporary_password = *(find_or_initialize_user_with params[:user])
     @submission.user.role = "speaker"
+
+    notice =  if temporary_password.nil?
+                "Thanks for submitting your proposal. We found a user with the email address #{@submission.user.email} and attached the submission to that account. Please log in to manage your profile and proposals."
+              else
+                "Thanks for submitting your proposal. Since this is your first proposal we went ahead and generated an account for you and logged you in. Log in with the email you provided and the temporary password '#{temporary_password}'."
+              end
 
     respond_to do |format|
       if @submission.save
-        format.html { redirect_to(@submission,
-                                  :notice => "Thank you for submitting your proposal. If this is your first submission you should receive a confirmation email.") }
+        format.html { redirect_to(@submission, :notice => notice) }
       else
         format.html { render :action => "new" }
       end
@@ -86,10 +91,11 @@ class SubmissionsController < ApplicationController
     # TODO setup job to send the confirmations using the following command
     # Devise::Mailer.confirmation_instructions(@user).deliver
     user.skip_confirmation! # unless Rails.env == "production"
+    user.save!
 
     if user.errors.blank?
       sign_in user
     end
-    user
+    [user, password]
   end
 end
