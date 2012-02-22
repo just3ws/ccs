@@ -14,7 +14,7 @@
         %span keywords:
         = submission.keywords
 
-  - if user_signed_in? && current_user.admin?
+  - if user_signed_in? && (current_user.admin? || current_user.speaker?)
     .actions
       %ul
         %li= link_to 'Show', submission
