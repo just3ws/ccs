@@ -9,6 +9,8 @@ gem 'activeresource' , '3.0.11'
 gem 'activesupport'  , '3.0.11'
 gem 'railties'       , '3.0.11'
 
+gem 'jbuilder'
+
 gem 'arel'
 gem 'rake'
 
