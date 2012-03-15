@@ -25,18 +25,18 @@ function getCookie(cookieName) {
 }
 
 jQuery(document).ready(function() {
-  try {
-    var agent = navigator.userAgent.toLowerCase();
-    if ($.browser.mobile && getCookie('mobileSnooze') != 'nothanks') {
-      if (confirm('chicagocodecamp.mobi is mobile optimized for this event: would you like to go there instead?'))
-        window.location = 'http://chicagocodecamp.mobi';
-        else
-      setCookie('mobileSnooze', 'nothanks', 2); // user says no, wait to ask again
-    }
-  }
-  catch (err) {
-    console.error(err);
-  }});
+  //try {
+    //var agent = navigator.userAgent.toLowerCase();
+    //if ($.browser.mobile && getCookie('mobileSnooze') != 'nothanks') {
+      //if (confirm('chicagocodecamp.mobi is mobile optimized for this event: would you like to go there instead?'))
+        //window.location = 'http://chicagocodecamp.mobi';
+        //else
+      //setCookie('mobileSnooze', 'nothanks', 2); // user says no, wait to ask again
+    //}
+  //}
+  //catch (err) {
+    //console.error(err);
+  //}});
 
   jQuery(document).ready(function() {
     $('form').
