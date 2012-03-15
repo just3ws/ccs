@@ -1,4 +1,4 @@
 . script/push
-rake staging heroku:maintenance
-rake staging deploy
-rake staging heroku:maintenance_off
+bundle exec rake staging heroku:maintenance
+bundle exec rake staging deploy
+bundle exec rake staging heroku:maintenance_off
