@@ -337,7 +337,7 @@ DEPENDENCIES
   sass
   simplecov
   simplecov-rcov
-  sqlite3-ruby
+  sqlite3
   taps
   thin
   traceroute
