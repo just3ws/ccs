@@ -54,6 +54,7 @@ gem 'jquery-rails', '>= 0.2.6'
 
 # cleaner HTML
 gem 'haml'
+gem 'haml-rails'
 
 # for Sass
 gem 'sass'
