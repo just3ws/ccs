@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120201112341) do
+ActiveRecord::Schema.define(:version => 20120410001745) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -254,5 +254,14 @@ ActiveRecord::Schema.define(:version => 20120201112341) do
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
   add_index "users", ["permalink"], :name => "index_users_on_permalink"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "volunteers", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.text     "what_are_you_up_for"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
