@@ -1,7 +1,4 @@
 ActiveAdmin.register Submission do
-
-
-
   csv do
     column :version_tag
     column :title
@@ -30,5 +27,7 @@ ActiveAdmin.register Submission do
     column "Bio" do |submission|
       submission.user.biography
     end
+    column :keywords
+    column :level
   end
 end
