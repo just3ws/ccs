@@ -1,11 +1,11 @@
 = semantic_form_for @schedule do |f|
   = f.inputs do
     = f.input :sesja, :as => :select, :collection => Sesja.displayable,
-      :include_blank => true, :label_method => :title
-    = f.input :room, :as => :select, :collection => Room.all, 
-      :include_blank => true, :label_method => :title
-    = f.input :time_slot, :as => :select, :collection => TimeSlot.all, 
-      :include_blank => true, :label_method => :title
+      :include_blank => true, :member_label => :title
+    = f.input :room, :as => :select, :collection => Room.all,
+      :include_blank => true, :member_label => :title
+    = f.input :time_slot, :as => :select, :collection => TimeSlot.all,
+      :include_blank => true, :member_label => :title
   = f.buttons
 
 -# <%= form_for(@schedule) do |f| %>

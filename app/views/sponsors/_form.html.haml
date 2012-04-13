@@ -1,4 +1,4 @@
-= semantic_form_for @sponsor, :html => { :multipart => true } do |f| 
+= semantic_form_for @sponsor, :html => { :multipart => true } do |f|
   = f.inputs do
     = f.input :name
     = f.input :contact_name
@@ -6,7 +6,7 @@
     = f.input :home_page
     = f.input :email
     = f.input :sponsorship_level, :as => :select, :collection => SponsorshipLevel.all,
-      :include_blank => true, :label_method => :name
+      :include_blank => true, :member_label => :name
     %li
       = f.label :logo
       = f.file_field :logo
@@ -33,7 +33,7 @@
 -#     <%= f.label :home_page %><br />
 -#     <%= f.text_field :home_page %>
 -#   </div>
-  
+
 -#   <div class="field">
 -#     <%= f.label :sponsorship_level %><br />
 -#     <%= f.select(:sponsorship_level_id, SponsorshipLevel.all.collect {|s| [s.name, s.id] }) %>
