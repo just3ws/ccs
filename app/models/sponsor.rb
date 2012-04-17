@@ -1,7 +1,7 @@
 class Sponsor < ActiveRecord::Base
   belongs_to :sponsorship_level
 
-  default_scope where("sponsors.version_tag = ?", VERSION_TAG)
+  default_scope where("sponsors.version_tag = ?", VERSION_TAG).order(:name)
 
   has_attached_file :logo,
     :bucket => S3Settings.bucket,
