@@ -1,16 +1,17 @@
 = f.inputs do
-  = f.input :email, :as => :email, :input_html => { :readonly => true }, required: true
-  = f.input :password
-  = f.input :password_confirmation
+  = f.input :email, :require => true, :placeholder => "your.login@email.com"
+  = f.input :password, :placeholder => "password", required: true
+  = f.input :password_confirmation, :placeholder => "password confirmation", required: true
   - if current_user.admin?
     = f.input :role, :as => :string, :input_html => { :readonly => true }, required: true
   - else
     = f.input :role, :as => :string, enabled: false, :input_html => { :readonly => true, style: "background-color: lightgrey" }, required: true
-  = f.input :home_page, :as => :url
-  = f.input :first_name, required: true
-  = f.input :last_name, required: true
-  = f.input :biography, required: true
-  = f.input :speakerrate, :as => :url
-  = f.input :twitter, :as => :url
+  = f.input :first_name, :label => "First Name", :required => true
+  = f.input :last_name, :label => "Last Name", :required => true
+  = f.input :home_page, :label => "Home Page", :placeholder => "http://your.homepage.com"
+  = f.input :biography, :required => true, :placeholder => "some biographical information", :as => :text, :input_html => { :class => 'autogrow', :rows => 8, :maxlength => 1000  }
+  = f.input :speakerrate, :label => "Speaker Rate", :placeholder => "http://speakerrate.com/0000-your-profile-name"
+  = f.input :twitter, :placeholder => "@yourtwittername"
   = f.input :permalink, :as => :string, :input_html => { :readonly => true }, required: true
-= f.buttons
+= f.buttons do
+  = f.commit_button :label => "Submit Profile"
