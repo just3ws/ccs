@@ -33,7 +33,7 @@
   %fieldset.actions
     %legend= "Manage #{@sesja.title}"
     %ul
-      - if can?(:show, Sesja)
+      - if can?(:update, Sesja)
         %li= link_to "Edit", edit_sesja_path(@sesja)
 
       -#- if can?(:update, Sesja)

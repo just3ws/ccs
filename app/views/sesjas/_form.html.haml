@@ -1,15 +1,16 @@
 = semantic_form_for @sesja, :html => {:multipart => true} do |f|
   = f.inputs do
-    = f.input :title
-    = f.input :abstract
-    = f.input :level
-    = f.input :keywords
+    = f.input :title, :required => true, :placeholder => "the working title for your presentation"
+    = f.input :abstract, :required => true, :placeholder => "a brief synopsis of the presentation and topic", :as => :text, :input_html => { :class => 'autogrow', :rows => 8, :maxlength => 1000  }
+    = f.input :level, :required => true, :as => :select, :collection => [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to"
+    = f.input :keywords, :required => true, :placeholder => "relevant, words, for, your, session"
     = f.input :permalink
     - if current_user.admin?
       = f.input :accepted_at
       = f.input :mailed_at
       = f.input :rsvped_at
-  = f.buttons
+  = f.buttons do
+    = f.commit_button :label => "Submit Session"
 
 -# = form_for @sesja, :html => {:multipart => true} do |f|
 -#   - if @sesja.errors.any?
@@ -24,7 +25,7 @@
 -#         - errors.full_messages.each do |msg|
 -#           %li= msg
 -#   %fieldset
--#     %legend edit your session 
+-#     %legend edit your session
 -#     %ul
 -#       %li
 -#         = f.label :title, :class => "required"
