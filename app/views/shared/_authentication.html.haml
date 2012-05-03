@@ -7,7 +7,7 @@
         = button "logout", destroy_user_session_path
   - else
     = semantic_form_for(User.new(:email => @email), :as => 'user', :url => session_path('user')) do |f|
-      %h5 admin login
+      %h5 speaker login
       %p.login-to Login to manage your sessions.
       - f.inputs do
         = f.input :email, :placeholder => "your.login@email.com", required: true
