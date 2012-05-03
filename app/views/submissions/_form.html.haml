@@ -12,39 +12,30 @@
           %li= msg
   - f.inputs :name => "Tell us about your awesome session idea." do
     = f.input :title, :required => true, :placeholder => "the working title for your presentation"
-    -# .hint the working title for your presentation
 
     = f.input :abstract, :required => true, :placeholder => "a brief synopsis of the presentation and topic", :as => :text, :input_html => { :class => 'autogrow', :rows => 8, :maxlength => 1000  }
-    -# .hint describe your proposal in 1k characters or less
 
     = f.input :level, :required => true, :as => :select, :collection => [["introductory", 1], ["intermediate", 2], ["advanced", 3]], :prompt => "select the level your session is targeted to"
-    -# .hint select the level your session is targeted to
 
     = f.input :keywords, :required => true, :placeholder => "relevant, words, for, your, session"
-    -# .hint comma-separated list of keywords to help describe your session
 
   - unless user_signed_in?
     = semantic_fields_for @submission.user do |uf|
       - f.inputs :name => "And a little bit about your awesome self too." do
 
         = uf.input :email, :require => true, :placeholder => "your.login@email.com"
-        -# .hint the email address we can reach you at
 
         = uf.input :first_name, :label => "First Name", :required => true
 
         = uf.input :last_name, :label => "Last Name", :required => true
 
         = uf.input :home_page, :label => "Home Page", :placeholder => "http://your.homepage.com"
-        -# .hint this can be your blog, twitter, linkedin or personal homepage
 
         = f.input :biography, :required => true, :placeholder => "some biographical information", :as => :text, :input_html => { :class => 'autogrow', :rows => 8, :maxlength => 1000  }
-        -# .hint your life story in 1K characters or less
 
         = uf.input :twitter, :placeholder => "@yourtwittername"
-        -# .hint your twitter name if you'd like us to provide a link your twitter account
 
         = uf.input :speakerrate, :label => "Speaker Rate", :placeholder => "http://speakerrate.com/0000-your-profile-name"
-        -# .hint your speakerrate url if you'd like us to provide a link to encourage attendees to provide feedback
 
         -#= uf.label :avatar, :accept => 'image/png,image/gif,image/jpeg', :class => "optional"
         -#= uf.file_field :avatar
