@@ -1,7 +1,20 @@
-%div
-  %h4 User Profile
+-# only render submissions before closing date
+-#= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}
+- current_user.sesja.each do |sesja|
+  %fieldset.actions
+    %legend= "Manage Sessions"
+    %ul
+      - if can?(:show, Sesja)
+        %li= link_to "Edit → #{sesja.title}", edit_sesja_path(sesja)
 
+      -#- if can?(:update, Sesja)
+        -#%li= link_to "Edit this #{sesja.title}", polymorphic_path(Sesja, :action => "edit")
+
+      -#- if can?(:destroy, Sesja)
+        -#%li= link_to "Destroy this #{sesja.title}", model, :confirm => "Are you sure you wish to delete this #{sesja.title}?", :method => :delete
+
+%br
+%div
+  %h4 Profile
   = semantic_form_for @user, :html => {:multipart => true} do |f|
     - render :partial => "form", :locals => {:f => f, :model => @user}
-
-= render :partial => "shared/actions", :locals => {:model => Submission.new, :current_action => :index}
