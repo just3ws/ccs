@@ -17,8 +17,8 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  pool: 5
   database: ccs_production
+  pool: 5
   user: ccs
   host: localhost
 

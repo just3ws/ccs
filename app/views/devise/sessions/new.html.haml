@@ -3,7 +3,7 @@
   = devise_error_messages!
   - f.inputs do
     = f.input :email, :required => true, :placeholder => "your.login@email.com"
-    .hint the email address you registered with
+    -#.hint the email address you registered with
     = f.input :password, :required => true, :placeholder => "password"
   - f.buttons do
     = f.commit_button :label => "login"

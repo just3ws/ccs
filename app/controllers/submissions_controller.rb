@@ -20,6 +20,47 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def accept
+    require 'ruby-debug'; debugger; puts 'debugger'
+
+    # TODO add an accepted? attribute to the submission
+    # TODO add a rejected? attribute to the submission
+
+    id = params[:id]
+    # find the submission
+    submission = Submission.find_by_id(id)
+    fail "Unknown submission id: #{id}" unless submission
+
+    # was it already accepted?
+    #return true if submission.accepted?
+
+    # was it already rejected?
+    #return true if submission.accepted?
+
+    # is there a sesja already associated with the submission?
+    return true if submission.sesja
+
+    # create a sesja from the submission
+    sesja = Sesja.new(
+      title: submission.title,
+      abstract: submission.abstract,
+      level: submission.level,
+      user_id: submission.user_id,
+      accepted_at: DateTime.now)
+
+    sesja.save!
+
+
+    # associate the submission to the sesja
+    submission.sesja_id = sesja.id
+
+    # send acceptance email to the speaker
+  end
+
+  def reject
+    raise TODO
+  end
+
   def show
     respond_to do |format|
       format.html # show.html.erb

@@ -1,13 +1,16 @@
 class Submission < ActiveRecord::Base
-  belongs_to :user, :autosave => true
+  belongs_to :user, autosave: true
+
+  belongs_to :sesja
 
   # HEY! By using the => syntax VERSION_TAG is used as the default value for new submissions.
   default_scope where(:version_tag => VERSION_TAG).order('submissions.created_at DESC')
 
-  scope :visible, :conditions => {:deleted_at => nil}
-  scope :hidden, :conditions => "submissions.deleted_at IS NOT NULL"
+  scope :visible, conditions: {deleted_at: nil}
+  scope :hidden,  conditions: "submissions.deleted_at IS NOT NULL"
+  scope :processed, conditions: "submissions.sesja_id is not null"
 
-  validates :user, :presence => true
+  validates :user, presence: true
   validates :title, :presence => true, :length => {:within => 0..64}
   validates :abstract, :presence => true, :length => {:within => 0..1024}
   validates_inclusion_of :level, :in => 0..3

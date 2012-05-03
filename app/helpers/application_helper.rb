@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def allow_markup(content)
-     raw(RDiscount.new(content).to_html)
+    raw(RDiscount.new(content).to_html)
   end
 
   def display_name(class_name)

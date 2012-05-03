@@ -20,3 +20,6 @@
         %li= link_to 'Show', submission
         %li= link_to 'Edit', edit_submission_path(submission)
         %li= link_to 'Destroy', submission, :confirm => 'Are you sure you wish to delete this submission?', :method => :delete
+        - if current_user.admin?
+          %li= link_to 'Accept', controller: "submissions", action: "accept", id: submission.id, confirm: "Accepting this session will result in an acceptance email being sent to the speaker. Are you sure?", remote: true
+          %li= link_to 'Reject', controller: "submissions", action: "accept", id: submission.id, confirm: "Rejecting this session will result in a rejection email being sent to the speaker. Are you sure?", remote: true
