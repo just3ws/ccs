@@ -1,3 +1,10 @@
+- if user_signed_in? && current_user.speaker?
+  %fieldset.actions
+    %legend= "Manage #{@sesja.title}"
+    %ul
+      - if can?(:update, Sesja)
+        %li= link_to "Edit", edit_sesja_path(@sesja)
+
 %h4.section-title session description
 = render :partial => "sesjas/sesja", :locals => {:sesja => @sesja}
 
@@ -17,27 +24,3 @@
         = f.input :comment, :rows => 3
         = f.input :email
       = f.buttons
-
-  -# - content_for :javascript do
-  -#   :javascript
-  -#     $('button').live('click', function () {
-  -#       alert('le clicke');
-  -#       $(this).parents('form:first').submit();
-  -#       return false;
-  -#     });
-
--#- if user_signed_in? && current_user.admin?
-  -#= render :partial => "shared/actions", :locals => {:model => @sesja, :current_action => :show}
-
-- if user_signed_in? && current_user.speaker?
-  %fieldset.actions
-    %legend= "Manage #{@sesja.title}"
-    %ul
-      - if can?(:update, Sesja)
-        %li= link_to "Edit", edit_sesja_path(@sesja)
-
-      -#- if can?(:update, Sesja)
-        -#%li= link_to "Edit this #{sesja.title}", polymorphic_path(Sesja, :action => "edit")
-
-      -#- if can?(:destroy, Sesja)
-        -#%li= link_to "Destroy this #{sesja.title}", model, :confirm => "Are you sure you wish to delete this #{sesja.title}?", :method => :delete

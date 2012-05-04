@@ -1,5 +1,3 @@
-= render 'form'
--#= render :partial => "shared/actions", :locals => {:model => @sesja, :current_action => :update}
 - if user_signed_in? && current_user.speaker?
   %fieldset.actions
     %legend= "Manage #{@sesja.title}"
@@ -7,8 +5,5 @@
       - if can?(:show, Sesja)
         %li= link_to "view", sesja_path(@sesja)
 
-      -#- if can?(:update, Sesja)
-        -#%li= link_to "Edit this #{sesja.title}", polymorphic_path(Sesja, :action => "edit")
-
-      -#- if can?(:destroy, Sesja)
-        -#%li= link_to "Destroy this #{sesja.title}", model, :confirm => "Are you sure you wish to delete this #{sesja.title}?", :method => :delete
+%h4.section-title session description
+= render 'form'
