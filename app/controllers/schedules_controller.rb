@@ -36,8 +36,10 @@ class SchedulesController < ApplicationController
   end
 
   def create
+    @schedule.version_tag = VERSION_TAG
     respond_to do |wants|
       if @schedule.save
+
         expire_page :action => :index
         wants.html { redirect_to(@schedule, :notice => 'Schedule was successfully created.') }
       else
