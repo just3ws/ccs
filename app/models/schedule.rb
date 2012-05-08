@@ -31,11 +31,7 @@ from (
 
     end
   end
-
-
 end
-
-
 
 # == Schema Information
 #
@@ -49,4 +45,3 @@ end
 #  updated_at   :datetime
 #  version_tag  :string(255)
 #
-

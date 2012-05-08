@@ -38,14 +38,15 @@ Ccs::Application.routes.draw do
   match '/submissions/reject/:id', controller: "submissions", action: "reject"
   resources :submissions
 
-  resources :contents
 
   match '/import/proc/:id' => 'imports#proc_csv', :as => :import_proc
+
   match '/:path' => 'contents#show' # this needs to be the last non-default route
 
   root :to => 'sesjas#index'
   #root :to => 'submissions#new'
   #root :to => "contents#show"
+
 end
 #== Route Map
 # Generated on 10 Feb 2012 09:40
