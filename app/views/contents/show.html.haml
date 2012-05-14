@@ -1,6 +1,6 @@
 .show
-  %div
-    %h3= "#{@content.title}"
+  %div{class: @content.permalink}
+    %h4{class: "#{@content.permalink} section-title"}= "#{@content.title}"
     .user-content.long-text= allow_markup(@content.body)
 - if current_user.try(:admin?)
   = render :partial => "shared/actions", :locals => {:model => @content, :current_action => :show}
