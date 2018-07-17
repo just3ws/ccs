@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 # ah-yup.
 gem 'rails'          , '3.0.11'
@@ -24,9 +24,6 @@ gem 'pg'
 
 gem 'thin'
 gem 'foreman'
-
-# our beloved host
-gem 'heroku'
 
 # well. json
 gem 'json'
@@ -58,7 +55,7 @@ gem 'haml-rails'
 
 # for Sass
 gem 'sass'
-gem 'compass' #, :git => "git://github.com/chriseppstein/compass.git", :branch => "master"
+gem 'compass' #, :git => "https://github.com/chriseppstein/compass.git", :branch => "master"
 
 # javascript
 # gem 'coffee-script'
@@ -105,7 +102,7 @@ group :development do
   gem 'pry'
 
   # simplify management of heroku environments
-  gem 'heroku_san'
+  gem 'heroku_san', '~> 4.4.0'
 
   # improve Irb
   gem 'wirble'
@@ -114,7 +111,8 @@ group :development do
   gem 'awesome_print'
 
   # should make things faster
-  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'rails-dev-boost', :git => 'https://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'rb-fsevent', '>= 0.9.1'
 
   # understand hotspots in the codebase
   gem 'rails_best_practices'
