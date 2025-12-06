@@ -24,10 +24,6 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.string   "namespace"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
-
   create_table "admin_users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
     t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
@@ -42,9 +38,6 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
-  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "comments", :force => true do |t|
     t.text     "comment"
@@ -84,8 +77,6 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.datetime "updated_at"
   end
 
-  add_index "features", ["name"], :name => "index_features_on_name", :unique => true
-
   create_table "imports", :force => true do |t|
     t.string   "datatype"
     t.integer  "processed"
@@ -119,8 +110,6 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.string   "version_tag"
   end
 
-  add_index "rooms", ["title"], :name => "index_rooms_on_title", :unique => true
-
   create_table "schedules", :force => true do |t|
     t.integer  "sesja_id"
     t.integer  "room_id"
@@ -144,9 +133,6 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.string   "permalink"
     t.string   "version_tag"
   end
-
-  add_index "sesjas", ["permalink"], :name => "index_sesjas_on_permalink"
-  add_index "sesjas", ["title"], :name => "index_sesjas_on_title"
 
   create_table "sponsors", :force => true do |t|
     t.string   "name"
@@ -203,9 +189,6 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.string   "version_tag"
   end
 
-  add_index "time_slots", ["starts_at", "ends_at"], :name => "index_time_slots_on_starts_at_and_ends_at", :unique => true
-  add_index "time_slots", ["title"], :name => "index_time_slots_on_title", :unique => true
-
   create_table "translations", :force => true do |t|
     t.string   "locale"
     t.string   "key"
@@ -217,19 +200,19 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                :default => "",      :null => false
-    t.string   "encrypted_password",                   :default => ""
+    t.string   "email",                                  :default => "",      :null => false
+    t.string   "encrypted_password",                     :default => ""
     t.string   "reset_password_token"
-    t.string   "remember_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                        :default => 0
+    t.integer  "sign_in_count",                          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role",                                 :default => "guest"
+    t.string   "role",                                   :default => "guest"
     t.integer  "submissions_id"
     t.string   "home_page"
     t.string   "first_name"
@@ -242,27 +225,11 @@ ActiveRecord::Schema.define(:version => 20120424135414) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "invitation_token",     :limit => 20
+    t.string   "invitation_token",       :limit => 20
     t.datetime "invitation_sent_at"
-    t.string   "speakerrate",          :limit => 2048
-    t.string   "twitter",              :limit => 32
+    t.string   "speakerrate",            :limit => 2048
+    t.string   "twitter",                :limit => 32
     t.string   "permalink"
-  end
-
-  add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["first_name", "last_name"], :name => "index_users_on_first_name_and_last_name"
-  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
-  add_index "users", ["permalink"], :name => "index_users_on_permalink"
-  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "volunteers", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.text     "what_are_you_up_for"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end

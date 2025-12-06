@@ -1,18 +1,20 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ccs_dev
+  pool: 5
+  username: postgres
+  password: secret
+  host: db
+
 test: &test
   adapter: postgresql
   encoding: unicode
   database: ccs_test
   pool: 5
-  user: ccs
-  host: localhost
-
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: ccs_development
-  pool: 5
-  user: ccs
-  host: localhost
+  username: postgres
+  password: secret
+  host: db
 
 production:
   adapter: postgresql

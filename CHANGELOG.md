@@ -43,3 +43,36 @@
   - YAML safe loading isn't available in this version of `psych`.
   - `git://...` urls are insecure.
   - `heroku` version used doesn't even exist.
+
+
+## 2025-02-06
+
+> **McCoy:** *“My God, man… drilling holes in his head isn't the answer. The kid's memory is gone.”*
+>
+> **Kirk:** *“No, Bones. His memory is there. We just have to coax it back.”*
+>
+> &mdash; <cite>*Star Trek IV: The Voyage Home*</cite>
+
+* **Resurrect the 2012 CCS application from deep storage**
+  After more than a decade offline, CCS now boots again inside a fully containerized Ruby 1.9.3 + Rails 3 environment.
+
+* **Dockerize the entire runtime stack**
+
+  * Added `Dockerfile` capable of building Ruby 1.9.3-p551 on Ubuntu 14.04
+  * Added `docker-compose.yml` orchestrating Rails, Postgres 9.6, and Memcached
+  * Added `entrypoint.sh` for deterministic boot
+  * Added `Makefile` for migrations, resets, seeds, and developer workflow
+
+* **Modernize environment configuration**
+
+  * Replace ancient `.rvmrc` setup with `.tool-versions`
+  * Introduce explicit bundler path volume for reproducible installs
+
+* **Repair broken migrations**
+
+  * Update `MoveAdminNotesToComments` to handle missing historical index state
+  * Normalize schema loading for legacy structure
+
+* **Successfully boot the server for the first time since 2012**
+  The app now launches cleanly via Docker, confirming data model, routes, and legacy dependencies operate in an isolated reproducible environment.
+
