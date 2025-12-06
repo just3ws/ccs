@@ -44,7 +44,6 @@
   - `git://...` urls are insecure.
   - `heroku` version used doesn't even exist.
 
-
 ## 2025-02-06
 
 > **McCoy:** *“My God, man… drilling holes in his head isn't the answer. The kid's memory is gone.”*

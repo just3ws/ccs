@@ -43,6 +43,19 @@ rake:
 	@docker exec -it $(APP) bash -lc "RAILS_ENV=development bundle exec rake $(filter-out $@,$(MAKECMDGOALS))"
 
 # ---------------------------------------------
+# RSpec test runner
+# ---------------------------------------------
+
+spec-prepare:
+	@echo "🧪 Preparing test database..."
+	@docker exec -it $(APP) bash -lc "RAILS_ENV=test bundle exec rake db:create db:migrate"
+
+spec: spec-prepare
+	@docker exec -it $(APP) bash -lc "RAILS_ENV=test bundle exec rspec $(filter-out $@,$(MAKECMDGOALS))"
+
+rspec: spec
+
+# ---------------------------------------------
 # Lifecycle
 # ---------------------------------------------
 
