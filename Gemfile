@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 # ah-yup.
-gem 'rails'          , '3.0.11'
-gem 'activerecord'   , '3.0.11'
-gem 'actionmailer'   , '3.0.11'
-gem 'actionpack'     , '3.0.11'
-gem 'activeresource' , '3.0.11'
-gem 'activesupport'  , '3.0.11'
-gem 'railties'       , '3.0.11'
+gem 'rails'          , '~> 3.0'
+gem 'activerecord'   , '~> 3.0'
+gem 'actionmailer'   , '~> 3.0'
+gem 'actionpack'     , '~> 3.0'
+gem 'activeresource' , '~> 3.0'
+gem 'activesupport'  , '~> 3.0'
+gem 'railties'       , '~> 3.0'
 
 gem 'jbuilder'
 

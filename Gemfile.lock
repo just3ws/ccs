@@ -298,12 +298,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer (= 3.0.11)
-  actionpack (= 3.0.11)
+  actionmailer (~> 3.0)
+  actionpack (~> 3.0)
   activeadmin
-  activerecord (= 3.0.11)
-  activeresource (= 3.0.11)
-  activesupport (= 3.0.11)
+  activerecord (~> 3.0)
+  activeresource (~> 3.0)
+  activesupport (~> 3.0)
   annotate
   arel
   awesome_print
@@ -330,11 +330,11 @@ DEPENDENCIES
   paperclip
   pg
   pry
-  rails (= 3.0.11)
+  rails (~> 3.0)
   rails-dev-boost!
   rails-erd
   rails_best_practices
-  railties (= 3.0.11)
+  railties (~> 3.0)
   rake
   rb-fsevent (>= 0.9.1)
   rdiscount
@@ -350,4 +350,4 @@ DEPENDENCIES
   wirble
 
 BUNDLED WITH
-   1.16.2
+   1.17.3
