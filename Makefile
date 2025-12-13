@@ -42,6 +42,10 @@ rails:
 rake:
 	@docker exec -it $(APP) bash -lc "RAILS_ENV=development bundle exec rake $(filter-out $@,$(MAKECMDGOALS))"
 
+bundle:
+	@echo "📦 Installing gems inside container..."
+	docker exec -it $(APP) bash -lc "bundle install"
+
 # ---------------------------------------------
 # RSpec test runner
 # ---------------------------------------------
