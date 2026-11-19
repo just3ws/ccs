@@ -1,0 +1,57 @@
+.Dd November 19, 2026
+.Dt CCS-ARCHIVE 1
+.Os macOS
+.Sh NAME
+.Nm ccs-archive
+.Nd manage the Chicago Code Camp 2012 archival oracle and static snapshots
+.Sh SYNOPSIS
+.Nm
+.Op Fl h | Fl -help
+.Ar command
+.Sh DESCRIPTION
+The
+.Nm
+utility inspects and controls the resurrected 2012 Chicago Code Camp
+.Pq Code Camp Server , ccs
+reference environment running via Colima and Docker Compose in the
+.Pa ../ccs-2025-12
+worktree, without disturbing the
+.Cm main
+branch.
+.Sh COMMANDS
+.Bl -tag -width "snapshot"
+.It Cm status
+Show git branch/tag anchors, Colima/Docker container state, and static archive paths.
+.It Cm boot
+Ensure Colima is running via
+.Xr zsvc 1
+and start the
+.Pa ../ccs-2025-12
+containers with
+.Xr docker-compose 1 .
+.It Cm down
+Stop the
+.Pa ../ccs-2025-12
+containers cleanly.
+.It Cm snapshot
+Mirror
+.Lk http://localhost:3000/
+into
+.Pa ../ccs-2012-static
+using
+.Xr wget 1 .
+.El
+.Sh ENVIRONMENT
+.Bl -tag -width "CCS_ORACLE_DIR"
+.It Ev CCS_ORACLE_DIR
+Path to the
+.Cm origin/2025-12
+worktree. Defaults to
+.Pa ../ccs-2025-12 .
+.It Ev CCS_STATIC_DIR
+Output directory for the static HTML mirror. Defaults to
+.Pa ../ccs-2012-static .
+.El
+.Sh SEE ALSO
+.Pa doc/retrospective-and-roadmap.md ,
+.Pa README.md

@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ORACLE_DIR="${CCS_ORACLE_DIR:-$(dirname "$ROOT_DIR")/ccs-2025-12}"
+STATIC_DIR="${CCS_STATIC_DIR:-$(dirname "$ROOT_DIR")/ccs-2012-static}"
+DC="${DC:-docker-compose}"
+
+usage() {
+  cat <<'EOF'
+Usage: script/ccs-archive [--help] <command>
+
+Manage the 2012 Chicago Code Camp reference oracle and archival snapshot
+without modifying the main branch.
+
+Commands:
+  status      Show git anchors, container state, and archive directories
+  boot        Start Colima (via zsvc) and boot the ../ccs-2025-12 containers
+  down        Stop the ../ccs-2025-12 containers
+  snapshot    Mirror http://localhost:3000/ into ../ccs-2012-static via wget
+
+Environment:
+  CCS_ORACLE_DIR   Override ../ccs-2025-12 worktree path
+  CCS_STATIC_DIR   Override ../ccs-2012-static output path
+  DC               Compose command (default: docker-compose)
+EOF
+}
+
+cmd_status() {
+  echo "=== Git Anchors ==="
+  git -C "$ROOT_DIR" log -n 1 --oneline main
+  git -C "$ROOT_DIR" show-ref --tags | grep prod-2012-05 || true
+  echo ""
+  echo "=== Oracle Worktree ($ORACLE_DIR) ==="
+  [ -d "$ORACLE_DIR" ] && echo "present" || echo "missing"
+  echo ""
+  echo "=== Containers ==="
+  docker ps --filter "name=ccs_" --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}" 2>/dev/null || echo "docker unavailable"
+  echo ""
+  echo "=== Static Archive ($STATIC_DIR) ==="
+  [ -d "$STATIC_DIR" ] && ls -lh "$STATIC_DIR" | head -n 10 || echo "missing"
+}
+
+cmd_boot() {
+  command -v zsvc >/dev/null 2>&1 && zsvc start colima && zsvc wait colima --timeout 60
+  (cd "$ORACLE_DIR" && make DC="$DC" up)
+}
+
+cmd_down() {
+  (cd "$ORACLE_DIR" && make DC="$DC" down)
+}
+
+cmd_snapshot() {
+  mkdir -p "$STATIC_DIR"
+  wget --mirror --convert-links --adjust-extension --page-requisites --no-parent --no-host-directories \
+    -P "$STATIC_DIR" http://localhost:3000/
+}
+
+case "${1:-}" in
+  -h|--help|"")
+    usage
+    ;;
+  status)
+    cmd_status
+    ;;
+  boot)
+    cmd_boot
+    ;;
+  down)
+    cmd_down
+    ;;
+  snapshot)
+    cmd_snapshot
+    ;;
+  *)
+    echo "Unknown command: $1" >&2
+    usage >&2
+    exit 2
+    ;;
+esac
