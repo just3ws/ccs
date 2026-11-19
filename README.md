@@ -3,7 +3,7 @@
 Code Camp Server is a site that we're using for Chicago Code Camp.
 
 Much like the Chicago Code Camp that CCS was created to support,
-CCS is a free, open-source application licensed under the GPL. So,
+CCS is a free, open-source application licensed under the AGPL v3. So,
 if you'd like to help make CCS better or find a problem, then please
 help make it even better by contributing patches or even just submitting
 defects in our Github issue tracker.
@@ -70,16 +70,15 @@ skill levels & interests, w/multiple sessions running side-by-side.
 
 Copyright (C) 2011-2012  Michael D. Hall (just3ws)
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+GNU Affero General Public License for more details.
 
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
