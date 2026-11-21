@@ -1,0 +1,56 @@
+{
+  "episodeId": "ep-03-controversial-design",
+  "format": "16:9",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "title-open",
+      "label": "Episode 03: The Anti-Corporate Design",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "THE ANTI-CORPORATE DESIGN OF 2012",
+      "subheadline": "Episode 03: Triadic Sass, #color-proof & 2012 A11y",
+      "caption": "app/stylesheets/_colors.sass  |  #800000 / #004080 / #00803F  |  Open Sans"
+    },
+    {
+      "id": "triadic-sass",
+      "label": "Triadic Sass & Lowercase Headings",
+      "kind": "pan",
+      "image": "2012-home.png",
+      "citation": "Indented .sass  |  h1..h5 lowercase  |  +square-corner-top-left(24px)"
+    },
+    {
+      "id": "color-proof",
+      "label": "Living Style Guide & ?dss=1",
+      "kind": "split",
+      "leftImage": "2012-home.png",
+      "rightImage": "2012-home-diagnostic.png",
+      "leftLabel": "DEV MODE: #color-proof SWATCH BAR",
+      "rightLabel": "DIAGNOSTIC MODE: /?dss=1",
+      "citation": "shared/color_proof  |  ApplicationHelper#display_diagnostic_stylesheet?"
+    },
+    {
+      "id": "ie-and-js",
+      "label": "Pre-Sprockets JS & IE6/IE7 Fallbacks",
+      "kind": "pan",
+      "image": "2012-schedule.png",
+      "citation": "jquery + modernizr + jquery.placeholder  |  formtastic_ie6/ie7.css + html5shiv"
+    },
+    {
+      "id": "a11y-2012",
+      "label": "2012 Formtastic & Pre-ARIA Layout",
+      "kind": "pan",
+      "image": "2012-submissions-new.png",
+      "citation": "/submissions/new  |  Formtastic fieldset/legend/label  |  pre-ARIA divs"
+    },
+    {
+      "id": "outro",
+      "label": "Next: Episode 04 — Under the Hood",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "NEXT: EPISODE 04 — UNDER THE HOOD",
+      "subheadline": "Sesja, Feature Flags, ActiveAdmin & Proto-Observability",
+      "caption": "just3ws.com/ai/series/chicago-code-camp/  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

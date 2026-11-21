@@ -1,0 +1,32 @@
+{
+  "episodeId": "s-01-why-sesja",
+  "format": "9:16",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "hook",
+      "label": "Why Sesja?",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "WHY NAME A RAILS MODEL 'SESJA'?",
+      "subheadline": "Chicago Code Camp (2012)",
+      "caption": "app/models/sesja.rb  |  Polish for 'session'"
+    },
+    {
+      "id": "explain",
+      "label": "Avoiding Rails Session Collision",
+      "kind": "pan",
+      "image": "2012-admin-sesjas.png",
+      "citation": "resources :sesjas, :path => 'sessions'  |  config/routes.rb:29"
+    },
+    {
+      "id": "cta",
+      "label": "Full Series on Playlist",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "WATCH THE FULL SERIES",
+      "subheadline": "Chicago Code Camp -> Code Camp Server",
+      "caption": "just3ws.com  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

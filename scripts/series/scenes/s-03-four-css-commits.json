@@ -1,0 +1,32 @@
+{
+  "episodeId": "s-03-four-css-commits",
+  "format": "9:16",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "hook",
+      "label": "Live CSS Debugging (2012)",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "4 CSS COMMITS IN 26 MINUTES",
+      "subheadline": "May 15, 2012  |  4 Days Before Launch",
+      "caption": "300e149 -> e39efab -> 8fc9f68 -> 1b5f639"
+    },
+    {
+      "id": "explain",
+      "label": "The Schedule Line-Height Sprint",
+      "kind": "pan",
+      "image": "2012-schedule.png",
+      "citation": "1b5f639: 'Finally fixed the bad line height on schedule items'"
+    },
+    {
+      "id": "cta",
+      "label": "Watch Episode 01",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "EPISODE 01: THE TIME CAPSULE",
+      "subheadline": "Chicago Code Camp -> Code Camp Server",
+      "caption": "just3ws.com  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

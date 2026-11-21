@@ -1,0 +1,32 @@
+{
+  "episodeId": "s-02-color-proof",
+  "format": "9:16",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "hook",
+      "label": "Dev-Mode Style Guide",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "A LIVING STYLE GUIDE IN 2012",
+      "subheadline": "shared/color_proof in dev mode",
+      "caption": "app/stylesheets/_colors.sass"
+    },
+    {
+      "id": "explain",
+      "label": "#color-proof Swatch Bar",
+      "kind": "pan",
+      "image": "2012-home.png",
+      "citation": "#800000 / #004080 / #00803F  |  Indented .sass"
+    },
+    {
+      "id": "cta",
+      "label": "Watch Episode 03",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "EPISODE 03: ANTI-CORPORATE DESIGN",
+      "subheadline": "Chicago Code Camp -> Code Camp Server",
+      "caption": "just3ws.com  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "episodeId": "s-05-ruby-193-apple-silicon",
+  "format": "9:16",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "hook",
+      "label": "Ruby 1.9.3 on Apple Silicon",
+      "kind": "card",
+      "bgColor": "#00803F",
+      "headline": "RUBY 1.9.3 ON APPLE SILICON",
+      "subheadline": "Ubuntu 14.04 + Colima + 2 Dockerfile Fixes",
+      "caption": "2009 config.guess vs aarch64  |  libffi-dev"
+    },
+    {
+      "id": "explain",
+      "label": "HTTP 200 on localhost:3000",
+      "kind": "pan",
+      "image": "2012-home.png",
+      "citation": "WEBrick/1.3.1 (Ruby/1.9.3/2014-11-13)  |  HTTP 200 OK"
+    },
+    {
+      "id": "cta",
+      "label": "Watch Episode 01",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "EPISODE 01: THE TIME CAPSULE",
+      "subheadline": "Chicago Code Camp -> Code Camp Server",
+      "caption": "just3ws.com  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "repository": "https://github.com/just3ws/ccs",
+  "productionTag": "prod-2012-05",
+  "productionCommit": "1b5f6392957a1c29a46fc8a460e67ee879abe591",
+  "firstCommit": "a8f4b11",
+  "sources": {
+    "git-first-commit": {
+      "kind": "git",
+      "ref": "a8f4b11",
+      "date": "2010-01-23",
+      "note": "Initial commit of ccs"
+    },
+    "git-prod-2012-05": {
+      "kind": "git",
+      "ref": "1b5f639",
+      "tag": "prod-2012-05",
+      "date": "2012-05-15",
+      "note": "Last 2012 production-era commit (schedule line-height fix)"
+    },
+    "heroku-config": {
+      "kind": "file",
+      "path": "config/heroku.yml",
+      "lines": "1-38",
+      "note": "Heroku production (chicagocodecamp.com) and staging config"
+    },
+    "local-home": {
+      "kind": "screenshot",
+      "file": "2012-home.png",
+      "url": "http://localhost:3000/",
+      "note": "Colima Ruby 1.9.3-p551 dev boot showing #color-proof swatch bar"
+    },
+    "wayback-home-2012-05-18": {
+      "kind": "wayback",
+      "file": "wayback-2012-home.png",
+      "timestamp": "20120518214850",
+      "url": "https://web.archive.org/web/20120518214850/http://chicagocodecamp.com/",
+      "note": "Live production capture 1 day before May 19, 2012 conference"
+    },
+    "wayback-sponsors-2012-05-06": {
+      "kind": "wayback",
+      "file": "wayback-2012-sponsors.png",
+      "timestamp": "20120506020818",
+      "url": "https://web.archive.org/web/20120506020818/http://chicagocodecamp.com/sponsors",
+      "note": "Live May 2012 sponsor lineup (12 sponsors across Platinum, Gold, Silver, Bronze)"
+    },
+    "wayback-speakers-2012-05-06": {
+      "kind": "wayback",
+      "file": "wayback-2012-speakers.png",
+      "timestamp": "20120506022442",
+      "url": "https://web.archive.org/web/20120506022442/http://chicagocodecamp.com/speakers",
+      "note": "Live May 2012 speaker roster (32 speakers)"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "episodeId": "ep-05-carrying-it-forward",
+  "format": "16:9",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "title-open",
+      "label": "Episode 05: Carrying It Forward",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "CARRYING CODE CAMP SERVER FORWARD",
+      "subheadline": "Episode 05: Lineage, GNU AGPL v3 & Rails 8 Roadmap",
+      "caption": "github.com/just3ws/ccs  |  main (627e8c8 -> d0b5bdf)"
+    },
+    {
+      "id": "lineage",
+      "label": "Preserving 16 Years of Git Lineage",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "ZERO HISTORY LOST",
+      "subheadline": "prod-2012-05 (1b5f639)  ->  main (AGPLv3)  |  archive/master-2018 preserved",
+      "caption": "2012 Colima Oracle (ccs-2025-12) stays beside main as behavioral spec"
+    },
+    {
+      "id": "agpl",
+      "label": "Why GNU AGPL v3 Fits the Original Intent",
+      "kind": "card",
+      "bgColor": "#004080",
+      "headline": "GPL v2 (2010)  ->  GNU AGPL v3 (2026)",
+      "subheadline": "Closing the hosted web-app copyleft gap for community code camps",
+      "caption": "README.md & LICENSE updated on main (627e8c8)"
+    },
+    {
+      "id": "roadmap",
+      "label": "Rails 8 + Railway Generalization",
+      "kind": "pan",
+      "image": "2012-admin-sesjas.png",
+      "citation": "Next: Port 19 tables & 17 models to Rails 8 + Railway  |  Multi-event config"
+    },
+    {
+      "id": "outro",
+      "label": "Series Finale & Links",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "CHICAGO CODE CAMP -> CODE CAMP SERVER",
+      "subheadline": "Series: just3ws.com/ai/series/chicago-code-camp/",
+      "caption": "Code: github.com/just3ws/ccs (AGPLv3)  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

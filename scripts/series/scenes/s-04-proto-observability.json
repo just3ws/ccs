@@ -1,0 +1,32 @@
+{
+  "episodeId": "s-04-proto-observability",
+  "format": "9:16",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "hook",
+      "label": "Proto-Observability in 2012",
+      "kind": "card",
+      "bgColor": "#004080",
+      "headline": "PROTO-OBSERVABILITY IN 2012",
+      "subheadline": "Bullet  |  Hoptoad  |  SimpleCov-Rcov  |  ?dss=1",
+      "caption": "Before OpenTelemetry or GitHub Actions"
+    },
+    {
+      "id": "explain",
+      "label": "Diagnostic CSS (?dss=1)",
+      "kind": "pan",
+      "image": "2012-home-diagnostic.png",
+      "citation": "ApplicationHelper#display_diagnostic_stylesheet?  |  /?dss=1"
+    },
+    {
+      "id": "cta",
+      "label": "Watch Episode 04",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "EPISODE 04: UNDER THE HOOD",
+      "subheadline": "Chicago Code Camp -> Code Camp Server",
+      "caption": "just3ws.com  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

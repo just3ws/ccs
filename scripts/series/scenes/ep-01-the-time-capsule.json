@@ -1,0 +1,65 @@
+{
+  "episodeId": "ep-01-the-time-capsule",
+  "format": "16:9",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "title-open",
+      "label": "The Time Capsule (2012 -> 2026)",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "CHICAGO CODE CAMP -> CODE CAMP SERVER",
+      "subheadline": "Episode 01: The Time Capsule",
+      "caption": "just3ws/ccs  |  prod-2012-05 (1b5f639)  |  May 19, 2012"
+    },
+    {
+      "id": "provenance-git",
+      "label": "Git Provenance (2010-2012)",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "796 COMMITS ACROSS THREE MAY CAMPS",
+      "subheadline": "2010-01-23 (a8f4b11)  ->  2012-05-15 (1b5f639)",
+      "caption": "config/heroku.yml: chicagocodecamp.com  |  Rails 3.0.11  |  Ruby 1.9.3"
+    },
+    {
+      "id": "colima-boot",
+      "label": "Colima Ruby 1.9.3 Boot",
+      "kind": "pan",
+      "image": "2012-home.png",
+      "citation": "Colima aarch64 Oracle  |  WEBrick Ruby 1.9.3-p551  |  http://localhost:3000/"
+    },
+    {
+      "id": "split-home-compare",
+      "label": "1:1 Colima vs Wayback (May 18, 2012)",
+      "kind": "split",
+      "leftImage": "2012-home.png",
+      "rightImage": "wayback-2012-home.png",
+      "leftLabel": "LOCAL COLIMA ORACLE (DEV + #color-proof)",
+      "rightLabel": "INTERNET ARCHIVE (2012-05-18 LIVE PROD)",
+      "citation": "1:1 Match: prod-2012-05 (1b5f639) vs. web.archive.org/web/20120518214850"
+    },
+    {
+      "id": "wayback-sponsors",
+      "label": "May 2012 Sponsor Lineup",
+      "kind": "pan",
+      "image": "wayback-2012-sponsors.png",
+      "citation": "Wayback Machine 2012-05-06  |  chicagocodecamp.com/sponsors (12 Sponsors)"
+    },
+    {
+      "id": "community-lineage",
+      "label": "May 2012 Speakers & Community",
+      "kind": "pan",
+      "image": "wayback-2012-speakers.png",
+      "citation": "Wayback Machine 2012-05-06  |  chicagocodecamp.com/speakers (32 Speakers)"
+    },
+    {
+      "id": "outro-next",
+      "label": "Next: Design, Admin & Proto-Observability",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "NEXT: EPISODE 02 — COMMUNITY & DESIGN",
+      "subheadline": "Companion Series: just3ws.com/ai/series/chicago-code-camp/",
+      "caption": "Code: github.com/just3ws/ccs (GNU AGPL v3)  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

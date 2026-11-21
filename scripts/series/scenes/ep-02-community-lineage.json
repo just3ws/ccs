@@ -1,0 +1,55 @@
+{
+  "episodeId": "ep-02-community-lineage",
+  "format": "16:9",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "title-open",
+      "label": "Episode 02: People, Sponsors & Three Mays",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "WHAT CHICAGO CODE CAMP WAS ALL ABOUT",
+      "subheadline": "Episode 02: People, Sponsors & Three Mays",
+      "caption": "2010 (175 commits)  |  2011 (489 commits)  |  2012 (132 commits)"
+    },
+    {
+      "id": "three-mays",
+      "label": "The Three-May Cadence",
+      "kind": "pan",
+      "image": "wayback-2012-home.png",
+      "citation": "May 18, 2012 Live Home  |  College of Lake County, Grayslake, IL"
+    },
+    {
+      "id": "contributors",
+      "label": "Contributors & Design Credit",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "796 COMMITS TO PROD-2012-05",
+      "subheadline": "Mike Hall (764)  |  Sergio Pereira (24)  |  Adam Walters (7)  |  Dustin Updyke (1)",
+      "caption": "Logo: Jane Ashley (@xamlgirl)  |  GPL v2 from 2010-04-07 (a71d39a)"
+    },
+    {
+      "id": "sponsors-2012",
+      "label": "May 2012 Sponsors (12)",
+      "kind": "pan",
+      "image": "wayback-2012-sponsors.png",
+      "citation": "Wayback 2012-05-06  |  Microsoft, PCS, 8th Light, Centare, Groupon, Telerik, ThoughtWorks, Twilio, GitHub, JetBrains, Neudesic"
+    },
+    {
+      "id": "speakers-2012",
+      "label": "May 2012 Speakers (32)",
+      "kind": "pan",
+      "image": "wayback-2012-speakers.png",
+      "citation": "Wayback 2012-05-06  |  32 Speakers  |  Honoring Dave Bost & the Chicago Dev Community"
+    },
+    {
+      "id": "outro",
+      "label": "Next: Episode 03 — The Anti-Corporate Design",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "NEXT: EPISODE 03 — THE ANTI-CORPORATE DESIGN",
+      "subheadline": "Triadic Sass, #color-proof & 2012 A11y",
+      "caption": "just3ws.com/ai/series/chicago-code-camp/  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

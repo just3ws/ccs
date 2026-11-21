@@ -1,0 +1,58 @@
+{
+  "episodeId": "ep-04-under-the-hood",
+  "format": "16:9",
+  "fps": 30,
+  "beats": [
+    {
+      "id": "title-open",
+      "label": "Episode 04: Under the Hood",
+      "kind": "card",
+      "bgColor": "#800000",
+      "headline": "UNDER THE HOOD OF 2012 RAILS",
+      "subheadline": "Episode 04: Sesja, Feature Flags, ActiveAdmin & Proto-Observability",
+      "caption": "17 Models  |  15 Controllers  |  19 Tables  |  25 Spec/Feature Files"
+    },
+    {
+      "id": "sesja-and-cfp",
+      "label": "Sesja, VERSION_TAG & Frictionless CFP",
+      "kind": "pan",
+      "image": "2012-submissions-new.png",
+      "citation": "app/models/sesja.rb  |  VERSION_TAG = '2012-05'  |  SubmissionsController#create"
+    },
+    {
+      "id": "speaker-and-auth",
+      "label": "Devise, CanCan & Speaker Profiles",
+      "kind": "pan",
+      "image": "2012-speaker-profile-edit.png",
+      "citation": "Ability (CanCan)  |  ROLES: guest < attendee < speaker < admin  |  EmailDomainValidator MX"
+    },
+    {
+      "id": "activeadmin-features",
+      "label": "ActiveAdmin 0.4.3 & Live Feature Flags",
+      "kind": "split",
+      "leftImage": "2012-admin-dashboard.png",
+      "rightImage": "2012-admin-features.png",
+      "leftLabel": "ACTIVEADMIN 0.4.3 DASHBOARD",
+      "rightLabel": "LIVE FEATURE FLAGS (Feature.ok?)",
+      "citation": "/admin & /admin/features  |  preregistrations, image_logo, show_sponsors, comments"
+    },
+    {
+      "id": "tests-and-observability",
+      "label": "Tests, CI & Proto-Observability",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "TESTS, CI & PROTO-OBSERVABILITY (2012)",
+      "subheadline": "RSpec + Cucumber + SimpleCov-Rcov (Hudson/Jenkins)",
+      "caption": "Bullet (N+1)  |  HoptoadNotifier  |  ?dss=1  |  #color-proof  |  Rails.logger"
+    },
+    {
+      "id": "outro",
+      "label": "Next: Episode 05 — AGPLv3 & Rails 8 Roadmap",
+      "kind": "card",
+      "bgColor": "#16161d",
+      "headline": "NEXT: EPISODE 05 — CARRYING IT FORWARD",
+      "subheadline": "From Chicago Code Camp to AGPLv3 Code Camp Server",
+      "caption": "just3ws.com/ai/series/chicago-code-camp/  |  Disclosure: Synthetic narration"
+    }
+  ]
+}

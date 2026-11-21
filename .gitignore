@@ -31,3 +31,4 @@ tmp/**/*
 *.dump
 push_*
 .backup
+/artifacts/
