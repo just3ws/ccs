@@ -3,7 +3,7 @@
  * scripts/series/stage-episode.mjs
  *
  * Packages and stages a 6-file media-pipeline cue bundle (.mp4, .vtt, .png, .yml,
- * .metadata.json, .manifest.json) into ~/ai/media-pipeline/whoistechcmty/chicago-code-camp/staged/.
+ * .metadata.json, .manifest.json) into ~/ai/media-pipeline/just3ws-mike/chicago-code-camp/staged/.
  *
  * Usage:
  *   node scripts/series/stage-episode.mjs <episode-id> --dry-run
@@ -71,6 +71,8 @@ async function main() {
     `Companion essay & 1:1 archival gallery: ${companionUrl}`,
     `Repository (GNU AGPL v3): https://github.com/just3ws/ccs`,
     `Series Playlist: https://www.youtube.com/playlist?list=${manifest.playlistId}`,
+    `YouTube Channel: https://www.youtube.com/@just3ws-mike`,
+    `Support & Project Map: https://www.just3ws.com/support/`,
     '',
     'Chapters:',
     chapterBlock,
